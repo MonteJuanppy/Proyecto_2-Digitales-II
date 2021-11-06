@@ -1,24 +1,28 @@
+//Proyecto II
+//Desarrollo de Memoria
+//5-11-2012
+//Version 1.0
+//Modulo tomado de: https://riptutorial.com/verilog/example/10519/single-port-synchronous-ram
+
+
 module memoria #(
-  parameter DATA_WIDTH=8,          //width of data bus
-  parameter ADDR_WIDTH=8           //width of addresses buses
-)(
-  input  [(DATA_WIDTH-1):0] data,  //data to be written
-  input  [(ADDR_WIDTH-1):0] addr,  //address for write/read operation
-  input                     we,    //write enable signal
-  input                     clk,   //clock signal
-  output [(DATA_WIDTH-1):0] q      //read data
+  parameter DATA_WIDTH=8, //tamaño de datos FIFO_data_in
+  parameter ADDR_WIDTH=8)  //tamaño de direcciones
+
+(input [(DATA_WIDTH-1):0] FIFO_data_in,  //entrada FIFO_data_in 
+  input [(ADDR_WIDTH-1):0] wr_ptr,  //direccíón de escritura
+  input [(ADDR_WIDTH-1):0] rd_ptr,  //direccíón de lectura
+  input clk,   //señal de reloj
+  output [(DATA_WIDTH-1):0] FIFO_data_out //salida FIFO_data_out
 );
 
-  reg [DATA_WIDTH-1:0] ram [2**ADDR_WIDTH-1:0];
-  reg [ADDR_WIDTH-1:0] addr_r;
+  initial FIFO_data_out = 0;
 
-  always @(posedge clk) begin //WRITE
-      if (we) begin
-          ram[addr] <= data;
+  reg [DATA_WIDTH-1:0] ram [2**ADDR_WIDTH-1:0]; //Tamaño de la memoria
+
+  always @(posedge clk) begin 
+        ram[wr_ptr] <= FIFO_data_in;//Escritura
+        //FIFO_data_out = ram[rd_ptr]; //Lectura
       end
-      addr_r <= addr;
-  end
-
-  assign q = ram[addr_r]; //READ
-
+  assign FIFO_data_out = ram[rd_ptr]; 
 endmodule

@@ -1,0 +1,12 @@
+read_verilog memoria.v
+
+hierarchy -check -top memoria
+
+proc; opt; fsm; opt; memory; opt
+
+techmap; opt
+
+clean
+
+write_verilog memoria_synth.v
+show memoria

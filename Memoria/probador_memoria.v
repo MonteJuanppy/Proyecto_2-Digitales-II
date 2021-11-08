@@ -13,14 +13,17 @@ module probador_memoria #(
   output reg[(ADDR_WIDTH-1):0] wr_ptr,  //direccíón de escritura
   output reg[(ADDR_WIDTH-1):0] rd_ptr,  //direccíón de lectura
   output reg clk,   //señal de reloj
+  output reg write_enable, //enable
+  output reg read_enable, //enable
   input [(DATA_WIDTH-1):0] FIFO_data_out //salida FIFO_data_out
 );
-
     initial begin
         FIFO_data_in = 0;
         wr_ptr = 0;
         rd_ptr = 0;
         clk = 0;
+        write_enable = 0;
+        read_enable = 0;
     end
     always #1 clk <= ~clk;
 
@@ -32,6 +35,8 @@ module probador_memoria #(
     FIFO_data_in = 8'hFF;
     wr_ptr = 8'h01;
     rd_ptr = 8'h00;
+    write_enable = 1;
+    read_enable = 1;
 
     @(posedge clk);
     FIFO_data_in = 8'hAF;
@@ -51,7 +56,7 @@ module probador_memoria #(
     @(posedge clk);
     FIFO_data_in = 8'h6A;
     wr_ptr = 8'h9F;
-    rd_ptr = 8'h05;
+    rd_ptr = 8'h8A;
 
 	#3 $finish;
 	end

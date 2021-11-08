@@ -1,5 +1,5 @@
 $date
-	Fri Nov  5 21:20:27 2021
+	Sun Nov  7 16:47:15 2021
 $end
 $version
 	Icarus Verilog
@@ -8,2178 +8,128 @@ $timescale
 	100ps
 $end
 $scope module banco $end
-$var wire 8 ! wr_ptr [7:0] $end
-$var wire 8 " rd_ptr [7:0] $end
-$var wire 1 # clk $end
-$var wire 8 $ FIFO_data_out_synth [7:0] $end
-$var wire 8 % FIFO_data_out [7:0] $end
-$var wire 8 & FIFO_data_in [7:0] $end
+$var wire 1 ! write_enable $end
+$var wire 8 " wr_ptr [7:0] $end
+$var wire 1 # read_enable $end
+$var wire 8 $ rd_ptr [7:0] $end
+$var wire 1 % clk $end
+$var wire 8 & FIFO_data_out_synth [7:0] $end
+$var wire 8 ' FIFO_data_out [7:0] $end
+$var wire 8 ( FIFO_data_in [7:0] $end
 $scope module conductual $end
-$var wire 8 ' wr_ptr [7:0] $end
-$var wire 8 ( rd_ptr [7:0] $end
-$var wire 1 # clk $end
-$var wire 8 ) FIFO_data_in [7:0] $end
-$var reg 8 * FIFO_data_out [7:0] $end
+$var wire 1 ! write_enable $end
+$var wire 8 ) wr_ptr [7:0] $end
+$var wire 1 # read_enable $end
+$var wire 8 * rd_ptr [7:0] $end
+$var wire 1 % clk $end
+$var wire 8 + FIFO_data_in [7:0] $end
+$var reg 8 , FIFO_data_out [7:0] $end
 $upscope $end
 $scope module estructural $end
-$var wire 1 + _0001_ $end
-$var wire 1 , _0002_ $end
-$var wire 1 - _0003_ $end
-$var wire 1 . _0004_ $end
-$var wire 1 / _0005_ $end
-$var wire 1 0 _0006_ $end
-$var wire 1 1 _0007_ $end
-$var wire 1 2 _0008_ $end
-$var wire 1 3 _0009_ $end
-$var wire 1 4 _0010_ $end
-$var wire 1 5 _0011_ $end
-$var wire 1 6 _0012_ $end
-$var wire 1 7 _0013_ $end
-$var wire 1 8 _0014_ $end
-$var wire 1 9 _0015_ $end
-$var wire 1 : _0016_ $end
-$var wire 1 ; _0017_ $end
-$var wire 1 < _0018_ $end
-$var wire 1 = _0019_ $end
-$var wire 1 > _0020_ $end
-$var wire 1 ? _0021_ $end
-$var wire 1 @ _0022_ $end
-$var wire 1 A _0023_ $end
-$var wire 1 B _0024_ $end
-$var wire 1 C _0025_ $end
-$var wire 1 D _0026_ $end
-$var wire 1 E _0027_ $end
-$var wire 1 F _0028_ $end
-$var wire 1 G _0029_ $end
-$var wire 1 H _0030_ $end
-$var wire 1 I _0031_ $end
-$var wire 1 J _0032_ $end
-$var wire 1 K _0033_ $end
-$var wire 1 L _0034_ $end
-$var wire 1 M _0035_ $end
-$var wire 1 N _0036_ $end
-$var wire 1 O _0037_ $end
-$var wire 1 P _0038_ $end
-$var wire 1 Q _0039_ $end
-$var wire 1 R _0040_ $end
-$var wire 1 S _0041_ $end
-$var wire 1 T _0042_ $end
-$var wire 1 U _0043_ $end
-$var wire 1 V _0044_ $end
-$var wire 1 W _0045_ $end
-$var wire 1 X _0046_ $end
-$var wire 1 Y _0047_ $end
-$var wire 1 Z _0048_ $end
-$var wire 1 [ _0049_ $end
-$var wire 1 \ _0050_ $end
-$var wire 1 ] _0051_ $end
-$var wire 1 ^ _0052_ $end
-$var wire 1 _ _0053_ $end
-$var wire 1 ` _0054_ $end
-$var wire 1 a _0055_ $end
-$var wire 1 b _0056_ $end
-$var wire 1 c _0057_ $end
-$var wire 1 d _0058_ $end
-$var wire 1 e _0059_ $end
-$var wire 1 f _0060_ $end
-$var wire 1 g _0061_ $end
-$var wire 1 h _0062_ $end
-$var wire 1 i _0063_ $end
-$var wire 1 j _0064_ $end
-$var wire 1 k _0065_ $end
-$var wire 1 l _0066_ $end
-$var wire 1 m _0067_ $end
-$var wire 1 n _0068_ $end
-$var wire 1 o _0069_ $end
-$var wire 1 p _0070_ $end
-$var wire 1 q _0071_ $end
-$var wire 1 r _0072_ $end
-$var wire 1 s _0073_ $end
-$var wire 1 t _0074_ $end
-$var wire 1 u _0075_ $end
-$var wire 1 v _0076_ $end
-$var wire 1 w _0077_ $end
-$var wire 1 x _0078_ $end
-$var wire 1 y _0079_ $end
-$var wire 1 z _0080_ $end
-$var wire 1 { _0081_ $end
-$var wire 1 | _0082_ $end
-$var wire 1 } _0083_ $end
-$var wire 1 ~ _0084_ $end
-$var wire 1 !" _0085_ $end
-$var wire 1 "" _0086_ $end
-$var wire 1 #" _0087_ $end
-$var wire 1 $" _0088_ $end
-$var wire 1 %" _0089_ $end
-$var wire 1 &" _0090_ $end
-$var wire 1 '" _0091_ $end
-$var wire 1 (" _0092_ $end
-$var wire 1 )" _0093_ $end
-$var wire 1 *" _0094_ $end
-$var wire 1 +" _0095_ $end
-$var wire 1 ," _0096_ $end
-$var wire 1 -" _0097_ $end
-$var wire 1 ." _0098_ $end
-$var wire 1 /" _0099_ $end
-$var wire 1 0" _0100_ $end
-$var wire 1 1" _0101_ $end
-$var wire 1 2" _0102_ $end
-$var wire 1 3" _0103_ $end
-$var wire 1 4" _0104_ $end
-$var wire 1 5" _0105_ $end
-$var wire 1 6" _0106_ $end
-$var wire 1 7" _0107_ $end
-$var wire 1 8" _0108_ $end
-$var wire 1 9" _0109_ $end
-$var wire 1 :" _0110_ $end
-$var wire 1 ;" _0111_ $end
-$var wire 1 <" _0112_ $end
-$var wire 1 =" _0113_ $end
-$var wire 1 >" _0114_ $end
-$var wire 1 ?" _0115_ $end
-$var wire 1 @" _0116_ $end
-$var wire 1 A" _0117_ $end
-$var wire 1 B" _0118_ $end
-$var wire 1 C" _0119_ $end
-$var wire 1 D" _0120_ $end
-$var wire 1 E" _0121_ $end
-$var wire 1 F" _0122_ $end
-$var wire 1 G" _0123_ $end
-$var wire 1 H" _0124_ $end
-$var wire 1 I" _0125_ $end
-$var wire 1 J" _0126_ $end
-$var wire 1 K" _0127_ $end
-$var wire 1 L" _0128_ $end
-$var wire 1 M" _0129_ $end
-$var wire 1 N" _0130_ $end
-$var wire 1 O" _0131_ $end
-$var wire 1 P" _0132_ $end
-$var wire 1 Q" _0133_ $end
-$var wire 1 R" _0134_ $end
-$var wire 1 S" _0135_ $end
-$var wire 1 T" _0136_ $end
-$var wire 1 U" _0137_ $end
-$var wire 1 V" _0138_ $end
-$var wire 1 W" _0139_ $end
-$var wire 1 X" _0140_ $end
-$var wire 1 Y" _0141_ $end
-$var wire 1 Z" _0142_ $end
-$var wire 1 [" _0143_ $end
-$var wire 1 \" _0144_ $end
-$var wire 1 ]" _0145_ $end
-$var wire 1 ^" _0146_ $end
-$var wire 1 _" _0147_ $end
-$var wire 1 `" _0148_ $end
-$var wire 1 a" _0149_ $end
-$var wire 1 b" _0150_ $end
-$var wire 1 c" _0151_ $end
-$var wire 1 d" _0152_ $end
-$var wire 1 e" _0153_ $end
-$var wire 1 f" _0154_ $end
-$var wire 1 g" _0155_ $end
-$var wire 1 h" _0156_ $end
-$var wire 1 i" _0157_ $end
-$var wire 1 j" _0158_ $end
-$var wire 1 k" _0159_ $end
-$var wire 1 l" _0160_ $end
-$var wire 1 m" _0161_ $end
-$var wire 1 n" _0162_ $end
-$var wire 1 o" _0163_ $end
-$var wire 1 p" _0164_ $end
-$var wire 1 q" _0165_ $end
-$var wire 1 r" _0166_ $end
-$var wire 1 s" _0167_ $end
-$var wire 1 t" _0168_ $end
-$var wire 1 u" _0169_ $end
-$var wire 1 v" _0170_ $end
-$var wire 1 w" _0171_ $end
-$var wire 1 x" _0172_ $end
-$var wire 1 y" _0173_ $end
-$var wire 1 z" _0174_ $end
-$var wire 1 {" _0175_ $end
-$var wire 1 |" _0176_ $end
-$var wire 1 }" _0177_ $end
-$var wire 1 ~" _0178_ $end
-$var wire 1 !# _0179_ $end
-$var wire 1 "# _0180_ $end
-$var wire 1 ## _0181_ $end
-$var wire 1 $# _0182_ $end
-$var wire 1 %# _0183_ $end
-$var wire 1 &# _0184_ $end
-$var wire 1 '# _0185_ $end
-$var wire 1 (# _0186_ $end
-$var wire 1 )# _0187_ $end
-$var wire 1 *# _0188_ $end
-$var wire 1 +# _0189_ $end
-$var wire 1 ,# _0190_ $end
-$var wire 1 -# _0191_ $end
-$var wire 1 .# _0192_ $end
-$var wire 1 /# _0193_ $end
-$var wire 1 0# _0194_ $end
-$var wire 1 1# _0195_ $end
-$var wire 1 2# _0196_ $end
-$var wire 1 3# _0197_ $end
-$var wire 1 4# _0198_ $end
-$var wire 1 5# _0199_ $end
-$var wire 1 6# _0200_ $end
-$var wire 1 7# _0201_ $end
-$var wire 1 8# _0202_ $end
-$var wire 1 9# _0203_ $end
-$var wire 1 :# _0204_ $end
-$var wire 1 ;# _0205_ $end
-$var wire 1 <# _0206_ $end
-$var wire 1 =# _0207_ $end
-$var wire 1 ># _0208_ $end
-$var wire 1 ?# _0209_ $end
-$var wire 1 @# _0210_ $end
-$var wire 1 A# _0211_ $end
-$var wire 1 B# _0212_ $end
-$var wire 1 C# _0213_ $end
-$var wire 1 D# _0214_ $end
-$var wire 1 E# _0215_ $end
-$var wire 1 F# _0216_ $end
-$var wire 1 G# _0217_ $end
-$var wire 1 H# _0218_ $end
-$var wire 1 I# _0219_ $end
-$var wire 1 J# _0220_ $end
-$var wire 1 K# _0221_ $end
-$var wire 1 L# _0222_ $end
-$var wire 1 M# _0223_ $end
-$var wire 1 N# _0224_ $end
-$var wire 1 O# _0225_ $end
-$var wire 1 P# _0226_ $end
-$var wire 1 Q# _0227_ $end
-$var wire 1 R# _0228_ $end
-$var wire 1 S# _0229_ $end
-$var wire 1 T# _0230_ $end
-$var wire 1 U# _0231_ $end
-$var wire 1 V# _0232_ $end
-$var wire 1 W# _0233_ $end
-$var wire 1 X# _0234_ $end
-$var wire 1 Y# _0235_ $end
-$var wire 1 Z# _0236_ $end
-$var wire 1 [# _0237_ $end
-$var wire 1 \# _0238_ $end
-$var wire 1 ]# _0239_ $end
-$var wire 1 ^# _0240_ $end
-$var wire 1 _# _0241_ $end
-$var wire 1 `# _0242_ $end
-$var wire 1 a# _0243_ $end
-$var wire 1 b# _0244_ $end
-$var wire 1 c# _0245_ $end
-$var wire 1 d# _0246_ $end
-$var wire 1 e# _0247_ $end
-$var wire 1 f# _0248_ $end
-$var wire 1 g# _0249_ $end
-$var wire 1 h# _0250_ $end
-$var wire 1 i# _0251_ $end
-$var wire 1 j# _0252_ $end
-$var wire 1 k# _0253_ $end
-$var wire 1 l# _0254_ $end
-$var wire 1 m# _0255_ $end
-$var wire 1 n# _0256_ $end
-$var wire 1 o# _0257_ $end
-$var wire 1 p# _0258_ $end
-$var wire 1 q# _0259_ $end
-$var wire 1 r# _0260_ $end
-$var wire 1 s# _0261_ $end
-$var wire 1 t# _0262_ $end
-$var wire 1 u# _0263_ $end
-$var wire 1 v# _0264_ $end
-$var wire 1 w# _0265_ $end
-$var wire 1 x# _0266_ $end
-$var wire 1 y# _0267_ $end
-$var wire 1 z# _0268_ $end
-$var wire 1 {# _0269_ $end
-$var wire 1 |# _0270_ $end
-$var wire 1 }# _0271_ $end
-$var wire 1 ~# _0272_ $end
-$var wire 1 !$ _0273_ $end
-$var wire 1 "$ _0274_ $end
-$var wire 1 #$ _0275_ $end
-$var wire 1 $$ _0276_ $end
-$var wire 1 %$ _0277_ $end
-$var wire 1 &$ _0278_ $end
-$var wire 1 '$ _0279_ $end
-$var wire 1 ($ _0280_ $end
-$var wire 1 )$ _0281_ $end
-$var wire 1 *$ _0282_ $end
-$var wire 1 +$ _0283_ $end
-$var wire 1 ,$ _0284_ $end
-$var wire 1 -$ _0285_ $end
-$var wire 1 .$ _0286_ $end
-$var wire 1 /$ _0287_ $end
-$var wire 1 0$ _0288_ $end
-$var wire 1 1$ _0289_ $end
-$var wire 1 2$ _0290_ $end
-$var wire 1 3$ _0291_ $end
-$var wire 1 4$ _0292_ $end
-$var wire 1 5$ _0293_ $end
-$var wire 1 6$ _0294_ $end
-$var wire 1 7$ _0295_ $end
-$var wire 1 8$ _0296_ $end
-$var wire 1 9$ _0297_ $end
-$var wire 1 :$ _0298_ $end
-$var wire 1 ;$ _0299_ $end
-$var wire 1 <$ _0300_ $end
-$var wire 1 =$ _0301_ $end
-$var wire 1 >$ _0302_ $end
-$var wire 1 ?$ _0303_ $end
-$var wire 1 @$ _0304_ $end
-$var wire 1 A$ _0305_ $end
-$var wire 1 B$ _0306_ $end
-$var wire 1 C$ _0307_ $end
-$var wire 1 D$ _0308_ $end
-$var wire 1 E$ _0309_ $end
-$var wire 1 F$ _0310_ $end
-$var wire 1 G$ _0311_ $end
-$var wire 1 H$ _0312_ $end
-$var wire 8 I$ wr_ptr [7:0] $end
-$var wire 8 J$ rd_ptr [7:0] $end
-$var wire 1 # clk $end
-$var wire 8 K$ _0822_ [7:0] $end
-$var wire 8 L$ _0821_ [7:0] $end
-$var wire 8 M$ _0820_ [7:0] $end
-$var wire 8 N$ _0819_ [7:0] $end
-$var wire 8 O$ _0818_ [7:0] $end
-$var wire 8 P$ _0817_ [7:0] $end
-$var wire 8 Q$ _0816_ [7:0] $end
-$var wire 8 R$ _0815_ [7:0] $end
-$var wire 8 S$ _0814_ [7:0] $end
-$var wire 8 T$ _0813_ [7:0] $end
-$var wire 8 U$ _0812_ [7:0] $end
-$var wire 8 V$ _0811_ [7:0] $end
-$var wire 8 W$ _0810_ [7:0] $end
-$var wire 8 X$ _0809_ [7:0] $end
-$var wire 8 Y$ _0808_ [7:0] $end
-$var wire 8 Z$ _0807_ [7:0] $end
-$var wire 8 [$ _0806_ [7:0] $end
-$var wire 8 \$ _0805_ [7:0] $end
-$var wire 8 ]$ _0804_ [7:0] $end
-$var wire 8 ^$ _0803_ [7:0] $end
-$var wire 8 _$ _0802_ [7:0] $end
-$var wire 8 `$ _0801_ [7:0] $end
-$var wire 8 a$ _0800_ [7:0] $end
-$var wire 8 b$ _0799_ [7:0] $end
-$var wire 8 c$ _0798_ [7:0] $end
-$var wire 8 d$ _0797_ [7:0] $end
-$var wire 8 e$ _0796_ [7:0] $end
-$var wire 8 f$ _0795_ [7:0] $end
-$var wire 8 g$ _0794_ [7:0] $end
-$var wire 8 h$ _0793_ [7:0] $end
-$var wire 8 i$ _0792_ [7:0] $end
-$var wire 8 j$ _0791_ [7:0] $end
-$var wire 8 k$ _0790_ [7:0] $end
-$var wire 8 l$ _0789_ [7:0] $end
-$var wire 8 m$ _0788_ [7:0] $end
-$var wire 8 n$ _0787_ [7:0] $end
-$var wire 8 o$ _0786_ [7:0] $end
-$var wire 8 p$ _0785_ [7:0] $end
-$var wire 8 q$ _0784_ [7:0] $end
-$var wire 8 r$ _0783_ [7:0] $end
-$var wire 8 s$ _0782_ [7:0] $end
-$var wire 8 t$ _0781_ [7:0] $end
-$var wire 8 u$ _0780_ [7:0] $end
-$var wire 8 v$ _0779_ [7:0] $end
-$var wire 8 w$ _0778_ [7:0] $end
-$var wire 8 x$ _0777_ [7:0] $end
-$var wire 8 y$ _0776_ [7:0] $end
-$var wire 8 z$ _0775_ [7:0] $end
-$var wire 8 {$ _0774_ [7:0] $end
-$var wire 8 |$ _0773_ [7:0] $end
-$var wire 8 }$ _0772_ [7:0] $end
-$var wire 8 ~$ _0771_ [7:0] $end
-$var wire 8 !% _0770_ [7:0] $end
-$var wire 8 "% _0769_ [7:0] $end
-$var wire 8 #% _0768_ [7:0] $end
-$var wire 8 $% _0767_ [7:0] $end
-$var wire 8 %% _0766_ [7:0] $end
-$var wire 8 &% _0765_ [7:0] $end
-$var wire 8 '% _0764_ [7:0] $end
-$var wire 8 (% _0763_ [7:0] $end
-$var wire 8 )% _0762_ [7:0] $end
-$var wire 8 *% _0761_ [7:0] $end
-$var wire 8 +% _0760_ [7:0] $end
-$var wire 8 ,% _0759_ [7:0] $end
-$var wire 8 -% _0758_ [7:0] $end
-$var wire 8 .% _0757_ [7:0] $end
-$var wire 8 /% _0756_ [7:0] $end
-$var wire 8 0% _0755_ [7:0] $end
-$var wire 8 1% _0754_ [7:0] $end
-$var wire 8 2% _0753_ [7:0] $end
-$var wire 8 3% _0752_ [7:0] $end
-$var wire 8 4% _0751_ [7:0] $end
-$var wire 8 5% _0750_ [7:0] $end
-$var wire 8 6% _0749_ [7:0] $end
-$var wire 8 7% _0748_ [7:0] $end
-$var wire 8 8% _0747_ [7:0] $end
-$var wire 8 9% _0746_ [7:0] $end
-$var wire 8 :% _0745_ [7:0] $end
-$var wire 8 ;% _0744_ [7:0] $end
-$var wire 8 <% _0743_ [7:0] $end
-$var wire 8 =% _0742_ [7:0] $end
-$var wire 8 >% _0741_ [7:0] $end
-$var wire 8 ?% _0740_ [7:0] $end
-$var wire 8 @% _0739_ [7:0] $end
-$var wire 8 A% _0738_ [7:0] $end
-$var wire 8 B% _0737_ [7:0] $end
-$var wire 8 C% _0736_ [7:0] $end
-$var wire 8 D% _0735_ [7:0] $end
-$var wire 8 E% _0734_ [7:0] $end
-$var wire 8 F% _0733_ [7:0] $end
-$var wire 8 G% _0732_ [7:0] $end
-$var wire 8 H% _0731_ [7:0] $end
-$var wire 8 I% _0730_ [7:0] $end
-$var wire 8 J% _0729_ [7:0] $end
-$var wire 8 K% _0728_ [7:0] $end
-$var wire 8 L% _0727_ [7:0] $end
-$var wire 8 M% _0726_ [7:0] $end
-$var wire 8 N% _0725_ [7:0] $end
-$var wire 8 O% _0724_ [7:0] $end
-$var wire 8 P% _0723_ [7:0] $end
-$var wire 8 Q% _0722_ [7:0] $end
-$var wire 8 R% _0721_ [7:0] $end
-$var wire 8 S% _0720_ [7:0] $end
-$var wire 8 T% _0719_ [7:0] $end
-$var wire 8 U% _0718_ [7:0] $end
-$var wire 8 V% _0717_ [7:0] $end
-$var wire 8 W% _0716_ [7:0] $end
-$var wire 8 X% _0715_ [7:0] $end
-$var wire 8 Y% _0714_ [7:0] $end
-$var wire 8 Z% _0713_ [7:0] $end
-$var wire 8 [% _0712_ [7:0] $end
-$var wire 8 \% _0711_ [7:0] $end
-$var wire 8 ]% _0710_ [7:0] $end
-$var wire 8 ^% _0709_ [7:0] $end
-$var wire 8 _% _0708_ [7:0] $end
-$var wire 8 `% _0707_ [7:0] $end
-$var wire 8 a% _0706_ [7:0] $end
-$var wire 8 b% _0705_ [7:0] $end
-$var wire 8 c% _0704_ [7:0] $end
-$var wire 8 d% _0703_ [7:0] $end
-$var wire 8 e% _0702_ [7:0] $end
-$var wire 8 f% _0701_ [7:0] $end
-$var wire 8 g% _0700_ [7:0] $end
-$var wire 8 h% _0699_ [7:0] $end
-$var wire 8 i% _0698_ [7:0] $end
-$var wire 8 j% _0697_ [7:0] $end
-$var wire 8 k% _0696_ [7:0] $end
-$var wire 8 l% _0695_ [7:0] $end
-$var wire 8 m% _0694_ [7:0] $end
-$var wire 8 n% _0693_ [7:0] $end
-$var wire 8 o% _0692_ [7:0] $end
-$var wire 8 p% _0691_ [7:0] $end
-$var wire 8 q% _0690_ [7:0] $end
-$var wire 8 r% _0689_ [7:0] $end
-$var wire 8 s% _0688_ [7:0] $end
-$var wire 8 t% _0687_ [7:0] $end
-$var wire 8 u% _0686_ [7:0] $end
-$var wire 8 v% _0685_ [7:0] $end
-$var wire 8 w% _0684_ [7:0] $end
-$var wire 8 x% _0683_ [7:0] $end
-$var wire 8 y% _0682_ [7:0] $end
-$var wire 8 z% _0681_ [7:0] $end
-$var wire 8 {% _0680_ [7:0] $end
-$var wire 8 |% _0679_ [7:0] $end
-$var wire 8 }% _0678_ [7:0] $end
-$var wire 8 ~% _0677_ [7:0] $end
-$var wire 8 !& _0676_ [7:0] $end
-$var wire 8 "& _0675_ [7:0] $end
-$var wire 8 #& _0674_ [7:0] $end
-$var wire 8 $& _0673_ [7:0] $end
-$var wire 8 %& _0672_ [7:0] $end
-$var wire 8 && _0671_ [7:0] $end
-$var wire 8 '& _0670_ [7:0] $end
-$var wire 8 (& _0669_ [7:0] $end
-$var wire 8 )& _0668_ [7:0] $end
-$var wire 8 *& _0667_ [7:0] $end
-$var wire 8 +& _0666_ [7:0] $end
-$var wire 8 ,& _0665_ [7:0] $end
-$var wire 8 -& _0664_ [7:0] $end
-$var wire 8 .& _0663_ [7:0] $end
-$var wire 8 /& _0662_ [7:0] $end
-$var wire 8 0& _0661_ [7:0] $end
-$var wire 8 1& _0660_ [7:0] $end
-$var wire 8 2& _0659_ [7:0] $end
-$var wire 8 3& _0658_ [7:0] $end
-$var wire 8 4& _0657_ [7:0] $end
-$var wire 8 5& _0656_ [7:0] $end
-$var wire 8 6& _0655_ [7:0] $end
-$var wire 8 7& _0654_ [7:0] $end
-$var wire 8 8& _0653_ [7:0] $end
-$var wire 8 9& _0652_ [7:0] $end
-$var wire 8 :& _0651_ [7:0] $end
-$var wire 8 ;& _0650_ [7:0] $end
-$var wire 8 <& _0649_ [7:0] $end
-$var wire 8 =& _0648_ [7:0] $end
-$var wire 8 >& _0647_ [7:0] $end
-$var wire 8 ?& _0646_ [7:0] $end
-$var wire 8 @& _0645_ [7:0] $end
-$var wire 8 A& _0644_ [7:0] $end
-$var wire 8 B& _0643_ [7:0] $end
-$var wire 8 C& _0642_ [7:0] $end
-$var wire 8 D& _0641_ [7:0] $end
-$var wire 8 E& _0640_ [7:0] $end
-$var wire 8 F& _0639_ [7:0] $end
-$var wire 8 G& _0638_ [7:0] $end
-$var wire 8 H& _0637_ [7:0] $end
-$var wire 8 I& _0636_ [7:0] $end
-$var wire 8 J& _0635_ [7:0] $end
-$var wire 8 K& _0634_ [7:0] $end
-$var wire 8 L& _0633_ [7:0] $end
-$var wire 8 M& _0632_ [7:0] $end
-$var wire 8 N& _0631_ [7:0] $end
-$var wire 8 O& _0630_ [7:0] $end
-$var wire 8 P& _0629_ [7:0] $end
-$var wire 8 Q& _0628_ [7:0] $end
-$var wire 8 R& _0627_ [7:0] $end
-$var wire 8 S& _0626_ [7:0] $end
-$var wire 8 T& _0625_ [7:0] $end
-$var wire 8 U& _0624_ [7:0] $end
-$var wire 8 V& _0623_ [7:0] $end
-$var wire 8 W& _0622_ [7:0] $end
-$var wire 8 X& _0621_ [7:0] $end
-$var wire 8 Y& _0620_ [7:0] $end
-$var wire 8 Z& _0619_ [7:0] $end
-$var wire 8 [& _0618_ [7:0] $end
-$var wire 8 \& _0617_ [7:0] $end
-$var wire 8 ]& _0616_ [7:0] $end
-$var wire 8 ^& _0615_ [7:0] $end
-$var wire 8 _& _0614_ [7:0] $end
-$var wire 8 `& _0613_ [7:0] $end
-$var wire 8 a& _0612_ [7:0] $end
-$var wire 8 b& _0611_ [7:0] $end
-$var wire 8 c& _0610_ [7:0] $end
-$var wire 8 d& _0609_ [7:0] $end
-$var wire 8 e& _0608_ [7:0] $end
-$var wire 8 f& _0607_ [7:0] $end
-$var wire 8 g& _0606_ [7:0] $end
-$var wire 8 h& _0605_ [7:0] $end
-$var wire 8 i& _0604_ [7:0] $end
-$var wire 8 j& _0603_ [7:0] $end
-$var wire 8 k& _0602_ [7:0] $end
-$var wire 8 l& _0601_ [7:0] $end
-$var wire 8 m& _0600_ [7:0] $end
-$var wire 8 n& _0599_ [7:0] $end
-$var wire 8 o& _0598_ [7:0] $end
-$var wire 8 p& _0597_ [7:0] $end
-$var wire 8 q& _0596_ [7:0] $end
-$var wire 8 r& _0595_ [7:0] $end
-$var wire 8 s& _0594_ [7:0] $end
-$var wire 8 t& _0593_ [7:0] $end
-$var wire 8 u& _0592_ [7:0] $end
-$var wire 8 v& _0591_ [7:0] $end
-$var wire 8 w& _0590_ [7:0] $end
-$var wire 8 x& _0589_ [7:0] $end
-$var wire 8 y& _0588_ [7:0] $end
-$var wire 8 z& _0587_ [7:0] $end
-$var wire 8 {& _0586_ [7:0] $end
-$var wire 8 |& _0585_ [7:0] $end
-$var wire 8 }& _0584_ [7:0] $end
-$var wire 8 ~& _0583_ [7:0] $end
-$var wire 8 !' _0582_ [7:0] $end
-$var wire 8 "' _0581_ [7:0] $end
-$var wire 8 #' _0580_ [7:0] $end
-$var wire 8 $' _0579_ [7:0] $end
-$var wire 8 %' _0578_ [7:0] $end
-$var wire 8 &' _0577_ [7:0] $end
-$var wire 8 '' _0576_ [7:0] $end
-$var wire 8 (' _0575_ [7:0] $end
-$var wire 8 )' _0574_ [7:0] $end
-$var wire 8 *' _0573_ [7:0] $end
-$var wire 8 +' _0572_ [7:0] $end
-$var wire 8 ,' _0571_ [7:0] $end
-$var wire 8 -' _0570_ [7:0] $end
-$var wire 8 .' _0569_ [7:0] $end
-$var wire 8 /' _0568_ [7:0] $end
-$var wire 8 0' _0567_ [7:0] $end
-$var wire 8 1' _0566_ [7:0] $end
-$var wire 8 2' _0565_ [7:0] $end
-$var wire 8 3' _0564_ [7:0] $end
-$var wire 8 4' _0563_ [7:0] $end
-$var wire 8 5' _0562_ [7:0] $end
-$var wire 8 6' _0561_ [7:0] $end
-$var wire 8 7' _0560_ [7:0] $end
-$var wire 8 8' _0559_ [7:0] $end
-$var wire 8 9' _0558_ [7:0] $end
-$var wire 8 :' _0557_ [7:0] $end
-$var wire 8 ;' _0556_ [7:0] $end
-$var wire 8 <' _0555_ [7:0] $end
-$var wire 8 =' _0554_ [7:0] $end
-$var wire 8 >' _0553_ [7:0] $end
-$var wire 8 ?' _0552_ [7:0] $end
-$var wire 8 @' _0551_ [7:0] $end
-$var wire 8 A' _0550_ [7:0] $end
-$var wire 8 B' _0549_ [7:0] $end
-$var wire 8 C' _0548_ [7:0] $end
-$var wire 8 D' _0547_ [7:0] $end
-$var wire 8 E' _0546_ [7:0] $end
-$var wire 8 F' _0545_ [7:0] $end
-$var wire 8 G' _0544_ [7:0] $end
-$var wire 8 H' _0543_ [7:0] $end
-$var wire 8 I' _0542_ [7:0] $end
-$var wire 8 J' _0541_ [7:0] $end
-$var wire 8 K' _0540_ [7:0] $end
-$var wire 8 L' _0539_ [7:0] $end
-$var wire 8 M' _0538_ [7:0] $end
-$var wire 8 N' _0537_ [7:0] $end
-$var wire 8 O' _0536_ [7:0] $end
-$var wire 8 P' _0535_ [7:0] $end
-$var wire 8 Q' _0534_ [7:0] $end
-$var wire 8 R' _0533_ [7:0] $end
-$var wire 8 S' _0532_ [7:0] $end
-$var wire 8 T' _0531_ [7:0] $end
-$var wire 8 U' _0530_ [7:0] $end
-$var wire 8 V' _0529_ [7:0] $end
-$var wire 8 W' _0528_ [7:0] $end
-$var wire 8 X' _0527_ [7:0] $end
-$var wire 8 Y' _0526_ [7:0] $end
-$var wire 8 Z' _0525_ [7:0] $end
-$var wire 8 [' _0524_ [7:0] $end
-$var wire 8 \' _0523_ [7:0] $end
-$var wire 8 ]' _0522_ [7:0] $end
-$var wire 8 ^' _0521_ [7:0] $end
-$var wire 8 _' _0520_ [7:0] $end
-$var wire 8 `' _0519_ [7:0] $end
-$var wire 8 a' _0518_ [7:0] $end
-$var wire 8 b' _0517_ [7:0] $end
-$var wire 8 c' _0516_ [7:0] $end
-$var wire 8 d' _0515_ [7:0] $end
-$var wire 8 e' _0514_ [7:0] $end
-$var wire 8 f' _0513_ [7:0] $end
-$var wire 8 g' _0512_ [7:0] $end
-$var wire 8 h' _0511_ [7:0] $end
-$var wire 8 i' _0510_ [7:0] $end
-$var wire 8 j' _0509_ [7:0] $end
-$var wire 8 k' _0508_ [7:0] $end
-$var wire 8 l' _0507_ [7:0] $end
-$var wire 8 m' _0506_ [7:0] $end
-$var wire 8 n' _0505_ [7:0] $end
-$var wire 8 o' _0504_ [7:0] $end
-$var wire 8 p' _0503_ [7:0] $end
-$var wire 8 q' _0502_ [7:0] $end
-$var wire 8 r' _0501_ [7:0] $end
-$var wire 8 s' _0500_ [7:0] $end
-$var wire 8 t' _0499_ [7:0] $end
-$var wire 8 u' _0498_ [7:0] $end
-$var wire 8 v' _0497_ [7:0] $end
-$var wire 8 w' _0496_ [7:0] $end
-$var wire 8 x' _0495_ [7:0] $end
-$var wire 8 y' _0494_ [7:0] $end
-$var wire 8 z' _0493_ [7:0] $end
-$var wire 8 {' _0492_ [7:0] $end
-$var wire 8 |' _0491_ [7:0] $end
-$var wire 8 }' _0490_ [7:0] $end
-$var wire 8 ~' _0489_ [7:0] $end
-$var wire 8 !( _0488_ [7:0] $end
-$var wire 8 "( _0487_ [7:0] $end
-$var wire 8 #( _0486_ [7:0] $end
-$var wire 8 $( _0485_ [7:0] $end
-$var wire 8 %( _0484_ [7:0] $end
-$var wire 8 &( _0483_ [7:0] $end
-$var wire 8 '( _0482_ [7:0] $end
-$var wire 8 (( _0481_ [7:0] $end
-$var wire 8 )( _0480_ [7:0] $end
-$var wire 8 *( _0479_ [7:0] $end
-$var wire 8 +( _0478_ [7:0] $end
-$var wire 8 ,( _0477_ [7:0] $end
-$var wire 8 -( _0476_ [7:0] $end
-$var wire 8 .( _0475_ [7:0] $end
-$var wire 8 /( _0474_ [7:0] $end
-$var wire 8 0( _0473_ [7:0] $end
-$var wire 8 1( _0472_ [7:0] $end
-$var wire 8 2( _0471_ [7:0] $end
-$var wire 8 3( _0470_ [7:0] $end
-$var wire 8 4( _0469_ [7:0] $end
-$var wire 8 5( _0468_ [7:0] $end
-$var wire 8 6( _0467_ [7:0] $end
-$var wire 8 7( _0466_ [7:0] $end
-$var wire 8 8( _0465_ [7:0] $end
-$var wire 8 9( _0464_ [7:0] $end
-$var wire 8 :( _0463_ [7:0] $end
-$var wire 8 ;( _0462_ [7:0] $end
-$var wire 8 <( _0461_ [7:0] $end
-$var wire 8 =( _0460_ [7:0] $end
-$var wire 8 >( _0459_ [7:0] $end
-$var wire 8 ?( _0458_ [7:0] $end
-$var wire 8 @( _0457_ [7:0] $end
-$var wire 8 A( _0456_ [7:0] $end
-$var wire 8 B( _0455_ [7:0] $end
-$var wire 8 C( _0454_ [7:0] $end
-$var wire 8 D( _0453_ [7:0] $end
-$var wire 8 E( _0452_ [7:0] $end
-$var wire 8 F( _0451_ [7:0] $end
-$var wire 8 G( _0450_ [7:0] $end
-$var wire 8 H( _0449_ [7:0] $end
-$var wire 8 I( _0448_ [7:0] $end
-$var wire 8 J( _0447_ [7:0] $end
-$var wire 8 K( _0446_ [7:0] $end
-$var wire 8 L( _0445_ [7:0] $end
-$var wire 8 M( _0444_ [7:0] $end
-$var wire 8 N( _0443_ [7:0] $end
-$var wire 8 O( _0442_ [7:0] $end
-$var wire 8 P( _0441_ [7:0] $end
-$var wire 8 Q( _0440_ [7:0] $end
-$var wire 8 R( _0439_ [7:0] $end
-$var wire 8 S( _0438_ [7:0] $end
-$var wire 8 T( _0437_ [7:0] $end
-$var wire 8 U( _0436_ [7:0] $end
-$var wire 8 V( _0435_ [7:0] $end
-$var wire 8 W( _0434_ [7:0] $end
-$var wire 8 X( _0433_ [7:0] $end
-$var wire 8 Y( _0432_ [7:0] $end
-$var wire 8 Z( _0431_ [7:0] $end
-$var wire 8 [( _0430_ [7:0] $end
-$var wire 8 \( _0429_ [7:0] $end
-$var wire 8 ]( _0428_ [7:0] $end
-$var wire 8 ^( _0427_ [7:0] $end
-$var wire 8 _( _0426_ [7:0] $end
-$var wire 8 `( _0425_ [7:0] $end
-$var wire 8 a( _0424_ [7:0] $end
-$var wire 8 b( _0423_ [7:0] $end
-$var wire 8 c( _0422_ [7:0] $end
-$var wire 8 d( _0421_ [7:0] $end
-$var wire 8 e( _0420_ [7:0] $end
-$var wire 8 f( _0419_ [7:0] $end
-$var wire 8 g( _0418_ [7:0] $end
-$var wire 8 h( _0417_ [7:0] $end
-$var wire 8 i( _0416_ [7:0] $end
-$var wire 8 j( _0415_ [7:0] $end
-$var wire 8 k( _0414_ [7:0] $end
-$var wire 8 l( _0413_ [7:0] $end
-$var wire 8 m( _0412_ [7:0] $end
-$var wire 8 n( _0411_ [7:0] $end
-$var wire 8 o( _0410_ [7:0] $end
-$var wire 8 p( _0409_ [7:0] $end
-$var wire 8 q( _0408_ [7:0] $end
-$var wire 8 r( _0407_ [7:0] $end
-$var wire 8 s( _0406_ [7:0] $end
-$var wire 8 t( _0405_ [7:0] $end
-$var wire 8 u( _0404_ [7:0] $end
-$var wire 8 v( _0403_ [7:0] $end
-$var wire 8 w( _0402_ [7:0] $end
-$var wire 8 x( _0401_ [7:0] $end
-$var wire 8 y( _0400_ [7:0] $end
-$var wire 8 z( _0399_ [7:0] $end
-$var wire 8 {( _0398_ [7:0] $end
-$var wire 8 |( _0397_ [7:0] $end
-$var wire 8 }( _0396_ [7:0] $end
-$var wire 8 ~( _0395_ [7:0] $end
-$var wire 8 !) _0394_ [7:0] $end
-$var wire 8 ") _0393_ [7:0] $end
-$var wire 8 #) _0392_ [7:0] $end
-$var wire 8 $) _0391_ [7:0] $end
-$var wire 8 %) _0390_ [7:0] $end
-$var wire 8 &) _0389_ [7:0] $end
-$var wire 8 ') _0388_ [7:0] $end
-$var wire 8 () _0387_ [7:0] $end
-$var wire 8 )) _0386_ [7:0] $end
-$var wire 8 *) _0385_ [7:0] $end
-$var wire 8 +) _0384_ [7:0] $end
-$var wire 8 ,) _0383_ [7:0] $end
-$var wire 8 -) _0382_ [7:0] $end
-$var wire 8 .) _0381_ [7:0] $end
-$var wire 8 /) _0380_ [7:0] $end
-$var wire 8 0) _0379_ [7:0] $end
-$var wire 8 1) _0378_ [7:0] $end
-$var wire 8 2) _0377_ [7:0] $end
-$var wire 8 3) _0376_ [7:0] $end
-$var wire 8 4) _0375_ [7:0] $end
-$var wire 8 5) _0374_ [7:0] $end
-$var wire 8 6) _0373_ [7:0] $end
-$var wire 8 7) _0372_ [7:0] $end
-$var wire 8 8) _0371_ [7:0] $end
-$var wire 8 9) _0370_ [7:0] $end
-$var wire 8 :) _0369_ [7:0] $end
-$var wire 8 ;) _0368_ [7:0] $end
-$var wire 8 <) _0367_ [7:0] $end
-$var wire 8 =) _0366_ [7:0] $end
-$var wire 8 >) _0365_ [7:0] $end
-$var wire 8 ?) _0364_ [7:0] $end
-$var wire 8 @) _0363_ [7:0] $end
-$var wire 8 A) _0362_ [7:0] $end
-$var wire 8 B) _0361_ [7:0] $end
-$var wire 8 C) _0360_ [7:0] $end
-$var wire 8 D) _0359_ [7:0] $end
-$var wire 8 E) _0358_ [7:0] $end
-$var wire 8 F) _0357_ [7:0] $end
-$var wire 8 G) _0356_ [7:0] $end
-$var wire 8 H) _0355_ [7:0] $end
-$var wire 8 I) _0354_ [7:0] $end
-$var wire 8 J) _0353_ [7:0] $end
-$var wire 8 K) _0352_ [7:0] $end
-$var wire 8 L) _0351_ [7:0] $end
-$var wire 8 M) _0350_ [7:0] $end
-$var wire 8 N) _0349_ [7:0] $end
-$var wire 8 O) _0348_ [7:0] $end
-$var wire 8 P) _0347_ [7:0] $end
-$var wire 8 Q) _0346_ [7:0] $end
-$var wire 8 R) _0345_ [7:0] $end
-$var wire 8 S) _0344_ [7:0] $end
-$var wire 8 T) _0343_ [7:0] $end
-$var wire 8 U) _0342_ [7:0] $end
-$var wire 8 V) _0341_ [7:0] $end
-$var wire 8 W) _0340_ [7:0] $end
-$var wire 8 X) _0339_ [7:0] $end
-$var wire 8 Y) _0338_ [7:0] $end
-$var wire 8 Z) _0337_ [7:0] $end
-$var wire 8 [) _0336_ [7:0] $end
-$var wire 8 \) _0335_ [7:0] $end
-$var wire 8 ]) _0334_ [7:0] $end
-$var wire 8 ^) _0333_ [7:0] $end
-$var wire 8 _) _0332_ [7:0] $end
-$var wire 8 `) _0331_ [7:0] $end
-$var wire 8 a) _0330_ [7:0] $end
-$var wire 8 b) _0329_ [7:0] $end
-$var wire 8 c) _0328_ [7:0] $end
-$var wire 8 d) _0327_ [7:0] $end
-$var wire 8 e) _0326_ [7:0] $end
-$var wire 8 f) _0325_ [7:0] $end
-$var wire 8 g) _0324_ [7:0] $end
-$var wire 8 h) _0323_ [7:0] $end
-$var wire 8 i) _0322_ [7:0] $end
-$var wire 8 j) _0321_ [7:0] $end
-$var wire 8 k) _0320_ [7:0] $end
-$var wire 8 l) _0319_ [7:0] $end
-$var wire 8 m) _0318_ [7:0] $end
-$var wire 8 n) _0317_ [7:0] $end
-$var wire 8 o) _0316_ [7:0] $end
-$var wire 8 p) _0315_ [7:0] $end
-$var wire 8 q) _0314_ [7:0] $end
-$var wire 8 r) _0313_ [7:0] $end
-$var wire 8 s) _0000_ [7:0] $end
-$var wire 8 t) FIFO_data_in [7:0] $end
-$var reg 8 u) FIFO_data_out_synth [7:0] $end
-$var reg 8 v) \ram[0] [7:0] $end
-$var reg 8 w) \ram[100] [7:0] $end
-$var reg 8 x) \ram[101] [7:0] $end
-$var reg 8 y) \ram[102] [7:0] $end
-$var reg 8 z) \ram[103] [7:0] $end
-$var reg 8 {) \ram[104] [7:0] $end
-$var reg 8 |) \ram[105] [7:0] $end
-$var reg 8 }) \ram[106] [7:0] $end
-$var reg 8 ~) \ram[107] [7:0] $end
-$var reg 8 !* \ram[108] [7:0] $end
-$var reg 8 "* \ram[109] [7:0] $end
-$var reg 8 #* \ram[10] [7:0] $end
-$var reg 8 $* \ram[110] [7:0] $end
-$var reg 8 %* \ram[111] [7:0] $end
-$var reg 8 &* \ram[112] [7:0] $end
-$var reg 8 '* \ram[113] [7:0] $end
-$var reg 8 (* \ram[114] [7:0] $end
-$var reg 8 )* \ram[115] [7:0] $end
-$var reg 8 ** \ram[116] [7:0] $end
-$var reg 8 +* \ram[117] [7:0] $end
-$var reg 8 ,* \ram[118] [7:0] $end
-$var reg 8 -* \ram[119] [7:0] $end
-$var reg 8 .* \ram[11] [7:0] $end
-$var reg 8 /* \ram[120] [7:0] $end
-$var reg 8 0* \ram[121] [7:0] $end
-$var reg 8 1* \ram[122] [7:0] $end
-$var reg 8 2* \ram[123] [7:0] $end
-$var reg 8 3* \ram[124] [7:0] $end
-$var reg 8 4* \ram[125] [7:0] $end
-$var reg 8 5* \ram[126] [7:0] $end
-$var reg 8 6* \ram[127] [7:0] $end
-$var reg 8 7* \ram[128] [7:0] $end
-$var reg 8 8* \ram[129] [7:0] $end
-$var reg 8 9* \ram[12] [7:0] $end
-$var reg 8 :* \ram[130] [7:0] $end
-$var reg 8 ;* \ram[131] [7:0] $end
-$var reg 8 <* \ram[132] [7:0] $end
-$var reg 8 =* \ram[133] [7:0] $end
-$var reg 8 >* \ram[134] [7:0] $end
-$var reg 8 ?* \ram[135] [7:0] $end
-$var reg 8 @* \ram[136] [7:0] $end
-$var reg 8 A* \ram[137] [7:0] $end
-$var reg 8 B* \ram[138] [7:0] $end
-$var reg 8 C* \ram[139] [7:0] $end
-$var reg 8 D* \ram[13] [7:0] $end
-$var reg 8 E* \ram[140] [7:0] $end
-$var reg 8 F* \ram[141] [7:0] $end
-$var reg 8 G* \ram[142] [7:0] $end
-$var reg 8 H* \ram[143] [7:0] $end
-$var reg 8 I* \ram[144] [7:0] $end
-$var reg 8 J* \ram[145] [7:0] $end
-$var reg 8 K* \ram[146] [7:0] $end
-$var reg 8 L* \ram[147] [7:0] $end
-$var reg 8 M* \ram[148] [7:0] $end
-$var reg 8 N* \ram[149] [7:0] $end
-$var reg 8 O* \ram[14] [7:0] $end
-$var reg 8 P* \ram[150] [7:0] $end
-$var reg 8 Q* \ram[151] [7:0] $end
-$var reg 8 R* \ram[152] [7:0] $end
-$var reg 8 S* \ram[153] [7:0] $end
-$var reg 8 T* \ram[154] [7:0] $end
-$var reg 8 U* \ram[155] [7:0] $end
-$var reg 8 V* \ram[156] [7:0] $end
-$var reg 8 W* \ram[157] [7:0] $end
-$var reg 8 X* \ram[158] [7:0] $end
-$var reg 8 Y* \ram[159] [7:0] $end
-$var reg 8 Z* \ram[15] [7:0] $end
-$var reg 8 [* \ram[160] [7:0] $end
-$var reg 8 \* \ram[161] [7:0] $end
-$var reg 8 ]* \ram[162] [7:0] $end
-$var reg 8 ^* \ram[163] [7:0] $end
-$var reg 8 _* \ram[164] [7:0] $end
-$var reg 8 `* \ram[165] [7:0] $end
-$var reg 8 a* \ram[166] [7:0] $end
-$var reg 8 b* \ram[167] [7:0] $end
-$var reg 8 c* \ram[168] [7:0] $end
-$var reg 8 d* \ram[169] [7:0] $end
-$var reg 8 e* \ram[16] [7:0] $end
-$var reg 8 f* \ram[170] [7:0] $end
-$var reg 8 g* \ram[171] [7:0] $end
-$var reg 8 h* \ram[172] [7:0] $end
-$var reg 8 i* \ram[173] [7:0] $end
-$var reg 8 j* \ram[174] [7:0] $end
-$var reg 8 k* \ram[175] [7:0] $end
-$var reg 8 l* \ram[176] [7:0] $end
-$var reg 8 m* \ram[177] [7:0] $end
-$var reg 8 n* \ram[178] [7:0] $end
-$var reg 8 o* \ram[179] [7:0] $end
-$var reg 8 p* \ram[17] [7:0] $end
-$var reg 8 q* \ram[180] [7:0] $end
-$var reg 8 r* \ram[181] [7:0] $end
-$var reg 8 s* \ram[182] [7:0] $end
-$var reg 8 t* \ram[183] [7:0] $end
-$var reg 8 u* \ram[184] [7:0] $end
-$var reg 8 v* \ram[185] [7:0] $end
-$var reg 8 w* \ram[186] [7:0] $end
-$var reg 8 x* \ram[187] [7:0] $end
-$var reg 8 y* \ram[188] [7:0] $end
-$var reg 8 z* \ram[189] [7:0] $end
-$var reg 8 {* \ram[18] [7:0] $end
-$var reg 8 |* \ram[190] [7:0] $end
-$var reg 8 }* \ram[191] [7:0] $end
-$var reg 8 ~* \ram[192] [7:0] $end
-$var reg 8 !+ \ram[193] [7:0] $end
-$var reg 8 "+ \ram[194] [7:0] $end
-$var reg 8 #+ \ram[195] [7:0] $end
-$var reg 8 $+ \ram[196] [7:0] $end
-$var reg 8 %+ \ram[197] [7:0] $end
-$var reg 8 &+ \ram[198] [7:0] $end
-$var reg 8 '+ \ram[199] [7:0] $end
-$var reg 8 (+ \ram[19] [7:0] $end
-$var reg 8 )+ \ram[1] [7:0] $end
-$var reg 8 *+ \ram[200] [7:0] $end
-$var reg 8 ++ \ram[201] [7:0] $end
-$var reg 8 ,+ \ram[202] [7:0] $end
-$var reg 8 -+ \ram[203] [7:0] $end
-$var reg 8 .+ \ram[204] [7:0] $end
-$var reg 8 /+ \ram[205] [7:0] $end
-$var reg 8 0+ \ram[206] [7:0] $end
-$var reg 8 1+ \ram[207] [7:0] $end
-$var reg 8 2+ \ram[208] [7:0] $end
-$var reg 8 3+ \ram[209] [7:0] $end
-$var reg 8 4+ \ram[20] [7:0] $end
-$var reg 8 5+ \ram[210] [7:0] $end
-$var reg 8 6+ \ram[211] [7:0] $end
-$var reg 8 7+ \ram[212] [7:0] $end
-$var reg 8 8+ \ram[213] [7:0] $end
-$var reg 8 9+ \ram[214] [7:0] $end
-$var reg 8 :+ \ram[215] [7:0] $end
-$var reg 8 ;+ \ram[216] [7:0] $end
-$var reg 8 <+ \ram[217] [7:0] $end
-$var reg 8 =+ \ram[218] [7:0] $end
-$var reg 8 >+ \ram[219] [7:0] $end
-$var reg 8 ?+ \ram[21] [7:0] $end
-$var reg 8 @+ \ram[220] [7:0] $end
-$var reg 8 A+ \ram[221] [7:0] $end
-$var reg 8 B+ \ram[222] [7:0] $end
-$var reg 8 C+ \ram[223] [7:0] $end
-$var reg 8 D+ \ram[224] [7:0] $end
-$var reg 8 E+ \ram[225] [7:0] $end
-$var reg 8 F+ \ram[226] [7:0] $end
-$var reg 8 G+ \ram[227] [7:0] $end
-$var reg 8 H+ \ram[228] [7:0] $end
-$var reg 8 I+ \ram[229] [7:0] $end
-$var reg 8 J+ \ram[22] [7:0] $end
-$var reg 8 K+ \ram[230] [7:0] $end
-$var reg 8 L+ \ram[231] [7:0] $end
-$var reg 8 M+ \ram[232] [7:0] $end
-$var reg 8 N+ \ram[233] [7:0] $end
-$var reg 8 O+ \ram[234] [7:0] $end
-$var reg 8 P+ \ram[235] [7:0] $end
-$var reg 8 Q+ \ram[236] [7:0] $end
-$var reg 8 R+ \ram[237] [7:0] $end
-$var reg 8 S+ \ram[238] [7:0] $end
-$var reg 8 T+ \ram[239] [7:0] $end
-$var reg 8 U+ \ram[23] [7:0] $end
-$var reg 8 V+ \ram[240] [7:0] $end
-$var reg 8 W+ \ram[241] [7:0] $end
-$var reg 8 X+ \ram[242] [7:0] $end
-$var reg 8 Y+ \ram[243] [7:0] $end
-$var reg 8 Z+ \ram[244] [7:0] $end
-$var reg 8 [+ \ram[245] [7:0] $end
-$var reg 8 \+ \ram[246] [7:0] $end
-$var reg 8 ]+ \ram[247] [7:0] $end
-$var reg 8 ^+ \ram[248] [7:0] $end
-$var reg 8 _+ \ram[249] [7:0] $end
-$var reg 8 `+ \ram[24] [7:0] $end
-$var reg 8 a+ \ram[250] [7:0] $end
-$var reg 8 b+ \ram[251] [7:0] $end
-$var reg 8 c+ \ram[252] [7:0] $end
-$var reg 8 d+ \ram[253] [7:0] $end
-$var reg 8 e+ \ram[254] [7:0] $end
-$var reg 8 f+ \ram[255] [7:0] $end
-$var reg 8 g+ \ram[25] [7:0] $end
-$var reg 8 h+ \ram[26] [7:0] $end
-$var reg 8 i+ \ram[27] [7:0] $end
-$var reg 8 j+ \ram[28] [7:0] $end
-$var reg 8 k+ \ram[29] [7:0] $end
-$var reg 8 l+ \ram[2] [7:0] $end
-$var reg 8 m+ \ram[30] [7:0] $end
-$var reg 8 n+ \ram[31] [7:0] $end
-$var reg 8 o+ \ram[32] [7:0] $end
-$var reg 8 p+ \ram[33] [7:0] $end
-$var reg 8 q+ \ram[34] [7:0] $end
-$var reg 8 r+ \ram[35] [7:0] $end
-$var reg 8 s+ \ram[36] [7:0] $end
-$var reg 8 t+ \ram[37] [7:0] $end
-$var reg 8 u+ \ram[38] [7:0] $end
-$var reg 8 v+ \ram[39] [7:0] $end
-$var reg 8 w+ \ram[3] [7:0] $end
-$var reg 8 x+ \ram[40] [7:0] $end
-$var reg 8 y+ \ram[41] [7:0] $end
-$var reg 8 z+ \ram[42] [7:0] $end
-$var reg 8 {+ \ram[43] [7:0] $end
-$var reg 8 |+ \ram[44] [7:0] $end
-$var reg 8 }+ \ram[45] [7:0] $end
-$var reg 8 ~+ \ram[46] [7:0] $end
-$var reg 8 !, \ram[47] [7:0] $end
-$var reg 8 ", \ram[48] [7:0] $end
-$var reg 8 #, \ram[49] [7:0] $end
-$var reg 8 $, \ram[4] [7:0] $end
-$var reg 8 %, \ram[50] [7:0] $end
-$var reg 8 &, \ram[51] [7:0] $end
-$var reg 8 ', \ram[52] [7:0] $end
-$var reg 8 (, \ram[53] [7:0] $end
-$var reg 8 ), \ram[54] [7:0] $end
-$var reg 8 *, \ram[55] [7:0] $end
-$var reg 8 +, \ram[56] [7:0] $end
-$var reg 8 ,, \ram[57] [7:0] $end
-$var reg 8 -, \ram[58] [7:0] $end
-$var reg 8 ., \ram[59] [7:0] $end
-$var reg 8 /, \ram[5] [7:0] $end
-$var reg 8 0, \ram[60] [7:0] $end
-$var reg 8 1, \ram[61] [7:0] $end
-$var reg 8 2, \ram[62] [7:0] $end
-$var reg 8 3, \ram[63] [7:0] $end
-$var reg 8 4, \ram[64] [7:0] $end
-$var reg 8 5, \ram[65] [7:0] $end
-$var reg 8 6, \ram[66] [7:0] $end
-$var reg 8 7, \ram[67] [7:0] $end
-$var reg 8 8, \ram[68] [7:0] $end
-$var reg 8 9, \ram[69] [7:0] $end
-$var reg 8 :, \ram[6] [7:0] $end
-$var reg 8 ;, \ram[70] [7:0] $end
-$var reg 8 <, \ram[71] [7:0] $end
-$var reg 8 =, \ram[72] [7:0] $end
-$var reg 8 >, \ram[73] [7:0] $end
-$var reg 8 ?, \ram[74] [7:0] $end
-$var reg 8 @, \ram[75] [7:0] $end
-$var reg 8 A, \ram[76] [7:0] $end
-$var reg 8 B, \ram[77] [7:0] $end
-$var reg 8 C, \ram[78] [7:0] $end
-$var reg 8 D, \ram[79] [7:0] $end
-$var reg 8 E, \ram[7] [7:0] $end
-$var reg 8 F, \ram[80] [7:0] $end
-$var reg 8 G, \ram[81] [7:0] $end
-$var reg 8 H, \ram[82] [7:0] $end
-$var reg 8 I, \ram[83] [7:0] $end
-$var reg 8 J, \ram[84] [7:0] $end
-$var reg 8 K, \ram[85] [7:0] $end
-$var reg 8 L, \ram[86] [7:0] $end
-$var reg 8 M, \ram[87] [7:0] $end
-$var reg 8 N, \ram[88] [7:0] $end
-$var reg 8 O, \ram[89] [7:0] $end
-$var reg 8 P, \ram[8] [7:0] $end
-$var reg 8 Q, \ram[90] [7:0] $end
-$var reg 8 R, \ram[91] [7:0] $end
-$var reg 8 S, \ram[92] [7:0] $end
-$var reg 8 T, \ram[93] [7:0] $end
-$var reg 8 U, \ram[94] [7:0] $end
-$var reg 8 V, \ram[95] [7:0] $end
-$var reg 8 W, \ram[96] [7:0] $end
-$var reg 8 X, \ram[97] [7:0] $end
-$var reg 8 Y, \ram[98] [7:0] $end
-$var reg 8 Z, \ram[99] [7:0] $end
-$var reg 8 [, \ram[9] [7:0] $end
+$var wire 1 - _002_ $end
+$var wire 1 . _003_ $end
+$var wire 1 / _004_ $end
+$var wire 1 0 _005_ $end
+$var wire 1 1 _006_ $end
+$var wire 1 2 _007_ $end
+$var wire 1 3 _008_ $end
+$var wire 1 4 _009_ $end
+$var wire 1 5 _010_ $end
+$var wire 1 6 _011_ $end
+$var wire 1 7 _012_ $end
+$var wire 1 8 _013_ $end
+$var wire 1 9 _014_ $end
+$var wire 1 : _015_ $end
+$var wire 1 ; _016_ $end
+$var wire 1 < _025_ $end
+$var wire 1 = _026_ $end
+$var wire 1 > _027_ $end
+$var wire 1 ? _028_ $end
+$var wire 1 @ _029_ $end
+$var wire 1 A _030_ $end
+$var wire 1 B _031_ $end
+$var wire 1 C _032_ $end
+$var wire 1 ! write_enable $end
+$var wire 8 D wr_ptr [7:0] $end
+$var wire 1 # read_enable $end
+$var wire 8 E rd_ptr [7:0] $end
+$var wire 1 % clk $end
+$var wire 8 F _040_ [7:0] $end
+$var wire 8 G _039_ [7:0] $end
+$var wire 8 H _038_ [7:0] $end
+$var wire 8 I _037_ [7:0] $end
+$var wire 8 J _036_ [7:0] $end
+$var wire 8 K _035_ [7:0] $end
+$var wire 8 L _034_ [7:0] $end
+$var wire 8 M _033_ [7:0] $end
+$var wire 8 N _024_ [7:0] $end
+$var wire 8 O _023_ [7:0] $end
+$var wire 8 P _022_ [7:0] $end
+$var wire 8 Q _021_ [7:0] $end
+$var wire 8 R _020_ [7:0] $end
+$var wire 8 S _019_ [7:0] $end
+$var wire 8 T _018_ [7:0] $end
+$var wire 8 U _017_ [7:0] $end
+$var wire 8 V _001_ [7:0] $end
+$var wire 8 W _000_ [7:0] $end
+$var wire 8 X FIFO_data_in [7:0] $end
+$var reg 8 Y FIFO_data_out_synth [7:0] $end
+$var reg 8 Z \ram[0] [7:0] $end
+$var reg 8 [ \ram[1] [7:0] $end
+$var reg 8 \ \ram[2] [7:0] $end
+$var reg 8 ] \ram[3] [7:0] $end
+$var reg 8 ^ \ram[4] [7:0] $end
+$var reg 8 _ \ram[5] [7:0] $end
+$var reg 8 ` \ram[6] [7:0] $end
+$var reg 8 a \ram[7] [7:0] $end
 $upscope $end
 $scope module probador $end
-$var wire 8 \, FIFO_data_out [7:0] $end
-$var reg 8 ], FIFO_data_in [7:0] $end
-$var reg 1 # clk $end
-$var reg 8 ^, rd_ptr [7:0] $end
-$var reg 8 _, wr_ptr [7:0] $end
+$var wire 8 b FIFO_data_out [7:0] $end
+$var reg 8 c FIFO_data_in [7:0] $end
+$var reg 1 % clk $end
+$var reg 8 d rd_ptr [7:0] $end
+$var reg 1 # read_enable $end
+$var reg 8 e wr_ptr [7:0] $end
+$var reg 1 ! write_enable $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-b0 _,
-b0 ^,
-b0 ],
-b0 \,
-bx [,
-bx Z,
-bx Y,
-bx X,
-bx W,
-bx V,
-bx U,
-bx T,
-bx S,
-bx R,
-bx Q,
-bx P,
-bx O,
-bx N,
-bx M,
-bx L,
-bx K,
-bx J,
-bx I,
-bx H,
-bx G,
-bx F,
-bx E,
-bx D,
-bx C,
-bx B,
-bx A,
-bx @,
-bx ?,
-bx >,
-bx =,
-bx <,
-bx ;,
-bx :,
-bx 9,
-bx 8,
-bx 7,
-bx 6,
-bx 5,
-bx 4,
-bx 3,
-bx 2,
-bx 1,
-bx 0,
-bx /,
-bx .,
-bx -,
-bx ,,
-bx +,
-bx *,
-bx ),
-bx (,
-bx ',
-bx &,
-bx %,
-bx $,
-bx #,
-bx ",
-bx !,
-bx ~+
-bx }+
-bx |+
-bx {+
-bx z+
-bx y+
-bx x+
-bx w+
-bx v+
-bx u+
-bx t+
-bx s+
-bx r+
-bx q+
-bx p+
-bx o+
-bx n+
-bx m+
-bx l+
-bx k+
-bx j+
-bx i+
-bx h+
-bx g+
-bx f+
-bx e+
-bx d+
-bx c+
-bx b+
-bx a+
-bx `+
-bx _+
-bx ^+
-bx ]+
-bx \+
-bx [+
-bx Z+
-bx Y+
-bx X+
-bx W+
-bx V+
-bx U+
-bx T+
-bx S+
-bx R+
-bx Q+
-bx P+
-bx O+
-bx N+
-bx M+
-bx L+
-bx K+
-bx J+
-bx I+
-bx H+
-bx G+
-bx F+
-bx E+
-bx D+
-bx C+
-bx B+
-bx A+
-bx @+
-bx ?+
-bx >+
-bx =+
-bx <+
-bx ;+
-bx :+
-bx 9+
-bx 8+
-bx 7+
-bx 6+
-bx 5+
-bx 4+
-bx 3+
-bx 2+
-bx 1+
-bx 0+
-bx /+
-bx .+
-bx -+
-bx ,+
-bx ++
-bx *+
-bx )+
-bx (+
-bx '+
-bx &+
-bx %+
-bx $+
-bx #+
-bx "+
-bx !+
-bx ~*
-bx }*
-bx |*
-bx {*
-bx z*
-bx y*
-bx x*
-bx w*
-bx v*
-bx u*
-bx t*
-bx s*
-bx r*
-bx q*
-bx p*
-bx o*
-bx n*
-bx m*
-bx l*
-bx k*
-bx j*
-bx i*
-bx h*
-bx g*
-bx f*
-bx e*
-bx d*
-bx c*
-bx b*
-bx a*
-bx `*
-bx _*
-bx ^*
-bx ]*
-bx \*
-bx [*
-bx Z*
-bx Y*
-bx X*
-bx W*
-bx V*
-bx U*
-bx T*
-bx S*
-bx R*
-bx Q*
-bx P*
-bx O*
-bx N*
-bx M*
-bx L*
-bx K*
-bx J*
-bx I*
-bx H*
-bx G*
-bx F*
-bx E*
-bx D*
-bx C*
-bx B*
-bx A*
-bx @*
-bx ?*
-bx >*
-bx =*
-bx <*
-bx ;*
-bx :*
-bx 9*
-bx 8*
-bx 7*
-bx 6*
-bx 5*
-bx 4*
-bx 3*
-bx 2*
-bx 1*
-bx 0*
-bx /*
-bx .*
-bx -*
-bx ,*
-bx +*
-bx **
-bx )*
-bx (*
-bx '*
-bx &*
-bx %*
-bx $*
-bx #*
-bx "*
-bx !*
-bx ~)
-bx })
-bx |)
-bx {)
-bx z)
-bx y)
-bx x)
-bx w)
-bx v)
-b0 u)
-b0 t)
-bx s)
-bx r)
-bx q)
-bx p)
-bx o)
-bx n)
-bx m)
-bx l)
-bx k)
-bx j)
-bx i)
-bx h)
-bx g)
-bx f)
-bx e)
-bx d)
-bx c)
-bx b)
-bx a)
-bx `)
-bx _)
-bx ^)
-bx ])
-bx \)
-bx [)
-bx Z)
-bx Y)
-bx X)
-bx W)
-bx V)
-bx U)
-bx T)
-bx S)
-bx R)
-bx Q)
-bx P)
-bx O)
-bx N)
-bx M)
-bx L)
-bx K)
-bx J)
-bx I)
-bx H)
-bx G)
-bx F)
-bx E)
-bx D)
-bx C)
-bx B)
-bx A)
-bx @)
-bx ?)
-bx >)
-bx =)
-bx <)
-bx ;)
-bx :)
-bx 9)
-bx 8)
-bx 7)
-bx 6)
-bx 5)
-bx 4)
-bx 3)
-bx 2)
-bx 1)
-bx 0)
-bx /)
-bx .)
-bx -)
-bx ,)
-bx +)
-bx *)
-bx ))
-bx ()
-bx ')
-bx &)
-bx %)
-bx $)
-bx #)
-bx ")
-bx !)
-bx ~(
-bx }(
-bx |(
-bx {(
-bx z(
-bx y(
-bx x(
-bx w(
-bx v(
-bx u(
-bx t(
-bx s(
-bx r(
-bx q(
-bx p(
-bx o(
-bx n(
-bx m(
-bx l(
-bx k(
-bx j(
-bx i(
-bx h(
-bx g(
-bx f(
-bx e(
-bx d(
-bx c(
-bx b(
-bx a(
-bx `(
-bx _(
-bx ^(
-bx ](
-bx \(
-bx [(
-bx Z(
-bx Y(
-bx X(
-bx W(
-bx V(
-bx U(
-bx T(
-bx S(
-bx R(
-bx Q(
-bx P(
-bx O(
-bx N(
-bx M(
-bx L(
-bx K(
-bx J(
-bx I(
-bx H(
-bx G(
-bx F(
-bx E(
-bx D(
-bx C(
-bx B(
-bx A(
-bx @(
-bx ?(
-bx >(
-bx =(
-bx <(
-bx ;(
-bx :(
-bx 9(
-bx 8(
-bx 7(
-bx 6(
-bx 5(
-bx 4(
-bx 3(
-bx 2(
-bx 1(
-bx 0(
-bx /(
-bx .(
-bx -(
-bx ,(
-bx +(
-bx *(
-bx )(
-bx ((
-bx '(
-bx &(
-bx %(
-bx $(
-bx #(
-bx "(
-bx !(
-bx ~'
-bx }'
-bx |'
-bx {'
-bx z'
-bx y'
-bx x'
-bx w'
-bx v'
-bx u'
-bx t'
-bx s'
-bx r'
-bx q'
-bx p'
-bx o'
-bx n'
-bx m'
-bx l'
-bx k'
-bx j'
-bx i'
-bx h'
-bx g'
-bx f'
-bx e'
-bx d'
-bx c'
-bx b'
-bx a'
-bx `'
-bx _'
-bx ^'
-bx ]'
-bx \'
-bx ['
-bx Z'
-bx Y'
-bx X'
-bx W'
-bx V'
-bx U'
-bx T'
-bx S'
-bx R'
-bx Q'
-bx P'
-bx O'
-bx N'
-bx M'
-bx L'
-bx K'
-bx J'
-bx I'
-bx H'
-bx G'
-bx F'
-bx E'
-bx D'
-bx C'
-bx B'
-bx A'
-bx @'
-bx ?'
-bx >'
-bx ='
-bx <'
-bx ;'
-bx :'
-bx 9'
-bx 8'
-bx 7'
-bx 6'
-bx 5'
-bx 4'
-bx 3'
-bx 2'
-bx 1'
-b0 0'
-bx /'
-bx .'
-bx -'
-bx ,'
-bx +'
-bx *'
-bx )'
-bx ('
-bx ''
-bx &'
-bx %'
-bx $'
-bx #'
-bx "'
-bx !'
-bx ~&
-bx }&
-bx |&
-bx {&
-bx z&
-bx y&
-bx x&
-bx w&
-bx v&
-bx u&
-bx t&
-bx s&
-bx r&
-bx q&
-bx p&
-bx o&
-bx n&
-bx m&
-bx l&
-bx k&
-bx j&
-bx i&
-bx h&
-bx g&
-bx f&
-bx e&
-bx d&
-bx c&
-bx b&
-bx a&
-bx `&
-bx _&
-bx ^&
-bx ]&
-bx \&
-bx [&
-bx Z&
-bx Y&
-bx X&
-bx W&
-bx V&
-bx U&
-bx T&
-bx S&
-bx R&
-bx Q&
-bx P&
-bx O&
-bx N&
-bx M&
-bx L&
-bx K&
-bx J&
-bx I&
-bx H&
-bx G&
-bx F&
-bx E&
-bx D&
-bx C&
-bx B&
-bx A&
-bx @&
-bx ?&
-bx >&
-bx =&
-bx <&
-bx ;&
-bx :&
-bx 9&
-bx 8&
-bx 7&
-bx 6&
-bx 5&
-bx 4&
-bx 3&
-bx 2&
-bx 1&
-bx 0&
-bx /&
-bx .&
-bx -&
-bx ,&
-bx +&
-bx *&
-bx )&
-bx (&
-bx '&
-bx &&
-bx %&
-bx $&
-bx #&
-bx "&
-bx !&
-bx ~%
-bx }%
-bx |%
-bx {%
-bx z%
-bx y%
-bx x%
-bx w%
-bx v%
-bx u%
-bx t%
-bx s%
-bx r%
-bx q%
-bx p%
-bx o%
-bx n%
-bx m%
-bx l%
-bx k%
-bx j%
-bx i%
-bx h%
-bx g%
-bx f%
-bx e%
-bx d%
-bx c%
-bx b%
-bx a%
-bx `%
-bx _%
-bx ^%
-bx ]%
-bx \%
-bx [%
-bx Z%
-bx Y%
-bx X%
-bx W%
-bx V%
-bx U%
-bx T%
-bx S%
-bx R%
-bx Q%
-bx P%
-bx O%
-bx N%
-bx M%
-bx L%
-bx K%
-bx J%
-bx I%
-bx H%
-bx G%
-bx F%
-bx E%
-bx D%
-bx C%
-bx B%
-bx A%
-bx @%
-bx ?%
-bx >%
-bx =%
-bx <%
-bx ;%
-bx :%
-bx 9%
-bx 8%
-bx 7%
-bx 6%
-bx 5%
-bx 4%
-bx 3%
-bx 2%
-bx 1%
-bx 0%
-bx /%
-bx .%
-bx -%
-bx ,%
-bx +%
-bx *%
-bx )%
-bx (%
-bx '%
-bx &%
-bx %%
-bx $%
-bx #%
-bx "%
-bx !%
-bx ~$
-bx }$
-bx |$
-bx {$
-bx z$
-bx y$
-bx x$
-bx w$
-bx v$
-bx u$
-bx t$
-bx s$
-bx r$
-bx q$
-bx p$
-bx o$
-bx n$
-bx m$
-bx l$
-bx k$
-bx j$
-bx i$
-bx h$
-bx g$
-bx f$
-bx e$
-bx d$
-bx c$
-bx b$
-bx a$
-bx `$
-bx _$
-bx ^$
-bx ]$
-bx \$
-bx [$
-bx Z$
-bx Y$
-bx X$
-bx W$
-bx V$
-bx U$
-bx T$
-bx S$
-bx R$
-bx Q$
-bx P$
-bx O$
-bx N$
-bx M$
-bx L$
-bx K$
-b0 J$
-b0 I$
-1H$
-1G$
-1F$
-1E$
-1D$
-1C$
-1B$
-1A$
-0@$
-0?$
-0>$
-0=$
-0<$
-0;$
-0:$
-09$
-08$
-07$
-06$
-05$
-04$
-03$
-02$
-01$
-00$
-0/$
-0.$
-0-$
-0,$
-0+$
-0*$
-0)$
-0($
-0'$
-0&$
-0%$
-0$$
-0#$
-0"$
-0!$
-0~#
-0}#
-0|#
-0{#
-0z#
-0y#
-0x#
-0w#
-0v#
-0u#
-0t#
-0s#
-0r#
-0q#
-0p#
-0o#
-0n#
-0m#
-0l#
-0k#
-0j#
-0i#
-0h#
-0g#
-0f#
-0e#
-0d#
-0c#
-0b#
-0a#
-0`#
-0_#
-0^#
-0]#
-0\#
-0[#
-0Z#
-0Y#
-0X#
-0W#
-0V#
-0U#
-0T#
-0S#
-0R#
-0Q#
-0P#
-0O#
-0N#
-0M#
-0L#
-0K#
-0J#
-0I#
-0H#
-0G#
-0F#
-0E#
-0D#
-0C#
-0B#
-0A#
-0@#
-0?#
-0>#
-0=#
-0<#
-0;#
-0:#
-09#
-08#
-07#
-06#
-05#
-04#
-03#
-02#
-01#
-00#
-0/#
-0.#
-0-#
-0,#
-0+#
-0*#
-0)#
-0(#
-0'#
-0&#
-0%#
-0$#
-0##
-0"#
-0!#
-0~"
-0}"
-0|"
-0{"
-0z"
-0y"
-0x"
-0w"
-0v"
-0u"
-0t"
-0s"
-0r"
-0q"
-0p"
-0o"
-0n"
-0m"
-0l"
-0k"
-0j"
-0i"
-0h"
-0g"
-0f"
-0e"
-0d"
-0c"
-0b"
-0a"
-0`"
-0_"
-0^"
-0]"
-0\"
-0["
-0Z"
-0Y"
-0X"
-0W"
-0V"
-0U"
-0T"
-0S"
-0R"
-0Q"
-0P"
-0O"
-0N"
-0M"
-0L"
-0K"
-0J"
-0I"
-0H"
-0G"
-0F"
-0E"
-0D"
-0C"
-0B"
-0A"
-0@"
-0?"
-0>"
-0="
-0<"
-0;"
-0:"
-09"
-08"
-07"
-06"
-05"
-04"
-03"
-02"
-01"
-00"
-0/"
-0."
-0-"
-0,"
-0+"
-0*"
-0)"
-0("
-0'"
-0&"
-0%"
-0$"
-0#"
-0""
-0!"
-0~
-0}
-0|
-0{
-0z
-0y
-0x
-0w
-0v
-0u
-0t
-0s
-0r
-0q
-0p
-0o
-0n
-0m
-0l
-0k
-0j
-0i
-0h
-0g
-0f
-0e
-0d
-0c
-0b
-0a
-0`
-0_
-0^
-0]
-0\
-0[
-0Z
-0Y
-0X
-0W
-0V
-0U
-0T
-0S
-0R
-0Q
-0P
-0O
-0N
-0M
-0L
-0K
-0J
-0I
-0H
-0G
-0F
-0E
-0D
+b0 e
+b0 d
+b0 c
+bx b
+bx a
+bx `
+bx _
+bx ^
+bx ]
+bx \
+bx [
+bx Z
+bx Y
+b0 X
+bzxxx W
+bx V
+bx U
+bx T
+bx S
+bx R
+bx Q
+bx P
+bx O
+bx N
+bx M
+bx L
+bx K
+bx J
+bx I
+bx H
+bx G
+bx F
+b0 E
+b0 D
 0C
 0B
 0A
@@ -2188,235 +138,224 @@ b0 I$
 0>
 0=
 0<
-0;
-0:
-09
-08
-07
-06
-05
-04
-03
-02
-11
-10
-1/
-1.
-1-
-1,
-1+
+x;
+x:
+x9
+x8
+x7
+x6
+x5
+x4
+x3
+x2
+x1
+x0
+x/
+x.
+x-
+bx ,
+b0 +
 b0 *
 b0 )
 b0 (
-b0 '
-b0 &
-b0 %
+bx '
+bx &
+0%
 b0 $
 0#
 b0 "
-b0 !
+0!
 $end
 #10
-b0 s)
-b0 r)
-b0 p)
-b0 l)
-b0 d)
-b0 T)
-b0 4)
-b0 R(
-b0 v)
-bx $
-bx u)
-b11111111 }%
-01
-14
-0-
-13
-0+
-12
-0A$
-b0 0'
-bx %
-bx *
-bx \,
-b1 !
-b1 '
-b1 I$
-b1 _,
-b11111111 &
-b11111111 )
-b11111111 t)
-b11111111 ],
-1#
-#20
-0#
-#30
-b0 $
-b0 u)
-b11111111 )+
-b11111111 s)
-b11111111 r)
-b11111111 p)
-b11111111 l)
-b11111111 d)
-b11111111 T)
-b10101111 w$
-04
-b11111111 4)
-1?
-03
-1>
-0,
-b11111111 R(
-1;
-0C$
-b11111111 }%
-b1 "
-b1 (
-b1 J$
-b1 ^,
-b101 !
-b101 '
-b101 I$
-b101 _,
-b10101111 &
-b10101111 )
-b10101111 t)
-b10101111 ],
-1#
-#40
-0#
-#50
-b11111111 $
-b11111111 u)
-b10101111 /,
-b10111 d&
-bx d)
-bx s)
-1!#
-0?
-00
-1t"
-1I
-0>
-0/
-b0 R(
-bx 4)
-bx T)
-bx l)
-bx p)
-bx r)
-1s"
-1D
-0;
+b11111111 L
 15
+0/
 02
-0H$
-0D$
-1C$
-0B$
-1A$
-b10101111 w$
-b1110110 "
-b1110110 (
-b1110110 J$
-b1110110 ^,
-b10001010 !
-b10001010 '
-b10001010 I$
-b10001010 _,
-b10111 &
-b10111 )
-b10111 t)
-b10111 ],
-1#
-#60
-0#
-#70
-b10111 B*
-bx $
-bx u)
-b10101111 s)
-b10101111 r)
-b10101111 p)
-b10101111 l)
-b10101111 d)
-b10101111 T)
-b10111000 S$
-b10101111 3)
-1M"
-0!#
-0t"
-1@"
-1N
-0I
+08
+13
+04
+07
 0.
-0D
-1+
-b10101111 <(
-b11111111 R(
-b11111111 4)
-0s"
-1."
-1V
-1M
+01
+0-
+1;
+00
+06
+1:
+09
+b11111111 V
+bz001 W
+0C
+0B
+0A
+0@
+0?
+0>
+1=
+0<
+1#
+1!
+b1 "
+b1 )
+b1 D
+b1 e
+b11111111 (
+b11111111 +
+b11111111 X
+b11111111 c
+1%
+#20
+0%
+#30
+b11111111 U
+b11111111 N
+b11111111 T
+b11111111 R
+b11111111 [
+b10101111 H
+0=
+1A
 05
-1H$
-0G$
-0E$
-0C$
-1B$
-b10111 d&
+1/
+03
+1-
+0;
+b11111111 L
+bz101 W
+b10101111 V
+b1 $
+b1 *
+b1 E
+b1 d
 b101 "
-b101 (
-b101 J$
-b101 ^,
-b1011100 !
-b1011100 '
-b1011100 I$
-b1011100 _,
-b10111000 &
-b10111000 )
-b10111000 t)
-b10111000 ],
-1#
+b101 )
+b101 D
+b101 e
+b10101111 (
+b10101111 +
+b10101111 X
+b10101111 c
+1%
+#40
+0%
+#50
+b10101111 _
+b11111111 &
+b11111111 Y
+b10111 K
+1>
+17
+16
+0A
+bx U
+0-
+1;
+0:
+0/
+19
+b10101111 H
+bx R
+bx T
+bx N
+bz010 W
+b10111 V
+b1110110 $
+b1110110 *
+b1110110 E
+b1110110 d
+b10001010 "
+b10001010 )
+b10001010 D
+b10001010 e
+b10111 (
+b10111 +
+b10111 X
+b10111 c
+1%
+#60
+0%
+#70
+bx &
+bx Y
+b10111 \
+b10101111 U
+b10111000 I
+b10101111 N
+1@
+0>
+1.
+07
+b10101111 S
+b11111111 T
+1-
+0;
+06
+1:
+b10111 K
+b10101111 P
+b11111111 R
+bz100 W
+b10111000 V
+b101 $
+b101 *
+b101 E
+b101 d
+b1011100 "
+b1011100 )
+b1011100 D
+b1011100 e
+b10111000 (
+b10111000 +
+b10111000 X
+b10111000 c
+1%
 #80
-0#
+0%
 #90
-b10101111 $
-b10101111 u)
-b10111000 S,
-b1101010 M&
-0M"
-17#
-0N
-1'#
-0@"
-1T
-0+
-1s"
-0."
-18
-0H$
-1G$
-0B$
-0A$
-b10111000 S$
-b10011111 !
-b10011111 '
-b10011111 I$
-b10011111 _,
-b1101010 &
-b1101010 )
-b1101010 t)
-b1101010 ],
-1#
+b10111000 ^
+b10101111 &
+b10101111 Y
+b1101010 F
+1C
+b10101111 H
+0@
+12
+0-
+0A
+0.
+b10111 U
+10
+0:
+0/
+09
+b10111000 I
+b10111000 P
+b10111 Q
+bx R
+bx S
+b10111 T
+b10111 N
+bz111 W
+b1101010 V
+b10001010 $
+b10001010 *
+b10001010 E
+b10001010 d
+b10011111 "
+b10011111 )
+b10011111 D
+b10011111 e
+b1101010 (
+b1101010 +
+b1101010 X
+b1101010 c
+1%
 #100
-0#
+0%
 #110
-b1101010 o'
-b1101010 Y*
-1#
+b10111 &
+b10111 Y
+b1101010 a
+1%
 #120
-0#
+0%

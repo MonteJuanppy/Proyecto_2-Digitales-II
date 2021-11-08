@@ -23,6 +23,8 @@ module banco #(
     wire [(ADDR_WIDTH-1):0] wr_ptr; //direccíón de escritura
     wire [(ADDR_WIDTH-1):0] rd_ptr; //direccíón de lectura
     wire clk; //señal de reloj
+	wire write_enable; //señal de reloj
+	wire read_enable; //señal de reloj
     wire [(DATA_WIDTH-1):0] FIFO_data_out; //salida FIFO_data_out
     wire [(DATA_WIDTH-1):0] FIFO_data_out_synth; //salida FIFO_data_out
 
@@ -34,7 +36,9 @@ module banco #(
 			   .FIFO_data_in	(FIFO_data_in[(DATA_WIDTH-1):0]),
 			   .wr_ptr		(wr_ptr[(ADDR_WIDTH-1):0]),
 			   .rd_ptr		(rd_ptr[(ADDR_WIDTH-1):0]),
-			   .clk			(clk));
+			   .clk			(clk),
+			   .write_enable	(write_enable),
+			   .read_enable		(read_enable));
 
     memoria_synth estructural(/*AUTOINST*/
 			      // Outputs
@@ -43,7 +47,9 @@ module banco #(
 			      .FIFO_data_in	(FIFO_data_in[7:0]),
 			      .clk		(clk),
 			      .rd_ptr		(rd_ptr[7:0]),
-			      .wr_ptr		(wr_ptr[7:0]));
+			      .read_enable	(read_enable),
+			      .wr_ptr		(wr_ptr[7:0]),
+			      .write_enable	(write_enable));
 
 	// Probador
 	probador_memoria probador(/*AUTOINST*/
@@ -52,6 +58,8 @@ module banco #(
 				  .wr_ptr		(wr_ptr[(ADDR_WIDTH-1):0]),
 				  .rd_ptr		(rd_ptr[(ADDR_WIDTH-1):0]),
 				  .clk			(clk),
+				  .write_enable		(write_enable),
+				  .read_enable		(read_enable),
 				  // Inputs
 				  .FIFO_data_out	(FIFO_data_out[(DATA_WIDTH-1):0]));
 

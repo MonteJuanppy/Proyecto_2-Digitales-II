@@ -1,0 +1,145 @@
+$date
+	Sun Nov  7 23:29:05 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module banco_FIFO $end
+$var wire 8 ! FIFO_data_out [7:0] $end
+$var wire 1 " write_enable $end
+$var wire 1 # read_enable $end
+$var wire 1 $ clk $end
+$var wire 1 % Reset $end
+$var wire 1 & FIFO_full $end
+$var wire 1 ' FIFO_empty $end
+$var wire 8 ( FIFO_data_in [7:0] $end
+$var wire 1 ) Enable $end
+$scope module conductual $end
+$var wire 8 * FIFO_data_out [7:0] $end
+$var wire 1 " write_enable $end
+$var wire 1 # read_enable $end
+$var wire 8 + memory_data_out [7:0] $end
+$var wire 1 $ clk $end
+$var wire 1 % Reset $end
+$var wire 1 & FIFO_full $end
+$var wire 1 ' FIFO_empty $end
+$var wire 8 , FIFO_data_in [7:0] $end
+$var wire 1 ) Enable $end
+$var reg 3 - espacios_disponibles [2:0] $end
+$var reg 3 . rd_ptr [2:0] $end
+$var reg 3 / wr_ptr [2:0] $end
+$scope module memoria $end
+$var wire 8 0 rd_ptr [7:0] $end
+$var wire 8 1 wr_ptr [7:0] $end
+$var wire 1 " write_enable $end
+$var wire 1 # read_enable $end
+$var wire 1 $ clk $end
+$var wire 8 2 FIFO_data_in [7:0] $end
+$var reg 8 3 memory_data_out [7:0] $end
+$upscope $end
+$upscope $end
+$scope module probador $end
+$var wire 8 4 FIFO_data_out [7:0] $end
+$var wire 1 ' FIFO_empty $end
+$var wire 1 & FIFO_full $end
+$var reg 1 ) Enable $end
+$var reg 8 5 FIFO_data_in [7:0] $end
+$var reg 1 % Reset $end
+$var reg 1 $ clk $end
+$var reg 1 # read_enable $end
+$var reg 1 " write_enable $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 5
+bz 4
+bx 3
+b0 2
+bx000 1
+bx000 0
+b0 /
+b0 .
+b0 -
+b0 ,
+bx +
+bz *
+0)
+b0 (
+1'
+0&
+0%
+0$
+0#
+0"
+bz !
+$end
+#10
+b11111111 (
+b11111111 ,
+b11111111 2
+b11111111 5
+0'
+bx001 1
+b1 -
+b1 /
+1#
+1"
+1)
+1%
+1$
+#20
+0$
+#30
+b10101111 (
+b10101111 ,
+b10101111 2
+b10101111 5
+bx001 0
+b1 .
+1$
+#40
+0$
+#50
+b10111 (
+b10111 ,
+b10111 2
+b10111 5
+bx010 0
+b10 .
+1$
+#60
+0$
+#70
+b10111000 (
+b10111000 ,
+b10111000 2
+b10111000 5
+bx011 0
+b10 -
+b11 .
+1$
+#80
+0$
+#90
+b1101010 (
+b1101010 ,
+b1101010 2
+b1101010 5
+bx100 0
+b11 -
+b100 .
+1$
+#100
+0$
+#110
+bx101 0
+b100 -
+b101 .
+1$
+#120
+0$

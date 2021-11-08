@@ -1,0 +1,12 @@
+read_verilog FIFO.v
+
+hierarchy -check -top FIFO
+
+proc; opt; fsm; opt; memory; opt
+
+techmap; opt
+
+clean
+
+write_verilog FIFO_synth.v
+show FIFO

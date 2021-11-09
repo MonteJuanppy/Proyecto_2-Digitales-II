@@ -17,6 +17,8 @@ module probador_FIFO #(
     output reg [DATA_WIDTH-1:0] FIFO_data_in, //Entrada de datos
     input [DATA_WIDTH-1:0] FIFO_data_out, //Salida de datos
     input FIFO_empty, //Indica cuando queda mucho espacio en memoria
+    input FIFO_almost_full,
+    input FIFO_almost_empty,
     input FIFO_full); //Indica cuando queda poco espacio en memoria
 
     initial begin
@@ -37,9 +39,10 @@ module probador_FIFO #(
 	@(posedge clk);
     Reset = 1;
     Enable = 1;
-    FIFO_data_in <= 8'hFF;
     write_enable = 1;
-    read_enable = 1;
+
+    @(posedge clk);
+    FIFO_data_in <= 8'hFF;
 
     @(posedge clk);
     FIFO_data_in <= 8'hAF;
@@ -52,6 +55,13 @@ module probador_FIFO #(
 
     @(posedge clk);
     FIFO_data_in <= 8'h6A;
+    
+    @(posedge clk);
+    write_enable = 0;
+    read_enable = 1;
+
+    repeat(4)
+	@(posedge clk);
 
 	#3 $finish;
 	end

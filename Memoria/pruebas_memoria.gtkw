@@ -1,0 +1,41 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Tue Nov  9 16:51:30 2021
+[*]
+[dumpfile] "/home/montejuanppy/Documents/Circuitos_DIgitales_II/Proyecto_II/Proyecto_2-Digitales-II/Memoria/memoria.vcd"
+[dumpfile_mtime] "Tue Nov  9 16:45:32 2021"
+[dumpfile_size] 4360
+[savefile] "/home/montejuanppy/Documents/Circuitos_DIgitales_II/Proyecto_II/Proyecto_2-Digitales-II/Memoria/pruebas_memoria.gtkw"
+[timestart] 0
+[size] 1848 1016
+[pos] -196 -196
+*-11.025855 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] banco.
+[sst_width] 233
+[signals_width] 222
+[sst_expanded] 1
+[sst_vpaned_height] 289
+@200
+-Memoria
+@28
+banco.clk
+@22
+banco.FIFO_data_in[7:0]
+@28
+banco.read_enable
+@22
+banco.rd_ptr[7:0]
+@28
+banco.write_enable
+@22
+banco.wr_ptr[7:0]
+@200
+-Conductual
+@22
+banco.FIFO_data_out[7:0]
+@200
+-Estructural
+@22
+banco.FIFO_data_out_synth[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

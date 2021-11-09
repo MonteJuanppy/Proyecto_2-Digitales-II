@@ -30,26 +30,29 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   wire [7:0] _020_;
   wire [7:0] _021_;
   wire [7:0] _022_;
-  wire _023_;
-  wire _024_;
+  wire [7:0] _023_;
+  wire [7:0] _024_;
   wire _025_;
   wire _026_;
   wire _027_;
   wire _028_;
   wire _029_;
   wire _030_;
-  wire [7:0] _031_;
-  wire [7:0] _032_;
+  wire _031_;
+  wire _032_;
   wire [7:0] _033_;
   wire [7:0] _034_;
   wire [7:0] _035_;
   wire [7:0] _036_;
   wire [7:0] _037_;
   wire [7:0] _038_;
+  wire [7:0] _039_;
+  wire [7:0] _040_;
   (* src = "memoria_synth.v:12" *)
   input [7:0] FIFO_data_in;
   (* src = "memoria_synth.v:18" *)
   output [7:0] FIFO_data_out_synth;
+  reg [7:0] FIFO_data_out_synth;
   (* src = "memoria_synth.v:15" *)
   input clk;
   reg [7:0] \ram[0] ;
@@ -79,275 +82,299 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _001_[5] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_data_in[5] : 1'hx;
   assign _001_[6] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_data_in[6] : 1'hx;
   assign _001_[7] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_data_in[7] : 1'hx;
-  assign FIFO_data_out_synth[0] = rd_ptr[2] ? _018_[0] : _017_[0];
-  assign FIFO_data_out_synth[1] = rd_ptr[2] ? _018_[1] : _017_[1];
-  assign FIFO_data_out_synth[2] = rd_ptr[2] ? _018_[2] : _017_[2];
-  assign FIFO_data_out_synth[3] = rd_ptr[2] ? _018_[3] : _017_[3];
-  assign FIFO_data_out_synth[4] = rd_ptr[2] ? _018_[4] : _017_[4];
-  assign FIFO_data_out_synth[5] = rd_ptr[2] ? _018_[5] : _017_[5];
-  assign FIFO_data_out_synth[6] = rd_ptr[2] ? _018_[6] : _017_[6];
-  assign FIFO_data_out_synth[7] = rd_ptr[2] ? _018_[7] : _017_[7];
-  assign _017_[0] = rd_ptr[1] ? _020_[0] : _019_[0];
-  assign _017_[1] = rd_ptr[1] ? _020_[1] : _019_[1];
-  assign _017_[2] = rd_ptr[1] ? _020_[2] : _019_[2];
-  assign _017_[3] = rd_ptr[1] ? _020_[3] : _019_[3];
-  assign _017_[4] = rd_ptr[1] ? _020_[4] : _019_[4];
-  assign _017_[5] = rd_ptr[1] ? _020_[5] : _019_[5];
-  assign _017_[6] = rd_ptr[1] ? _020_[6] : _019_[6];
-  assign _017_[7] = rd_ptr[1] ? _020_[7] : _019_[7];
-  assign _018_[0] = rd_ptr[1] ? _022_[0] : _021_[0];
-  assign _018_[1] = rd_ptr[1] ? _022_[1] : _021_[1];
-  assign _018_[2] = rd_ptr[1] ? _022_[2] : _021_[2];
-  assign _018_[3] = rd_ptr[1] ? _022_[3] : _021_[3];
-  assign _018_[4] = rd_ptr[1] ? _022_[4] : _021_[4];
-  assign _018_[5] = rd_ptr[1] ? _022_[5] : _021_[5];
-  assign _018_[6] = rd_ptr[1] ? _022_[6] : _021_[6];
-  assign _018_[7] = rd_ptr[1] ? _022_[7] : _021_[7];
-  assign _019_[0] = rd_ptr[0] ? \ram[1] [0] : \ram[0] [0];
-  assign _019_[1] = rd_ptr[0] ? \ram[1] [1] : \ram[0] [1];
-  assign _019_[2] = rd_ptr[0] ? \ram[1] [2] : \ram[0] [2];
-  assign _019_[3] = rd_ptr[0] ? \ram[1] [3] : \ram[0] [3];
-  assign _019_[4] = rd_ptr[0] ? \ram[1] [4] : \ram[0] [4];
-  assign _019_[5] = rd_ptr[0] ? \ram[1] [5] : \ram[0] [5];
-  assign _019_[6] = rd_ptr[0] ? \ram[1] [6] : \ram[0] [6];
-  assign _019_[7] = rd_ptr[0] ? \ram[1] [7] : \ram[0] [7];
-  assign _020_[0] = rd_ptr[0] ? \ram[3] [0] : \ram[2] [0];
-  assign _020_[1] = rd_ptr[0] ? \ram[3] [1] : \ram[2] [1];
-  assign _020_[2] = rd_ptr[0] ? \ram[3] [2] : \ram[2] [2];
-  assign _020_[3] = rd_ptr[0] ? \ram[3] [3] : \ram[2] [3];
-  assign _020_[4] = rd_ptr[0] ? \ram[3] [4] : \ram[2] [4];
-  assign _020_[5] = rd_ptr[0] ? \ram[3] [5] : \ram[2] [5];
-  assign _020_[6] = rd_ptr[0] ? \ram[3] [6] : \ram[2] [6];
-  assign _020_[7] = rd_ptr[0] ? \ram[3] [7] : \ram[2] [7];
-  assign _021_[0] = rd_ptr[0] ? \ram[5] [0] : \ram[4] [0];
-  assign _021_[1] = rd_ptr[0] ? \ram[5] [1] : \ram[4] [1];
-  assign _021_[2] = rd_ptr[0] ? \ram[5] [2] : \ram[4] [2];
-  assign _021_[3] = rd_ptr[0] ? \ram[5] [3] : \ram[4] [3];
-  assign _021_[4] = rd_ptr[0] ? \ram[5] [4] : \ram[4] [4];
-  assign _021_[5] = rd_ptr[0] ? \ram[5] [5] : \ram[4] [5];
-  assign _021_[6] = rd_ptr[0] ? \ram[5] [6] : \ram[4] [6];
-  assign _021_[7] = rd_ptr[0] ? \ram[5] [7] : \ram[4] [7];
-  assign _022_[0] = rd_ptr[0] ? \ram[7] [0] : \ram[6] [0];
-  assign _022_[1] = rd_ptr[0] ? \ram[7] [1] : \ram[6] [1];
-  assign _022_[2] = rd_ptr[0] ? \ram[7] [2] : \ram[6] [2];
-  assign _022_[3] = rd_ptr[0] ? \ram[7] [3] : \ram[6] [3];
-  assign _022_[4] = rd_ptr[0] ? \ram[7] [4] : \ram[6] [4];
-  assign _022_[5] = rd_ptr[0] ? \ram[7] [5] : \ram[6] [5];
-  assign _022_[6] = rd_ptr[0] ? \ram[7] [6] : \ram[6] [6];
-  assign _022_[7] = rd_ptr[0] ? \ram[7] [7] : \ram[6] [7];
-  assign _031_[0] = _023_ ? _001_[0] : \ram[0] [0];
-  assign _031_[1] = _023_ ? _001_[1] : \ram[0] [1];
-  assign _031_[2] = _023_ ? _001_[2] : \ram[0] [2];
-  assign _031_[3] = _023_ ? _001_[3] : \ram[0] [3];
-  assign _031_[4] = _023_ ? _001_[4] : \ram[0] [4];
-  assign _031_[5] = _023_ ? _001_[5] : \ram[0] [5];
-  assign _031_[6] = _023_ ? _001_[6] : \ram[0] [6];
-  assign _031_[7] = _023_ ? _001_[7] : \ram[0] [7];
-  assign _032_[0] = _024_ ? _001_[0] : \ram[1] [0];
-  assign _032_[1] = _024_ ? _001_[1] : \ram[1] [1];
-  assign _032_[2] = _024_ ? _001_[2] : \ram[1] [2];
-  assign _032_[3] = _024_ ? _001_[3] : \ram[1] [3];
-  assign _032_[4] = _024_ ? _001_[4] : \ram[1] [4];
-  assign _032_[5] = _024_ ? _001_[5] : \ram[1] [5];
-  assign _032_[6] = _024_ ? _001_[6] : \ram[1] [6];
-  assign _032_[7] = _024_ ? _001_[7] : \ram[1] [7];
-  assign _033_[0] = _025_ ? _001_[0] : \ram[2] [0];
-  assign _033_[1] = _025_ ? _001_[1] : \ram[2] [1];
-  assign _033_[2] = _025_ ? _001_[2] : \ram[2] [2];
-  assign _033_[3] = _025_ ? _001_[3] : \ram[2] [3];
-  assign _033_[4] = _025_ ? _001_[4] : \ram[2] [4];
-  assign _033_[5] = _025_ ? _001_[5] : \ram[2] [5];
-  assign _033_[6] = _025_ ? _001_[6] : \ram[2] [6];
-  assign _033_[7] = _025_ ? _001_[7] : \ram[2] [7];
-  assign _034_[0] = _026_ ? _001_[0] : \ram[3] [0];
-  assign _034_[1] = _026_ ? _001_[1] : \ram[3] [1];
-  assign _034_[2] = _026_ ? _001_[2] : \ram[3] [2];
-  assign _034_[3] = _026_ ? _001_[3] : \ram[3] [3];
-  assign _034_[4] = _026_ ? _001_[4] : \ram[3] [4];
-  assign _034_[5] = _026_ ? _001_[5] : \ram[3] [5];
-  assign _034_[6] = _026_ ? _001_[6] : \ram[3] [6];
-  assign _034_[7] = _026_ ? _001_[7] : \ram[3] [7];
-  assign _035_[0] = _027_ ? _001_[0] : \ram[4] [0];
-  assign _035_[1] = _027_ ? _001_[1] : \ram[4] [1];
-  assign _035_[2] = _027_ ? _001_[2] : \ram[4] [2];
-  assign _035_[3] = _027_ ? _001_[3] : \ram[4] [3];
-  assign _035_[4] = _027_ ? _001_[4] : \ram[4] [4];
-  assign _035_[5] = _027_ ? _001_[5] : \ram[4] [5];
-  assign _035_[6] = _027_ ? _001_[6] : \ram[4] [6];
-  assign _035_[7] = _027_ ? _001_[7] : \ram[4] [7];
-  assign _036_[0] = _028_ ? _001_[0] : \ram[5] [0];
-  assign _036_[1] = _028_ ? _001_[1] : \ram[5] [1];
-  assign _036_[2] = _028_ ? _001_[2] : \ram[5] [2];
-  assign _036_[3] = _028_ ? _001_[3] : \ram[5] [3];
-  assign _036_[4] = _028_ ? _001_[4] : \ram[5] [4];
-  assign _036_[5] = _028_ ? _001_[5] : \ram[5] [5];
-  assign _036_[6] = _028_ ? _001_[6] : \ram[5] [6];
-  assign _036_[7] = _028_ ? _001_[7] : \ram[5] [7];
-  assign _037_[0] = _029_ ? _001_[0] : \ram[6] [0];
-  assign _037_[1] = _029_ ? _001_[1] : \ram[6] [1];
-  assign _037_[2] = _029_ ? _001_[2] : \ram[6] [2];
-  assign _037_[3] = _029_ ? _001_[3] : \ram[6] [3];
-  assign _037_[4] = _029_ ? _001_[4] : \ram[6] [4];
-  assign _037_[5] = _029_ ? _001_[5] : \ram[6] [5];
-  assign _037_[6] = _029_ ? _001_[6] : \ram[6] [6];
-  assign _037_[7] = _029_ ? _001_[7] : \ram[6] [7];
-  assign _038_[0] = _030_ ? _001_[0] : \ram[7] [0];
-  assign _038_[1] = _030_ ? _001_[1] : \ram[7] [1];
-  assign _038_[2] = _030_ ? _001_[2] : \ram[7] [2];
-  assign _038_[3] = _030_ ? _001_[3] : \ram[7] [3];
-  assign _038_[4] = _030_ ? _001_[4] : \ram[7] [4];
-  assign _038_[5] = _030_ ? _001_[5] : \ram[7] [5];
-  assign _038_[6] = _030_ ? _001_[6] : \ram[7] [6];
-  assign _038_[7] = _030_ ? _001_[7] : \ram[7] [7];
+  assign _017_[0] = read_enable ? _024_[0] : FIFO_data_out_synth[0];
+  assign _017_[1] = read_enable ? _024_[1] : FIFO_data_out_synth[1];
+  assign _017_[2] = read_enable ? _024_[2] : FIFO_data_out_synth[2];
+  assign _017_[3] = read_enable ? _024_[3] : FIFO_data_out_synth[3];
+  assign _017_[4] = read_enable ? _024_[4] : FIFO_data_out_synth[4];
+  assign _017_[5] = read_enable ? _024_[5] : FIFO_data_out_synth[5];
+  assign _017_[6] = read_enable ? _024_[6] : FIFO_data_out_synth[6];
+  assign _017_[7] = read_enable ? _024_[7] : FIFO_data_out_synth[7];
+  assign _024_[0] = rd_ptr[2] ? _019_[0] : _018_[0];
+  assign _024_[1] = rd_ptr[2] ? _019_[1] : _018_[1];
+  assign _024_[2] = rd_ptr[2] ? _019_[2] : _018_[2];
+  assign _024_[3] = rd_ptr[2] ? _019_[3] : _018_[3];
+  assign _024_[4] = rd_ptr[2] ? _019_[4] : _018_[4];
+  assign _024_[5] = rd_ptr[2] ? _019_[5] : _018_[5];
+  assign _024_[6] = rd_ptr[2] ? _019_[6] : _018_[6];
+  assign _024_[7] = rd_ptr[2] ? _019_[7] : _018_[7];
+  assign _018_[0] = rd_ptr[1] ? _021_[0] : _020_[0];
+  assign _018_[1] = rd_ptr[1] ? _021_[1] : _020_[1];
+  assign _018_[2] = rd_ptr[1] ? _021_[2] : _020_[2];
+  assign _018_[3] = rd_ptr[1] ? _021_[3] : _020_[3];
+  assign _018_[4] = rd_ptr[1] ? _021_[4] : _020_[4];
+  assign _018_[5] = rd_ptr[1] ? _021_[5] : _020_[5];
+  assign _018_[6] = rd_ptr[1] ? _021_[6] : _020_[6];
+  assign _018_[7] = rd_ptr[1] ? _021_[7] : _020_[7];
+  assign _019_[0] = rd_ptr[1] ? _023_[0] : _022_[0];
+  assign _019_[1] = rd_ptr[1] ? _023_[1] : _022_[1];
+  assign _019_[2] = rd_ptr[1] ? _023_[2] : _022_[2];
+  assign _019_[3] = rd_ptr[1] ? _023_[3] : _022_[3];
+  assign _019_[4] = rd_ptr[1] ? _023_[4] : _022_[4];
+  assign _019_[5] = rd_ptr[1] ? _023_[5] : _022_[5];
+  assign _019_[6] = rd_ptr[1] ? _023_[6] : _022_[6];
+  assign _019_[7] = rd_ptr[1] ? _023_[7] : _022_[7];
+  assign _020_[0] = rd_ptr[0] ? \ram[1] [0] : \ram[0] [0];
+  assign _020_[1] = rd_ptr[0] ? \ram[1] [1] : \ram[0] [1];
+  assign _020_[2] = rd_ptr[0] ? \ram[1] [2] : \ram[0] [2];
+  assign _020_[3] = rd_ptr[0] ? \ram[1] [3] : \ram[0] [3];
+  assign _020_[4] = rd_ptr[0] ? \ram[1] [4] : \ram[0] [4];
+  assign _020_[5] = rd_ptr[0] ? \ram[1] [5] : \ram[0] [5];
+  assign _020_[6] = rd_ptr[0] ? \ram[1] [6] : \ram[0] [6];
+  assign _020_[7] = rd_ptr[0] ? \ram[1] [7] : \ram[0] [7];
+  assign _021_[0] = rd_ptr[0] ? \ram[3] [0] : \ram[2] [0];
+  assign _021_[1] = rd_ptr[0] ? \ram[3] [1] : \ram[2] [1];
+  assign _021_[2] = rd_ptr[0] ? \ram[3] [2] : \ram[2] [2];
+  assign _021_[3] = rd_ptr[0] ? \ram[3] [3] : \ram[2] [3];
+  assign _021_[4] = rd_ptr[0] ? \ram[3] [4] : \ram[2] [4];
+  assign _021_[5] = rd_ptr[0] ? \ram[3] [5] : \ram[2] [5];
+  assign _021_[6] = rd_ptr[0] ? \ram[3] [6] : \ram[2] [6];
+  assign _021_[7] = rd_ptr[0] ? \ram[3] [7] : \ram[2] [7];
+  assign _022_[0] = rd_ptr[0] ? \ram[5] [0] : \ram[4] [0];
+  assign _022_[1] = rd_ptr[0] ? \ram[5] [1] : \ram[4] [1];
+  assign _022_[2] = rd_ptr[0] ? \ram[5] [2] : \ram[4] [2];
+  assign _022_[3] = rd_ptr[0] ? \ram[5] [3] : \ram[4] [3];
+  assign _022_[4] = rd_ptr[0] ? \ram[5] [4] : \ram[4] [4];
+  assign _022_[5] = rd_ptr[0] ? \ram[5] [5] : \ram[4] [5];
+  assign _022_[6] = rd_ptr[0] ? \ram[5] [6] : \ram[4] [6];
+  assign _022_[7] = rd_ptr[0] ? \ram[5] [7] : \ram[4] [7];
+  assign _023_[0] = rd_ptr[0] ? \ram[7] [0] : \ram[6] [0];
+  assign _023_[1] = rd_ptr[0] ? \ram[7] [1] : \ram[6] [1];
+  assign _023_[2] = rd_ptr[0] ? \ram[7] [2] : \ram[6] [2];
+  assign _023_[3] = rd_ptr[0] ? \ram[7] [3] : \ram[6] [3];
+  assign _023_[4] = rd_ptr[0] ? \ram[7] [4] : \ram[6] [4];
+  assign _023_[5] = rd_ptr[0] ? \ram[7] [5] : \ram[6] [5];
+  assign _023_[6] = rd_ptr[0] ? \ram[7] [6] : \ram[6] [6];
+  assign _023_[7] = rd_ptr[0] ? \ram[7] [7] : \ram[6] [7];
+  assign _033_[0] = _025_ ? _001_[0] : \ram[0] [0];
+  assign _033_[1] = _025_ ? _001_[1] : \ram[0] [1];
+  assign _033_[2] = _025_ ? _001_[2] : \ram[0] [2];
+  assign _033_[3] = _025_ ? _001_[3] : \ram[0] [3];
+  assign _033_[4] = _025_ ? _001_[4] : \ram[0] [4];
+  assign _033_[5] = _025_ ? _001_[5] : \ram[0] [5];
+  assign _033_[6] = _025_ ? _001_[6] : \ram[0] [6];
+  assign _033_[7] = _025_ ? _001_[7] : \ram[0] [7];
+  assign _034_[0] = _026_ ? _001_[0] : \ram[1] [0];
+  assign _034_[1] = _026_ ? _001_[1] : \ram[1] [1];
+  assign _034_[2] = _026_ ? _001_[2] : \ram[1] [2];
+  assign _034_[3] = _026_ ? _001_[3] : \ram[1] [3];
+  assign _034_[4] = _026_ ? _001_[4] : \ram[1] [4];
+  assign _034_[5] = _026_ ? _001_[5] : \ram[1] [5];
+  assign _034_[6] = _026_ ? _001_[6] : \ram[1] [6];
+  assign _034_[7] = _026_ ? _001_[7] : \ram[1] [7];
+  assign _035_[0] = _027_ ? _001_[0] : \ram[2] [0];
+  assign _035_[1] = _027_ ? _001_[1] : \ram[2] [1];
+  assign _035_[2] = _027_ ? _001_[2] : \ram[2] [2];
+  assign _035_[3] = _027_ ? _001_[3] : \ram[2] [3];
+  assign _035_[4] = _027_ ? _001_[4] : \ram[2] [4];
+  assign _035_[5] = _027_ ? _001_[5] : \ram[2] [5];
+  assign _035_[6] = _027_ ? _001_[6] : \ram[2] [6];
+  assign _035_[7] = _027_ ? _001_[7] : \ram[2] [7];
+  assign _036_[0] = _028_ ? _001_[0] : \ram[3] [0];
+  assign _036_[1] = _028_ ? _001_[1] : \ram[3] [1];
+  assign _036_[2] = _028_ ? _001_[2] : \ram[3] [2];
+  assign _036_[3] = _028_ ? _001_[3] : \ram[3] [3];
+  assign _036_[4] = _028_ ? _001_[4] : \ram[3] [4];
+  assign _036_[5] = _028_ ? _001_[5] : \ram[3] [5];
+  assign _036_[6] = _028_ ? _001_[6] : \ram[3] [6];
+  assign _036_[7] = _028_ ? _001_[7] : \ram[3] [7];
+  assign _037_[0] = _029_ ? _001_[0] : \ram[4] [0];
+  assign _037_[1] = _029_ ? _001_[1] : \ram[4] [1];
+  assign _037_[2] = _029_ ? _001_[2] : \ram[4] [2];
+  assign _037_[3] = _029_ ? _001_[3] : \ram[4] [3];
+  assign _037_[4] = _029_ ? _001_[4] : \ram[4] [4];
+  assign _037_[5] = _029_ ? _001_[5] : \ram[4] [5];
+  assign _037_[6] = _029_ ? _001_[6] : \ram[4] [6];
+  assign _037_[7] = _029_ ? _001_[7] : \ram[4] [7];
+  assign _038_[0] = _030_ ? _001_[0] : \ram[5] [0];
+  assign _038_[1] = _030_ ? _001_[1] : \ram[5] [1];
+  assign _038_[2] = _030_ ? _001_[2] : \ram[5] [2];
+  assign _038_[3] = _030_ ? _001_[3] : \ram[5] [3];
+  assign _038_[4] = _030_ ? _001_[4] : \ram[5] [4];
+  assign _038_[5] = _030_ ? _001_[5] : \ram[5] [5];
+  assign _038_[6] = _030_ ? _001_[6] : \ram[5] [6];
+  assign _038_[7] = _030_ ? _001_[7] : \ram[5] [7];
+  assign _039_[0] = _031_ ? _001_[0] : \ram[6] [0];
+  assign _039_[1] = _031_ ? _001_[1] : \ram[6] [1];
+  assign _039_[2] = _031_ ? _001_[2] : \ram[6] [2];
+  assign _039_[3] = _031_ ? _001_[3] : \ram[6] [3];
+  assign _039_[4] = _031_ ? _001_[4] : \ram[6] [4];
+  assign _039_[5] = _031_ ? _001_[5] : \ram[6] [5];
+  assign _039_[6] = _031_ ? _001_[6] : \ram[6] [6];
+  assign _039_[7] = _031_ ? _001_[7] : \ram[6] [7];
+  assign _040_[0] = _032_ ? _001_[0] : \ram[7] [0];
+  assign _040_[1] = _032_ ? _001_[1] : \ram[7] [1];
+  assign _040_[2] = _032_ ? _001_[2] : \ram[7] [2];
+  assign _040_[3] = _032_ ? _001_[3] : \ram[7] [3];
+  assign _040_[4] = _032_ ? _001_[4] : \ram[7] [4];
+  assign _040_[5] = _032_ ? _001_[5] : \ram[7] [5];
+  assign _040_[6] = _032_ ? _001_[6] : \ram[7] [6];
+  assign _040_[7] = _032_ ? _001_[7] : \ram[7] [7];
   assign _014_ = ~_000_[0];
   assign _015_ = ~_000_[1];
   assign _016_ = ~_000_[2];
   always @(posedge clk)
-      \ram[1] [0] <= _032_[0];
+      \ram[4] [0] <= _037_[0];
   always @(posedge clk)
-      \ram[1] [1] <= _032_[1];
+      \ram[4] [1] <= _037_[1];
   always @(posedge clk)
-      \ram[1] [2] <= _032_[2];
+      \ram[4] [2] <= _037_[2];
   always @(posedge clk)
-      \ram[1] [3] <= _032_[3];
+      \ram[4] [3] <= _037_[3];
   always @(posedge clk)
-      \ram[1] [4] <= _032_[4];
+      \ram[4] [4] <= _037_[4];
   always @(posedge clk)
-      \ram[1] [5] <= _032_[5];
+      \ram[4] [5] <= _037_[5];
   always @(posedge clk)
-      \ram[1] [6] <= _032_[6];
+      \ram[4] [6] <= _037_[6];
   always @(posedge clk)
-      \ram[1] [7] <= _032_[7];
+      \ram[4] [7] <= _037_[7];
   always @(posedge clk)
-      \ram[2] [0] <= _033_[0];
+      \ram[2] [0] <= _035_[0];
   always @(posedge clk)
-      \ram[2] [1] <= _033_[1];
+      \ram[2] [1] <= _035_[1];
   always @(posedge clk)
-      \ram[2] [2] <= _033_[2];
+      \ram[2] [2] <= _035_[2];
   always @(posedge clk)
-      \ram[2] [3] <= _033_[3];
+      \ram[2] [3] <= _035_[3];
   always @(posedge clk)
-      \ram[2] [4] <= _033_[4];
+      \ram[2] [4] <= _035_[4];
   always @(posedge clk)
-      \ram[2] [5] <= _033_[5];
+      \ram[2] [5] <= _035_[5];
   always @(posedge clk)
-      \ram[2] [6] <= _033_[6];
+      \ram[2] [6] <= _035_[6];
   always @(posedge clk)
-      \ram[2] [7] <= _033_[7];
+      \ram[2] [7] <= _035_[7];
   always @(posedge clk)
-      \ram[0] [0] <= _031_[0];
+      \ram[0] [0] <= _033_[0];
   always @(posedge clk)
-      \ram[0] [1] <= _031_[1];
+      \ram[0] [1] <= _033_[1];
   always @(posedge clk)
-      \ram[0] [2] <= _031_[2];
+      \ram[0] [2] <= _033_[2];
   always @(posedge clk)
-      \ram[0] [3] <= _031_[3];
+      \ram[0] [3] <= _033_[3];
   always @(posedge clk)
-      \ram[0] [4] <= _031_[4];
+      \ram[0] [4] <= _033_[4];
   always @(posedge clk)
-      \ram[0] [5] <= _031_[5];
+      \ram[0] [5] <= _033_[5];
   always @(posedge clk)
-      \ram[0] [6] <= _031_[6];
+      \ram[0] [6] <= _033_[6];
   always @(posedge clk)
-      \ram[0] [7] <= _031_[7];
+      \ram[0] [7] <= _033_[7];
   always @(posedge clk)
-      \ram[3] [0] <= _034_[0];
+      \ram[5] [0] <= _038_[0];
   always @(posedge clk)
-      \ram[3] [1] <= _034_[1];
+      \ram[5] [1] <= _038_[1];
   always @(posedge clk)
-      \ram[3] [2] <= _034_[2];
+      \ram[5] [2] <= _038_[2];
   always @(posedge clk)
-      \ram[3] [3] <= _034_[3];
+      \ram[5] [3] <= _038_[3];
   always @(posedge clk)
-      \ram[3] [4] <= _034_[4];
+      \ram[5] [4] <= _038_[4];
   always @(posedge clk)
-      \ram[3] [5] <= _034_[5];
+      \ram[5] [5] <= _038_[5];
   always @(posedge clk)
-      \ram[3] [6] <= _034_[6];
+      \ram[5] [6] <= _038_[6];
   always @(posedge clk)
-      \ram[3] [7] <= _034_[7];
+      \ram[5] [7] <= _038_[7];
   always @(posedge clk)
-      \ram[4] [0] <= _035_[0];
+      \ram[1] [0] <= _034_[0];
   always @(posedge clk)
-      \ram[4] [1] <= _035_[1];
+      \ram[1] [1] <= _034_[1];
   always @(posedge clk)
-      \ram[4] [2] <= _035_[2];
+      \ram[1] [2] <= _034_[2];
   always @(posedge clk)
-      \ram[4] [3] <= _035_[3];
+      \ram[1] [3] <= _034_[3];
   always @(posedge clk)
-      \ram[4] [4] <= _035_[4];
+      \ram[1] [4] <= _034_[4];
   always @(posedge clk)
-      \ram[4] [5] <= _035_[5];
+      \ram[1] [5] <= _034_[5];
   always @(posedge clk)
-      \ram[4] [6] <= _035_[6];
+      \ram[1] [6] <= _034_[6];
   always @(posedge clk)
-      \ram[4] [7] <= _035_[7];
+      \ram[1] [7] <= _034_[7];
   always @(posedge clk)
-      \ram[5] [0] <= _036_[0];
+      \ram[3] [0] <= _036_[0];
   always @(posedge clk)
-      \ram[5] [1] <= _036_[1];
+      \ram[3] [1] <= _036_[1];
   always @(posedge clk)
-      \ram[5] [2] <= _036_[2];
+      \ram[3] [2] <= _036_[2];
   always @(posedge clk)
-      \ram[5] [3] <= _036_[3];
+      \ram[3] [3] <= _036_[3];
   always @(posedge clk)
-      \ram[5] [4] <= _036_[4];
+      \ram[3] [4] <= _036_[4];
   always @(posedge clk)
-      \ram[5] [5] <= _036_[5];
+      \ram[3] [5] <= _036_[5];
   always @(posedge clk)
-      \ram[5] [6] <= _036_[6];
+      \ram[3] [6] <= _036_[6];
   always @(posedge clk)
-      \ram[5] [7] <= _036_[7];
+      \ram[3] [7] <= _036_[7];
   always @(posedge clk)
-      \ram[6] [0] <= _037_[0];
+      \ram[6] [0] <= _039_[0];
   always @(posedge clk)
-      \ram[6] [1] <= _037_[1];
+      \ram[6] [1] <= _039_[1];
   always @(posedge clk)
-      \ram[6] [2] <= _037_[2];
+      \ram[6] [2] <= _039_[2];
   always @(posedge clk)
-      \ram[6] [3] <= _037_[3];
+      \ram[6] [3] <= _039_[3];
   always @(posedge clk)
-      \ram[6] [4] <= _037_[4];
+      \ram[6] [4] <= _039_[4];
   always @(posedge clk)
-      \ram[6] [5] <= _037_[5];
+      \ram[6] [5] <= _039_[5];
   always @(posedge clk)
-      \ram[6] [6] <= _037_[6];
+      \ram[6] [6] <= _039_[6];
   always @(posedge clk)
-      \ram[6] [7] <= _037_[7];
+      \ram[6] [7] <= _039_[7];
   always @(posedge clk)
-      \ram[7] [0] <= _038_[0];
+      \ram[7] [0] <= _040_[0];
   always @(posedge clk)
-      \ram[7] [1] <= _038_[1];
+      \ram[7] [1] <= _040_[1];
   always @(posedge clk)
-      \ram[7] [2] <= _038_[2];
+      \ram[7] [2] <= _040_[2];
   always @(posedge clk)
-      \ram[7] [3] <= _038_[3];
+      \ram[7] [3] <= _040_[3];
   always @(posedge clk)
-      \ram[7] [4] <= _038_[4];
+      \ram[7] [4] <= _040_[4];
   always @(posedge clk)
-      \ram[7] [5] <= _038_[5];
+      \ram[7] [5] <= _040_[5];
   always @(posedge clk)
-      \ram[7] [6] <= _038_[6];
+      \ram[7] [6] <= _040_[6];
   always @(posedge clk)
-      \ram[7] [7] <= _038_[7];
-  assign _006_ = _015_ & _016_;
-  assign _007_ = _014_ & _006_;
-  assign _023_ = _007_ & write_enable;
-  assign _008_ = _000_[0] & _006_;
-  assign _024_ = _008_ & write_enable;
-  assign _009_ = _000_[1] & _016_;
-  assign _010_ = _014_ & _009_;
-  assign _025_ = _010_ & write_enable;
-  assign _011_ = _000_[0] & _009_;
-  assign _026_ = _011_ & write_enable;
-  assign _012_ = _015_ & _000_[2];
-  assign _013_ = _014_ & _012_;
-  assign _027_ = _013_ & write_enable;
-  assign _002_ = _000_[0] & _012_;
-  assign _028_ = _002_ & write_enable;
-  assign _003_ = _000_[1] & _000_[2];
-  assign _004_ = _014_ & _003_;
-  assign _029_ = _004_ & write_enable;
-  assign _005_ = _000_[0] & _003_;
-  assign _030_ = _005_ & write_enable;
+      \ram[7] [7] <= _040_[7];
+  always @(posedge clk)
+      FIFO_data_out_synth[0] <= _017_[0];
+  always @(posedge clk)
+      FIFO_data_out_synth[1] <= _017_[1];
+  always @(posedge clk)
+      FIFO_data_out_synth[2] <= _017_[2];
+  always @(posedge clk)
+      FIFO_data_out_synth[3] <= _017_[3];
+  always @(posedge clk)
+      FIFO_data_out_synth[4] <= _017_[4];
+  always @(posedge clk)
+      FIFO_data_out_synth[5] <= _017_[5];
+  always @(posedge clk)
+      FIFO_data_out_synth[6] <= _017_[6];
+  always @(posedge clk)
+      FIFO_data_out_synth[7] <= _017_[7];
+  assign _008_ = _015_ & _016_;
+  assign _009_ = _014_ & _008_;
+  assign _025_ = _009_ & write_enable;
+  assign _010_ = _000_[0] & _008_;
+  assign _026_ = _010_ & write_enable;
+  assign _011_ = _000_[1] & _016_;
+  assign _012_ = _014_ & _011_;
+  assign _027_ = _012_ & write_enable;
+  assign _013_ = _000_[0] & _011_;
+  assign _028_ = _013_ & write_enable;
+  assign _002_ = _015_ & _000_[2];
+  assign _003_ = _014_ & _002_;
+  assign _029_ = _003_ & write_enable;
+  assign _004_ = _000_[0] & _002_;
+  assign _030_ = _004_ & write_enable;
+  assign _005_ = _000_[1] & _000_[2];
+  assign _006_ = _014_ & _005_;
+  assign _031_ = _006_ & write_enable;
+  assign _007_ = _000_[0] & _005_;
+  assign _032_ = _007_ & write_enable;
 endmodule

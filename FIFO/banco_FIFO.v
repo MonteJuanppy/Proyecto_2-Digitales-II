@@ -25,9 +25,9 @@ module banco_FIFO #(
 	wire write_enable; //Señal para habilitar escritura
 	wire read_enable; //Señal para habilitar lectura
     wire [(DATA_WIDTH-1):0] FIFO_data_out; //salida FIFO_data_out
-    wire FIFO_empty, FIFO_full;
-    //wire [(DATA_WIDTH-1):0] FIFO_data_out_synth; //salida FIFO_data_out
-    //wire FIFO_empty_synth, FIFO_full_synth;
+    wire FIFO_empty, FIFO_full, FIFO_almost_empty, FIFO_almost_full;
+    wire [(DATA_WIDTH-1):0] FIFO_synth_data_out; //salida FIFO_data_out
+    wire FIFO_empty_synth, FIFO_full_synth, FIFO_almost_empty_synth, FIFO_almost_full_synth;
 
 	// Se instancia el módulo de memoria conductual
 	FIFO conductual (/*AUTOINST*/
@@ -35,6 +35,8 @@ module banco_FIFO #(
 			 .FIFO_data_out		(FIFO_data_out[DATA_WIDTH-1:0]),
 			 .FIFO_empty		(FIFO_empty),
 			 .FIFO_full		(FIFO_full),
+			 .FIFO_almost_empty	(FIFO_almost_empty),
+			 .FIFO_almost_full	(FIFO_almost_full),
 			 // Inputs
 			 .FIFO_data_in		(FIFO_data_in[DATA_WIDTH-1:0]),
 			 .clk			(clk),
@@ -46,12 +48,14 @@ module banco_FIFO #(
     // Se instancia el módulo de memoria conductual
 	FIFO_synth estructural (/*AUTOINST*/
 				// Outputs
+				.FIFO_synth_almost_empty(FIFO_synth_almost_empty),
+				.FIFO_synth_almost_full(FIFO_synth_almost_full),
 				.FIFO_synth_data_out(FIFO_synth_data_out[7:0]),
 				.FIFO_synth_empty(FIFO_synth_empty),
 				.FIFO_synth_full(FIFO_synth_full),
 				// Inputs
 				.Enable		(Enable),
-				.FIFO_synth_data_in(FIFO_synth_data_in[7:0]),
+				.FIFO_data_in	(FIFO_data_in[7:0]),
 				.Reset		(Reset),
 				.clk		(clk),
 				.read_enable	(read_enable),
@@ -69,6 +73,8 @@ module banco_FIFO #(
 				// Inputs
 				.FIFO_data_out	(FIFO_data_out[DATA_WIDTH-1:0]),
 				.FIFO_empty	(FIFO_empty),
+				.FIFO_almost_full(FIFO_almost_full),
+				.FIFO_almost_empty(FIFO_almost_empty),
 				.FIFO_full	(FIFO_full));
 
 endmodule

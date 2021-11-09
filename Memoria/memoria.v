@@ -15,15 +15,14 @@ module memoria #(
   input clk, //señal de reloj
   input write_enable,
   input read_enable,
-  output [(DATA_WIDTH-1):0] FIFO_data_out //salida FIFO_data_out
+  output reg [(DATA_WIDTH-1):0] FIFO_data_out //salida FIFO_data_out
 );
 
   reg [DATA_WIDTH-1:0] ram [0:ADDR_WIDTH-1]; //Tamaño de la memoria
 
   always @(posedge clk) begin 
         if (write_enable) ram[wr_ptr] <= FIFO_data_in; //Escritura
-        //if (read_enable) FIFO_data_out <= ram[rd_ptr]; //Lectura
+        if (read_enable) FIFO_data_out <= ram[rd_ptr]; //Lectura
       end
-      assign FIFO_data_out = ram[rd_ptr];
   
 endmodule

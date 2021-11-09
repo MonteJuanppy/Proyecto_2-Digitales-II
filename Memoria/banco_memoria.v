@@ -1,4 +1,3 @@
-//Juan Ignacio Montealegre Salazar
 //Proyecto II
 //Desarrollo de Memoria
 //5-11-2012

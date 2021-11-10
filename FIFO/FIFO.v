@@ -21,39 +21,45 @@ module FIFO #(
     output FIFO_almost_empty, //Indica cuando queda mucho espacio en memoria
     output FIFO_almost_full); //Indica cuando queda poco espacio en memoria
 
-  reg [(ADDR_WIDTH-1):0] espacios_disponibles = 0; //registro para llevar cuenta de espacios disponibles 
-  wire [DATA_WIDTH-1:0] memory_data_out; //cable para salida de la memoria
+  reg [(ADDR_WIDTH-1):0] espacios_ocupados =0; //registro para llevar cuenta de espacios disponibles 
 
-  assign FIFO_empty = (espacios_disponibles == 0);
-  assign FIFO_full = (espacios_disponibles == ADDR_WIDTH);
-  assign FIFO_almost_empty = (espacios_disponibles == 2);
-  assign FIFO_almost_full = (espacios_disponibles == ADDR_WIDTH-2);
+  assign FIFO_empty = (espacios_ocupados == 0);
+  assign FIFO_full = (espacios_ocupados == ADDR_WIDTH);
+  assign FIFO_almost_empty = ((espacios_ocupados <= 2)&(espacios_ocupados != 0));
+  assign FIFO_almost_full = ((espacios_ocupados >= ADDR_WIDTH-2)&(espacios_ocupados != ADDR_WIDTH));
 
-  reg [(ADDR_WIDTH-1):0]  rd_ptr = 0, wr_ptr = 0; //registros para contar datos leidos y escritos
+  reg [2:0]  rd_ptr, wr_ptr; //registros para contar datos leidos y escritos
 
   always @ (posedge clk) begin 
   if (Enable==1) begin 
-    if (!Reset) begin 
+
+    if (Reset == 0) begin 
       rd_ptr <= 0; 
       wr_ptr <= 0;
-      espacios_disponibles <= 0;
+      espacios_ocupados <= 0;
       end 
 
     else begin
 
-    if ((read_enable == 1) & (wr_ptr != 0)) begin 
+    if (read_enable == 1) begin 
       rd_ptr <= rd_ptr + 1; 
     end 
 
-    if ((write_enable == 1) & (espacios_disponibles < ADDR_WIDTH)) begin
+    else rd_ptr <= rd_ptr;
+
+    if (write_enable == 1) begin
       wr_ptr  <= wr_ptr + 1; 
       end 
 
-    if (wr_ptr==ADDR_WIDTH) wr_ptr=0; 
-    else if (rd_ptr==ADDR_WIDTH) rd_ptr=0; 
+    else wr_ptr  <= wr_ptr;
 
-    if (write_enable & !read_enable) espacios_disponibles <= espacios_disponibles + 1;
-    if (!write_enable & read_enable) espacios_disponibles <= espacios_disponibles - 1;
+    //if (wr_ptr == ADDR_WIDTH) wr_ptr = 0; 
+    //else if (rd_ptr == ADDR_WIDTH) rd_ptr = 0; 
+
+    if (write_enable & !read_enable) espacios_ocupados <= espacios_ocupados + 1;
+    else;
+    if (!write_enable & read_enable) espacios_ocupados <= espacios_ocupados - 1;
+    else;
 
     end
     end
@@ -64,8 +70,8 @@ module FIFO #(
 		   .FIFO_data_out	(FIFO_data_out[(DATA_WIDTH-1):0]),
 		   // Inputs
 		   .FIFO_data_in	(FIFO_data_in[(DATA_WIDTH-1):0]),
-		   .wr_ptr		(wr_ptr[(ADDR_WIDTH-1):0]),
-		   .rd_ptr		(rd_ptr[(ADDR_WIDTH-1):0]),
+		   .wr_ptr		(wr_ptr[2:0]),
+		   .rd_ptr		(rd_ptr[2:0]),
 		   .clk			(clk),
 		   .write_enable	(write_enable),
 		   .read_enable		(read_enable));

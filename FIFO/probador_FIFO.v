@@ -35,10 +35,13 @@ module probador_FIFO #(
 	initial begin
 	$dumpfile("FIFO.vcd");
 	$dumpvars;
-
+    @(posedge clk);
+    Enable = 1;
+    repeat(2)
 	@(posedge clk);
     Reset = 1;
-    Enable = 1;
+    @(posedge clk);
+    
     write_enable = 1;
 
     @(posedge clk);

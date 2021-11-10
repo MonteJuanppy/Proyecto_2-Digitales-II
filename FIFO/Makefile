@@ -7,7 +7,7 @@ CC = iverilog
 PP = vvp
 
 Compile: banco_FIFO.v FIFO.v probador_FIFO.v 
-	emacs --batch FIFO.v -f verilog-batch-auto
+	#emacs --batch FIFO.v -f verilog-batch-auto
 	yosys -s FIFO.ys
 	sed -i 's/FIFO/FIFO_synth/g' FIFO_synth.v
 	sed -i 's/memoria/memoria_synth/g' FIFO_synth.v

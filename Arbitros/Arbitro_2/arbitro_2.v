@@ -3,12 +3,9 @@
 //Version 1
 //Modulo de Arbitro 2
 
-module arbitro_2 #(
-  parameter DATA_WIDTH=8,          //width of data bus
-  parameter ADDR_WIDTH=8)           //width of addresses buses
-(output Pop,
+module arbitro_2 (output reg Pop,
   input clk,
-  output [3:0] Push,
+  output reg [3:0] Push,
   input FIFO_empty,
   input [3:0] Almost_full,
   input [1:0] class);
@@ -30,5 +27,5 @@ always @(posedge clk) begin
         3: Push = 4'b1000;
         default: Push = 0;
     endcase
-
+end
 endmodule

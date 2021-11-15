@@ -1,5 +1,4 @@
 //Proyecto II
-//Desarrollo de Memoria
 //14-11-2012
 //Version 1.0
 

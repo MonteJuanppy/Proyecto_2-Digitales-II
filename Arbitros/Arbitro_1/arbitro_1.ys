@@ -1,0 +1,12 @@
+read_verilog arbitro_1.v
+
+hierarchy -check -top arbitro_1
+
+proc; opt; fsm; opt; memory; opt
+
+techmap; opt
+
+clean
+
+write_verilog arbitro_1_synth.v
+show arbitro_1

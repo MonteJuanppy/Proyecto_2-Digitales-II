@@ -6,7 +6,7 @@
 `include "memoria.v"
 
 module FIFO #(
-  parameter DATA_WIDTH=8,          //width of data bus
+  parameter DATA_WIDTH=12,          //width of data bus
   parameter ADDR_WIDTH=8           //width of addresses buses
 )
     (input [DATA_WIDTH-1:0] FIFO_data_in, //Entrada de datos

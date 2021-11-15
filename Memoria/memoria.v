@@ -6,7 +6,7 @@
 //Tambien de: https://yamin.cis.k.hosei.ac.jp/fpga/verilog-memory.html
 
 module memoria #(
-  parameter DATA_WIDTH=8, //tamaño de datos FIFO_data_in
+  parameter DATA_WIDTH=12, //tamaño de datos FIFO_data_in
   parameter ADDR_WIDTH=8)  //tamaño de direcciones
 
 (input [(DATA_WIDTH-1):0] FIFO_data_in, //entrada FIFO_data_in 

@@ -1,0 +1,12 @@
+read_verilog contador.v
+
+hierarchy -check -top contador
+
+proc; opt; fsm; opt; memory; opt
+
+techmap; opt
+
+clean
+
+write_verilog contador_synth.v
+show contador

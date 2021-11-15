@@ -50,12 +50,12 @@ module banco_FIFO #(
 				// Outputs
 				.FIFO_synth_almost_empty(FIFO_synth_almost_empty),
 				.FIFO_synth_almost_full(FIFO_synth_almost_full),
-				.FIFO_synth_data_out(FIFO_synth_data_out[7:0]),
+				.FIFO_synth_data_out(FIFO_synth_data_out[11:0]),
 				.FIFO_synth_empty(FIFO_synth_empty),
 				.FIFO_synth_full(FIFO_synth_full),
 				// Inputs
 				.Enable		(Enable),
-				.FIFO_data_in	(FIFO_data_in[7:0]),
+				.FIFO_data_in	(FIFO_data_in[11:0]),
 				.Reset		(Reset),
 				.clk		(clk),
 				.read_enable	(read_enable),

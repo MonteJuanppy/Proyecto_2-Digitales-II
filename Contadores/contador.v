@@ -4,14 +4,18 @@
 //Modulo de Contadores
 
 module contador 
-(input Push,
+(input push,
   input clk,
-  output cuenta);
+  output reg [2:0] cuenta);
 
-initial cuenta = 0;
+initial cuenta = 3'b000;
 
 always @(posedge clk) begin
     //Por cada push se incrementa la cantidad de datos
-  if (Push) cuenta = cuenta + 1;
+  if (push) cuenta <= cuenta + 1;
+  else;
+
+end
+
 endmodule
 

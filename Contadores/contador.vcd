@@ -1,0 +1,175 @@
+$date
+	Mon Nov 15 11:57:50 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module banco_contador $end
+$var wire 1 ! push $end
+$var wire 3 " cuenta_synth [2:0] $end
+$var wire 3 # cuenta [2:0] $end
+$var wire 1 $ clk $end
+$scope module conductual $end
+$var wire 1 ! push $end
+$var wire 1 $ clk $end
+$var reg 3 % cuenta [2:0] $end
+$upscope $end
+$scope module estructural $end
+$var wire 1 ! push $end
+$var wire 1 $ clk $end
+$var wire 32 & _02_ [31:0] $end
+$var wire 32 ' _01_ [31:0] $end
+$var wire 3 ( _00_ [2:0] $end
+$var reg 3 ) cuenta [2:0] $end
+$upscope $end
+$scope module probador $end
+$var wire 3 * cuenta [2:0] $end
+$var wire 3 + cuenta_synth [2:0] $end
+$var reg 1 $ clk $end
+$var reg 1 ! push $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 +
+b0 *
+b0 )
+b0 (
+b0z001 '
+b0z00 &
+b0 %
+0$
+b0 #
+b0 "
+0!
+$end
+#10
+1$
+#20
+0$
+#30
+b1 (
+1!
+1$
+#40
+0$
+#50
+b10 (
+b0z010 '
+b0z01 &
+b1 #
+b1 %
+b1 *
+b1 "
+b1 )
+b1 +
+1$
+#60
+0$
+#70
+b11 (
+b0z011 '
+b0z00 &
+b10 "
+b10 )
+b10 +
+b10 #
+b10 %
+b10 *
+1$
+#80
+0$
+#90
+b0z100 '
+b0z11 &
+b11 #
+b11 %
+b11 *
+b11 "
+b11 )
+b11 +
+b11 (
+0!
+1$
+#100
+0$
+#110
+1$
+#120
+0$
+#130
+1$
+#139
+b100 (
+1!
+#140
+0$
+#150
+b101 (
+b0z101 '
+b0z00 &
+b100 "
+b100 )
+b100 +
+b100 #
+b100 %
+b100 *
+1$
+#160
+0$
+#170
+b110 (
+b0z110 '
+b0z01 &
+b101 #
+b101 %
+b101 *
+b101 "
+b101 )
+b101 +
+1$
+#180
+0$
+#190
+b111 (
+b0z111 '
+b0z00 &
+b110 "
+b110 )
+b110 +
+b110 #
+b110 %
+b110 *
+1$
+#200
+0$
+#210
+b0 (
+b0z000 '
+b0z11 &
+b111 #
+b111 %
+b111 *
+b111 "
+b111 )
+b111 +
+1$
+#220
+0$
+#230
+b1 (
+b0z001 '
+b0z00 &
+b0 "
+b0 )
+b0 +
+b0 #
+b0 %
+b0 *
+1$
+#240
+0$

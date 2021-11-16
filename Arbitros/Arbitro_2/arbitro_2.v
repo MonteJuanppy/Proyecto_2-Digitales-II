@@ -23,7 +23,7 @@ always @(posedge clk) begin
     case (class)
         0: Push = 4'b0001;
         1: Push = 4'b0010;
-        2: Push = 4'b0100;
+        2: Push = 4'b0100; 
         3: Push = 4'b1000;
         default: Push = 0;
     endcase

@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Mon Nov 15 20:25:42 2021
+[*] Tue Nov 16 04:54:24 2021
 [*]
 [dumpfile] "/home/montejuanppy/Documents/Circuitos_DIgitales_II/Proyecto_II/Proyecto_2-Digitales-II/Arbitros/Arbitro_1/arbitro_1.vcd"
-[dumpfile_mtime] "Mon Nov 15 20:21:45 2021"
-[dumpfile_size] 7385
+[dumpfile_mtime] "Tue Nov 16 04:50:49 2021"
+[dumpfile_size] 7222
 [savefile] "/home/montejuanppy/Documents/Circuitos_DIgitales_II/Proyecto_II/Proyecto_2-Digitales-II/Arbitros/Arbitro_1/arbitro_1.gtkw"
 [timestart] 0
 [size] 1848 1016
-[pos] -146 -146
-*-12.058172 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -134 -134
+*-12.058172 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [sst_width] 233
 [signals_width] 158
 [sst_expanded] 1
@@ -18,10 +18,10 @@
 -Arbitro_1
 @28
 banco_arbitro_1.clk
-@22
 banco_arbitro_1.Almost_full[3:0]
+@29
 banco_arbitro_1.FIFO_empty[3:0]
-@28
+@24
 banco_arbitro_1.dest[1:0]
 @200
 -Conductual

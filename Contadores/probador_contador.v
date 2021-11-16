@@ -8,8 +8,8 @@ module probador_contador
                     
 (output reg clk,   //señal de reloj
   output reg push, //push
-  input [2:0] cuenta,
-  input [2:0] cuenta_synth);
+  input [5:0]  cuenta,
+  input [5:0]  cuenta_synth);
 
     initial clk <= 0;
     initial push <= 0;
@@ -32,6 +32,9 @@ module probador_contador
     #0.9 push = 1;
     @(posedge clk);
     
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
     @(posedge clk);
     @(posedge clk);
     @(posedge clk);

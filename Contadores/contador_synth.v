@@ -4,24 +4,29 @@
 (* src = "contador_synth.v:6" *)
 module contador_synth(push, clk, cuenta);
   (* src = "contador_synth.v:13" *)
-  wire [2:0] _00_;
+  wire [5:0] _00_;
   (* src = "contador_synth.v:15" *)
-  (* unused_bits = "3" *)
+  (* unused_bits = "6" *)
   wire [31:0] _01_;
   (* src = "contador_synth.v:15|<techmap.v>:260|<techmap.v>:203" *)
-  (* unused_bits = "2" *)
+  (* unused_bits = "5" *)
   wire [31:0] _02_;
+  (* src = "contador_synth.v:15|<techmap.v>:260|<techmap.v>:222" *)
+  wire _03_;
   (* src = "contador_synth.v:8" *)
   input clk;
-  (* init = 3'h0 *)
+  (* init = 6'h00 *)
   (* src = "contador_synth.v:9" *)
-  output [2:0] cuenta;
-  reg [2:0] cuenta = 3'h0;
+  output [5:0] cuenta;
+  reg [5:0] cuenta = 6'h00;
   (* src = "contador_synth.v:7" *)
   input push;
   assign _00_[0] = push ? (* src = "contador_synth.v:15" *) _01_[0] : cuenta[0];
   assign _00_[1] = push ? (* src = "contador_synth.v:15" *) _01_[1] : cuenta[1];
   assign _00_[2] = push ? (* src = "contador_synth.v:15" *) _01_[2] : cuenta[2];
+  assign _00_[3] = push ? (* src = "contador_synth.v:15" *) _01_[3] : cuenta[3];
+  assign _00_[4] = push ? (* src = "contador_synth.v:15" *) _01_[4] : cuenta[4];
+  assign _00_[5] = push ? (* src = "contador_synth.v:15" *) _01_[5] : cuenta[5];
   (* src = "contador_synth.v:13" *)
   always @(posedge clk)
       cuenta[0] <= _00_[0];
@@ -31,10 +36,26 @@ module contador_synth(push, clk, cuenta);
   (* src = "contador_synth.v:13" *)
   always @(posedge clk)
       cuenta[2] <= _00_[2];
-  assign _01_[0] = cuenta[0] ^(* src = "contador_synth.v:15|<techmap.v>:262" *)  1'h1;
-  assign _02_[1] = cuenta[1] &(* src = "contador_synth.v:15|<techmap.v>:260|<techmap.v>:221" *)  cuenta[0];
+  (* src = "contador_synth.v:13" *)
+  always @(posedge clk)
+      cuenta[3] <= _00_[3];
+  (* src = "contador_synth.v:13" *)
+  always @(posedge clk)
+      cuenta[4] <= _00_[4];
+  (* src = "contador_synth.v:13" *)
+  always @(posedge clk)
+      cuenta[5] <= _00_[5];
   assign _01_[1] = cuenta[1] ^(* src = "contador_synth.v:15|<techmap.v>:263" *)  cuenta[0];
   assign _01_[2] = cuenta[2] ^(* src = "contador_synth.v:15|<techmap.v>:263" *)  _02_[1];
-  assign _01_[31:4] = 28'h0000000;
-  assign { _02_[31:2], _02_[0] } = { 29'h00000000, _01_[3], cuenta[0] };
+  assign _01_[3] = cuenta[3] ^(* src = "contador_synth.v:15|<techmap.v>:263" *)  _02_[2];
+  assign _01_[4] = cuenta[4] ^(* src = "contador_synth.v:15|<techmap.v>:263" *)  _02_[3];
+  assign _01_[5] = cuenta[5] ^(* src = "contador_synth.v:15|<techmap.v>:263" *)  _02_[4];
+  assign _01_[0] = cuenta[0] ^(* src = "contador_synth.v:15|<techmap.v>:262" *)  1'h1;
+  assign _02_[1] = cuenta[1] &(* src = "contador_synth.v:15|<techmap.v>:260|<techmap.v>:221" *)  cuenta[0];
+  assign _02_[3] = _03_ &(* src = "contador_synth.v:15|<techmap.v>:260|<techmap.v>:221" *)  _02_[1];
+  assign _03_ = cuenta[3] &(* src = "contador_synth.v:15|<techmap.v>:260|<techmap.v>:222" *)  cuenta[2];
+  assign _02_[2] = cuenta[2] &(* src = "contador_synth.v:15|<techmap.v>:260|<techmap.v>:229" *)  _02_[1];
+  assign _02_[4] = cuenta[4] &(* src = "contador_synth.v:15|<techmap.v>:260|<techmap.v>:229" *)  _02_[3];
+  assign _01_[31:7] = 25'h0000000;
+  assign { _02_[31:5], _02_[0] } = { 26'h0000000, _01_[6], cuenta[0] };
 endmodule

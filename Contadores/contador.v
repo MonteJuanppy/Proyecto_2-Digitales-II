@@ -6,7 +6,7 @@
 module contador 
 (input push,
   input clk,
-  output reg [2:0] cuenta);
+  output reg [5:0] cuenta);
 
 initial cuenta = 3'b000;
 

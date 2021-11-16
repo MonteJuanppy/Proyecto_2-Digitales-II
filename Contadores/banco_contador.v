@@ -17,20 +17,20 @@ module banco_contador;
     //Wires
     wire clk; //señal de reloj
 	wire push; //señal de push
-	wire [2:0] cuenta; //señal de cuenta
-    wire [2:0] cuenta_synth; //señal de cuenta
+	wire [5:0]  cuenta; //señal de cuenta
+    wire [5:0]  cuenta_synth; //señal de cuenta
     
 	// Se instancia el módulo de memoria conductual
 	contador conductual(/*AUTOINST*/
 			    // Outputs
-			    .cuenta		(cuenta[2:0]),
+			    .cuenta		(cuenta[5:0] ),
 			    // Inputs
 			    .push		(push),
 			    .clk		(clk));
 
     contador_synth estructural(/*AUTOINST*/
 			       // Outputs
-			       .cuenta	(cuenta_synth[2:0]),
+			       .cuenta	(cuenta_synth[5:0]),
 			       // Inputs
 			       .clk		(clk),
 			       .push		(push));
@@ -41,7 +41,7 @@ module banco_contador;
 				   .clk			(clk),
 				   .push		(push),
 				   // Inputs
-				   .cuenta		(cuenta[2:0]),
-				   .cuenta_synth	(cuenta_synth[2:0]));
+				   .cuenta		(cuenta[5:0]),
+				   .cuenta_synth	(cuenta_synth[5:0]));
 
 endmodule

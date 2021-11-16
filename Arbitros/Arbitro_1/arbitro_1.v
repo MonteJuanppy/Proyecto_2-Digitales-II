@@ -14,6 +14,7 @@ module arbitro_1 #(
   input [1:0] dest);
 
 reg [3:0] contador = 0; //Contador para llevar a cabo lógica de prioridad.
+reg [1:0] count2 = 0;
 
 always @(posedge clk) begin
   //Cuando el transmisor está Empty o algún receptor
@@ -46,10 +47,13 @@ always @(posedge clk) begin
   end
 
   else begin
-   if (FIFO_empty[0]) Pops <= 4'b0001;
-   else if (FIFO_empty[1]) Pops <= 4'b0010;
-   else if (FIFO_empty[2]) Pops <= 4'b0010;
-   else if (FIFO_empty[3]) Pops <= 4'b0010;
+  case (count2)
+        0: if (!FIFO_empty[0]) Pops <= 4'b0001;
+        1: if (!FIFO_empty[1]) Pops <= 4'b0010;
+        2: if (!FIFO_empty[2]) Pops <= 4'b0100;
+        3: if (!FIFO_empty[3]) Pops <= 4'b1000;
+        default: Pops = 0;
+  endcase
 
   end
 

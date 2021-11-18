@@ -6,13 +6,25 @@
 
 module probador_contador
                     
-(output reg clk,   //señal de reloj
-  output reg push, //push
-  input [5:0]  cuenta,
-  input [5:0]  cuenta_synth);
+(output reg push0,
+output reg push1,
+output reg push2,
+output reg push3,
+output reg push4,
+output reg req,
+output reg [2:0] idx,
+  output reg clk,
+  input [5:0] data,
+  input valid);
 
     initial clk <= 0;
-    initial push <= 0;
+    initial push0 <= 0;
+    initial push1 <= 0;
+    initial push2 <= 0;
+    initial push3 <= 0;
+    initial push4 <= 0;
+    initial req <= 0;
+    initial idx <=0;
     
     always #1 clk <= ~clk;
 
@@ -22,19 +34,22 @@ module probador_contador
 
     @(posedge clk);
     @(posedge clk);
-    push = 1;
+    push0 = 1;
+    @(posedge clk);
+    req = 1;
     @(posedge clk);
     @(posedge clk);
-    @(posedge clk);
-    #0.01 push = 0;
-    @(posedge clk);
-    @(posedge clk);
-    #0.9 push = 1;
-    @(posedge clk);
-    
+    #0.9  push1 = 1; 
     @(posedge clk);
     @(posedge clk);
+    #0.9 push2 = 1;
     @(posedge clk);
+    @(posedge clk);
+    #0.9 push0 = 0;
+
+    @(posedge clk);
+    @(posedge clk);
+    #0.9 idx = 1;
     @(posedge clk);
     @(posedge clk);
     @(posedge clk);

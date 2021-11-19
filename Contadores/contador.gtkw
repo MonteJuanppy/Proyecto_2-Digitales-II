@@ -1,17 +1,17 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Thu Nov 18 19:32:10 2021
+[*] Fri Nov 19 03:41:20 2021
 [*]
 [dumpfile] "/home/montejuanppy/Documents/Circuitos_DIgitales_II/Proyecto_II/Proyecto_2-Digitales-II/Contadores/contador.vcd"
-[dumpfile_mtime] "Thu Nov 18 19:30:44 2021"
+[dumpfile_mtime] "Fri Nov 19 03:38:34 2021"
 [dumpfile_size] 5783
 [savefile] "/home/montejuanppy/Documents/Circuitos_DIgitales_II/Proyecto_II/Proyecto_2-Digitales-II/Contadores/contador.gtkw"
 [timestart] 0
 [size] 1848 1016
-[pos] -196 -196
-*-12.049993 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -39 -39
+*-12.074673 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [sst_width] 233
-[signals_width] 150
+[signals_width] 174
 [sst_expanded] 1
 [sst_vpaned_height] 289
 @200
@@ -19,12 +19,12 @@
 @28
 banco_contador.clk
 banco_contador.req
+banco_contador.idx[2:0]
 banco_contador.push0
 banco_contador.push1
 banco_contador.push2
 banco_contador.push3
 banco_contador.push4
-banco_contador.idx[2:0]
 @200
 -Conductual
 @22

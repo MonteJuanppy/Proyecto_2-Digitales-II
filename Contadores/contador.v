@@ -15,8 +15,8 @@ input [2:0] idx,
   output reg [5:0] data,
   output reg valid);
 
-initial data = 0;
-initial valid = 0;
+initial data <= 0;
+initial valid <= 0;
 reg [3:0] cuenta0 = 0;
 reg [3:0] cuenta1 = 0;
 reg [3:0] cuenta2 = 0;
@@ -24,7 +24,7 @@ reg [3:0] cuenta3 = 0;
 reg [3:0] cuenta4 = 0;
 
 always @(posedge clk) begin
-    //Por cada push se incrementa la cantidad de datos
+  //Por cada push se incrementa la cantidad de datos
   
   if (push0) cuenta0 <= cuenta0 + 1;
 
@@ -37,7 +37,6 @@ always @(posedge clk) begin
   if (push4) cuenta4 <= cuenta4 + 1;
 
   if (req) begin
-
     case (idx)
       0:  data <= cuenta0;
       1:  data <= cuenta1;
@@ -47,9 +46,9 @@ always @(posedge clk) begin
 
       default: data = 0;
     endcase
-    valid = 1;
+    valid <= 1;
   end
-  else valid = 0;
+  else valid <= 0;
 end
 
 endmodule

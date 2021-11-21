@@ -1,0 +1,12 @@
+read_verilog FSM.v
+
+hierarchy -check -top FSM
+
+proc; opt; fsm; opt; memory; opt
+
+techmap; opt
+
+clean
+
+write_verilog FSM_synth.v
+show FSM

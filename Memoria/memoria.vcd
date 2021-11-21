@@ -1,5 +1,5 @@
 $date
-	Tue Nov  9 10:45:32 2021
+	Sun Nov 21 12:21:52 2021
 $end
 $version
 	Icarus Verilog
@@ -13,17 +13,17 @@ $var wire 8 " wr_ptr [7:0] $end
 $var wire 1 # read_enable $end
 $var wire 8 $ rd_ptr [7:0] $end
 $var wire 1 % clk $end
-$var wire 8 & FIFO_data_out_synth [7:0] $end
-$var wire 8 ' FIFO_data_out [7:0] $end
-$var wire 8 ( FIFO_data_in [7:0] $end
+$var wire 12 & FIFO_data_out_synth [11:0] $end
+$var wire 12 ' FIFO_data_out [11:0] $end
+$var wire 12 ( FIFO_data_in [11:0] $end
 $scope module conductual $end
 $var wire 1 ! write_enable $end
 $var wire 8 ) wr_ptr [7:0] $end
 $var wire 1 # read_enable $end
 $var wire 8 * rd_ptr [7:0] $end
 $var wire 1 % clk $end
-$var wire 8 + FIFO_data_in [7:0] $end
-$var reg 8 , FIFO_data_out [7:0] $end
+$var wire 12 + FIFO_data_in [11:0] $end
+$var reg 12 , FIFO_data_out [11:0] $end
 $upscope $end
 $scope module estructural $end
 $var wire 1 - _002_ $end
@@ -54,38 +54,38 @@ $var wire 8 D wr_ptr [7:0] $end
 $var wire 1 # read_enable $end
 $var wire 8 E rd_ptr [7:0] $end
 $var wire 1 % clk $end
-$var wire 8 F _040_ [7:0] $end
-$var wire 8 G _039_ [7:0] $end
-$var wire 8 H _038_ [7:0] $end
-$var wire 8 I _037_ [7:0] $end
-$var wire 8 J _036_ [7:0] $end
-$var wire 8 K _035_ [7:0] $end
-$var wire 8 L _034_ [7:0] $end
-$var wire 8 M _033_ [7:0] $end
-$var wire 8 N _024_ [7:0] $end
-$var wire 8 O _023_ [7:0] $end
-$var wire 8 P _022_ [7:0] $end
-$var wire 8 Q _021_ [7:0] $end
-$var wire 8 R _020_ [7:0] $end
-$var wire 8 S _019_ [7:0] $end
-$var wire 8 T _018_ [7:0] $end
-$var wire 8 U _017_ [7:0] $end
-$var wire 8 V _001_ [7:0] $end
+$var wire 12 F _040_ [11:0] $end
+$var wire 12 G _039_ [11:0] $end
+$var wire 12 H _038_ [11:0] $end
+$var wire 12 I _037_ [11:0] $end
+$var wire 12 J _036_ [11:0] $end
+$var wire 12 K _035_ [11:0] $end
+$var wire 12 L _034_ [11:0] $end
+$var wire 12 M _033_ [11:0] $end
+$var wire 12 N _024_ [11:0] $end
+$var wire 12 O _023_ [11:0] $end
+$var wire 12 P _022_ [11:0] $end
+$var wire 12 Q _021_ [11:0] $end
+$var wire 12 R _020_ [11:0] $end
+$var wire 12 S _019_ [11:0] $end
+$var wire 12 T _018_ [11:0] $end
+$var wire 12 U _017_ [11:0] $end
+$var wire 12 V _001_ [11:0] $end
 $var wire 8 W _000_ [7:0] $end
-$var wire 8 X FIFO_data_in [7:0] $end
-$var reg 8 Y FIFO_data_out_synth [7:0] $end
-$var reg 8 Z \ram[0] [7:0] $end
-$var reg 8 [ \ram[1] [7:0] $end
-$var reg 8 \ \ram[2] [7:0] $end
-$var reg 8 ] \ram[3] [7:0] $end
-$var reg 8 ^ \ram[4] [7:0] $end
-$var reg 8 _ \ram[5] [7:0] $end
-$var reg 8 ` \ram[6] [7:0] $end
-$var reg 8 a \ram[7] [7:0] $end
+$var wire 12 X FIFO_data_in [11:0] $end
+$var reg 12 Y FIFO_data_out_synth [11:0] $end
+$var reg 12 Z \ram[0] [11:0] $end
+$var reg 12 [ \ram[1] [11:0] $end
+$var reg 12 \ \ram[2] [11:0] $end
+$var reg 12 ] \ram[3] [11:0] $end
+$var reg 12 ^ \ram[4] [11:0] $end
+$var reg 12 _ \ram[5] [11:0] $end
+$var reg 12 ` \ram[6] [11:0] $end
+$var reg 12 a \ram[7] [11:0] $end
 $upscope $end
 $scope module probador $end
-$var wire 8 b FIFO_data_out [7:0] $end
-$var reg 8 c FIFO_data_in [7:0] $end
+$var wire 12 b FIFO_data_out [11:0] $end
+$var reg 12 c FIFO_data_in [11:0] $end
 $var reg 1 % clk $end
 $var reg 8 d rd_ptr [7:0] $end
 $var reg 1 # read_enable $end
@@ -200,7 +200,7 @@ bz000 W
 0%
 #30
 b0 U
-b11111111 L
+b11111011 L
 0<
 b0 N
 1=
@@ -210,22 +210,22 @@ b0 N
 b0 M
 b0 T
 bz001 W
-b11111111 V
+b11111011 V
 b0 R
 b1 "
 b1 )
 b1 D
 b1 e
-b11111111 (
-b11111111 +
-b11111111 X
-b11111111 c
+b11111011 (
+b11111011 +
+b11111011 X
+b11111011 c
 b0 Z
 1%
 #40
 0%
 #50
-b10101111 H
+b101011001111 H
 0=
 1A
 05
@@ -233,48 +233,48 @@ b10101111 H
 03
 1-
 0;
-b11111111 L
+b11111011 L
 bz101 W
-b10101111 V
+b101011001111 V
 b0 '
 b0 ,
 b0 b
-b11111111 [
+b11111011 [
 b0 &
 b0 Y
 b101 "
 b101 )
 b101 D
 b101 e
-b10101111 (
-b10101111 +
-b10101111 X
-b10101111 c
+b101011001111 (
+b101011001111 +
+b101011001111 X
+b101011001111 c
 1%
 #60
 0%
 #70
-b11111111 U
+b11111011 U
 bx I
-b10111 G
-b11111111 N
+b101000010111 G
+b11111011 N
 0@
 1B
 0-
 0A
 0.
 11
-b10101111 S
-b11111111 T
+b101011001111 S
+b11111011 T
 10
 0:
 0/
 19
-b10101111 H
-b10101111 P
-b11111111 R
+b101011001111 H
+b101011001111 P
+b11111011 R
 bz110 W
-b10111 V
+b101000010111 V
 b1 $
 b1 *
 b1 E
@@ -283,34 +283,34 @@ b110 "
 b110 )
 b110 D
 b110 e
-b10111 (
-b10111 +
-b10111 X
-b10111 c
-b10101111 _
+b101000010111 (
+b101000010111 +
+b101000010111 X
+b101000010111 c
+b101011001111 _
 1%
 #80
 0%
 #90
-b10111000 I
+b101111111000 I
 1@
 0B
 1.
 01
 1-
-b10101111 U
+b101011001111 U
 00
 1:
-b10111 G
-b10101111 N
+b101000010111 G
+b101011001111 N
 bz100 W
-b10111000 V
-b11111111 '
-b11111111 ,
-b11111111 b
-b10111 `
-b11111111 &
-b11111111 Y
+b101111111000 V
+b11111011 '
+b11111011 ,
+b11111011 b
+b101000010111 `
+b11111011 &
+b11111011 Y
 b101 $
 b101 *
 b101 E
@@ -319,36 +319,36 @@ b1011100 "
 b1011100 )
 b1011100 D
 b1011100 e
-b10111000 (
-b10111000 +
-b10111000 X
-b10111000 c
+b101111111000 (
+b101111111000 +
+b101111111000 X
+b101111111000 c
 1%
 #100
 0%
 #110
-b1101010 F
-b10111 U
+b101001101010 F
+b101000010111 U
 1C
-b10101111 H
+b101011001111 H
 0@
 12
 0-
 0A
 0.
-b10111 N
+b101000010111 N
 10
 0:
 0/
 09
-b10111000 I
-b10111 O
-b10111000 P
+b101111111000 I
+b101000010111 O
+b101111111000 P
 b0 R
-b10111 S
+b101000010111 S
 bx T
 bz111 W
-b1101010 V
+b101001101010 V
 b110 $
 b110 *
 b110 E
@@ -357,26 +357,26 @@ b10011111 "
 b10011111 )
 b10011111 D
 b10011111 e
-b1101010 (
-b1101010 +
-b1101010 X
-b1101010 c
-b10101111 &
-b10101111 Y
-b10111000 ^
-b10101111 '
-b10101111 ,
-b10101111 b
+b101001101010 (
+b101001101010 +
+b101001101010 X
+b101001101010 c
+b101011001111 &
+b101011001111 Y
+b101111111000 ^
+b101011001111 '
+b101011001111 ,
+b101011001111 b
 1%
 #120
 0%
 #130
-b10111 '
-b10111 ,
-b10111 b
-b1101010 a
-b10111 &
-b10111 Y
+b101000010111 '
+b101000010111 ,
+b101000010111 b
+b101001101010 a
+b101000010111 &
+b101000010111 Y
 1%
 #140
 0%

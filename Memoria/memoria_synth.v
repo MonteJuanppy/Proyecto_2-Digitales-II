@@ -8,7 +8,7 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   (* unused_bits = "3 4 5 6 7" *)
   wire [7:0] _000_;
   (* src = "memoria_synth.v:23" *)
-  wire [7:0] _001_;
+  wire [11:0] _001_;
   wire _002_;
   wire _003_;
   wire _004_;
@@ -24,14 +24,14 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   wire _014_;
   wire _015_;
   wire _016_;
-  wire [7:0] _017_;
-  wire [7:0] _018_;
-  wire [7:0] _019_;
-  wire [7:0] _020_;
-  wire [7:0] _021_;
-  wire [7:0] _022_;
-  wire [7:0] _023_;
-  wire [7:0] _024_;
+  wire [11:0] _017_;
+  wire [11:0] _018_;
+  wire [11:0] _019_;
+  wire [11:0] _020_;
+  wire [11:0] _021_;
+  wire [11:0] _022_;
+  wire [11:0] _023_;
+  wire [11:0] _024_;
   wire _025_;
   wire _026_;
   wire _027_;
@@ -40,29 +40,29 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   wire _030_;
   wire _031_;
   wire _032_;
-  wire [7:0] _033_;
-  wire [7:0] _034_;
-  wire [7:0] _035_;
-  wire [7:0] _036_;
-  wire [7:0] _037_;
-  wire [7:0] _038_;
-  wire [7:0] _039_;
-  wire [7:0] _040_;
+  wire [11:0] _033_;
+  wire [11:0] _034_;
+  wire [11:0] _035_;
+  wire [11:0] _036_;
+  wire [11:0] _037_;
+  wire [11:0] _038_;
+  wire [11:0] _039_;
+  wire [11:0] _040_;
   (* src = "memoria_synth.v:12" *)
-  input [7:0] FIFO_data_in;
+  input [11:0] FIFO_data_in;
   (* src = "memoria_synth.v:18" *)
-  output [7:0] FIFO_data_out_synth;
-  reg [7:0] FIFO_data_out_synth;
+  output [11:0] FIFO_data_out_synth;
+  reg [11:0] FIFO_data_out_synth;
   (* src = "memoria_synth.v:15" *)
   input clk;
-  reg [7:0] \ram[0] ;
-  reg [7:0] \ram[1] ;
-  reg [7:0] \ram[2] ;
-  reg [7:0] \ram[3] ;
-  reg [7:0] \ram[4] ;
-  reg [7:0] \ram[5] ;
-  reg [7:0] \ram[6] ;
-  reg [7:0] \ram[7] ;
+  reg [11:0] \ram[0] ;
+  reg [11:0] \ram[1] ;
+  reg [11:0] \ram[2] ;
+  reg [11:0] \ram[3] ;
+  reg [11:0] \ram[4] ;
+  reg [11:0] \ram[5] ;
+  reg [11:0] \ram[6] ;
+  reg [11:0] \ram[7] ;
   (* src = "memoria_synth.v:14" *)
   input [7:0] rd_ptr;
   (* src = "memoria_synth.v:17" *)
@@ -82,6 +82,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _001_[5] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_data_in[5] : 1'hx;
   assign _001_[6] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_data_in[6] : 1'hx;
   assign _001_[7] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_data_in[7] : 1'hx;
+  assign _001_[8] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_data_in[8] : 1'hx;
+  assign _001_[9] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_data_in[9] : 1'hx;
+  assign _001_[10] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_data_in[10] : 1'hx;
+  assign _001_[11] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_data_in[11] : 1'hx;
   assign _017_[0] = read_enable ? _024_[0] : FIFO_data_out_synth[0];
   assign _017_[1] = read_enable ? _024_[1] : FIFO_data_out_synth[1];
   assign _017_[2] = read_enable ? _024_[2] : FIFO_data_out_synth[2];
@@ -90,6 +94,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _017_[5] = read_enable ? _024_[5] : FIFO_data_out_synth[5];
   assign _017_[6] = read_enable ? _024_[6] : FIFO_data_out_synth[6];
   assign _017_[7] = read_enable ? _024_[7] : FIFO_data_out_synth[7];
+  assign _017_[8] = read_enable ? _024_[8] : FIFO_data_out_synth[8];
+  assign _017_[9] = read_enable ? _024_[9] : FIFO_data_out_synth[9];
+  assign _017_[10] = read_enable ? _024_[10] : FIFO_data_out_synth[10];
+  assign _017_[11] = read_enable ? _024_[11] : FIFO_data_out_synth[11];
   assign _024_[0] = rd_ptr[2] ? _019_[0] : _018_[0];
   assign _024_[1] = rd_ptr[2] ? _019_[1] : _018_[1];
   assign _024_[2] = rd_ptr[2] ? _019_[2] : _018_[2];
@@ -98,6 +106,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _024_[5] = rd_ptr[2] ? _019_[5] : _018_[5];
   assign _024_[6] = rd_ptr[2] ? _019_[6] : _018_[6];
   assign _024_[7] = rd_ptr[2] ? _019_[7] : _018_[7];
+  assign _024_[8] = rd_ptr[2] ? _019_[8] : _018_[8];
+  assign _024_[9] = rd_ptr[2] ? _019_[9] : _018_[9];
+  assign _024_[10] = rd_ptr[2] ? _019_[10] : _018_[10];
+  assign _024_[11] = rd_ptr[2] ? _019_[11] : _018_[11];
   assign _018_[0] = rd_ptr[1] ? _021_[0] : _020_[0];
   assign _018_[1] = rd_ptr[1] ? _021_[1] : _020_[1];
   assign _018_[2] = rd_ptr[1] ? _021_[2] : _020_[2];
@@ -106,6 +118,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _018_[5] = rd_ptr[1] ? _021_[5] : _020_[5];
   assign _018_[6] = rd_ptr[1] ? _021_[6] : _020_[6];
   assign _018_[7] = rd_ptr[1] ? _021_[7] : _020_[7];
+  assign _018_[8] = rd_ptr[1] ? _021_[8] : _020_[8];
+  assign _018_[9] = rd_ptr[1] ? _021_[9] : _020_[9];
+  assign _018_[10] = rd_ptr[1] ? _021_[10] : _020_[10];
+  assign _018_[11] = rd_ptr[1] ? _021_[11] : _020_[11];
   assign _019_[0] = rd_ptr[1] ? _023_[0] : _022_[0];
   assign _019_[1] = rd_ptr[1] ? _023_[1] : _022_[1];
   assign _019_[2] = rd_ptr[1] ? _023_[2] : _022_[2];
@@ -114,6 +130,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _019_[5] = rd_ptr[1] ? _023_[5] : _022_[5];
   assign _019_[6] = rd_ptr[1] ? _023_[6] : _022_[6];
   assign _019_[7] = rd_ptr[1] ? _023_[7] : _022_[7];
+  assign _019_[8] = rd_ptr[1] ? _023_[8] : _022_[8];
+  assign _019_[9] = rd_ptr[1] ? _023_[9] : _022_[9];
+  assign _019_[10] = rd_ptr[1] ? _023_[10] : _022_[10];
+  assign _019_[11] = rd_ptr[1] ? _023_[11] : _022_[11];
   assign _020_[0] = rd_ptr[0] ? \ram[1] [0] : \ram[0] [0];
   assign _020_[1] = rd_ptr[0] ? \ram[1] [1] : \ram[0] [1];
   assign _020_[2] = rd_ptr[0] ? \ram[1] [2] : \ram[0] [2];
@@ -122,6 +142,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _020_[5] = rd_ptr[0] ? \ram[1] [5] : \ram[0] [5];
   assign _020_[6] = rd_ptr[0] ? \ram[1] [6] : \ram[0] [6];
   assign _020_[7] = rd_ptr[0] ? \ram[1] [7] : \ram[0] [7];
+  assign _020_[8] = rd_ptr[0] ? \ram[1] [8] : \ram[0] [8];
+  assign _020_[9] = rd_ptr[0] ? \ram[1] [9] : \ram[0] [9];
+  assign _020_[10] = rd_ptr[0] ? \ram[1] [10] : \ram[0] [10];
+  assign _020_[11] = rd_ptr[0] ? \ram[1] [11] : \ram[0] [11];
   assign _021_[0] = rd_ptr[0] ? \ram[3] [0] : \ram[2] [0];
   assign _021_[1] = rd_ptr[0] ? \ram[3] [1] : \ram[2] [1];
   assign _021_[2] = rd_ptr[0] ? \ram[3] [2] : \ram[2] [2];
@@ -130,6 +154,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _021_[5] = rd_ptr[0] ? \ram[3] [5] : \ram[2] [5];
   assign _021_[6] = rd_ptr[0] ? \ram[3] [6] : \ram[2] [6];
   assign _021_[7] = rd_ptr[0] ? \ram[3] [7] : \ram[2] [7];
+  assign _021_[8] = rd_ptr[0] ? \ram[3] [8] : \ram[2] [8];
+  assign _021_[9] = rd_ptr[0] ? \ram[3] [9] : \ram[2] [9];
+  assign _021_[10] = rd_ptr[0] ? \ram[3] [10] : \ram[2] [10];
+  assign _021_[11] = rd_ptr[0] ? \ram[3] [11] : \ram[2] [11];
   assign _022_[0] = rd_ptr[0] ? \ram[5] [0] : \ram[4] [0];
   assign _022_[1] = rd_ptr[0] ? \ram[5] [1] : \ram[4] [1];
   assign _022_[2] = rd_ptr[0] ? \ram[5] [2] : \ram[4] [2];
@@ -138,6 +166,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _022_[5] = rd_ptr[0] ? \ram[5] [5] : \ram[4] [5];
   assign _022_[6] = rd_ptr[0] ? \ram[5] [6] : \ram[4] [6];
   assign _022_[7] = rd_ptr[0] ? \ram[5] [7] : \ram[4] [7];
+  assign _022_[8] = rd_ptr[0] ? \ram[5] [8] : \ram[4] [8];
+  assign _022_[9] = rd_ptr[0] ? \ram[5] [9] : \ram[4] [9];
+  assign _022_[10] = rd_ptr[0] ? \ram[5] [10] : \ram[4] [10];
+  assign _022_[11] = rd_ptr[0] ? \ram[5] [11] : \ram[4] [11];
   assign _023_[0] = rd_ptr[0] ? \ram[7] [0] : \ram[6] [0];
   assign _023_[1] = rd_ptr[0] ? \ram[7] [1] : \ram[6] [1];
   assign _023_[2] = rd_ptr[0] ? \ram[7] [2] : \ram[6] [2];
@@ -146,6 +178,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _023_[5] = rd_ptr[0] ? \ram[7] [5] : \ram[6] [5];
   assign _023_[6] = rd_ptr[0] ? \ram[7] [6] : \ram[6] [6];
   assign _023_[7] = rd_ptr[0] ? \ram[7] [7] : \ram[6] [7];
+  assign _023_[8] = rd_ptr[0] ? \ram[7] [8] : \ram[6] [8];
+  assign _023_[9] = rd_ptr[0] ? \ram[7] [9] : \ram[6] [9];
+  assign _023_[10] = rd_ptr[0] ? \ram[7] [10] : \ram[6] [10];
+  assign _023_[11] = rd_ptr[0] ? \ram[7] [11] : \ram[6] [11];
   assign _033_[0] = _025_ ? _001_[0] : \ram[0] [0];
   assign _033_[1] = _025_ ? _001_[1] : \ram[0] [1];
   assign _033_[2] = _025_ ? _001_[2] : \ram[0] [2];
@@ -154,6 +190,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _033_[5] = _025_ ? _001_[5] : \ram[0] [5];
   assign _033_[6] = _025_ ? _001_[6] : \ram[0] [6];
   assign _033_[7] = _025_ ? _001_[7] : \ram[0] [7];
+  assign _033_[8] = _025_ ? _001_[8] : \ram[0] [8];
+  assign _033_[9] = _025_ ? _001_[9] : \ram[0] [9];
+  assign _033_[10] = _025_ ? _001_[10] : \ram[0] [10];
+  assign _033_[11] = _025_ ? _001_[11] : \ram[0] [11];
   assign _034_[0] = _026_ ? _001_[0] : \ram[1] [0];
   assign _034_[1] = _026_ ? _001_[1] : \ram[1] [1];
   assign _034_[2] = _026_ ? _001_[2] : \ram[1] [2];
@@ -162,6 +202,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _034_[5] = _026_ ? _001_[5] : \ram[1] [5];
   assign _034_[6] = _026_ ? _001_[6] : \ram[1] [6];
   assign _034_[7] = _026_ ? _001_[7] : \ram[1] [7];
+  assign _034_[8] = _026_ ? _001_[8] : \ram[1] [8];
+  assign _034_[9] = _026_ ? _001_[9] : \ram[1] [9];
+  assign _034_[10] = _026_ ? _001_[10] : \ram[1] [10];
+  assign _034_[11] = _026_ ? _001_[11] : \ram[1] [11];
   assign _035_[0] = _027_ ? _001_[0] : \ram[2] [0];
   assign _035_[1] = _027_ ? _001_[1] : \ram[2] [1];
   assign _035_[2] = _027_ ? _001_[2] : \ram[2] [2];
@@ -170,6 +214,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _035_[5] = _027_ ? _001_[5] : \ram[2] [5];
   assign _035_[6] = _027_ ? _001_[6] : \ram[2] [6];
   assign _035_[7] = _027_ ? _001_[7] : \ram[2] [7];
+  assign _035_[8] = _027_ ? _001_[8] : \ram[2] [8];
+  assign _035_[9] = _027_ ? _001_[9] : \ram[2] [9];
+  assign _035_[10] = _027_ ? _001_[10] : \ram[2] [10];
+  assign _035_[11] = _027_ ? _001_[11] : \ram[2] [11];
   assign _036_[0] = _028_ ? _001_[0] : \ram[3] [0];
   assign _036_[1] = _028_ ? _001_[1] : \ram[3] [1];
   assign _036_[2] = _028_ ? _001_[2] : \ram[3] [2];
@@ -178,6 +226,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _036_[5] = _028_ ? _001_[5] : \ram[3] [5];
   assign _036_[6] = _028_ ? _001_[6] : \ram[3] [6];
   assign _036_[7] = _028_ ? _001_[7] : \ram[3] [7];
+  assign _036_[8] = _028_ ? _001_[8] : \ram[3] [8];
+  assign _036_[9] = _028_ ? _001_[9] : \ram[3] [9];
+  assign _036_[10] = _028_ ? _001_[10] : \ram[3] [10];
+  assign _036_[11] = _028_ ? _001_[11] : \ram[3] [11];
   assign _037_[0] = _029_ ? _001_[0] : \ram[4] [0];
   assign _037_[1] = _029_ ? _001_[1] : \ram[4] [1];
   assign _037_[2] = _029_ ? _001_[2] : \ram[4] [2];
@@ -186,6 +238,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _037_[5] = _029_ ? _001_[5] : \ram[4] [5];
   assign _037_[6] = _029_ ? _001_[6] : \ram[4] [6];
   assign _037_[7] = _029_ ? _001_[7] : \ram[4] [7];
+  assign _037_[8] = _029_ ? _001_[8] : \ram[4] [8];
+  assign _037_[9] = _029_ ? _001_[9] : \ram[4] [9];
+  assign _037_[10] = _029_ ? _001_[10] : \ram[4] [10];
+  assign _037_[11] = _029_ ? _001_[11] : \ram[4] [11];
   assign _038_[0] = _030_ ? _001_[0] : \ram[5] [0];
   assign _038_[1] = _030_ ? _001_[1] : \ram[5] [1];
   assign _038_[2] = _030_ ? _001_[2] : \ram[5] [2];
@@ -194,6 +250,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _038_[5] = _030_ ? _001_[5] : \ram[5] [5];
   assign _038_[6] = _030_ ? _001_[6] : \ram[5] [6];
   assign _038_[7] = _030_ ? _001_[7] : \ram[5] [7];
+  assign _038_[8] = _030_ ? _001_[8] : \ram[5] [8];
+  assign _038_[9] = _030_ ? _001_[9] : \ram[5] [9];
+  assign _038_[10] = _030_ ? _001_[10] : \ram[5] [10];
+  assign _038_[11] = _030_ ? _001_[11] : \ram[5] [11];
   assign _039_[0] = _031_ ? _001_[0] : \ram[6] [0];
   assign _039_[1] = _031_ ? _001_[1] : \ram[6] [1];
   assign _039_[2] = _031_ ? _001_[2] : \ram[6] [2];
@@ -202,6 +262,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _039_[5] = _031_ ? _001_[5] : \ram[6] [5];
   assign _039_[6] = _031_ ? _001_[6] : \ram[6] [6];
   assign _039_[7] = _031_ ? _001_[7] : \ram[6] [7];
+  assign _039_[8] = _031_ ? _001_[8] : \ram[6] [8];
+  assign _039_[9] = _031_ ? _001_[9] : \ram[6] [9];
+  assign _039_[10] = _031_ ? _001_[10] : \ram[6] [10];
+  assign _039_[11] = _031_ ? _001_[11] : \ram[6] [11];
   assign _040_[0] = _032_ ? _001_[0] : \ram[7] [0];
   assign _040_[1] = _032_ ? _001_[1] : \ram[7] [1];
   assign _040_[2] = _032_ ? _001_[2] : \ram[7] [2];
@@ -210,6 +274,10 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _040_[5] = _032_ ? _001_[5] : \ram[7] [5];
   assign _040_[6] = _032_ ? _001_[6] : \ram[7] [6];
   assign _040_[7] = _032_ ? _001_[7] : \ram[7] [7];
+  assign _040_[8] = _032_ ? _001_[8] : \ram[7] [8];
+  assign _040_[9] = _032_ ? _001_[9] : \ram[7] [9];
+  assign _040_[10] = _032_ ? _001_[10] : \ram[7] [10];
+  assign _040_[11] = _032_ ? _001_[11] : \ram[7] [11];
   assign _014_ = ~_000_[0];
   assign _015_ = ~_000_[1];
   assign _016_ = ~_000_[2];
@@ -230,6 +298,14 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   always @(posedge clk)
       \ram[4] [7] <= _037_[7];
   always @(posedge clk)
+      \ram[4] [8] <= _037_[8];
+  always @(posedge clk)
+      \ram[4] [9] <= _037_[9];
+  always @(posedge clk)
+      \ram[4] [10] <= _037_[10];
+  always @(posedge clk)
+      \ram[4] [11] <= _037_[11];
+  always @(posedge clk)
       \ram[2] [0] <= _035_[0];
   always @(posedge clk)
       \ram[2] [1] <= _035_[1];
@@ -245,6 +321,14 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
       \ram[2] [6] <= _035_[6];
   always @(posedge clk)
       \ram[2] [7] <= _035_[7];
+  always @(posedge clk)
+      \ram[2] [8] <= _035_[8];
+  always @(posedge clk)
+      \ram[2] [9] <= _035_[9];
+  always @(posedge clk)
+      \ram[2] [10] <= _035_[10];
+  always @(posedge clk)
+      \ram[2] [11] <= _035_[11];
   always @(posedge clk)
       \ram[0] [0] <= _033_[0];
   always @(posedge clk)
@@ -262,6 +346,14 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   always @(posedge clk)
       \ram[0] [7] <= _033_[7];
   always @(posedge clk)
+      \ram[0] [8] <= _033_[8];
+  always @(posedge clk)
+      \ram[0] [9] <= _033_[9];
+  always @(posedge clk)
+      \ram[0] [10] <= _033_[10];
+  always @(posedge clk)
+      \ram[0] [11] <= _033_[11];
+  always @(posedge clk)
       \ram[5] [0] <= _038_[0];
   always @(posedge clk)
       \ram[5] [1] <= _038_[1];
@@ -277,6 +369,14 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
       \ram[5] [6] <= _038_[6];
   always @(posedge clk)
       \ram[5] [7] <= _038_[7];
+  always @(posedge clk)
+      \ram[5] [8] <= _038_[8];
+  always @(posedge clk)
+      \ram[5] [9] <= _038_[9];
+  always @(posedge clk)
+      \ram[5] [10] <= _038_[10];
+  always @(posedge clk)
+      \ram[5] [11] <= _038_[11];
   always @(posedge clk)
       \ram[1] [0] <= _034_[0];
   always @(posedge clk)
@@ -294,6 +394,14 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   always @(posedge clk)
       \ram[1] [7] <= _034_[7];
   always @(posedge clk)
+      \ram[1] [8] <= _034_[8];
+  always @(posedge clk)
+      \ram[1] [9] <= _034_[9];
+  always @(posedge clk)
+      \ram[1] [10] <= _034_[10];
+  always @(posedge clk)
+      \ram[1] [11] <= _034_[11];
+  always @(posedge clk)
       \ram[3] [0] <= _036_[0];
   always @(posedge clk)
       \ram[3] [1] <= _036_[1];
@@ -309,6 +417,14 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
       \ram[3] [6] <= _036_[6];
   always @(posedge clk)
       \ram[3] [7] <= _036_[7];
+  always @(posedge clk)
+      \ram[3] [8] <= _036_[8];
+  always @(posedge clk)
+      \ram[3] [9] <= _036_[9];
+  always @(posedge clk)
+      \ram[3] [10] <= _036_[10];
+  always @(posedge clk)
+      \ram[3] [11] <= _036_[11];
   always @(posedge clk)
       \ram[6] [0] <= _039_[0];
   always @(posedge clk)
@@ -326,6 +442,14 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   always @(posedge clk)
       \ram[6] [7] <= _039_[7];
   always @(posedge clk)
+      \ram[6] [8] <= _039_[8];
+  always @(posedge clk)
+      \ram[6] [9] <= _039_[9];
+  always @(posedge clk)
+      \ram[6] [10] <= _039_[10];
+  always @(posedge clk)
+      \ram[6] [11] <= _039_[11];
+  always @(posedge clk)
       \ram[7] [0] <= _040_[0];
   always @(posedge clk)
       \ram[7] [1] <= _040_[1];
@@ -342,6 +466,14 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   always @(posedge clk)
       \ram[7] [7] <= _040_[7];
   always @(posedge clk)
+      \ram[7] [8] <= _040_[8];
+  always @(posedge clk)
+      \ram[7] [9] <= _040_[9];
+  always @(posedge clk)
+      \ram[7] [10] <= _040_[10];
+  always @(posedge clk)
+      \ram[7] [11] <= _040_[11];
+  always @(posedge clk)
       FIFO_data_out_synth[0] <= _017_[0];
   always @(posedge clk)
       FIFO_data_out_synth[1] <= _017_[1];
@@ -357,6 +489,14 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
       FIFO_data_out_synth[6] <= _017_[6];
   always @(posedge clk)
       FIFO_data_out_synth[7] <= _017_[7];
+  always @(posedge clk)
+      FIFO_data_out_synth[8] <= _017_[8];
+  always @(posedge clk)
+      FIFO_data_out_synth[9] <= _017_[9];
+  always @(posedge clk)
+      FIFO_data_out_synth[10] <= _017_[10];
+  always @(posedge clk)
+      FIFO_data_out_synth[11] <= _017_[11];
   assign _008_ = _015_ & _016_;
   assign _009_ = _014_ & _008_;
   assign _025_ = _009_ & write_enable;

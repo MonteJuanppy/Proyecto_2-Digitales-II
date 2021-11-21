@@ -14,13 +14,15 @@
 `include "probador_FIFO.v"
 
 module banco_FIFO #(
-  parameter DATA_WIDTH=8, //tamaño de datos FIFO_data_in
+  parameter DATA_WIDTH=12, //tamaño de datos FIFO_data_in
   parameter ADDR_WIDTH=8);  //tamaño de direcciones
 
     //Wires
     wire [(DATA_WIDTH-1):0] FIFO_data_in; //tamaño de datos FIFO_data_in
     wire clk; //señal de reloj
     wire Reset; //señal de reset
+	wire [2:0] interno_bajo; //Señal de umbral baja para almost Empty
+	wire [2:0] interno_alto; //Señal de umbral alta para almost Full
     wire Enable; //señal de enable
 	wire write_enable; //Señal para habilitar escritura
 	wire read_enable; //Señal para habilitar lectura
@@ -40,6 +42,8 @@ module banco_FIFO #(
 			 // Inputs
 			 .FIFO_data_in		(FIFO_data_in[DATA_WIDTH-1:0]),
 			 .clk			(clk),
+			 .interno_bajo		(interno_bajo[2:0]),
+			 .interno_alto		(interno_alto[2:0]),
 			 .Reset			(Reset),
 			 .Enable		(Enable),
 			 .write_enable		(write_enable),
@@ -58,6 +62,8 @@ module banco_FIFO #(
 				.FIFO_data_in	(FIFO_data_in[11:0]),
 				.Reset		(Reset),
 				.clk		(clk),
+				.interno_alto	(interno_alto[2:0]),
+				.interno_bajo	(interno_bajo[2:0]),
 				.read_enable	(read_enable),
 				.write_enable	(write_enable));
 
@@ -68,6 +74,8 @@ module banco_FIFO #(
 				.Reset		(Reset),
 				.Enable		(Enable),
 				.write_enable	(write_enable),
+				.interno_bajo	(interno_bajo[2:0]),
+				.interno_alto	(interno_alto[2:0]),
 				.read_enable	(read_enable),
 				.FIFO_data_in	(FIFO_data_in[DATA_WIDTH-1:0]),
 				// Inputs

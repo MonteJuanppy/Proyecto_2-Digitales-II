@@ -6,7 +6,7 @@
 //Probador
 
 module probador_memoria #(
-            parameter DATA_WIDTH=8, //tamaño de datos FIFO_data_in
+            parameter DATA_WIDTH=12, //tamaño de datos FIFO_data_in
             parameter ADDR_WIDTH=8)  //tamaño de direcciones
                     
 (output reg [(DATA_WIDTH-1):0] FIFO_data_in,  //entrada FIFO_data_in 
@@ -35,28 +35,28 @@ module probador_memoria #(
     write_enable <= 1;
     read_enable <= 1;
     @(posedge clk);
-    FIFO_data_in <= 8'hFF;
+    FIFO_data_in <= 12'hFB;
     wr_ptr <= 8'h01;
     rd_ptr <= 8'h00;
     
 
     @(posedge clk);
-    FIFO_data_in <= 8'hAF;
+    FIFO_data_in <= 12'hACF;
     wr_ptr <= 8'h05;
     rd_ptr <= 8'h00;
 
     @(posedge clk);
-    FIFO_data_in <= 8'h17;
+    FIFO_data_in <= 12'hA17;
     wr_ptr <= 8'h06;
     rd_ptr <= 8'h01;
 
     @(posedge clk);
-    FIFO_data_in <= 8'hB8;
+    FIFO_data_in <= 12'hBF8;
     wr_ptr <= 8'h5C;
     rd_ptr <= 8'h05;
 
     @(posedge clk);
-    FIFO_data_in <= 8'h6A;
+    FIFO_data_in <= 12'hA6A;
     wr_ptr <= 8'h9F;
     rd_ptr <= 8'h06;
 

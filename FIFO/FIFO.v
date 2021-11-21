@@ -11,6 +11,8 @@ module FIFO #(
 )
     (input [DATA_WIDTH-1:0] FIFO_data_in, //Entrada de datos
     input clk, //Señal de reloj
+    input [2:0] interno_bajo, //Señal de umbral baja para almost Empty
+    input [2:0] interno_alto, //Señal de umbral alta para almost Full
     input Reset, //Señal de reset
     input Enable, //Señal de enable
     input write_enable, //Señal para habilitar escritura
@@ -25,8 +27,8 @@ module FIFO #(
 
   assign FIFO_empty = (espacios_ocupados == 0);
   assign FIFO_full = (espacios_ocupados == ADDR_WIDTH);
-  assign FIFO_almost_empty = ((espacios_ocupados <= 2)&(espacios_ocupados != 0));
-  assign FIFO_almost_full = ((espacios_ocupados >= ADDR_WIDTH-2)&(espacios_ocupados != ADDR_WIDTH));
+  assign FIFO_almost_empty = ((espacios_ocupados <= interno_bajo)&(espacios_ocupados != 0));
+  assign FIFO_almost_full = ((espacios_ocupados >= interno_alto)&(espacios_ocupados != ADDR_WIDTH));
 
   reg [2:0]  rd_ptr, wr_ptr; //registros para contar datos leidos y escritos
 

@@ -3,17 +3,17 @@
 (* top =  1  *)
 (* src = "arbitro_1_synth.v:6" *)
 module arbitro_1_synth(Pops, Push, clk, FIFO_empty, Almost_full, dest);
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   wire [3:0] _000_;
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   wire [3:0] _001_;
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   wire [3:0] _002_;
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   wire [3:0] _003_;
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   wire [3:0] _004_;
-  (* src = "arbitro_1_synth.v:45" *)
+  (* src = "arbitro_1_synth.v:43" *)
   (* unused_bits = "4" *)
   wire [31:0] _005_;
   wire [1:0] _006_;
@@ -42,236 +42,236 @@ module arbitro_1_synth(Pops, Push, clk, FIFO_empty, Almost_full, dest);
   wire _029_;
   wire _030_;
   wire _031_;
-  (* src = "arbitro_1_synth.v:32" *)
+  (* src = "arbitro_1_synth.v:30" *)
   wire _032_;
-  (* src = "arbitro_1_synth.v:36" *)
+  (* src = "arbitro_1_synth.v:34" *)
   wire _033_;
-  (* src = "arbitro_1_synth.v:28" *)
+  (* src = "arbitro_1_synth.v:26" *)
   wire _034_;
-  (* src = "arbitro_1_synth.v:32" *)
+  (* src = "arbitro_1_synth.v:30" *)
   wire _035_;
-  (* src = "arbitro_1_synth.v:36" *)
+  (* src = "arbitro_1_synth.v:34" *)
   wire _036_;
-  (* src = "arbitro_1_synth.v:32" *)
+  (* src = "arbitro_1_synth.v:30" *)
   wire _037_;
-  (* src = "arbitro_1_synth.v:36" *)
+  (* src = "arbitro_1_synth.v:34" *)
   wire _038_;
-  (* src = "arbitro_1_synth.v:22" *)
+  (* src = "arbitro_1_synth.v:20" *)
   wire _039_;
   wire [3:0] _040_;
   wire [3:0] _041_;
   wire [3:0] _042_;
   wire [3:0] _043_;
   wire [3:0] _044_;
-  (* src = "arbitro_1_synth.v:22" *)
+  (* src = "arbitro_1_synth.v:20" *)
   wire _045_;
-  (* src = "arbitro_1_synth.v:45|<techmap.v>:260|<techmap.v>:203" *)
+  (* src = "arbitro_1_synth.v:43|<techmap.v>:260|<techmap.v>:203" *)
   (* unused_bits = "3" *)
   wire [31:0] _046_;
-  (* src = "arbitro_1_synth.v:32|<techmap.v>:260|<techmap.v>:203" *)
+  (* src = "arbitro_1_synth.v:30|<techmap.v>:260|<techmap.v>:203" *)
   (* unused_bits = "2" *)
   wire [31:0] _047_;
   wire _048_;
   wire _049_;
   wire _050_;
-  (* src = "arbitro_1_synth.v:36|arbitro_1.v:32|<techmap.v>:260|<techmap.v>:203" *)
+  (* src = "arbitro_1_synth.v:34|arbitro_1.v:30|<techmap.v>:260|<techmap.v>:203" *)
   (* unused_bits = "2" *)
   wire [31:0] _051_;
   wire [31:0] _052_;
   wire _053_;
   wire _054_;
   wire _055_;
-  (* src = "arbitro_1_synth.v:28|<techmap.v>:260|<techmap.v>:203" *)
+  (* src = "arbitro_1_synth.v:26|<techmap.v>:260|<techmap.v>:203" *)
   (* unused_bits = "2" *)
   wire [31:0] _056_;
   wire _057_;
-  (* src = "arbitro_1_synth.v:32|arbitro_1.v:28|<techmap.v>:260|<techmap.v>:203" *)
+  (* src = "arbitro_1_synth.v:30|arbitro_1.v:26|<techmap.v>:260|<techmap.v>:203" *)
   wire [31:0] _058_;
   wire _059_;
-  (* src = "arbitro_1_synth.v:36|arbitro_1.v:28|<techmap.v>:260|<techmap.v>:203" *)
+  (* src = "arbitro_1_synth.v:34|arbitro_1.v:26|<techmap.v>:260|<techmap.v>:203" *)
   (* unused_bits = "2" *)
   wire [31:0] _060_;
   wire _061_;
-  (* src = "arbitro_1_synth.v:64|arbitro_1.v:60|<techmap.v>:445" *)
+  (* src = "arbitro_1_synth.v:62|arbitro_1.v:58|<techmap.v>:445" *)
   wire _062_;
-  (* src = "arbitro_1_synth.v:45|<techmap.v>:260|<techmap.v>:222" *)
+  (* src = "arbitro_1_synth.v:43|<techmap.v>:260|<techmap.v>:222" *)
   wire _063_;
-  (* src = "arbitro_1_synth.v:32|<techmap.v>:260|<techmap.v>:221" *)
+  (* src = "arbitro_1_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)
   wire _064_;
-  (* src = "arbitro_1_synth.v:36|arbitro_1.v:32|<techmap.v>:260|<techmap.v>:221" *)
+  (* src = "arbitro_1_synth.v:34|arbitro_1.v:30|<techmap.v>:260|<techmap.v>:221" *)
   wire _065_;
-  (* src = "arbitro_1_synth.v:36|arbitro_1.v:32|<techmap.v>:260|<techmap.v>:221" *)
+  (* src = "arbitro_1_synth.v:34|arbitro_1.v:30|<techmap.v>:260|<techmap.v>:221" *)
   wire _066_;
-  (* src = "arbitro_1_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)
+  (* src = "arbitro_1_synth.v:26|<techmap.v>:260|<techmap.v>:221" *)
   wire _067_;
-  (* src = "arbitro_1_synth.v:36|arbitro_1.v:28|<techmap.v>:260|<techmap.v>:221" *)
+  (* src = "arbitro_1_synth.v:34|arbitro_1.v:26|<techmap.v>:260|<techmap.v>:221" *)
   wire _068_;
-  (* src = "arbitro_1_synth.v:13" *)
+  (* src = "arbitro_1_synth.v:11" *)
   input [3:0] Almost_full;
-  (* src = "arbitro_1_synth.v:12" *)
+  (* src = "arbitro_1_synth.v:10" *)
   input [3:0] FIFO_empty;
-  (* src = "arbitro_1_synth.v:9" *)
+  (* src = "arbitro_1_synth.v:7" *)
   output [3:0] Pops;
   reg [3:0] Pops;
-  (* src = "arbitro_1_synth.v:10" *)
+  (* src = "arbitro_1_synth.v:8" *)
   output [3:0] Push;
   reg [3:0] Push;
-  (* src = "arbitro_1_synth.v:11" *)
+  (* src = "arbitro_1_synth.v:9" *)
   input clk;
   (* init = 4'h0 *)
-  (* src = "arbitro_1_synth.v:16" *)
-  reg [3:0] contador = 4'h0;
-  (* src = "arbitro_1_synth.v:17" *)
-  wire [1:0] count2;
   (* src = "arbitro_1_synth.v:14" *)
+  reg [3:0] contador = 4'h0;
+  (* src = "arbitro_1_synth.v:15" *)
+  wire [1:0] count2;
+  (* src = "arbitro_1_synth.v:12" *)
   input [1:0] dest;
-  assign _006_[0] = Almost_full[3] |(* src = "arbitro_1_synth.v:22" *)  Almost_full[2];
-  assign _006_[1] = Almost_full[1] |(* src = "arbitro_1_synth.v:22" *)  Almost_full[0];
-  assign _045_ = _006_[0] |(* src = "arbitro_1_synth.v:22" *)  _006_[1];
-  assign _007_[0] = contador[0] |(* src = "arbitro_1_synth.v:40" *)  _025_[1];
-  assign _007_[1] = contador[2] |(* src = "arbitro_1_synth.v:40" *)  _025_[3];
-  assign _028_ = _007_[0] |(* src = "arbitro_1_synth.v:40" *)  _007_[1];
-  assign _029_ = dest[0] |(* src = "arbitro_1_synth.v:63|arbitro_1.v:60" *)  _026_[1];
-  assign _030_ = _027_[0] |(* src = "arbitro_1_synth.v:64|arbitro_1.v:60" *)  _026_[1];
-  assign _031_ = _027_[0] |(* src = "arbitro_1_synth.v:62|arbitro_1.v:60" *)  dest[1];
-  assign _009_[0] = _008_[0] &(* src = "arbitro_1_synth.v:28" *)  _008_[1];
+  assign _006_[0] = Almost_full[3] |(* src = "arbitro_1_synth.v:20" *)  Almost_full[2];
+  assign _006_[1] = Almost_full[1] |(* src = "arbitro_1_synth.v:20" *)  Almost_full[0];
+  assign _045_ = _006_[0] |(* src = "arbitro_1_synth.v:20" *)  _006_[1];
+  assign _007_[0] = contador[0] |(* src = "arbitro_1_synth.v:38" *)  _025_[1];
+  assign _007_[1] = contador[2] |(* src = "arbitro_1_synth.v:38" *)  _025_[3];
+  assign _028_ = _007_[0] |(* src = "arbitro_1_synth.v:38" *)  _007_[1];
+  assign _029_ = dest[0] |(* src = "arbitro_1_synth.v:61|arbitro_1.v:58" *)  _026_[1];
+  assign _030_ = _027_[0] |(* src = "arbitro_1_synth.v:62|arbitro_1.v:58" *)  _026_[1];
+  assign _031_ = _027_[0] |(* src = "arbitro_1_synth.v:60|arbitro_1.v:58" *)  dest[1];
+  assign _009_[0] = _008_[0] &(* src = "arbitro_1_synth.v:26" *)  _008_[1];
   assign _034_ = _057_ | _009_[0];
-  assign _010_[0] = contador[0] &(* src = "arbitro_1_synth.v:32" *)  _025_[1];
-  assign _008_[1] = contador[2] &(* src = "arbitro_1_synth.v:32" *)  _025_[3];
-  assign _011_[0] = _010_[0] &(* src = "arbitro_1_synth.v:32" *)  _008_[1];
+  assign _010_[0] = contador[0] &(* src = "arbitro_1_synth.v:30" *)  _025_[1];
+  assign _008_[1] = contador[2] &(* src = "arbitro_1_synth.v:30" *)  _025_[3];
+  assign _011_[0] = _010_[0] &(* src = "arbitro_1_synth.v:30" *)  _008_[1];
   assign _032_ = _049_ | _011_[0];
-  assign _013_[0] = _012_[0] &(* src = "arbitro_1_synth.v:32|arbitro_1.v:28" *)  _008_[1];
+  assign _013_[0] = _012_[0] &(* src = "arbitro_1_synth.v:30|arbitro_1.v:26" *)  _008_[1];
   assign _035_ = _059_ | _013_[0];
-  assign _008_[0] = _005_[0] &(* src = "arbitro_1_synth.v:36|arbitro_1.v:32" *)  _025_[1];
-  assign _015_[0] = _008_[0] &(* src = "arbitro_1_synth.v:36|arbitro_1.v:32" *)  _014_[1];
+  assign _008_[0] = _005_[0] &(* src = "arbitro_1_synth.v:34|arbitro_1.v:30" *)  _025_[1];
+  assign _015_[0] = _008_[0] &(* src = "arbitro_1_synth.v:34|arbitro_1.v:30" *)  _014_[1];
   assign _033_ = _054_ | _015_[0];
-  assign _014_[1] = _052_[2] &(* src = "arbitro_1_synth.v:36|arbitro_1.v:28" *)  contador[3];
-  assign _016_[0] = _010_[0] &(* src = "arbitro_1_synth.v:36|arbitro_1.v:28" *)  _014_[1];
+  assign _014_[1] = _052_[2] &(* src = "arbitro_1_synth.v:34|arbitro_1.v:26" *)  contador[3];
+  assign _016_[0] = _010_[0] &(* src = "arbitro_1_synth.v:34|arbitro_1.v:26" *)  _014_[1];
   assign _036_ = _061_ | _016_[0];
-  assign _021_[0] = _018_[0] |(* src = "arbitro_1_synth.v:64|arbitro_1.v:60|<techmap.v>:445" *)  _019_[0];
-  assign _021_[1] = _017_[1] |(* src = "arbitro_1_synth.v:64|arbitro_1.v:60|<techmap.v>:445" *)  _020_[1];
-  assign _062_ = _021_[0] |(* src = "arbitro_1_synth.v:64|arbitro_1.v:60|<techmap.v>:445" *)  _021_[1];
-  assign _022_[0] = FIFO_empty[0] |(* src = "arbitro_1_synth.v:23" *)  FIFO_empty[1];
-  assign _022_[1] = FIFO_empty[2] |(* src = "arbitro_1_synth.v:23" *)  FIFO_empty[3];
-  assign _023_ = _022_[0] |(* src = "arbitro_1_synth.v:23" *)  _022_[1];
-  assign _024_ = dest[0] |(* src = "arbitro_1_synth.v:61|arbitro_1.v:60" *)  dest[1];
-  assign _019_[0] = ~(* src = "arbitro_1_synth.v:63|arbitro_1.v:60" *) _029_;
-  assign _018_[0] = ~(* src = "arbitro_1_synth.v:64|arbitro_1.v:60" *) _030_;
-  assign _017_[1] = ~(* src = "arbitro_1_synth.v:62|arbitro_1.v:60" *) _031_;
-  assign _020_[1] = ~(* src = "arbitro_1_synth.v:61|arbitro_1.v:60" *) _024_;
-  assign _039_ = _023_ |(* src = "arbitro_1_synth.v:22" *)  _045_;
-  assign _038_ = _033_ &(* src = "arbitro_1_synth.v:36" *)  _036_;
-  assign _037_ = _032_ &(* src = "arbitro_1_synth.v:32" *)  _035_;
-  assign _004_[0] = FIFO_empty[0] ? (* src = "arbitro_1_synth.v:51" *) Pops[0] : 1'h1;
-  assign _004_[1] = FIFO_empty[0] ? (* src = "arbitro_1_synth.v:51" *) Pops[1] : 1'h0;
-  assign _004_[2] = FIFO_empty[0] ? (* src = "arbitro_1_synth.v:51" *) Pops[2] : 1'h0;
-  assign _004_[3] = FIFO_empty[0] ? (* src = "arbitro_1_synth.v:51" *) Pops[3] : 1'h0;
-  assign _042_[0] = _037_ ? (* src = "arbitro_1_synth.v:32" *) 1'h0 : _041_[0];
-  assign _042_[1] = _037_ ? (* src = "arbitro_1_synth.v:32" *) 1'h1 : _041_[1];
-  assign _042_[2] = _037_ ? (* src = "arbitro_1_synth.v:32" *) 1'h0 : _041_[2];
-  assign _042_[3] = _037_ ? (* src = "arbitro_1_synth.v:32" *) 1'h0 : _041_[3];
-  assign _040_[0] = _028_ ? (* src = "arbitro_1_synth.v:40" *) Pops[0] : 1'h0;
-  assign _040_[1] = _028_ ? (* src = "arbitro_1_synth.v:40" *) Pops[1] : 1'h0;
-  assign _040_[2] = _028_ ? (* src = "arbitro_1_synth.v:40" *) Pops[2] : 1'h0;
-  assign _040_[3] = _028_ ? (* src = "arbitro_1_synth.v:40" *) Pops[3] : 1'h1;
-  assign _041_[0] = _038_ ? (* src = "arbitro_1_synth.v:36" *) 1'h0 : _040_[0];
-  assign _041_[1] = _038_ ? (* src = "arbitro_1_synth.v:36" *) 1'h0 : _040_[1];
-  assign _041_[2] = _038_ ? (* src = "arbitro_1_synth.v:36" *) 1'h1 : _040_[2];
-  assign _041_[3] = _038_ ? (* src = "arbitro_1_synth.v:36" *) 1'h0 : _040_[3];
-  assign _043_[0] = _034_ ? (* src = "arbitro_1_synth.v:28" *) 1'h1 : _042_[0];
-  assign _043_[1] = _034_ ? (* src = "arbitro_1_synth.v:28" *) 1'h0 : _042_[1];
-  assign _043_[2] = _034_ ? (* src = "arbitro_1_synth.v:28" *) 1'h0 : _042_[2];
-  assign _043_[3] = _034_ ? (* src = "arbitro_1_synth.v:28" *) 1'h0 : _042_[3];
-  assign _003_[0] = _023_ ? (* src = "arbitro_1_synth.v:23" *) _004_[0] : _043_[0];
-  assign _003_[1] = _023_ ? (* src = "arbitro_1_synth.v:23" *) _004_[1] : _043_[1];
-  assign _003_[2] = _023_ ? (* src = "arbitro_1_synth.v:23" *) _004_[2] : _043_[2];
-  assign _003_[3] = _023_ ? (* src = "arbitro_1_synth.v:23" *) _004_[3] : _043_[3];
-  assign _002_[0] = _039_ ? (* src = "arbitro_1_synth.v:22" *) contador[0] : _044_[0];
-  assign _002_[1] = _039_ ? (* src = "arbitro_1_synth.v:22" *) contador[1] : _044_[1];
-  assign _002_[2] = _039_ ? (* src = "arbitro_1_synth.v:22" *) contador[2] : _044_[2];
-  assign _002_[3] = _039_ ? (* src = "arbitro_1_synth.v:22" *) contador[3] : _044_[3];
-  assign _000_[0] = _039_ ? (* src = "arbitro_1_synth.v:22" *) 1'h0 : _003_[0];
-  assign _000_[1] = _039_ ? (* src = "arbitro_1_synth.v:22" *) 1'h0 : _003_[1];
-  assign _000_[2] = _039_ ? (* src = "arbitro_1_synth.v:22" *) 1'h0 : _003_[2];
-  assign _000_[3] = _039_ ? (* src = "arbitro_1_synth.v:22" *) 1'h0 : _003_[3];
-  assign _044_[0] = _023_ ? (* src = "arbitro_1_synth.v:23" *) contador[0] : _005_[0];
-  assign _044_[1] = _023_ ? (* src = "arbitro_1_synth.v:23" *) contador[1] : _005_[1];
-  assign _044_[2] = _023_ ? (* src = "arbitro_1_synth.v:23" *) contador[2] : _005_[2];
-  assign _044_[3] = _023_ ? (* src = "arbitro_1_synth.v:23" *) contador[3] : _005_[3];
-  assign _001_[0] = _062_ ? (* src = "arbitro_1_synth.v:64|arbitro_1.v:60|<techmap.v>:445" *) _020_[1] : 1'hx;
-  assign _001_[1] = _062_ ? (* src = "arbitro_1_synth.v:64|arbitro_1.v:60|<techmap.v>:445" *) _017_[1] : 1'hx;
-  assign _001_[2] = _062_ ? (* src = "arbitro_1_synth.v:64|arbitro_1.v:60|<techmap.v>:445" *) _019_[0] : 1'hx;
-  assign _001_[3] = _062_ ? (* src = "arbitro_1_synth.v:64|arbitro_1.v:60|<techmap.v>:445" *) _018_[0] : 1'hx;
-  assign _057_ = ~(* src = "arbitro_1_synth.v:28" *) _056_[31];
-  assign _049_ = ~(* src = "arbitro_1_synth.v:32" *) _050_;
-  assign _048_ = ~(* src = "arbitro_1_synth.v:32" *) _047_[31];
-  assign _059_ = ~(* src = "arbitro_1_synth.v:32|arbitro_1.v:28" *) _058_[31];
-  assign _054_ = ~(* src = "arbitro_1_synth.v:36|arbitro_1.v:32" *) _055_;
-  assign _053_ = ~(* src = "arbitro_1_synth.v:36|arbitro_1.v:32" *) _051_[31];
-  assign _061_ = ~(* src = "arbitro_1_synth.v:36|arbitro_1.v:28" *) _060_[31];
-  (* src = "arbitro_1_synth.v:19" *)
+  assign _021_[0] = _018_[0] |(* src = "arbitro_1_synth.v:62|arbitro_1.v:58|<techmap.v>:445" *)  _019_[0];
+  assign _021_[1] = _017_[1] |(* src = "arbitro_1_synth.v:62|arbitro_1.v:58|<techmap.v>:445" *)  _020_[1];
+  assign _062_ = _021_[0] |(* src = "arbitro_1_synth.v:62|arbitro_1.v:58|<techmap.v>:445" *)  _021_[1];
+  assign _022_[0] = FIFO_empty[0] |(* src = "arbitro_1_synth.v:21" *)  FIFO_empty[1];
+  assign _022_[1] = FIFO_empty[2] |(* src = "arbitro_1_synth.v:21" *)  FIFO_empty[3];
+  assign _023_ = _022_[0] |(* src = "arbitro_1_synth.v:21" *)  _022_[1];
+  assign _024_ = dest[0] |(* src = "arbitro_1_synth.v:59|arbitro_1.v:58" *)  dest[1];
+  assign _019_[0] = ~(* src = "arbitro_1_synth.v:61|arbitro_1.v:58" *) _029_;
+  assign _018_[0] = ~(* src = "arbitro_1_synth.v:62|arbitro_1.v:58" *) _030_;
+  assign _017_[1] = ~(* src = "arbitro_1_synth.v:60|arbitro_1.v:58" *) _031_;
+  assign _020_[1] = ~(* src = "arbitro_1_synth.v:59|arbitro_1.v:58" *) _024_;
+  assign _039_ = _023_ |(* src = "arbitro_1_synth.v:20" *)  _045_;
+  assign _038_ = _033_ &(* src = "arbitro_1_synth.v:34" *)  _036_;
+  assign _037_ = _032_ &(* src = "arbitro_1_synth.v:30" *)  _035_;
+  assign _004_[0] = FIFO_empty[0] ? (* src = "arbitro_1_synth.v:49" *) Pops[0] : 1'h1;
+  assign _004_[1] = FIFO_empty[0] ? (* src = "arbitro_1_synth.v:49" *) Pops[1] : 1'h0;
+  assign _004_[2] = FIFO_empty[0] ? (* src = "arbitro_1_synth.v:49" *) Pops[2] : 1'h0;
+  assign _004_[3] = FIFO_empty[0] ? (* src = "arbitro_1_synth.v:49" *) Pops[3] : 1'h0;
+  assign _042_[0] = _037_ ? (* src = "arbitro_1_synth.v:30" *) 1'h0 : _041_[0];
+  assign _042_[1] = _037_ ? (* src = "arbitro_1_synth.v:30" *) 1'h1 : _041_[1];
+  assign _042_[2] = _037_ ? (* src = "arbitro_1_synth.v:30" *) 1'h0 : _041_[2];
+  assign _042_[3] = _037_ ? (* src = "arbitro_1_synth.v:30" *) 1'h0 : _041_[3];
+  assign _040_[0] = _028_ ? (* src = "arbitro_1_synth.v:38" *) Pops[0] : 1'h0;
+  assign _040_[1] = _028_ ? (* src = "arbitro_1_synth.v:38" *) Pops[1] : 1'h0;
+  assign _040_[2] = _028_ ? (* src = "arbitro_1_synth.v:38" *) Pops[2] : 1'h0;
+  assign _040_[3] = _028_ ? (* src = "arbitro_1_synth.v:38" *) Pops[3] : 1'h1;
+  assign _041_[0] = _038_ ? (* src = "arbitro_1_synth.v:34" *) 1'h0 : _040_[0];
+  assign _041_[1] = _038_ ? (* src = "arbitro_1_synth.v:34" *) 1'h0 : _040_[1];
+  assign _041_[2] = _038_ ? (* src = "arbitro_1_synth.v:34" *) 1'h1 : _040_[2];
+  assign _041_[3] = _038_ ? (* src = "arbitro_1_synth.v:34" *) 1'h0 : _040_[3];
+  assign _043_[0] = _034_ ? (* src = "arbitro_1_synth.v:26" *) 1'h1 : _042_[0];
+  assign _043_[1] = _034_ ? (* src = "arbitro_1_synth.v:26" *) 1'h0 : _042_[1];
+  assign _043_[2] = _034_ ? (* src = "arbitro_1_synth.v:26" *) 1'h0 : _042_[2];
+  assign _043_[3] = _034_ ? (* src = "arbitro_1_synth.v:26" *) 1'h0 : _042_[3];
+  assign _003_[0] = _023_ ? (* src = "arbitro_1_synth.v:21" *) _004_[0] : _043_[0];
+  assign _003_[1] = _023_ ? (* src = "arbitro_1_synth.v:21" *) _004_[1] : _043_[1];
+  assign _003_[2] = _023_ ? (* src = "arbitro_1_synth.v:21" *) _004_[2] : _043_[2];
+  assign _003_[3] = _023_ ? (* src = "arbitro_1_synth.v:21" *) _004_[3] : _043_[3];
+  assign _002_[0] = _039_ ? (* src = "arbitro_1_synth.v:20" *) contador[0] : _044_[0];
+  assign _002_[1] = _039_ ? (* src = "arbitro_1_synth.v:20" *) contador[1] : _044_[1];
+  assign _002_[2] = _039_ ? (* src = "arbitro_1_synth.v:20" *) contador[2] : _044_[2];
+  assign _002_[3] = _039_ ? (* src = "arbitro_1_synth.v:20" *) contador[3] : _044_[3];
+  assign _000_[0] = _039_ ? (* src = "arbitro_1_synth.v:20" *) 1'h0 : _003_[0];
+  assign _000_[1] = _039_ ? (* src = "arbitro_1_synth.v:20" *) 1'h0 : _003_[1];
+  assign _000_[2] = _039_ ? (* src = "arbitro_1_synth.v:20" *) 1'h0 : _003_[2];
+  assign _000_[3] = _039_ ? (* src = "arbitro_1_synth.v:20" *) 1'h0 : _003_[3];
+  assign _044_[0] = _023_ ? (* src = "arbitro_1_synth.v:21" *) contador[0] : _005_[0];
+  assign _044_[1] = _023_ ? (* src = "arbitro_1_synth.v:21" *) contador[1] : _005_[1];
+  assign _044_[2] = _023_ ? (* src = "arbitro_1_synth.v:21" *) contador[2] : _005_[2];
+  assign _044_[3] = _023_ ? (* src = "arbitro_1_synth.v:21" *) contador[3] : _005_[3];
+  assign _001_[0] = _062_ ? (* src = "arbitro_1_synth.v:62|arbitro_1.v:58|<techmap.v>:445" *) _020_[1] : 1'hx;
+  assign _001_[1] = _062_ ? (* src = "arbitro_1_synth.v:62|arbitro_1.v:58|<techmap.v>:445" *) _017_[1] : 1'hx;
+  assign _001_[2] = _062_ ? (* src = "arbitro_1_synth.v:62|arbitro_1.v:58|<techmap.v>:445" *) _019_[0] : 1'hx;
+  assign _001_[3] = _062_ ? (* src = "arbitro_1_synth.v:62|arbitro_1.v:58|<techmap.v>:445" *) _018_[0] : 1'hx;
+  assign _057_ = ~(* src = "arbitro_1_synth.v:26" *) _056_[31];
+  assign _049_ = ~(* src = "arbitro_1_synth.v:30" *) _050_;
+  assign _048_ = ~(* src = "arbitro_1_synth.v:30" *) _047_[31];
+  assign _059_ = ~(* src = "arbitro_1_synth.v:30|arbitro_1.v:26" *) _058_[31];
+  assign _054_ = ~(* src = "arbitro_1_synth.v:34|arbitro_1.v:30" *) _055_;
+  assign _053_ = ~(* src = "arbitro_1_synth.v:34|arbitro_1.v:30" *) _051_[31];
+  assign _061_ = ~(* src = "arbitro_1_synth.v:34|arbitro_1.v:26" *) _060_[31];
+  (* src = "arbitro_1_synth.v:17" *)
   always @(posedge clk)
       contador[0] <= _002_[0];
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   always @(posedge clk)
       contador[1] <= _002_[1];
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   always @(posedge clk)
       contador[2] <= _002_[2];
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   always @(posedge clk)
       contador[3] <= _002_[3];
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   always @(posedge clk)
       Pops[0] <= _000_[0];
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   always @(posedge clk)
       Pops[1] <= _000_[1];
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   always @(posedge clk)
       Pops[2] <= _000_[2];
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   always @(posedge clk)
       Pops[3] <= _000_[3];
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   always @(posedge clk)
       Push[0] <= _001_[0];
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   always @(posedge clk)
       Push[1] <= _001_[1];
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   always @(posedge clk)
       Push[2] <= _001_[2];
-  (* src = "arbitro_1_synth.v:19" *)
+  (* src = "arbitro_1_synth.v:17" *)
   always @(posedge clk)
       Push[3] <= _001_[3];
-  assign _005_[0] = contador[0] ^(* src = "arbitro_1_synth.v:32|<techmap.v>:263" *)  1'h1;
-  assign _005_[2] = contador[2] ^(* src = "arbitro_1_synth.v:32|arbitro_1.v:28|<techmap.v>:263" *)  _012_[0];
-  assign _052_[2] = contador[2] ^(* src = "arbitro_1_synth.v:36|arbitro_1.v:28|<techmap.v>:262" *)  1'h1;
-  assign _005_[1] = contador[1] ^(* src = "arbitro_1_synth.v:45|<techmap.v>:263" *)  contador[0];
-  assign _005_[3] = contador[3] ^(* src = "arbitro_1_synth.v:45|<techmap.v>:263" *)  _046_[2];
-  assign _067_ = _008_[1] &(* src = "arbitro_1_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)  _051_[1];
-  assign _051_[0] = contador[0] |(* src = "arbitro_1_synth.v:28|<techmap.v>:260|<techmap.v>:212" *)  _005_[0];
-  assign _056_[31] = contador[3] |(* src = "arbitro_1_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)  _067_;
-  assign _064_ = _008_[1] &(* src = "arbitro_1_synth.v:32|<techmap.v>:260|<techmap.v>:221" *)  _047_[1];
-  assign _047_[1] = contador[1] |(* src = "arbitro_1_synth.v:32|<techmap.v>:260|<techmap.v>:221" *)  _010_[0];
-  assign _047_[31] = contador[3] |(* src = "arbitro_1_synth.v:32|<techmap.v>:260|<techmap.v>:221" *)  _064_;
-  assign _026_[1] = dest[1] ^(* src = "arbitro_1_synth.v:64|arbitro_1.v:60" *)  1'h1;
-  assign _027_[0] = dest[0] ^(* src = "arbitro_1_synth.v:62|arbitro_1.v:60" *)  1'h1;
-  assign _058_[31] = contador[3] |(* src = "arbitro_1_synth.v:32|arbitro_1.v:28|<techmap.v>:260|<techmap.v>:221" *)  _013_[0];
-  assign _065_ = _025_[1] &(* src = "arbitro_1_synth.v:36|arbitro_1.v:32|<techmap.v>:260|<techmap.v>:221" *)  _051_[0];
-  assign _066_ = _014_[1] &(* src = "arbitro_1_synth.v:36|arbitro_1.v:32|<techmap.v>:260|<techmap.v>:221" *)  _051_[1];
-  assign _051_[1] = contador[1] |(* src = "arbitro_1_synth.v:36|arbitro_1.v:32|<techmap.v>:260|<techmap.v>:221" *)  _065_;
-  assign _051_[31] = _063_ |(* src = "arbitro_1_synth.v:36|arbitro_1.v:32|<techmap.v>:260|<techmap.v>:221" *)  _066_;
-  assign _063_ = contador[3] &(* src = "arbitro_1_synth.v:36|arbitro_1.v:28|<techmap.v>:260|<techmap.v>:221" *)  contador[2];
-  assign _068_ = _014_[1] &(* src = "arbitro_1_synth.v:36|arbitro_1.v:28|<techmap.v>:260|<techmap.v>:221" *)  _047_[1];
-  assign _060_[31] = _063_ |(* src = "arbitro_1_synth.v:36|arbitro_1.v:28|<techmap.v>:260|<techmap.v>:221" *)  _068_;
-  assign _012_[0] = contador[1] &(* src = "arbitro_1_synth.v:45|<techmap.v>:260|<techmap.v>:221" *)  contador[0];
-  assign _046_[2] = contador[2] &(* src = "arbitro_1_synth.v:45|<techmap.v>:260|<techmap.v>:229" *)  _012_[0];
+  assign _005_[0] = contador[0] ^(* src = "arbitro_1_synth.v:30|<techmap.v>:263" *)  1'h1;
+  assign _005_[2] = contador[2] ^(* src = "arbitro_1_synth.v:30|arbitro_1.v:26|<techmap.v>:263" *)  _012_[0];
+  assign _052_[2] = contador[2] ^(* src = "arbitro_1_synth.v:34|arbitro_1.v:26|<techmap.v>:262" *)  1'h1;
+  assign _005_[1] = contador[1] ^(* src = "arbitro_1_synth.v:43|<techmap.v>:263" *)  contador[0];
+  assign _005_[3] = contador[3] ^(* src = "arbitro_1_synth.v:43|<techmap.v>:263" *)  _046_[2];
+  assign _067_ = _008_[1] &(* src = "arbitro_1_synth.v:26|<techmap.v>:260|<techmap.v>:221" *)  _051_[1];
+  assign _051_[0] = contador[0] |(* src = "arbitro_1_synth.v:26|<techmap.v>:260|<techmap.v>:212" *)  _005_[0];
+  assign _056_[31] = contador[3] |(* src = "arbitro_1_synth.v:26|<techmap.v>:260|<techmap.v>:221" *)  _067_;
+  assign _064_ = _008_[1] &(* src = "arbitro_1_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)  _047_[1];
+  assign _047_[1] = contador[1] |(* src = "arbitro_1_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)  _010_[0];
+  assign _047_[31] = contador[3] |(* src = "arbitro_1_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)  _064_;
+  assign _026_[1] = dest[1] ^(* src = "arbitro_1_synth.v:62|arbitro_1.v:58" *)  1'h1;
+  assign _027_[0] = dest[0] ^(* src = "arbitro_1_synth.v:60|arbitro_1.v:58" *)  1'h1;
+  assign _058_[31] = contador[3] |(* src = "arbitro_1_synth.v:30|arbitro_1.v:26|<techmap.v>:260|<techmap.v>:221" *)  _013_[0];
+  assign _065_ = _025_[1] &(* src = "arbitro_1_synth.v:34|arbitro_1.v:30|<techmap.v>:260|<techmap.v>:221" *)  _051_[0];
+  assign _066_ = _014_[1] &(* src = "arbitro_1_synth.v:34|arbitro_1.v:30|<techmap.v>:260|<techmap.v>:221" *)  _051_[1];
+  assign _051_[1] = contador[1] |(* src = "arbitro_1_synth.v:34|arbitro_1.v:30|<techmap.v>:260|<techmap.v>:221" *)  _065_;
+  assign _051_[31] = _063_ |(* src = "arbitro_1_synth.v:34|arbitro_1.v:30|<techmap.v>:260|<techmap.v>:221" *)  _066_;
+  assign _063_ = contador[3] &(* src = "arbitro_1_synth.v:34|arbitro_1.v:26|<techmap.v>:260|<techmap.v>:221" *)  contador[2];
+  assign _068_ = _014_[1] &(* src = "arbitro_1_synth.v:34|arbitro_1.v:26|<techmap.v>:260|<techmap.v>:221" *)  _047_[1];
+  assign _060_[31] = _063_ |(* src = "arbitro_1_synth.v:34|arbitro_1.v:26|<techmap.v>:260|<techmap.v>:221" *)  _068_;
+  assign _012_[0] = contador[1] &(* src = "arbitro_1_synth.v:43|<techmap.v>:260|<techmap.v>:221" *)  contador[0];
+  assign _046_[2] = contador[2] &(* src = "arbitro_1_synth.v:43|<techmap.v>:260|<techmap.v>:229" *)  _012_[0];
   assign _050_ = _048_ | _011_[0];
   assign _055_ = _053_ | _015_[0];
-  assign _025_[1] = contador[1] ^(* src = "arbitro_1_synth.v:28|<techmap.v>:262" *)  1'h1;
-  assign _025_[3] = contador[3] ^(* src = "arbitro_1_synth.v:28|<techmap.v>:262" *)  1'h1;
+  assign _025_[1] = contador[1] ^(* src = "arbitro_1_synth.v:26|<techmap.v>:262" *)  1'h1;
+  assign _025_[3] = contador[3] ^(* src = "arbitro_1_synth.v:26|<techmap.v>:262" *)  1'h1;
   assign _005_[31:5] = 27'h0000000;
   assign _008_[15:2] = 14'h3fff;
   assign _009_[7:1] = 7'h7f;

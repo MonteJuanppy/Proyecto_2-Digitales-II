@@ -1,47 +1,49 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Wed Nov 10 02:33:30 2021
+[*] Sun Nov 21 18:38:09 2021
 [*]
 [dumpfile] "/home/montejuanppy/Documents/Circuitos_DIgitales_II/Proyecto_II/Proyecto_2-Digitales-II/FIFO/FIFO.vcd"
-[dumpfile_mtime] "Wed Nov 10 02:28:49 2021"
-[dumpfile_size] 13126
+[dumpfile_mtime] "Sun Nov 21 18:34:41 2021"
+[dumpfile_size] 13708
 [savefile] "/home/montejuanppy/Documents/Circuitos_DIgitales_II/Proyecto_II/Proyecto_2-Digitales-II/FIFO/FIFO.gtkw"
 [timestart] 0
 [size] 1848 1016
-[pos] -151 -151
-*-12.125336 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -134 -134
+*-12.133955 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [sst_width] 233
-[signals_width] 222
+[signals_width] 230
 [sst_expanded] 1
 [sst_vpaned_height] 289
+@200
+-FIFO
 @28
 banco_FIFO.clk
 banco_FIFO.Reset
+banco_FIFO.Enable
 banco_FIFO.write_enable
 banco_FIFO.read_enable
+@24
+banco_FIFO.interno_alto[2:0]
+banco_FIFO.interno_bajo[2:0]
 @22
-banco_FIFO.FIFO_data_in[7:0]
+banco_FIFO.FIFO_data_in[11:0]
 @200
 -Conductual
 @28
-banco_FIFO.FIFO_full
-banco_FIFO.FIFO_empty
 banco_FIFO.FIFO_almost_empty
 banco_FIFO.FIFO_almost_full
+banco_FIFO.FIFO_empty
+banco_FIFO.FIFO_full
 @22
-banco_FIFO.FIFO_data_out[7:0]
+banco_FIFO.FIFO_data_out[11:0]
 @200
 -Estructural
 @28
-banco_FIFO.FIFO_empty
-@22
-banco_FIFO.FIFO_data_out[7:0]
-@28
-banco_FIFO.FIFO_synth_full
-banco_FIFO.FIFO_synth_empty
-banco_FIFO.FIFO_synth_almost_full
 banco_FIFO.FIFO_synth_almost_empty
+banco_FIFO.FIFO_synth_almost_full
+banco_FIFO.FIFO_synth_empty
+banco_FIFO.FIFO_synth_full
 @22
-banco_FIFO.FIFO_synth_data_out[7:0]
+banco_FIFO.FIFO_synth_data_out[11:0]
 [pattern_trace] 1
 [pattern_trace] 0

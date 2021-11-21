@@ -14,7 +14,7 @@
 `include "probador_memoria.v"
 
 module banco #(
-  parameter DATA_WIDTH=8, //tamaño de datos FIFO_data_in
+  parameter DATA_WIDTH=12, //tamaño de datos FIFO_data_in
   parameter ADDR_WIDTH=8);  //tamaño de direcciones
 
     //Wires
@@ -41,9 +41,9 @@ module banco #(
 
     memoria_synth estructural(/*AUTOINST*/
 			      // Outputs
-			      .FIFO_data_out_synth(FIFO_data_out_synth[7:0]),
+			      .FIFO_data_out_synth(FIFO_data_out_synth[11:0]),
 			      // Inputs
-			      .FIFO_data_in	(FIFO_data_in[7:0]),
+			      .FIFO_data_in	(FIFO_data_in[11:0]),
 			      .clk		(clk),
 			      .rd_ptr		(rd_ptr[7:0]),
 			      .read_enable	(read_enable),

@@ -3,9 +3,7 @@
 //Version 1
 //Modulo de Arbitro 1
 
-module arbitro_1 #(
-  parameter DATA_WIDTH=8, //width of data bus
-  parameter ADDR_WIDTH=8) //width of addresses buses
+module arbitro_1 
 (output reg [3:0] Pops,
   output reg [3:0] Push,
   input clk,

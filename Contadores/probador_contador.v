@@ -14,7 +14,7 @@ output reg push4,
 output reg req,
 output reg [2:0] idx,
   output reg clk,
-  input [5:0] data,
+  input [4:0] data,
   input valid);
 
     initial clk <= 0;

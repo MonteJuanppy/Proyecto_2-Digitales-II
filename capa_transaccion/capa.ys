@@ -1,0 +1,12 @@
+read_verilog capa_transccion.v
+
+hierarchy -check -top capa_transccion
+
+proc; opt; fsm; opt; memory; opt
+
+techmap; opt
+
+clean
+
+write_verilog capa_transccion_synth.v
+show capa_transccion

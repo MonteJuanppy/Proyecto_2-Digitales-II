@@ -25,13 +25,13 @@ module banco_contador;
 	wire push3; //señal de push de FIFO 3
 	wire push4; //señal de push de FIFO 4
 	wire [2:0] idx; //señal para indexar el contador
-	wire [5:0]  data; //señal de cuenta
-    wire [5:0]  data_synth; //señal de cuenta
+	wire [4:0]  data; //señal de cuenta
+    wire [4:0]  data_synth; //señal de cuenta
     
 	// Se instancia el módulo de memoria conductual
 	contador conductual(/*AUTOINST*/
 			    // Outputs
-			    .data		(data[5:0]),
+			    .data		(data[4:0]),
 			    .valid		(valid),
 			    // Inputs
 			    .push0		(push0),
@@ -45,7 +45,7 @@ module banco_contador;
 
     contador_synth estructural(/*AUTOINST*/
 			       // Outputs
-			       .data		(data_synth[5:0]),
+			       .data		(data_synth[4:0]),
 			       .valid		(valid_synth),
 			       // Inputs
 			       .clk		(clk),
@@ -69,7 +69,7 @@ module banco_contador;
 				   .idx			(idx[2:0]),
 				   .clk			(clk),
 				   // Inputs
-				   .data		(data[5:0]),
+				   .data		(data[4:0]),
 				   .valid		(valid));
 
 endmodule

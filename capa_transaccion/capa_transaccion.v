@@ -6,7 +6,6 @@
 `include "FIFO.v"
 `include "contador.v"
 `include "FSM.v"
-`include "memoria.v"
 `include "arbitro_1.v"
 `include "arbitro_2.v"
 
@@ -22,10 +21,13 @@ module capa_transaccion(
     input init,//señal de init para FSM
     input req, //señal de request para los contadores
     input [2:0] idx, //señal para indexar el contador
-    output reg [4:0] salida_contador,
-    output reg valid_contador,
-    output reg [11:0] data_out_fifo_azules[0:3], 
-    output reg idle); //señal de idle de FSM
+    output [4:0] salida_contador,
+    output valid_contador,
+    output [11:0] data_out_fifo_azul_p0,
+    output [11:0] data_out_fifo_azul_p1,
+    output [11:0] data_out_fifo_azul_p2,
+    output [11:0] data_out_fifo_azul_p3,
+    output idle); //señal de idle de FSM
 
     // cables para FIFO principal
     wire [11:0] salida_fifo_principal;
@@ -53,12 +55,18 @@ module capa_transaccion(
     wire [3:0] full_fifos_azules;
 
     //FIFO_central
-    wire [11:0] entrada_fifo_central;
+    reg [11:0] entrada_fifo_central;
     wire [11:0] salida_fifo_central;
     wire empty_fifo_central;
     wire full_fifo_central;
     wire almost_full_fifo_central;
     wire almost_empty_fifo_central;
+
+     //Máquina de Estados FSM
+    reg [9:0] All_fifo_empty;
+
+    wire [2:0] interno_bajo;
+    wire [2:0] interno_alto;
 
     //FIFO PRINCIPAL
     FIFO FIFO_principal (.FIFO_data_in(FIFO_in), .clk(clk), .interno_bajo(interno_bajo), .interno_alto(interno_alto), 
@@ -67,7 +75,7 @@ module capa_transaccion(
 
     //ARBITRO 2
     arbitro_2 arbitro_2 (.clk(clk), .class(FIFO_in[11:10]), .FIFO_empty(empty_fifo_principal), 
-    .Almost_full(almost_full_fifos_amarillos), .Push(push_fifos_amarillos), .Pop(pop_fifo_principal));
+    .reset(reset), .Enable(Enable), .Almost_full(almost_full_fifos_amarillos), .Push(push_fifos_amarillos), .Pop(pop_fifo_principal));
 
     //CAPA DE FIFOS AMARILLOS
 
@@ -87,6 +95,45 @@ module capa_transaccion(
     .Reset(reset), .Enable(Enable), .write_enable(push_fifos_amarillos[3]), .read_enable(pop_fifos_amarillos[3]), .FIFO_data_out(salida_fifos_amarillos[3]),
     .FIFO_empty(empty_fifos_amarillos[3]), .FIFO_full(full_fifos_amarillos[3]), .FIFO_almost_empty(almost_empty_fifos_amarillos[3]), .FIFO_almost_full(almost_full_fifos_amarillos[3]));
 
+
+    //ARBITRO 1
+    arbitro_1 arbitro_1 (.clk(clk), .dest(entrada_fifo_central[9:8]), .FIFO_empty(empty_fifos_amarillos), 
+    .reset(reset), .Enable(Enable), .Almost_full(almost_full_fifos_azules), .Push(push_fifos_azules), .Pops(pop_fifos_amarillos));
+
+    //FIFO central
+    FIFO FIFO_central (.FIFO_data_in(entrada_fifo_central), .clk(clk), .interno_bajo(interno_bajo), .interno_alto(interno_alto), 
+    .Reset(reset), .Enable(Enable), .write_enable(|pop_fifos_amarillos), .read_enable(|push_fifos_azules), .FIFO_data_out(salida_fifo_central),
+    .FIFO_empty(empty_fifo_central), .FIFO_full(full_fifo_central), .FIFO_almost_empty(almost_empty_fifo_central), .FIFO_almost_full(almost_full_fifo_central));
+
+    //Capa FIFOs azules
+    FIFO FIFO_azul_p0 (.FIFO_data_in(salida_fifo_central), .clk(clk), .interno_bajo(interno_bajo), .interno_alto(interno_alto), 
+    .Reset(reset), .Enable(Enable), .write_enable(push_fifos_azules[0]), .read_enable(pop_fifo_azules[0]), .FIFO_data_out(data_out_fifo_azul_p0),
+    .FIFO_empty(empty_fifos_azules[0]), .FIFO_full(full_fifos_azules[0]), .FIFO_almost_empty(almost_empty_fifos_azules[0]), .FIFO_almost_full(almost_full_fifos_azules[0]));
+
+     FIFO FIFO_azul_p1 (.FIFO_data_in(salida_fifo_central), .clk(clk), .interno_bajo(interno_bajo), .interno_alto(interno_alto), 
+    .Reset(reset), .Enable(Enable), .write_enable(push_fifos_azules[1]), .read_enable(pop_fifo_azules[1]), .FIFO_data_out(data_out_fifo_azul_p1),
+    .FIFO_empty(empty_fifos_azules[1]), .FIFO_full(full_fifos_azules[1]), .FIFO_almost_empty(almost_empty_fifos_azules[1]), .FIFO_almost_full(almost_full_fifos_azules[1]));
+
+     FIFO FIFO_azul_p2 (.FIFO_data_in(salida_fifo_central), .clk(clk), .interno_bajo(interno_bajo), .interno_alto(interno_alto), 
+    .Reset(reset), .Enable(Enable), .write_enable(push_fifos_azules[2]), .read_enable(pop_fifo_azules[2]), .FIFO_data_out(data_out_fifo_azul_p2),
+    .FIFO_empty(empty_fifos_azules[2]), .FIFO_full(full_fifos_azules[2]), .FIFO_almost_empty(almost_empty_fifos_azules[2]), .FIFO_almost_full(almost_full_fifos_azules[2]));
+
+     FIFO FIFO_azul_p3 (.FIFO_data_in(salida_fifo_central), .clk(clk), .interno_bajo(interno_bajo), .interno_alto(interno_alto), 
+    .Reset(reset), .Enable(Enable), .write_enable(push_fifos_azules[3]), .read_enable(pop_fifo_azules[3]), .FIFO_data_out(data_out_fifo_azul_p3),
+    .FIFO_empty(empty_fifos_azules[3]), .FIFO_full(full_fifos_azules[3]), .FIFO_almost_empty(almost_empty_fifos_azules[3]), .FIFO_almost_full(almost_full_fifos_azules[3]));
+
+    //Contador
+    contador contador (.push0(push_fifos_azules[0]), .push1(push_fifos_azules[1]), 
+    .push2(push_fifos_azules[2]), .push3(push_fifos_azules[3]), .push4(PUSH), .clk(clk), .req(req), .idx(idx), .data(salida_contador), .valid(valid_contador));
+
+    //Máquina de Estados FSM
+
+    FSM FSM (.reset(reset), .clk(clk), .init(init), .umbral_alto(umbral_alto), .umbral_bajo(umbral_bajo),
+            .FIFO_empty(All_fifo_empty), .idle(idle), .interno_alto(interno_alto), .interno_bajo(interno_bajo));
+
+    always @(*) begin
+    
+    entrada_fifo_central = 0;
     //Multiplexor para FIFOS amarillos a FIFO_central
     if (pop_fifos_amarillos[0] == 1) begin
         entrada_fifo_central = salida_fifos_amarillos[0];
@@ -103,39 +150,8 @@ module capa_transaccion(
     if (pop_fifos_amarillos[3] == 1) begin
         entrada_fifo_central = salida_fifos_amarillos[3];
     end
-
-    //ARBITRO 1
-    arbitro_1 arbitro_1 (.clk(clk), .dest(entrada_fifo_central[9:8]), .FIFO_empty(empty_fifos_amarillos), 
-    .Almost_full(almost_full_fifos_azules), .Push(push_fifos_azules), .Pops(pop_fifos_amarillos));
-
-    //FIFO central
-    FIFO FIFO_central (.FIFO_data_in(entrada_fifo_central), .clk(clk), .interno_bajo(interno_bajo), .interno_alto(interno_alto), 
-    .Reset(reset), .Enable(Enable), .write_enable(|pop_fifos_amarillos), .read_enable(|push_fifos_azules), .FIFO_data_out(salida_fifo_central),
-    .FIFO_empty(empty_fifo_central), .FIFO_full(full_fifo_central), .FIFO_almost_empty(almost_empty_fifo_central), .FIFO_almost_full(almost_full_fifo_central));
-
-    //Capa FIFOs azules
-    FIFO FIFO_azul_p0 (.FIFO_data_in(salida_fifo_central), .clk(clk), .interno_bajo(interno_bajo), .interno_alto(interno_alto), 
-    .Reset(reset), .Enable(Enable), .write_enable(push_fifos_azules[0]), .read_enable(pop_fifo_azules[0]), .FIFO_data_out(data_out_fifo_azules[0]),
-    .FIFO_empty(empty_fifos_azules[0]), .FIFO_full(full_fifos_azules[0]), .FIFO_almost_empty(almost_empty_fifos_azules[0]), .FIFO_almost_full(almost_full_fifos_azules[0]));
-
-     FIFO FIFO_azul_p1 (.FIFO_data_in(salida_fifo_central), .clk(clk), .interno_bajo(interno_bajo), .interno_alto(interno_alto), 
-    .Reset(reset), .Enable(Enable), .write_enable(push_fifos_azules[1]), .read_enable(pop_fifo_azules[1]), .FIFO_data_out(data_out_fifo_azules[1]),
-    .FIFO_empty(empty_fifos_azules[1]), .FIFO_full(full_fifos_azules[1]), .FIFO_almost_empty(almost_empty_fifos_azules[1]), .FIFO_almost_full(almost_full_fifos_azules[1]));
-
-     FIFO FIFO_azul_p2 (.FIFO_data_in(salida_fifo_central), .clk(clk), .interno_bajo(interno_bajo), .interno_alto(interno_alto), 
-    .Reset(reset), .Enable(Enable), .write_enable(push_fifos_azules[2]), .read_enable(pop_fifo_azules[2]), .FIFO_data_out(data_out_fifo_azules[2]),
-    .FIFO_empty(empty_fifos_azules[2]), .FIFO_full(full_fifos_azules[2]), .FIFO_almost_empty(almost_empty_fifos_azules[2]), .FIFO_almost_full(almost_full_fifos_azules[2]));
-
-     FIFO FIFO_azul_p3 (.FIFO_data_in(salida_fifo_central), .clk(clk), .interno_bajo(interno_bajo), .interno_alto(interno_alto), 
-    .Reset(reset), .Enable(Enable), .write_enable(push_fifos_azules[3]), .read_enable(pop_fifo_azules[3]), .FIFO_data_out(data_out_fifo_azules[3]),
-    .FIFO_empty(empty_fifos_azules[3]), .FIFO_full(full_fifos_azules[3]), .FIFO_almost_empty(almost_empty_fifos_azules[3]), .FIFO_almost_full(almost_full_fifos_azules[3]));
-
-    //Contador
-    contador contador (.push0(push_fifos_azules[0]), .push1(push_fifos_azules[1]), 
-    .push2(push_fifos_azules[2]), .push3(push_fifos_azules[3]), .push4(PUSH), .clk(clk), .req(req), .idx(idx), .data(salida_contador), .valid(valid_contador));
-
+    
     //Asignacio de salidas empty en un solo array
-    wire [9:0] All_fifo_empty;
     All_fifo_empty[0] = empty_fifo_principal;
     All_fifo_empty[1] = empty_fifos_amarillos[0];
     All_fifo_empty[2] = empty_fifos_amarillos[1];
@@ -146,14 +162,9 @@ module capa_transaccion(
     All_fifo_empty[7] = empty_fifos_azules[1];
     All_fifo_empty[8] = empty_fifos_azules[2];
     All_fifo_empty[9] = empty_fifos_azules[3];
+    end
 
-    //Máquina de Estados FSM
-
-    wire interno_bajo;
-    wire interno_alto;
-
-    FSM FSM (.reset(reset), .clk(clk), .init(init), .umbral_alto(umbral_alto), .umbral_bajo(umbral_bajo),
-            .FIFO_empty(All_fifo_empty), .idle(idle), .interno_alto(interno_alto), .interno_bajo(interno_bajo));
+    endmodule
 
 
 

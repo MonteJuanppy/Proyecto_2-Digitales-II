@@ -6,6 +6,8 @@
 module arbitro_2 (output reg Pop,
   input clk,
   output reg [3:0] Push,
+  input reset,
+  input Enable,
   input FIFO_empty,
   input [3:0] Almost_full,
   input [1:0] class);
@@ -14,11 +16,22 @@ initial Push = 0;
 initial Pop = 0;
 
 always @(posedge clk) begin
+
+  if (Enable) begin
+
+    if (!reset) begin
+      Pop = 0;
+      Push = 0;
+    end
+
+  else begin
     if (FIFO_empty | |Almost_full) Pop = 0;
     else Pop = 1;
 
     // No tiene prioridades
     // Dependiendo del valor de class se habilitan los Pushes
+
+  if (!FIFO_empty) begin
 
     case (class)
         0: Push = 4'b0001;
@@ -27,5 +40,13 @@ always @(posedge clk) begin
         3: Push = 4'b1000;
         default: Push = 0;
     endcase
+    
+  end
+    
 end
+
+  end
+    
+  end
+  
 endmodule

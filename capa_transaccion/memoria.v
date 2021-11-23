@@ -10,8 +10,8 @@ module memoria #(
   parameter ADDR_WIDTH=8)  //tamaño de direcciones
 
 (input [(DATA_WIDTH-1):0] FIFO_data_in, //entrada FIFO_data_in 
-  input [(ADDR_WIDTH-1):0] wr_ptr, //direccíón de escritura
-  input [(ADDR_WIDTH-1):0] rd_ptr, //direccíón de lectura
+  input [2:0] wr_ptr, //direccíón de escritura
+  input [2:0] rd_ptr, //direccíón de lectura
   input clk, //señal de reloj
   input write_enable,
   input read_enable,

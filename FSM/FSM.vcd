@@ -1,5 +1,5 @@
 $date
-	Sat Nov 20 20:46:47 2021
+	Mon Nov 22 21:56:39 2021
 $end
 $version
 	Icarus Verilog
@@ -11,155 +11,381 @@ $scope module banco_FSM $end
 $var wire 3 ! umbral_bajo [2:0] $end
 $var wire 3 " umbral_alto [2:0] $end
 $var wire 1 # reset $end
-$var wire 3 $ interno_bajo [2:0] $end
-$var wire 3 % interno_alto [2:0] $end
-$var wire 1 & init $end
-$var wire 1 ' idle $end
-$var wire 1 ( clk $end
-$var wire 10 ) FIFO_empty [9:0] $end
-$scope module conductual $end
-$var wire 3 * umbral_bajo [2:0] $end
-$var wire 3 + umbral_alto [2:0] $end
-$var wire 1 # reset $end
-$var wire 1 & init $end
-$var wire 1 ( clk $end
+$var wire 3 $ interno_bajo_synth [2:0] $end
+$var wire 3 % interno_bajo [2:0] $end
+$var wire 3 & interno_alto_synth [2:0] $end
+$var wire 3 ' interno_alto [2:0] $end
+$var wire 1 ( init $end
+$var wire 1 ) idle_synth $end
+$var wire 1 * idle $end
+$var wire 1 + clk $end
 $var wire 10 , FIFO_empty [9:0] $end
-$var reg 3 - estado [2:0] $end
-$var reg 1 ' idle $end
-$var reg 3 . interno_alto [2:0] $end
-$var reg 3 / interno_bajo [2:0] $end
-$var reg 3 0 proximo_estado [2:0] $end
+$scope module conductual $end
+$var wire 3 - umbral_bajo [2:0] $end
+$var wire 3 . umbral_alto [2:0] $end
+$var wire 1 # reset $end
+$var wire 1 ( init $end
+$var wire 1 + clk $end
+$var wire 10 / FIFO_empty [9:0] $end
+$var reg 3 0 estado [2:0] $end
+$var reg 1 * idle $end
+$var reg 3 1 interno_alto [2:0] $end
+$var reg 3 2 interno_bajo [2:0] $end
+$var reg 3 3 proximo_estado [2:0] $end
+$var reg 3 4 thr_alto [2:0] $end
+$var reg 3 5 thr_bajo [2:0] $end
+$upscope $end
+$scope module estructural $end
+$var wire 1 6 _002_ $end
+$var wire 1 7 _007_ $end
+$var wire 1 8 _008_ $end
+$var wire 1 9 _009_ $end
+$var wire 1 : _010_ $end
+$var wire 1 ; _015_ $end
+$var wire 1 < _016_ $end
+$var wire 1 = _019_ $end
+$var wire 1 > _020_ $end
+$var wire 1 ? _021_ $end
+$var wire 1 @ _022_ $end
+$var wire 1 A _023_ $end
+$var wire 1 B _024_ $end
+$var wire 1 C _027_ $end
+$var wire 3 D thr_alto [2:0] $end
+$var wire 3 E thr_bajo [2:0] $end
+$var wire 3 F umbral_bajo [2:0] $end
+$var wire 3 G umbral_alto [2:0] $end
+$var wire 1 # reset $end
+$var wire 3 H proximo_estado [2:0] $end
+$var wire 3 I interno_bajo [2:0] $end
+$var wire 3 J interno_alto [2:0] $end
+$var wire 1 ( init $end
+$var wire 1 ) idle $end
+$var wire 1 + clk $end
+$var wire 3 K _026_ [2:0] $end
+$var wire 12 L _025_ [11:0] $end
+$var wire 3 M _018_ [2:0] $end
+$var wire 10 N _017_ [9:0] $end
+$var wire 2 O _014_ [1:0] $end
+$var wire 2 P _013_ [1:0] $end
+$var wire 2 Q _012_ [1:0] $end
+$var wire 2 R _011_ [1:0] $end
+$var wire 2 S _006_ [1:0] $end
+$var wire 5 T _005_ [4:0] $end
+$var wire 3 U _004_ [2:0] $end
+$var wire 3 V _003_ [2:0] $end
+$var wire 3 W _001_ [2:0] $end
+$var wire 3 X _000_ [2:0] $end
+$var wire 10 Y FIFO_empty [9:0] $end
+$var reg 3 Z estado [2:0] $end
 $upscope $end
 $scope module probador $end
-$var wire 1 ' idle $end
-$var wire 3 1 interno_alto [2:0] $end
-$var wire 3 2 interno_bajo [2:0] $end
-$var reg 10 3 FIFO_empty [9:0] $end
-$var reg 1 ( clk $end
-$var reg 1 & init $end
+$var wire 1 * idle $end
+$var wire 3 [ interno_alto [2:0] $end
+$var wire 3 \ interno_bajo [2:0] $end
+$var reg 10 ] FIFO_empty [9:0] $end
+$var reg 1 + clk $end
+$var reg 1 ( init $end
 $var reg 1 # reset $end
-$var reg 3 4 umbral_alto [2:0] $end
-$var reg 3 5 umbral_bajo [2:0] $end
+$var reg 3 ^ umbral_alto [2:0] $end
+$var reg 3 _ umbral_bajo [2:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-b1 5
-b101 4
-b1111111111 3
+b1 _
+b101 ^
+b1111111111 ]
+b10 \
+b110 [
+b0 Z
+b1111111111 Y
+b0 X
+b0 W
+b0 V
+b10 U
+b0 T
+b0 S
+b0 R
+b0 Q
+b10 P
+b10 O
+b0 N
+b11 M
+b1000000000 L
+b1 K
+b110 J
+b10 I
+b1 H
+b101 G
+b1 F
+b10 E
+b110 D
+1C
+0B
+0A
+1@
+1?
+1>
+0=
+0<
+0;
+1:
+19
+18
+07
+16
+b10 5
+b110 4
+b1 3
 b10 2
 b110 1
-b1 0
-b10 /
-b110 .
-b0 -
+b0 0
+b1111111111 /
+b101 .
+b1 -
 b1111111111 ,
-b101 +
-b1 *
-b1111111111 )
+0+
+0*
+0)
 0(
-0'
-0&
-b110 %
+b110 '
+b110 &
+b10 %
 b10 $
 0#
 b101 "
 b1 !
 $end
 #10
-1(
+1+
 #20
-0(
+0+
 #30
+b1 3
+b1 X
 b110 "
-b110 +
-b110 4
+b110 .
+b110 G
+b110 ^
 b11 !
-b11 *
-b11 5
+b11 -
+b11 F
+b11 _
 1#
-1(
+1+
 #40
-0(
+0+
 #50
-b10 0
+b10 X
+1C
+b10 H
+b10 O
+b10 K
+b10 Q
 b11 $
-b11 /
+b11 I
+b10000000 L
+0@
+b0 P
+b1 V
+0:
+1<
+1;
+b1 W
+b10 M
+b10 3
+b11 %
 b11 2
-b1 -
-1(
+b11 \
+b1 0
+b1 Z
+1+
 #60
-0(
+0+
 #70
-1'
-b10 -
-1(
+b10 X
+b10 H
+b1 O
+b10 K
+1B
+1)
+b10000 L
+0?
+b1 Q
+b10 $
+b10 I
+09
+b10 V
+1@
+1:
+b10 W
+b1 M
+1*
+b10 %
+b10 2
+b10 \
+b10 Z
+b10 0
+1+
 #80
-0(
+0+
 #90
-1(
+1+
 #100
-0(
+0+
 #110
-b11 0
-0'
-b1 )
+b11 X
+b11 H
+b11 K
+b1 P
+b11000 L
+0)
+17
+06
+b11 V
+1=
+b11 S
+b11111 T
+b1111111110 N
+b11 3
+0*
 b1 ,
+b1 /
+b1 Y
+b1 ]
+1+
+#120
+0+
+#130
+b11 X
+b11 K
+b11 H
+b1 Q
+1C
+1A
+b11 L
+b1 O
+0>
+0B
+b11 U
+08
+1?
+19
+b11 W
+b0 M
+b11 0
+b11 Z
+b111 "
+b111 .
+b111 G
+b111 ^
+b10 !
+b10 -
+b10 F
+b10 _
+1+
+#140
+0+
+#150
+1+
+#160
+0+
+#170
+1+
+#180
+0+
+#190
+b1 X
+b1 H
+b1 K
+b0 Q
+b1 L
+b1 U
+b1 W
 b1 3
 1(
-#120
-0(
-#130
-b11 -
-b111 "
-b111 +
-b111 4
-b10 !
-b10 *
-b10 5
-1(
-#140
-0(
-#150
-1(
-#160
-0(
-#170
-1(
-#180
-0(
-#190
-b1 0
-1&
-1(
+1+
 #200
-0(
+0+
 #210
-b10 0
-b10 $
-b10 /
-b10 2
-b111 %
-b111 .
+b0 P
+b10 O
+0A
+1>
+b111 &
+b111 J
+18
+0@
+0:
+b10 M
+b111 '
 b111 1
-b1 -
-0&
-1(
+b111 [
+b1 0
+b1 Z
+b10 X
+b10 H
+b10 K
+b10 Q
+b10000000 L
+b1 U
+b1 W
+b10 3
+0(
+1+
 #220
-0(
+0+
 #230
-b11 0
-b10 -
-1(
+b11 X
+b1 P
+b11 H
+b1 O
+b11 K
+1B
+b11000 L
+0?
+b1 Q
+b110 &
+b110 J
+09
+b10 U
+1@
+1:
+b10 W
+b1 M
+b11 3
+b110 '
+b110 1
+b110 [
+b10 Z
+b10 0
+1+
 #240
-0(
+0+
 #250
-b11 -
-1(
+b11 X
+b11 K
+b11 H
+b1 Q
+1C
+1A
+b11 L
+b1 O
+0>
+0B
+b11 U
+08
+1?
+19
+b11 W
+b0 M
+b11 0
+b11 Z
+1+
 #260
-0(
+0+
 #270
-1(
+1+
 #280
-0(
+0+

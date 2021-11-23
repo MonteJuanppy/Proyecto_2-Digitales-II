@@ -26,6 +26,9 @@ module banco_FSM;
     wire idle;
     wire [2:0] interno_alto;
     wire [2:0] interno_bajo;
+	wire idle_synth;
+    wire [2:0] interno_alto_synth;
+    wire [2:0] interno_bajo_synth;
     
 
 	// Se instancia el módulo de memoria conductual
@@ -44,9 +47,9 @@ module banco_FSM;
 
     FSM_synth estructural(/*AUTOINST*/
 			  // Outputs
-			  .idle			(idle),
-			  .interno_alto		(interno_alto[2:0]),
-			  .interno_bajo		(interno_bajo[2:0]),
+			  .idle			(idle_synth),
+			  .interno_alto		(interno_alto_synth[2:0]),
+			  .interno_bajo		(interno_bajo_synth[2:0]),
 			  // Inputs
 			  .FIFO_empty		(FIFO_empty[9:0]),
 			  .clk			(clk),

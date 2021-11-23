@@ -7,17 +7,28 @@ module arbitro_1
 (output reg [3:0] Pops,
   output reg [3:0] Push,
   input clk,
+  input reset,
+  input Enable,
   input [3:0] FIFO_empty,
   input [3:0] Almost_full,
   input [1:0] dest);
 
 reg [3:0] contador = 0; //Contador para llevar a cabo lógica de prioridad.
-reg [1:0] count2 = 0;
 
 always @(posedge clk) begin
   //Cuando el transmisor está Empty o algún receptor
   //está almost full, no hace pop.
-  if (FIFO_empty || |Almost_full) Pops = 0;
+
+  if (Enable) begin
+  
+  if (!reset) begin
+    Pops <= 4'b0000;
+    Push <= 4'b0000;
+  end
+
+  else begin
+
+    if (&FIFO_empty | |Almost_full) Pops = 0;
   else if (FIFO_empty == 0) begin
 
   // El árbito 1 tiene el siguiente orden de prioridad cuando los todos los FIFOs no están vacíos
@@ -45,15 +56,16 @@ always @(posedge clk) begin
   end
 
   else begin
-  case (count2)
-        0: if (!FIFO_empty[0]) Pops <= 4'b0001;
-        1: if (!FIFO_empty[1]) Pops <= 4'b0010;
-        2: if (!FIFO_empty[2]) Pops <= 4'b0100;
-        3: if (!FIFO_empty[3]) Pops <= 4'b1000;
-        default: Pops = 0;
-  endcase
+
+        if (!FIFO_empty[0]) Pops <= 4'b0001;
+        else if (!FIFO_empty[1]) Pops <= 4'b0010;
+        else if (!FIFO_empty[2]) Pops <= 4'b0100;
+        else if (!FIFO_empty[3]) Pops <= 4'b1000;
 
   end
+
+  if (&FIFO_empty == 0) begin
+
 
   case (dest)
         0: Push = 4'b0001;
@@ -63,7 +75,13 @@ always @(posedge clk) begin
         default: Push = 0;
     endcase
 
+  end 
   end
+
+  end
+    
+  end
+
 
 endmodule
 

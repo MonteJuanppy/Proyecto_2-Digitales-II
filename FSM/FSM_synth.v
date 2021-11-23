@@ -4,191 +4,153 @@
 (* src = "FSM_synth.v:5" *)
 module FSM_synth(reset, clk, init, umbral_alto, umbral_bajo, FIFO_empty, idle, interno_alto, interno_bajo);
   (* src = "FSM_synth.v:25" *)
-  wire [2:0] _00_;
+  wire [2:0] _000_;
   (* src = "FSM_synth.v:33" *)
-  wire _01_;
+  wire [2:0] _001_;
   (* src = "FSM_synth.v:33" *)
-  wire [2:0] _02_;
-  wire _03_;
-  wire _04_;
-  wire _05_;
-  wire _06_;
-  wire _07_;
-  wire _08_;
-  wire _09_;
-  wire _10_;
-  wire _11_;
-  wire _12_;
-  wire _13_;
-  wire _14_;
-  wire [4:0] _15_;
-  wire [1:0] _16_;
-  wire _17_;
-  wire _18_;
-  wire _19_;
-  wire _20_;
-  wire _21_;
-  wire _22_;
-  wire _23_;
-  wire [9:0] _24_;
-  wire [2:0] _25_;
-  wire _26_;
-  wire _27_;
-  (* src = "FSM_synth.v:66|FSM.v:39|<techmap.v>:432" *)
-  wire [8:0] _28_;
-  (* src = "FSM_synth.v:66|FSM.v:39|<techmap.v>:428" *)
-  wire [2:0] _29_;
-  wire _30_;
-  (* src = "FSM_synth.v:66|FSM.v:39|<techmap.v>:445" *)
-  wire _31_;
+  wire _002_;
+  (* src = "FSM_synth.v:33" *)
+  wire [2:0] _003_;
+  (* src = "FSM_synth.v:33" *)
+  wire [2:0] _004_;
+  wire [4:0] _005_;
+  wire [1:0] _006_;
+  wire _007_;
+  wire _008_;
+  wire _009_;
+  wire _010_;
+  wire [1:0] _011_;
+  wire [1:0] _012_;
+  wire [1:0] _013_;
+  wire [1:0] _014_;
+  wire _015_;
+  wire _016_;
+  wire [9:0] _017_;
+  wire [2:0] _018_;
+  wire _019_;
+  wire _020_;
+  wire _021_;
+  wire _022_;
+  wire _023_;
+  wire _024_;
+  (* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:432" *)
+  wire [11:0] _025_;
+  (* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:428" *)
+  wire [2:0] _026_;
+  (* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:445" *)
+  wire _027_;
   (* src = "FSM_synth.v:10" *)
   input [9:0] FIFO_empty;
   (* src = "FSM_synth.v:6" *)
   input clk;
   (* init = 3'h0 *)
-  (* src = "FSM_synth.v:22" *)
+  (* src = "FSM_synth.v:20" *)
   reg [2:0] estado = 3'h0;
   (* init = 1'h0 *)
   (* src = "FSM_synth.v:11" *)
   output idle;
   (* src = "FSM_synth.v:7" *)
   input init;
-  (* init = 3'h6 *)
   (* src = "FSM_synth.v:12" *)
   output [2:0] interno_alto;
-  (* init = 3'h2 *)
   (* src = "FSM_synth.v:13" *)
   output [2:0] interno_bajo;
   (* init = 3'h0 *)
-  (* src = "FSM_synth.v:23" *)
+  (* src = "FSM_synth.v:21" *)
   wire [2:0] proximo_estado;
   (* src = "FSM_synth.v:5" *)
   input reset;
+  (* src = "FSM_synth.v:22" *)
+  wire [2:0] thr_alto;
+  (* src = "FSM_synth.v:23" *)
+  wire [2:0] thr_bajo;
   (* src = "FSM_synth.v:8" *)
   input [2:0] umbral_alto;
   (* src = "FSM_synth.v:9" *)
   input [2:0] umbral_bajo;
-  assign _15_[0] = _24_[0] |(* src = "FSM_synth.v:68" *)  _24_[1];
-  assign _15_[1] = _24_[2] |(* src = "FSM_synth.v:68" *)  _24_[3];
-  assign _15_[2] = _24_[4] |(* src = "FSM_synth.v:68" *)  _24_[5];
-  assign _15_[3] = _24_[6] |(* src = "FSM_synth.v:68" *)  _24_[7];
-  assign _15_[4] = _24_[8] |(* src = "FSM_synth.v:68" *)  _24_[9];
-  assign _16_[0] = _15_[0] |(* src = "FSM_synth.v:68" *)  _15_[1];
-  assign _16_[1] = _15_[2] |(* src = "FSM_synth.v:68" *)  _15_[3];
-  assign _17_ = _16_[0] |(* src = "FSM_synth.v:68" *)  _16_[1];
-  assign _09_ = _17_ |(* src = "FSM_synth.v:68" *)  _15_[4];
-  assign _18_ = _25_[0] |(* src = "FSM_synth.v:66|FSM.v:39" *)  _25_[1];
-  assign _26_ = _18_ |(* src = "FSM_synth.v:66|FSM.v:39" *)  estado[2];
-  assign _19_ = _25_[0] |(* src = "FSM_synth.v:45|FSM.v:39" *)  estado[1];
-  assign _27_ = _19_ |(* src = "FSM_synth.v:45|FSM.v:39" *)  estado[2];
-  assign _20_ = estado[0] |(* src = "FSM_synth.v:53|FSM.v:39" *)  _25_[1];
-  assign _06_ = _20_ |(* src = "FSM_synth.v:53|FSM.v:39" *)  estado[2];
-  assign _03_ = _08_ | _30_;
-  assign _11_ = _13_ |(* src = "FSM_synth.v:33" *)  _14_;
-  assign _21_ = _03_ |(* src = "FSM_synth.v:66|FSM.v:39|<techmap.v>:441" *)  _22_;
-  assign _29_[0] = _22_ |(* src = "FSM_synth.v:66|FSM.v:39|<techmap.v>:441" *)  _28_[6];
-  assign _31_ = _21_ |(* src = "FSM_synth.v:66|FSM.v:39|<techmap.v>:445" *)  _28_[6];
-  assign _23_ = estado[0] |(* src = "FSM_synth.v:40|FSM.v:39" *)  estado[1];
-  assign _05_ = _23_ |(* src = "FSM_synth.v:40|FSM.v:39" *)  estado[2];
-  assign _10_ = ~(* src = "FSM_synth.v:68" *) _09_;
-  assign _30_ = ~(* src = "FSM_synth.v:66|FSM.v:39" *) _26_;
-  assign _28_[6] = ~(* src = "FSM_synth.v:40|FSM.v:39" *) _05_;
-  assign _08_ = ~(* src = "FSM_synth.v:45|FSM.v:39" *) _27_;
-  assign _22_ = ~(* src = "FSM_synth.v:53|FSM.v:39" *) _06_;
-  assign _01_ = _06_ ? (* src = "FSM_synth.v:53|FSM.v:39" *) 1'h0 : _10_;
-  assign _00_[0] = reset ? (* src = "FSM_synth.v:27" *) proximo_estado[0] : 1'h0;
-  assign _00_[1] = reset ? (* src = "FSM_synth.v:27" *) proximo_estado[1] : 1'h0;
-  assign _00_[2] = reset ? (* src = "FSM_synth.v:27" *) proximo_estado[2] : 1'h0;
-  assign _02_[0] = _31_ ? (* src = "FSM_synth.v:66|FSM.v:39|<techmap.v>:445" *) _29_[0] : 1'h0;
-  assign _02_[1] = _31_ ? (* src = "FSM_synth.v:66|FSM.v:39|<techmap.v>:445" *) _21_ : 1'h0;
-  assign _07_ = ~_12_;
-  assign _04_ = ~_11_;
+  assign _005_[0] = _017_[0] |(* src = "FSM_synth.v:73" *)  _017_[1];
+  assign _005_[1] = _017_[2] |(* src = "FSM_synth.v:73" *)  _017_[3];
+  assign _005_[2] = _017_[4] |(* src = "FSM_synth.v:73" *)  _017_[5];
+  assign _005_[3] = _017_[6] |(* src = "FSM_synth.v:73" *)  _017_[7];
+  assign _005_[4] = _017_[8] |(* src = "FSM_synth.v:73" *)  _017_[9];
+  assign _006_[0] = _005_[0] |(* src = "FSM_synth.v:73" *)  _005_[1];
+  assign _006_[1] = _005_[2] |(* src = "FSM_synth.v:73" *)  _005_[3];
+  assign _007_ = _006_[0] |(* src = "FSM_synth.v:73" *)  _006_[1];
+  assign _019_ = _007_ |(* src = "FSM_synth.v:73" *)  _005_[4];
+  assign _008_ = _018_[0] |(* src = "FSM_synth.v:71|FSM.v:44" *)  _018_[1];
+  assign _020_ = _008_ |(* src = "FSM_synth.v:71|FSM.v:44" *)  estado[2];
+  assign _009_ = estado[0] |(* src = "FSM_synth.v:58|FSM.v:44" *)  _018_[1];
+  assign _021_ = _009_ |(* src = "FSM_synth.v:58|FSM.v:44" *)  estado[2];
+  assign _010_ = _018_[0] |(* src = "FSM_synth.v:50|FSM.v:44" *)  estado[1];
+  assign _022_ = _010_ |(* src = "FSM_synth.v:50|FSM.v:44" *)  estado[2];
+  assign _011_[0] = _025_[2] |(* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:441" *)  _025_[5];
+  assign _012_[0] = _025_[1] |(* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:441" *)  _025_[4];
+  assign _026_[1] = _012_[0] |(* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:441" *)  _012_[1];
+  assign _013_[0] = _025_[0] |(* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:441" *)  _025_[3];
+  assign _026_[0] = _013_[0] |(* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:441" *)  _013_[1];
+  assign _014_[0] = _023_ |(* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:445" *)  _024_;
+  assign _014_[1] = _012_[1] |(* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:445" *)  _013_[1];
+  assign _027_ = _014_[0] |(* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:445" *)  _014_[1];
+  assign _015_ = estado[0] |(* src = "FSM_synth.v:45|FSM.v:44" *)  estado[1];
+  assign _016_ = _015_ |(* src = "FSM_synth.v:45|FSM.v:44" *)  estado[2];
+  assign _002_ = ~(* src = "FSM_synth.v:73" *) _019_;
+  assign _023_ = ~(* src = "FSM_synth.v:71|FSM.v:44" *) _020_;
+  assign _013_[1] = ~(* src = "FSM_synth.v:45|FSM.v:44" *) _016_;
+  assign _024_ = ~(* src = "FSM_synth.v:58|FSM.v:44" *) _021_;
+  assign _012_[1] = ~(* src = "FSM_synth.v:50|FSM.v:44" *) _022_;
+  assign _004_[0] = _019_ ? (* src = "FSM_synth.v:73" *) _001_[0] : 1'h0;
+  assign _004_[1] = _019_ ? (* src = "FSM_synth.v:73" *) _001_[1] : 1'h1;
+  assign _004_[2] = _019_ ? (* src = "FSM_synth.v:73" *) _001_[2] : 1'h0;
+  assign _003_[0] = _019_ ? (* src = "FSM_synth.v:60" *) 1'h1 : _001_[0];
+  assign _003_[1] = _019_ ? (* src = "FSM_synth.v:60" *) 1'h1 : _001_[1];
+  assign _003_[2] = _019_ ? (* src = "FSM_synth.v:60" *) 1'h0 : _001_[2];
+  assign idle = _021_ ? (* src = "FSM_synth.v:58|FSM.v:44" *) 1'h0 : _002_;
+  assign interno_bajo[0] = _022_ ? (* src = "FSM_synth.v:50|FSM.v:44" *) 1'h0 : umbral_bajo[0];
+  assign interno_bajo[1] = _022_ ? (* src = "FSM_synth.v:50|FSM.v:44" *) 1'h1 : umbral_bajo[1];
+  assign interno_bajo[2] = _022_ ? (* src = "FSM_synth.v:50|FSM.v:44" *) 1'h0 : umbral_bajo[2];
+  assign interno_alto[0] = _022_ ? (* src = "FSM_synth.v:50|FSM.v:44" *) 1'h0 : umbral_alto[0];
+  assign interno_alto[1] = _022_ ? (* src = "FSM_synth.v:50|FSM.v:44" *) 1'h1 : umbral_alto[1];
+  assign interno_alto[2] = _022_ ? (* src = "FSM_synth.v:50|FSM.v:44" *) 1'h1 : umbral_alto[2];
+  assign _001_[0] = init ? (* src = "FSM_synth.v:40" *) 1'h1 : estado[0];
+  assign _001_[1] = init ? (* src = "FSM_synth.v:40" *) 1'h0 : estado[1];
+  assign _001_[2] = init ? (* src = "FSM_synth.v:40" *) 1'h0 : estado[2];
+  assign _000_[0] = reset ? (* src = "FSM_synth.v:27" *) proximo_estado[0] : 1'h0;
+  assign _000_[1] = reset ? (* src = "FSM_synth.v:27" *) proximo_estado[1] : 1'h0;
+  assign _000_[2] = reset ? (* src = "FSM_synth.v:27" *) proximo_estado[2] : 1'h0;
+  assign proximo_estado[0] = _027_ ? (* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:445" *) _026_[0] : 1'h0;
+  assign proximo_estado[1] = _027_ ? (* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:445" *) _026_[1] : 1'h0;
+  assign proximo_estado[2] = _027_ ? (* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:445" *) _011_[0] : 1'h0;
   (* src = "FSM_synth.v:25" *)
   always @(posedge clk)
-      estado[0] <= _00_[0];
+      estado[0] <= _000_[0];
   (* src = "FSM_synth.v:25" *)
   always @(posedge clk)
-      estado[1] <= _00_[1];
+      estado[1] <= _000_[1];
   (* src = "FSM_synth.v:25" *)
   always @(posedge clk)
-      estado[2] <= _00_[2];
-  (* src = "FSM_synth.v:33" *)
-  \$_DLATCH_P_  _70_ (
-    .D(_01_),
-    .E(_07_),
-    .Q(idle)
-  );
-  (* src = "FSM_synth.v:33" *)
-  \$_DLATCH_P_  _71_ (
-    .D(umbral_alto[0]),
-    .E(_08_),
-    .Q(interno_alto[0])
-  );
-  (* src = "FSM_synth.v:33" *)
-  \$_DLATCH_P_  _72_ (
-    .D(umbral_alto[1]),
-    .E(_08_),
-    .Q(interno_alto[1])
-  );
-  (* src = "FSM_synth.v:33" *)
-  \$_DLATCH_P_  _73_ (
-    .D(umbral_alto[2]),
-    .E(_08_),
-    .Q(interno_alto[2])
-  );
-  (* src = "FSM_synth.v:33" *)
-  \$_DLATCH_P_  _74_ (
-    .D(umbral_bajo[0]),
-    .E(_08_),
-    .Q(interno_bajo[0])
-  );
-  (* src = "FSM_synth.v:33" *)
-  \$_DLATCH_P_  _75_ (
-    .D(umbral_bajo[1]),
-    .E(_08_),
-    .Q(interno_bajo[1])
-  );
-  (* src = "FSM_synth.v:33" *)
-  \$_DLATCH_P_  _76_ (
-    .D(umbral_bajo[2]),
-    .E(_08_),
-    .Q(interno_bajo[2])
-  );
-  (* src = "FSM_synth.v:33" *)
-  \$_DLATCH_P_  _77_ (
-    .D(_02_[0]),
-    .E(_04_),
-    .Q(proximo_estado[0])
-  );
-  (* src = "FSM_synth.v:33" *)
-  \$_DLATCH_P_  _78_ (
-    .D(_02_[1]),
-    .E(_04_),
-    .Q(proximo_estado[1])
-  );
-  (* src = "FSM_synth.v:33" *)
-  \$_DLATCH_P_  _79_ (
-    .D(1'h0),
-    .E(_04_),
-    .Q(proximo_estado[2])
-  );
-  assign _24_[0] = FIFO_empty[0] ^(* src = "FSM_synth.v:68" *)  1'h1;
-  assign _24_[1] = FIFO_empty[1] ^(* src = "FSM_synth.v:68" *)  1'h1;
-  assign _24_[2] = FIFO_empty[2] ^(* src = "FSM_synth.v:68" *)  1'h1;
-  assign _24_[3] = FIFO_empty[3] ^(* src = "FSM_synth.v:68" *)  1'h1;
-  assign _24_[4] = FIFO_empty[4] ^(* src = "FSM_synth.v:68" *)  1'h1;
-  assign _24_[5] = FIFO_empty[5] ^(* src = "FSM_synth.v:68" *)  1'h1;
-  assign _24_[6] = FIFO_empty[6] ^(* src = "FSM_synth.v:68" *)  1'h1;
-  assign _24_[7] = FIFO_empty[7] ^(* src = "FSM_synth.v:68" *)  1'h1;
-  assign _24_[8] = FIFO_empty[8] ^(* src = "FSM_synth.v:68" *)  1'h1;
-  assign _24_[9] = FIFO_empty[9] ^(* src = "FSM_synth.v:68" *)  1'h1;
-  assign _25_[0] = estado[0] ^(* src = "FSM_synth.v:45|FSM.v:39" *)  1'h1;
-  assign _25_[1] = estado[1] ^(* src = "FSM_synth.v:53|FSM.v:39" *)  1'h1;
-  assign _12_ = _05_ &(* src = "FSM_synth.v:33" *)  _06_;
-  assign _14_ = _30_ &(* src = "FSM_synth.v:33" *)  _09_;
-  assign _13_ = _22_ &(* src = "FSM_synth.v:33" *)  _10_;
-  assign _02_[2] = 1'h0;
-  assign _25_[2] = estado[2];
-  assign { _28_[8:7], _28_[5:0] } = { 3'h0, _22_, _22_, 1'h0, _03_, 1'h0 };
-  assign _29_[2:1] = { 1'h0, _21_ };
+      estado[2] <= _000_[2];
+  assign _017_[0] = FIFO_empty[0] ^(* src = "FSM_synth.v:73" *)  1'h1;
+  assign _017_[1] = FIFO_empty[1] ^(* src = "FSM_synth.v:73" *)  1'h1;
+  assign _017_[2] = FIFO_empty[2] ^(* src = "FSM_synth.v:73" *)  1'h1;
+  assign _017_[3] = FIFO_empty[3] ^(* src = "FSM_synth.v:73" *)  1'h1;
+  assign _017_[4] = FIFO_empty[4] ^(* src = "FSM_synth.v:73" *)  1'h1;
+  assign _017_[5] = FIFO_empty[5] ^(* src = "FSM_synth.v:73" *)  1'h1;
+  assign _017_[6] = FIFO_empty[6] ^(* src = "FSM_synth.v:73" *)  1'h1;
+  assign _017_[7] = FIFO_empty[7] ^(* src = "FSM_synth.v:73" *)  1'h1;
+  assign _017_[8] = FIFO_empty[8] ^(* src = "FSM_synth.v:73" *)  1'h1;
+  assign _017_[9] = FIFO_empty[9] ^(* src = "FSM_synth.v:73" *)  1'h1;
+  assign _018_[1] = estado[1] ^(* src = "FSM_synth.v:58|FSM.v:44" *)  1'h1;
+  assign _018_[0] = estado[0] ^(* src = "FSM_synth.v:50|FSM.v:44" *)  1'h1;
+  assign _025_[3] = _003_[0] &(* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:434" *)  _024_;
+  assign _025_[4] = _003_[1] &(* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:434" *)  _024_;
+  assign _025_[5] = _003_[2] &(* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:434" *)  _024_;
+  assign _025_[0] = _004_[0] &(* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:434" *)  _023_;
+  assign _025_[1] = _004_[1] &(* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:434" *)  _023_;
+  assign _025_[2] = _004_[2] &(* src = "FSM_synth.v:71|FSM.v:44|<techmap.v>:434" *)  _023_;
+  assign _011_[1] = 1'h0;
+  assign _018_[2] = estado[2];
+  assign _025_[11:6] = { 2'h0, _013_[1], 1'h0, _012_[1], 1'h0 };
+  assign _026_[2] = _011_[0];
+  assign thr_alto = 3'h6;
+  assign thr_bajo = 3'h2;
 endmodule

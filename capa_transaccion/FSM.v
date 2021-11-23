@@ -12,8 +12,6 @@ module FSM (input reset,
             output reg [2:0] interno_alto,
             output reg [2:0] interno_bajo);
 
-initial interno_alto = 6;
-initial interno_bajo = 2;
 initial idle = 0;
 parameter RESET = 0;
 parameter INIT = 1;
@@ -21,6 +19,8 @@ parameter IDLE = 2;
 parameter ACTIVE = 3;
 reg [2:0] estado = 0;
 reg [2:0] proximo_estado = 0;
+reg [2:0] thr_alto = 6;
+reg [2:0] thr_bajo = 2;
 
 always @(posedge clk) begin
     
@@ -32,33 +32,38 @@ always @(posedge clk) begin
 
 always @(*) begin
 
+    proximo_estado = estado;
+    idle = 0;
+    interno_alto = thr_alto;
+    interno_bajo = thr_bajo;
+
     if (init) begin
-        proximo_estado <= INIT;
+        proximo_estado = INIT;
     end
 
     case (estado)
         RESET: begin
-                idle <= 0;
-                proximo_estado <= INIT;
+                idle = 0;
+                proximo_estado = INIT;
                 end
 
         INIT: begin
 
-                interno_alto <= umbral_alto;
-                interno_bajo <= umbral_bajo;
-                proximo_estado <= IDLE;
+                interno_alto = umbral_alto;
+                interno_bajo = umbral_bajo;
+                proximo_estado = IDLE;
 
         end
 
         IDLE: begin
 
                 if (FIFO_empty == 10'b1111111111) begin
-                    idle <= 1;
+                    idle = 1;
                 end
 
                 else begin
-                    idle <= 0;
-                    proximo_estado <= ACTIVE; 
+                    idle = 0;
+                    proximo_estado = ACTIVE; 
                 end
                 
         end
@@ -66,7 +71,7 @@ always @(*) begin
         ACTIVE: begin
 
                 if (FIFO_empty == 10'b1111111111) begin
-                   proximo_estado <= IDLE; 
+                   proximo_estado = IDLE; 
                 end
         end
         

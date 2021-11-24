@@ -34,7 +34,7 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
         init <= 0;
         req <= 0;
         idx <= 2;
-        FIFO_in <= 12'hAFC;
+        FIFO_in <= 12'h0FC;
     end
     always #1 clk <= ~clk;
 
@@ -45,24 +45,19 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
     /*1. Saque el bloque de RESET, manteniendo el estado de INIT (señal init) */
    
     @(posedge clk);
-    @(posedge clk);
     Enable <= 1;
     @(posedge clk);
     reset <= 1;
-    @(posedge clk);
     @(posedge clk);
     init <= 1;
 
     /*2. Modifique 2 veces los umbrales altos y bajos de los FIFOs (son el mismo umbral bajo y alto para todos). Libere la señal init.*/
     @(posedge clk);
-    @(posedge clk);
     umbral_bajo <=1;
     umbral_alto <= 7;
     @(posedge clk);
-    @(posedge clk);
     umbral_bajo <=2;
     umbral_alto <= 6;
-    @(posedge clk);
     @(posedge clk);
     init <= 0;
 
@@ -72,13 +67,23 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
     y que salieron por la salida correcta en la prioridad correcta.*/
     @(posedge clk);
     PUSH = 1;
-    repeat(16)
     @(posedge clk);
-    pop_fifo_azules = 4'b1111;
-    repeat(3)
+    FIFO_in <= 12'h0AA;
+    @(posedge clk);
+    FIFO_in <= 12'h0CC;
+    @(posedge clk);
+    FIFO_in <= 12'h0F23;
+    @(posedge clk);
+    FIFO_in <= 12'h077;
+    @(posedge clk);
+    FIFO_in <= 12'h0BB;
+    @(posedge clk);
+    PUSH = 0;
     @(posedge clk);
     @(posedge clk);
     @(posedge clk);
+    @(posedge clk);
+    pop_fifo_azules[0] <= 1;
    
 
 
@@ -95,6 +100,12 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
     valor que la suma de los contadores 0, 1, 2 y 3*/
     
     @(posedge clk);
+    @(posedge clk);
+     @(posedge clk);
+    @(posedge clk);
+     @(posedge clk);
+    @(posedge clk);
+     @(posedge clk);
     @(posedge clk);
 	#3 $finish;
     

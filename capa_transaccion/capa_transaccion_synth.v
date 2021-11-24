@@ -181,22 +181,10 @@ module FIFO_synth(FIFO_synth_data_in, clk, interno_bajo, interno_alto, Reset, En
   assign _013_[0] = _012_[0] |(* src = "FIFO_synth.v:31" *)  _012_[1];
   assign _018_ = _013_[0] |(* src = "FIFO_synth.v:31" *)  _013_[1];
   assign _016_ = _015_[0] |(* src = "FIFO_synth.v:28" *)  _013_[1];
-  assign FIFO_synth_empty = ~(* src = "FIFO_synth.v:28" *) _016_;
-  assign FIFO_synth_full = ~(* src = "FIFO_synth.v:29" *) _018_;
   assign _021_ = ~(* src = "FIFO_synth.v:61" *) read_enable;
   assign _022_ = ~(* src = "FIFO_synth.v:63" *) write_enable;
-  assign _027_[0] = Reset ? (* src = "FIFO_synth.v:38" *) _026_[0] : 1'h0;
-  assign _027_[1] = Reset ? (* src = "FIFO_synth.v:38" *) _026_[1] : 1'h0;
-  assign _027_[2] = Reset ? (* src = "FIFO_synth.v:38" *) _026_[2] : 1'h0;
-  assign _002_[0] = Enable ? (* src = "FIFO_synth.v:36" *) _029_[0] : wr_ptr[0];
-  assign _002_[1] = Enable ? (* src = "FIFO_synth.v:36" *) _029_[1] : wr_ptr[1];
-  assign _002_[2] = Enable ? (* src = "FIFO_synth.v:36" *) _029_[2] : wr_ptr[2];
-  assign _028_[0] = write_enable ? (* src = "FIFO_synth.v:52" *) _004_[0] : wr_ptr[0];
-  assign _028_[1] = write_enable ? (* src = "FIFO_synth.v:52" *) _004_[1] : wr_ptr[1];
-  assign _028_[2] = write_enable ? (* src = "FIFO_synth.v:52" *) _004_[2] : wr_ptr[2];
-  assign _029_[0] = Reset ? (* src = "FIFO_synth.v:38" *) _028_[0] : 1'h0;
-  assign _029_[1] = Reset ? (* src = "FIFO_synth.v:38" *) _028_[1] : 1'h0;
-  assign _029_[2] = Reset ? (* src = "FIFO_synth.v:38" *) _028_[2] : 1'h0;
+  assign FIFO_synth_empty = ~(* src = "FIFO_synth.v:28" *) _016_;
+  assign FIFO_synth_full = ~(* src = "FIFO_synth.v:29" *) _018_;
   assign _024_[0] = _007_ ? (* src = "FIFO_synth.v:63" *) _005_[0] : _023_[0];
   assign _024_[1] = _007_ ? (* src = "FIFO_synth.v:63" *) _030_[1] : _023_[1];
   assign _024_[2] = _007_ ? (* src = "FIFO_synth.v:63" *) _030_[2] : _023_[2];
@@ -235,6 +223,18 @@ module FIFO_synth(FIFO_synth_data_in, clk, interno_bajo, interno_alto, Reset, En
   assign _026_[0] = read_enable ? (* src = "FIFO_synth.v:46" *) _003_[0] : rd_ptr[0];
   assign _026_[1] = read_enable ? (* src = "FIFO_synth.v:46" *) _003_[1] : rd_ptr[1];
   assign _026_[2] = read_enable ? (* src = "FIFO_synth.v:46" *) _003_[2] : rd_ptr[2];
+  assign _027_[0] = Reset ? (* src = "FIFO_synth.v:38" *) _026_[0] : 1'h0;
+  assign _027_[1] = Reset ? (* src = "FIFO_synth.v:38" *) _026_[1] : 1'h0;
+  assign _027_[2] = Reset ? (* src = "FIFO_synth.v:38" *) _026_[2] : 1'h0;
+  assign _002_[0] = Enable ? (* src = "FIFO_synth.v:36" *) _029_[0] : wr_ptr[0];
+  assign _002_[1] = Enable ? (* src = "FIFO_synth.v:36" *) _029_[1] : wr_ptr[1];
+  assign _002_[2] = Enable ? (* src = "FIFO_synth.v:36" *) _029_[2] : wr_ptr[2];
+  assign _028_[0] = write_enable ? (* src = "FIFO_synth.v:52" *) _004_[0] : wr_ptr[0];
+  assign _028_[1] = write_enable ? (* src = "FIFO_synth.v:52" *) _004_[1] : wr_ptr[1];
+  assign _028_[2] = write_enable ? (* src = "FIFO_synth.v:52" *) _004_[2] : wr_ptr[2];
+  assign _029_[0] = Reset ? (* src = "FIFO_synth.v:38" *) _028_[0] : 1'h0;
+  assign _029_[1] = Reset ? (* src = "FIFO_synth.v:38" *) _028_[1] : 1'h0;
+  assign _029_[2] = Reset ? (* src = "FIFO_synth.v:38" *) _028_[2] : 1'h0;
   assign _044_ = ~(* src = "FIFO_synth.v:30" *) _046_;
   assign _043_ = ~(* src = "FIFO_synth.v:30" *) _040_[7];
   assign _038_ = ~(* src = "FIFO_synth.v:31" *) _035_[7];
@@ -288,6 +288,8 @@ module FIFO_synth(FIFO_synth_data_in, clk, interno_bajo, interno_alto, Reset, En
   (* src = "FIFO_synth.v:35" *)
   always @(posedge clk)
       espacios_ocupados[7] <= _000_[7];
+  assign _006_ = write_enable &(* src = "FIFO_synth.v:61" *)  _021_;
+  assign _007_ = _022_ &(* src = "FIFO_synth.v:63" *)  read_enable;
   assign _046_ = _043_ | _045_;
   assign _051_[0] = interno_alto[0] &(* src = "FIFO_synth.v:31|<techmap.v>:260" *)  _034_[0];
   assign _051_[1] = interno_alto[1] &(* src = "FIFO_synth.v:31|<techmap.v>:260" *)  _034_[1];
@@ -378,8 +380,6 @@ module FIFO_synth(FIFO_synth_data_in, clk, interno_bajo, interno_alto, Reset, En
   assign _047_[6] = espacios_ocupados[6] |(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:229" *)  _068_;
   assign FIFO_synth_almost_empty = _020_ &(* src = "FIFO_synth.v:30" *)  _016_;
   assign FIFO_synth_almost_full = _019_ &(* src = "FIFO_synth.v:31" *)  _018_;
-  assign _006_ = write_enable &(* src = "FIFO_synth.v:61" *)  _021_;
-  assign _007_ = _022_ &(* src = "FIFO_synth.v:63" *)  read_enable;
   (* module_not_derived = 32'd1 *)
   (* src = "FIFO_synth.v:70" *)
   memoria_synth memoria_synth (
@@ -413,156 +413,160 @@ endmodule
 
 (* src = "FSM_synth.v:5" *)
 module FSM_synth(reset, clk, init, umbral_alto, umbral_bajo, FIFO_synth_empty, idle, interno_alto, interno_bajo);
-  (* src = "FSM_synth.v:25" *)
+  (* src = "FSM_synth.v:24" *)
   wire [2:0] _000_;
-  (* src = "FSM_synth.v:33" *)
+  (* src = "FSM_synth.v:24" *)
   wire [2:0] _001_;
-  (* src = "FSM_synth.v:33" *)
+  (* src = "FSM_synth.v:41" *)
   wire _002_;
-  (* src = "FSM_synth.v:33" *)
-  wire [2:0] _003_;
-  (* src = "FSM_synth.v:33" *)
-  wire [2:0] _004_;
-  wire [4:0] _005_;
-  wire [1:0] _006_;
+  wire _003_;
+  wire _004_;
+  wire _005_;
+  wire _006_;
   wire _007_;
   wire _008_;
   wire _009_;
   wire _010_;
-  wire [1:0] _011_;
-  wire [1:0] _012_;
-  wire [1:0] _013_;
-  wire [1:0] _014_;
+  wire [3:0] _011_;
+  wire _012_;
+  wire _013_;
+  wire _014_;
   wire _015_;
   wire _016_;
-  wire [9:0] _017_;
-  wire [2:0] _018_;
+  wire _017_;
+  wire _018_;
   wire _019_;
   wire _020_;
-  wire _021_;
-  wire _022_;
+  wire [4:0] _021_;
+  wire [1:0] _022_;
   wire _023_;
   wire _024_;
-  (* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:432" *)
-  wire [11:0] _025_;
-  (* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:428" *)
+  wire [2:0] _025_;
   wire [2:0] _026_;
-  (* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:445" *)
-  wire _027_;
+  wire [9:0] _027_;
+  wire _028_;
+  wire _029_;
+  wire _030_;
+  wire _031_;
+  wire _032_;
+  wire _033_;
+  wire _034_;
   (* src = "FSM_synth.v:10" *)
   input [9:0] FIFO_synth_empty;
   (* src = "FSM_synth.v:6" *)
   input clk;
-  (* init = 3'h0 *)
-  (* src = "FSM_synth.v:20" *)
-  reg [2:0] estado = 3'h0;
-  (* init = 1'h0 *)
+  (* onehot = 32'd1 *)
+  reg [3:0] estado;
   (* src = "FSM_synth.v:11" *)
   output idle;
   (* src = "FSM_synth.v:7" *)
   input init;
   (* src = "FSM_synth.v:12" *)
   output [2:0] interno_alto;
+  (* src = "FSM_synth.v:21" *)
+  reg [2:0] interno_alto_d;
   (* src = "FSM_synth.v:13" *)
   output [2:0] interno_bajo;
-  (* init = 3'h0 *)
-  (* src = "FSM_synth.v:21" *)
-  wire [2:0] proximo_estado;
+  (* src = "FSM_synth.v:22" *)
+  reg [2:0] interno_bajo_d;
   (* src = "FSM_synth.v:5" *)
   input reset;
-  (* src = "FSM_synth.v:22" *)
-  wire [2:0] thr_alto;
-  (* src = "FSM_synth.v:23" *)
-  wire [2:0] thr_bajo;
   (* src = "FSM_synth.v:8" *)
   input [2:0] umbral_alto;
   (* src = "FSM_synth.v:9" *)
   input [2:0] umbral_bajo;
-  assign _005_[0] = _017_[0] |(* src = "FSM_synth.v:73" *)  _017_[1];
-  assign _005_[1] = _017_[2] |(* src = "FSM_synth.v:73" *)  _017_[3];
-  assign _005_[2] = _017_[4] |(* src = "FSM_synth.v:73" *)  _017_[5];
-  assign _005_[3] = _017_[6] |(* src = "FSM_synth.v:73" *)  _017_[7];
-  assign _005_[4] = _017_[8] |(* src = "FSM_synth.v:73" *)  _017_[9];
-  assign _006_[0] = _005_[0] |(* src = "FSM_synth.v:73" *)  _005_[1];
-  assign _006_[1] = _005_[2] |(* src = "FSM_synth.v:73" *)  _005_[3];
-  assign _007_ = _006_[0] |(* src = "FSM_synth.v:73" *)  _006_[1];
-  assign _019_ = _007_ |(* src = "FSM_synth.v:73" *)  _005_[4];
-  assign _008_ = _018_[0] |(* src = "FSM_synth.v:71|FSM_synth.v:44" *)  _018_[1];
-  assign _020_ = _008_ |(* src = "FSM_synth.v:71|FSM_synth.v:44" *)  estado[2];
-  assign _009_ = estado[0] |(* src = "FSM_synth.v:58|FSM_synth.v:44" *)  _018_[1];
-  assign _021_ = _009_ |(* src = "FSM_synth.v:58|FSM_synth.v:44" *)  estado[2];
-  assign _010_ = _018_[0] |(* src = "FSM_synth.v:50|FSM_synth.v:44" *)  estado[1];
-  assign _022_ = _010_ |(* src = "FSM_synth.v:50|FSM_synth.v:44" *)  estado[2];
-  assign _011_[0] = _025_[2] |(* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:441" *)  _025_[5];
-  assign _012_[0] = _025_[1] |(* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:441" *)  _025_[4];
-  assign _026_[1] = _012_[0] |(* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:441" *)  _012_[1];
-  assign _013_[0] = _025_[0] |(* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:441" *)  _025_[3];
-  assign _026_[0] = _013_[0] |(* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:441" *)  _013_[1];
-  assign _014_[0] = _023_ |(* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:445" *)  _024_;
-  assign _014_[1] = _012_[1] |(* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:445" *)  _013_[1];
-  assign _027_ = _014_[0] |(* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:445" *)  _014_[1];
-  assign _015_ = estado[0] |(* src = "FSM_synth.v:45|FSM_synth.v:44" *)  estado[1];
-  assign _016_ = _015_ |(* src = "FSM_synth.v:45|FSM_synth.v:44" *)  estado[2];
-  assign _002_ = ~(* src = "FSM_synth.v:73" *) _019_;
-  assign _023_ = ~(* src = "FSM_synth.v:71|FSM_synth.v:44" *) _020_;
-  assign _013_[1] = ~(* src = "FSM_synth.v:45|FSM_synth.v:44" *) _016_;
-  assign _024_ = ~(* src = "FSM_synth.v:58|FSM_synth.v:44" *) _021_;
-  assign _012_[1] = ~(* src = "FSM_synth.v:50|FSM_synth.v:44" *) _022_;
-  assign _004_[0] = _019_ ? (* src = "FSM_synth.v:73" *) _001_[0] : 1'h0;
-  assign _004_[1] = _019_ ? (* src = "FSM_synth.v:73" *) _001_[1] : 1'h1;
-  assign _004_[2] = _019_ ? (* src = "FSM_synth.v:73" *) _001_[2] : 1'h0;
-  assign _003_[0] = _019_ ? (* src = "FSM_synth.v:60" *) 1'h1 : _001_[0];
-  assign _003_[1] = _019_ ? (* src = "FSM_synth.v:60" *) 1'h1 : _001_[1];
-  assign _003_[2] = _019_ ? (* src = "FSM_synth.v:60" *) 1'h0 : _001_[2];
-  assign idle = _021_ ? (* src = "FSM_synth.v:58|FSM_synth.v:44" *) 1'h0 : _002_;
-  assign interno_bajo[0] = _022_ ? (* src = "FSM_synth.v:50|FSM_synth.v:44" *) 1'h0 : umbral_bajo[0];
-  assign interno_bajo[1] = _022_ ? (* src = "FSM_synth.v:50|FSM_synth.v:44" *) 1'h1 : umbral_bajo[1];
-  assign interno_bajo[2] = _022_ ? (* src = "FSM_synth.v:50|FSM_synth.v:44" *) 1'h0 : umbral_bajo[2];
-  assign interno_alto[0] = _022_ ? (* src = "FSM_synth.v:50|FSM_synth.v:44" *) 1'h0 : umbral_alto[0];
-  assign interno_alto[1] = _022_ ? (* src = "FSM_synth.v:50|FSM_synth.v:44" *) 1'h1 : umbral_alto[1];
-  assign interno_alto[2] = _022_ ? (* src = "FSM_synth.v:50|FSM_synth.v:44" *) 1'h1 : umbral_alto[2];
-  assign _001_[0] = init ? (* src = "FSM_synth.v:40" *) 1'h1 : estado[0];
-  assign _001_[1] = init ? (* src = "FSM_synth.v:40" *) 1'h0 : estado[1];
-  assign _001_[2] = init ? (* src = "FSM_synth.v:40" *) 1'h0 : estado[2];
-  assign _000_[0] = reset ? (* src = "FSM_synth.v:27" *) proximo_estado[0] : 1'h0;
-  assign _000_[1] = reset ? (* src = "FSM_synth.v:27" *) proximo_estado[1] : 1'h0;
-  assign _000_[2] = reset ? (* src = "FSM_synth.v:27" *) proximo_estado[2] : 1'h0;
-  assign proximo_estado[0] = _027_ ? (* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:445" *) _026_[0] : 1'h0;
-  assign proximo_estado[1] = _027_ ? (* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:445" *) _026_[1] : 1'h0;
-  assign proximo_estado[2] = _027_ ? (* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:445" *) _011_[0] : 1'h0;
-  (* src = "FSM_synth.v:25" *)
+  assign _018_ = _006_ | _007_;
+  assign _011_[2] = _018_ | _008_;
+  assign _019_ = _025_[0] | init;
+  assign _028_ = _019_ | _002_;
+  assign _029_ = _020_ | _026_[2];
+  assign _030_ = _025_[0] | _026_[2];
+  assign _021_[0] = _027_[0] |(* src = "FSM_synth.v:81" *)  _027_[1];
+  assign _021_[1] = _027_[2] |(* src = "FSM_synth.v:81" *)  _027_[3];
+  assign _021_[2] = _027_[4] |(* src = "FSM_synth.v:81" *)  _027_[5];
+  assign _021_[3] = _027_[6] |(* src = "FSM_synth.v:81" *)  _027_[7];
+  assign _021_[4] = _027_[8] |(* src = "FSM_synth.v:81" *)  _027_[9];
+  assign _022_[0] = _021_[0] |(* src = "FSM_synth.v:81" *)  _021_[1];
+  assign _022_[1] = _021_[2] |(* src = "FSM_synth.v:81" *)  _021_[3];
+  assign _023_ = _022_[0] |(* src = "FSM_synth.v:81" *)  _022_[1];
+  assign _031_ = _023_ |(* src = "FSM_synth.v:81" *)  _021_[4];
+  assign _020_ = _025_[0] | _026_[1];
+  assign _032_ = _020_ | _002_;
+  assign _024_ = _004_ | _005_;
+  assign _011_[1] = _024_ | _003_;
+  assign _011_[3] = _009_ | _010_;
+  assign _033_ = _025_[0] | _002_;
+  assign _034_ = _019_ | _026_[2];
+  assign _016_ = ~_028_;
+  assign _015_ = ~_029_;
+  assign _013_ = ~_030_;
+  assign _002_ = ~(* src = "FSM_synth.v:81" *) _031_;
+  assign _014_ = ~_032_;
+  assign _017_ = ~_033_;
+  assign _012_ = ~_034_;
+  assign idle = estado[1] ? (* src = "FSM_synth.v:66|FSM_synth.v:52" *) _002_ : 1'h0;
+  assign interno_bajo[0] = estado[2] ? (* src = "FSM_synth.v:58|FSM_synth.v:52" *) umbral_bajo[0] : interno_bajo_d[0];
+  assign interno_bajo[1] = estado[2] ? (* src = "FSM_synth.v:58|FSM_synth.v:52" *) umbral_bajo[1] : interno_bajo_d[1];
+  assign interno_bajo[2] = estado[2] ? (* src = "FSM_synth.v:58|FSM_synth.v:52" *) umbral_bajo[2] : interno_bajo_d[2];
+  assign interno_alto[0] = estado[2] ? (* src = "FSM_synth.v:58|FSM_synth.v:52" *) umbral_alto[0] : interno_alto_d[0];
+  assign interno_alto[1] = estado[2] ? (* src = "FSM_synth.v:58|FSM_synth.v:52" *) umbral_alto[1] : interno_alto_d[1];
+  assign interno_alto[2] = estado[2] ? (* src = "FSM_synth.v:58|FSM_synth.v:52" *) umbral_alto[2] : interno_alto_d[2];
+  assign _001_[0] = reset ? (* src = "FSM_synth.v:26" *) interno_bajo[0] : 1'h0;
+  assign _001_[1] = reset ? (* src = "FSM_synth.v:26" *) interno_bajo[1] : 1'h0;
+  assign _001_[2] = reset ? (* src = "FSM_synth.v:26" *) interno_bajo[2] : 1'h0;
+  assign _000_[0] = reset ? (* src = "FSM_synth.v:26" *) interno_alto[0] : 1'h0;
+  assign _000_[1] = reset ? (* src = "FSM_synth.v:26" *) interno_alto[1] : 1'h0;
+  assign _000_[2] = reset ? (* src = "FSM_synth.v:26" *) interno_alto[2] : 1'h0;
+  assign _011_[0] = ~reset;
   always @(posedge clk)
-      estado[0] <= _000_[0];
-  (* src = "FSM_synth.v:25" *)
+      estado[0] <= _011_[0];
   always @(posedge clk)
-      estado[1] <= _000_[1];
-  (* src = "FSM_synth.v:25" *)
+      estado[1] <= _011_[1];
   always @(posedge clk)
-      estado[2] <= _000_[2];
-  assign _017_[0] = FIFO_synth_empty[0] ^(* src = "FSM_synth.v:73" *)  1'h1;
-  assign _017_[1] = FIFO_synth_empty[1] ^(* src = "FSM_synth.v:73" *)  1'h1;
-  assign _017_[2] = FIFO_synth_empty[2] ^(* src = "FSM_synth.v:73" *)  1'h1;
-  assign _017_[3] = FIFO_synth_empty[3] ^(* src = "FSM_synth.v:73" *)  1'h1;
-  assign _017_[4] = FIFO_synth_empty[4] ^(* src = "FSM_synth.v:73" *)  1'h1;
-  assign _017_[5] = FIFO_synth_empty[5] ^(* src = "FSM_synth.v:73" *)  1'h1;
-  assign _017_[6] = FIFO_synth_empty[6] ^(* src = "FSM_synth.v:73" *)  1'h1;
-  assign _017_[7] = FIFO_synth_empty[7] ^(* src = "FSM_synth.v:73" *)  1'h1;
-  assign _017_[8] = FIFO_synth_empty[8] ^(* src = "FSM_synth.v:73" *)  1'h1;
-  assign _017_[9] = FIFO_synth_empty[9] ^(* src = "FSM_synth.v:73" *)  1'h1;
-  assign _018_[1] = estado[1] ^(* src = "FSM_synth.v:58|FSM_synth.v:44" *)  1'h1;
-  assign _018_[0] = estado[0] ^(* src = "FSM_synth.v:50|FSM_synth.v:44" *)  1'h1;
-  assign _025_[3] = _003_[0] &(* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:434" *)  _024_;
-  assign _025_[4] = _003_[1] &(* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:434" *)  _024_;
-  assign _025_[5] = _003_[2] &(* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:434" *)  _024_;
-  assign _025_[0] = _004_[0] &(* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:434" *)  _023_;
-  assign _025_[1] = _004_[1] &(* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:434" *)  _023_;
-  assign _025_[2] = _004_[2] &(* src = "FSM_synth.v:71|FSM_synth.v:44|<techmap.v>:434" *)  _023_;
-  assign _011_[1] = 1'h0;
-  assign _018_[2] = estado[2];
-  assign _025_[11:6] = { 2'h0, _013_[1], 1'h0, _012_[1], 1'h0 };
-  assign _026_[2] = _011_[0];
-  assign thr_alto = 3'h6;
-  assign thr_bajo = 3'h2;
+      estado[2] <= _011_[2];
+  always @(posedge clk)
+      estado[3] <= _011_[3];
+  (* src = "FSM_synth.v:24" *)
+  always @(posedge clk)
+      interno_alto_d[0] <= _000_[0];
+  (* src = "FSM_synth.v:24" *)
+  always @(posedge clk)
+      interno_alto_d[1] <= _000_[1];
+  (* src = "FSM_synth.v:24" *)
+  always @(posedge clk)
+      interno_alto_d[2] <= _000_[2];
+  (* src = "FSM_synth.v:24" *)
+  always @(posedge clk)
+      interno_bajo_d[0] <= _001_[0];
+  (* src = "FSM_synth.v:24" *)
+  always @(posedge clk)
+      interno_bajo_d[1] <= _001_[1];
+  (* src = "FSM_synth.v:24" *)
+  always @(posedge clk)
+      interno_bajo_d[2] <= _001_[2];
+  assign _007_ = _015_ & estado[1];
+  assign _008_ = reset & estado[0];
+  assign _003_ = _012_ & estado[1];
+  assign _027_[0] = FIFO_synth_empty[0] ^(* src = "FSM_synth.v:81" *)  1'h1;
+  assign _027_[1] = FIFO_synth_empty[1] ^(* src = "FSM_synth.v:81" *)  1'h1;
+  assign _027_[2] = FIFO_synth_empty[2] ^(* src = "FSM_synth.v:81" *)  1'h1;
+  assign _027_[3] = FIFO_synth_empty[3] ^(* src = "FSM_synth.v:81" *)  1'h1;
+  assign _027_[4] = FIFO_synth_empty[4] ^(* src = "FSM_synth.v:81" *)  1'h1;
+  assign _027_[5] = FIFO_synth_empty[5] ^(* src = "FSM_synth.v:81" *)  1'h1;
+  assign _027_[6] = FIFO_synth_empty[6] ^(* src = "FSM_synth.v:81" *)  1'h1;
+  assign _027_[7] = FIFO_synth_empty[7] ^(* src = "FSM_synth.v:81" *)  1'h1;
+  assign _027_[8] = FIFO_synth_empty[8] ^(* src = "FSM_synth.v:81" *)  1'h1;
+  assign _027_[9] = FIFO_synth_empty[9] ^(* src = "FSM_synth.v:81" *)  1'h1;
+  assign _026_[1] = init ^ 1'h1;
+  assign _005_ = reset & estado[2];
+  assign _004_ = _013_ & estado[3];
+  assign _010_ = _017_ & estado[1];
+  assign _009_ = _016_ & estado[3];
+  assign _006_ = _014_ & estado[3];
+  assign _025_[0] = reset ^ 1'h1;
+  assign _026_[2] = _002_ ^ 1'h1;
+  assign _025_[2:1] = { _002_, init };
+  assign _026_[0] = _025_[0];
 endmodule
 
 (* src = "arbitro_1_synth.v:6" *)
@@ -799,14 +803,14 @@ module arbitro_1_synth(Pops, Push, clk, reset, Enable, FIFO_synth_empty, Almost_
   assign _053_[1] = _027_ ? (* src = "arbitro_1_synth.v:32" *) contador_synth[1] : _008_[1];
   assign _053_[2] = _027_ ? (* src = "arbitro_1_synth.v:32" *) contador_synth[2] : _008_[2];
   assign _053_[3] = _027_ ? (* src = "arbitro_1_synth.v:32" *) contador_synth[3] : _008_[3];
-  assign _000_[0] = Enable ? (* src = "arbitro_1_synth.v:22" *) _003_[0] : Pops[0];
-  assign _000_[1] = Enable ? (* src = "arbitro_1_synth.v:22" *) _003_[1] : Pops[1];
-  assign _000_[2] = Enable ? (* src = "arbitro_1_synth.v:22" *) _003_[2] : Pops[2];
-  assign _000_[3] = Enable ? (* src = "arbitro_1_synth.v:22" *) _003_[3] : Pops[3];
   assign _001_[0] = Enable ? (* src = "arbitro_1_synth.v:22" *) _004_[0] : Push[0];
   assign _001_[1] = Enable ? (* src = "arbitro_1_synth.v:22" *) _004_[1] : Push[1];
   assign _001_[2] = Enable ? (* src = "arbitro_1_synth.v:22" *) _004_[2] : Push[2];
   assign _001_[3] = Enable ? (* src = "arbitro_1_synth.v:22" *) _004_[3] : Push[3];
+  assign _000_[0] = Enable ? (* src = "arbitro_1_synth.v:22" *) _003_[0] : Pops[0];
+  assign _000_[1] = Enable ? (* src = "arbitro_1_synth.v:22" *) _003_[1] : Pops[1];
+  assign _000_[2] = Enable ? (* src = "arbitro_1_synth.v:22" *) _003_[2] : Pops[2];
+  assign _000_[3] = Enable ? (* src = "arbitro_1_synth.v:22" *) _003_[3] : Pops[3];
   assign _054_[0] = _043_ ? (* src = "arbitro_1_synth.v:31" *) contador_synth[0] : _053_[0];
   assign _054_[1] = _043_ ? (* src = "arbitro_1_synth.v:31" *) contador_synth[1] : _053_[1];
   assign _054_[2] = _043_ ? (* src = "arbitro_1_synth.v:31" *) contador_synth[2] : _053_[2];
@@ -844,18 +848,6 @@ module arbitro_1_synth(Pops, Push, clk, reset, Enable, FIFO_synth_empty, Almost_
       contador_synth[3] <= _002_[3];
   (* src = "arbitro_1_synth.v:18" *)
   always @(posedge clk)
-      Push[0] <= _001_[0];
-  (* src = "arbitro_1_synth.v:18" *)
-  always @(posedge clk)
-      Push[1] <= _001_[1];
-  (* src = "arbitro_1_synth.v:18" *)
-  always @(posedge clk)
-      Push[2] <= _001_[2];
-  (* src = "arbitro_1_synth.v:18" *)
-  always @(posedge clk)
-      Push[3] <= _001_[3];
-  (* src = "arbitro_1_synth.v:18" *)
-  always @(posedge clk)
       Pops[0] <= _000_[0];
   (* src = "arbitro_1_synth.v:18" *)
   always @(posedge clk)
@@ -866,6 +858,18 @@ module arbitro_1_synth(Pops, Push, clk, reset, Enable, FIFO_synth_empty, Almost_
   (* src = "arbitro_1_synth.v:18" *)
   always @(posedge clk)
       Pops[3] <= _000_[3];
+  (* src = "arbitro_1_synth.v:18" *)
+  always @(posedge clk)
+      Push[0] <= _001_[0];
+  (* src = "arbitro_1_synth.v:18" *)
+  always @(posedge clk)
+      Push[1] <= _001_[1];
+  (* src = "arbitro_1_synth.v:18" *)
+  always @(posedge clk)
+      Push[2] <= _001_[2];
+  (* src = "arbitro_1_synth.v:18" *)
+  always @(posedge clk)
+      Push[3] <= _001_[3];
   assign _043_ = _028_[0] |(* src = "arbitro_1_synth.v:31" *)  _056_;
   assign _031_[1] = dest[1] ^(* src = "arbitro_1_synth.v:73|arbitro_1_synth.v:70" *)  1'h1;
   assign _031_[0] = dest[0] ^(* src = "arbitro_1_synth.v:72|arbitro_1_synth.v:70" *)  1'h1;
@@ -1831,150 +1835,6 @@ module memoria_synth(FIFO_synth_data_in, wr_ptr, rd_ptr, clk, write_enable, read
   input [2:0] wr_ptr;
   (* src = "memoria_synth.v:16" *)
   input write_enable;
-  assign _019_[0] = rd_ptr[1] ? _023_[0] : _022_[0];
-  assign _019_[1] = rd_ptr[1] ? _023_[1] : _022_[1];
-  assign _019_[2] = rd_ptr[1] ? _023_[2] : _022_[2];
-  assign _019_[3] = rd_ptr[1] ? _023_[3] : _022_[3];
-  assign _019_[4] = rd_ptr[1] ? _023_[4] : _022_[4];
-  assign _019_[5] = rd_ptr[1] ? _023_[5] : _022_[5];
-  assign _019_[6] = rd_ptr[1] ? _023_[6] : _022_[6];
-  assign _019_[7] = rd_ptr[1] ? _023_[7] : _022_[7];
-  assign _019_[8] = rd_ptr[1] ? _023_[8] : _022_[8];
-  assign _019_[9] = rd_ptr[1] ? _023_[9] : _022_[9];
-  assign _019_[10] = rd_ptr[1] ? _023_[10] : _022_[10];
-  assign _019_[11] = rd_ptr[1] ? _023_[11] : _022_[11];
-  assign _020_[0] = rd_ptr[0] ? \ram[1] [0] : \ram[0] [0];
-  assign _020_[1] = rd_ptr[0] ? \ram[1] [1] : \ram[0] [1];
-  assign _020_[2] = rd_ptr[0] ? \ram[1] [2] : \ram[0] [2];
-  assign _020_[3] = rd_ptr[0] ? \ram[1] [3] : \ram[0] [3];
-  assign _020_[4] = rd_ptr[0] ? \ram[1] [4] : \ram[0] [4];
-  assign _020_[5] = rd_ptr[0] ? \ram[1] [5] : \ram[0] [5];
-  assign _020_[6] = rd_ptr[0] ? \ram[1] [6] : \ram[0] [6];
-  assign _020_[7] = rd_ptr[0] ? \ram[1] [7] : \ram[0] [7];
-  assign _020_[8] = rd_ptr[0] ? \ram[1] [8] : \ram[0] [8];
-  assign _020_[9] = rd_ptr[0] ? \ram[1] [9] : \ram[0] [9];
-  assign _020_[10] = rd_ptr[0] ? \ram[1] [10] : \ram[0] [10];
-  assign _020_[11] = rd_ptr[0] ? \ram[1] [11] : \ram[0] [11];
-  assign _018_[0] = rd_ptr[1] ? _021_[0] : _020_[0];
-  assign _018_[1] = rd_ptr[1] ? _021_[1] : _020_[1];
-  assign _018_[2] = rd_ptr[1] ? _021_[2] : _020_[2];
-  assign _018_[3] = rd_ptr[1] ? _021_[3] : _020_[3];
-  assign _018_[4] = rd_ptr[1] ? _021_[4] : _020_[4];
-  assign _018_[5] = rd_ptr[1] ? _021_[5] : _020_[5];
-  assign _018_[6] = rd_ptr[1] ? _021_[6] : _020_[6];
-  assign _018_[7] = rd_ptr[1] ? _021_[7] : _020_[7];
-  assign _018_[8] = rd_ptr[1] ? _021_[8] : _020_[8];
-  assign _018_[9] = rd_ptr[1] ? _021_[9] : _020_[9];
-  assign _018_[10] = rd_ptr[1] ? _021_[10] : _020_[10];
-  assign _018_[11] = rd_ptr[1] ? _021_[11] : _020_[11];
-  assign _024_[0] = rd_ptr[2] ? _019_[0] : _018_[0];
-  assign _024_[1] = rd_ptr[2] ? _019_[1] : _018_[1];
-  assign _024_[2] = rd_ptr[2] ? _019_[2] : _018_[2];
-  assign _024_[3] = rd_ptr[2] ? _019_[3] : _018_[3];
-  assign _024_[4] = rd_ptr[2] ? _019_[4] : _018_[4];
-  assign _024_[5] = rd_ptr[2] ? _019_[5] : _018_[5];
-  assign _024_[6] = rd_ptr[2] ? _019_[6] : _018_[6];
-  assign _024_[7] = rd_ptr[2] ? _019_[7] : _018_[7];
-  assign _024_[8] = rd_ptr[2] ? _019_[8] : _018_[8];
-  assign _024_[9] = rd_ptr[2] ? _019_[9] : _018_[9];
-  assign _024_[10] = rd_ptr[2] ? _019_[10] : _018_[10];
-  assign _024_[11] = rd_ptr[2] ? _019_[11] : _018_[11];
-  assign _033_[0] = _025_ ? _001_[0] : \ram[0] [0];
-  assign _033_[1] = _025_ ? _001_[1] : \ram[0] [1];
-  assign _033_[2] = _025_ ? _001_[2] : \ram[0] [2];
-  assign _033_[3] = _025_ ? _001_[3] : \ram[0] [3];
-  assign _033_[4] = _025_ ? _001_[4] : \ram[0] [4];
-  assign _033_[5] = _025_ ? _001_[5] : \ram[0] [5];
-  assign _033_[6] = _025_ ? _001_[6] : \ram[0] [6];
-  assign _033_[7] = _025_ ? _001_[7] : \ram[0] [7];
-  assign _033_[8] = _025_ ? _001_[8] : \ram[0] [8];
-  assign _033_[9] = _025_ ? _001_[9] : \ram[0] [9];
-  assign _033_[10] = _025_ ? _001_[10] : \ram[0] [10];
-  assign _033_[11] = _025_ ? _001_[11] : \ram[0] [11];
-  assign _038_[0] = _030_ ? _001_[0] : \ram[5] [0];
-  assign _038_[1] = _030_ ? _001_[1] : \ram[5] [1];
-  assign _038_[2] = _030_ ? _001_[2] : \ram[5] [2];
-  assign _038_[3] = _030_ ? _001_[3] : \ram[5] [3];
-  assign _038_[4] = _030_ ? _001_[4] : \ram[5] [4];
-  assign _038_[5] = _030_ ? _001_[5] : \ram[5] [5];
-  assign _038_[6] = _030_ ? _001_[6] : \ram[5] [6];
-  assign _038_[7] = _030_ ? _001_[7] : \ram[5] [7];
-  assign _038_[8] = _030_ ? _001_[8] : \ram[5] [8];
-  assign _038_[9] = _030_ ? _001_[9] : \ram[5] [9];
-  assign _038_[10] = _030_ ? _001_[10] : \ram[5] [10];
-  assign _038_[11] = _030_ ? _001_[11] : \ram[5] [11];
-  assign _037_[0] = _029_ ? _001_[0] : \ram[4] [0];
-  assign _037_[1] = _029_ ? _001_[1] : \ram[4] [1];
-  assign _037_[2] = _029_ ? _001_[2] : \ram[4] [2];
-  assign _037_[3] = _029_ ? _001_[3] : \ram[4] [3];
-  assign _037_[4] = _029_ ? _001_[4] : \ram[4] [4];
-  assign _037_[5] = _029_ ? _001_[5] : \ram[4] [5];
-  assign _037_[6] = _029_ ? _001_[6] : \ram[4] [6];
-  assign _037_[7] = _029_ ? _001_[7] : \ram[4] [7];
-  assign _037_[8] = _029_ ? _001_[8] : \ram[4] [8];
-  assign _037_[9] = _029_ ? _001_[9] : \ram[4] [9];
-  assign _037_[10] = _029_ ? _001_[10] : \ram[4] [10];
-  assign _037_[11] = _029_ ? _001_[11] : \ram[4] [11];
-  assign _040_[0] = _032_ ? _001_[0] : \ram[7] [0];
-  assign _040_[1] = _032_ ? _001_[1] : \ram[7] [1];
-  assign _040_[2] = _032_ ? _001_[2] : \ram[7] [2];
-  assign _040_[3] = _032_ ? _001_[3] : \ram[7] [3];
-  assign _040_[4] = _032_ ? _001_[4] : \ram[7] [4];
-  assign _040_[5] = _032_ ? _001_[5] : \ram[7] [5];
-  assign _040_[6] = _032_ ? _001_[6] : \ram[7] [6];
-  assign _040_[7] = _032_ ? _001_[7] : \ram[7] [7];
-  assign _040_[8] = _032_ ? _001_[8] : \ram[7] [8];
-  assign _040_[9] = _032_ ? _001_[9] : \ram[7] [9];
-  assign _040_[10] = _032_ ? _001_[10] : \ram[7] [10];
-  assign _040_[11] = _032_ ? _001_[11] : \ram[7] [11];
-  assign _039_[0] = _031_ ? _001_[0] : \ram[6] [0];
-  assign _039_[1] = _031_ ? _001_[1] : \ram[6] [1];
-  assign _039_[2] = _031_ ? _001_[2] : \ram[6] [2];
-  assign _039_[3] = _031_ ? _001_[3] : \ram[6] [3];
-  assign _039_[4] = _031_ ? _001_[4] : \ram[6] [4];
-  assign _039_[5] = _031_ ? _001_[5] : \ram[6] [5];
-  assign _039_[6] = _031_ ? _001_[6] : \ram[6] [6];
-  assign _039_[7] = _031_ ? _001_[7] : \ram[6] [7];
-  assign _039_[8] = _031_ ? _001_[8] : \ram[6] [8];
-  assign _039_[9] = _031_ ? _001_[9] : \ram[6] [9];
-  assign _039_[10] = _031_ ? _001_[10] : \ram[6] [10];
-  assign _039_[11] = _031_ ? _001_[11] : \ram[6] [11];
-  assign _036_[0] = _028_ ? _001_[0] : \ram[3] [0];
-  assign _036_[1] = _028_ ? _001_[1] : \ram[3] [1];
-  assign _036_[2] = _028_ ? _001_[2] : \ram[3] [2];
-  assign _036_[3] = _028_ ? _001_[3] : \ram[3] [3];
-  assign _036_[4] = _028_ ? _001_[4] : \ram[3] [4];
-  assign _036_[5] = _028_ ? _001_[5] : \ram[3] [5];
-  assign _036_[6] = _028_ ? _001_[6] : \ram[3] [6];
-  assign _036_[7] = _028_ ? _001_[7] : \ram[3] [7];
-  assign _036_[8] = _028_ ? _001_[8] : \ram[3] [8];
-  assign _036_[9] = _028_ ? _001_[9] : \ram[3] [9];
-  assign _036_[10] = _028_ ? _001_[10] : \ram[3] [10];
-  assign _036_[11] = _028_ ? _001_[11] : \ram[3] [11];
-  assign _035_[0] = _027_ ? _001_[0] : \ram[2] [0];
-  assign _035_[1] = _027_ ? _001_[1] : \ram[2] [1];
-  assign _035_[2] = _027_ ? _001_[2] : \ram[2] [2];
-  assign _035_[3] = _027_ ? _001_[3] : \ram[2] [3];
-  assign _035_[4] = _027_ ? _001_[4] : \ram[2] [4];
-  assign _035_[5] = _027_ ? _001_[5] : \ram[2] [5];
-  assign _035_[6] = _027_ ? _001_[6] : \ram[2] [6];
-  assign _035_[7] = _027_ ? _001_[7] : \ram[2] [7];
-  assign _035_[8] = _027_ ? _001_[8] : \ram[2] [8];
-  assign _035_[9] = _027_ ? _001_[9] : \ram[2] [9];
-  assign _035_[10] = _027_ ? _001_[10] : \ram[2] [10];
-  assign _035_[11] = _027_ ? _001_[11] : \ram[2] [11];
-  assign _034_[0] = _026_ ? _001_[0] : \ram[1] [0];
-  assign _034_[1] = _026_ ? _001_[1] : \ram[1] [1];
-  assign _034_[2] = _026_ ? _001_[2] : \ram[1] [2];
-  assign _034_[3] = _026_ ? _001_[3] : \ram[1] [3];
-  assign _034_[4] = _026_ ? _001_[4] : \ram[1] [4];
-  assign _034_[5] = _026_ ? _001_[5] : \ram[1] [5];
-  assign _034_[6] = _026_ ? _001_[6] : \ram[1] [6];
-  assign _034_[7] = _026_ ? _001_[7] : \ram[1] [7];
-  assign _034_[8] = _026_ ? _001_[8] : \ram[1] [8];
-  assign _034_[9] = _026_ ? _001_[9] : \ram[1] [9];
-  assign _034_[10] = _026_ ? _001_[10] : \ram[1] [10];
-  assign _034_[11] = _026_ ? _001_[11] : \ram[1] [11];
   assign _023_[0] = rd_ptr[0] ? \ram[7] [0] : \ram[6] [0];
   assign _023_[1] = rd_ptr[0] ? \ram[7] [1] : \ram[6] [1];
   assign _023_[2] = rd_ptr[0] ? \ram[7] [2] : \ram[6] [2];
@@ -2011,6 +1871,153 @@ module memoria_synth(FIFO_synth_data_in, wr_ptr, rd_ptr, clk, write_enable, read
   assign _021_[9] = rd_ptr[0] ? \ram[3] [9] : \ram[2] [9];
   assign _021_[10] = rd_ptr[0] ? \ram[3] [10] : \ram[2] [10];
   assign _021_[11] = rd_ptr[0] ? \ram[3] [11] : \ram[2] [11];
+  assign _035_[0] = _027_ ? _001_[0] : \ram[2] [0];
+  assign _035_[1] = _027_ ? _001_[1] : \ram[2] [1];
+  assign _035_[2] = _027_ ? _001_[2] : \ram[2] [2];
+  assign _035_[3] = _027_ ? _001_[3] : \ram[2] [3];
+  assign _035_[4] = _027_ ? _001_[4] : \ram[2] [4];
+  assign _035_[5] = _027_ ? _001_[5] : \ram[2] [5];
+  assign _035_[6] = _027_ ? _001_[6] : \ram[2] [6];
+  assign _035_[7] = _027_ ? _001_[7] : \ram[2] [7];
+  assign _035_[8] = _027_ ? _001_[8] : \ram[2] [8];
+  assign _035_[9] = _027_ ? _001_[9] : \ram[2] [9];
+  assign _035_[10] = _027_ ? _001_[10] : \ram[2] [10];
+  assign _035_[11] = _027_ ? _001_[11] : \ram[2] [11];
+  assign _040_[0] = _032_ ? _001_[0] : \ram[7] [0];
+  assign _040_[1] = _032_ ? _001_[1] : \ram[7] [1];
+  assign _040_[2] = _032_ ? _001_[2] : \ram[7] [2];
+  assign _040_[3] = _032_ ? _001_[3] : \ram[7] [3];
+  assign _040_[4] = _032_ ? _001_[4] : \ram[7] [4];
+  assign _040_[5] = _032_ ? _001_[5] : \ram[7] [5];
+  assign _040_[6] = _032_ ? _001_[6] : \ram[7] [6];
+  assign _040_[7] = _032_ ? _001_[7] : \ram[7] [7];
+  assign _040_[8] = _032_ ? _001_[8] : \ram[7] [8];
+  assign _040_[9] = _032_ ? _001_[9] : \ram[7] [9];
+  assign _040_[10] = _032_ ? _001_[10] : \ram[7] [10];
+  assign _040_[11] = _032_ ? _001_[11] : \ram[7] [11];
+  assign _039_[0] = _031_ ? _001_[0] : \ram[6] [0];
+  assign _039_[1] = _031_ ? _001_[1] : \ram[6] [1];
+  assign _039_[2] = _031_ ? _001_[2] : \ram[6] [2];
+  assign _039_[3] = _031_ ? _001_[3] : \ram[6] [3];
+  assign _039_[4] = _031_ ? _001_[4] : \ram[6] [4];
+  assign _039_[5] = _031_ ? _001_[5] : \ram[6] [5];
+  assign _039_[6] = _031_ ? _001_[6] : \ram[6] [6];
+  assign _039_[7] = _031_ ? _001_[7] : \ram[6] [7];
+  assign _039_[8] = _031_ ? _001_[8] : \ram[6] [8];
+  assign _039_[9] = _031_ ? _001_[9] : \ram[6] [9];
+  assign _039_[10] = _031_ ? _001_[10] : \ram[6] [10];
+  assign _039_[11] = _031_ ? _001_[11] : \ram[6] [11];
+  assign _038_[0] = _030_ ? _001_[0] : \ram[5] [0];
+  assign _038_[1] = _030_ ? _001_[1] : \ram[5] [1];
+  assign _038_[2] = _030_ ? _001_[2] : \ram[5] [2];
+  assign _038_[3] = _030_ ? _001_[3] : \ram[5] [3];
+  assign _038_[4] = _030_ ? _001_[4] : \ram[5] [4];
+  assign _038_[5] = _030_ ? _001_[5] : \ram[5] [5];
+  assign _038_[6] = _030_ ? _001_[6] : \ram[5] [6];
+  assign _038_[7] = _030_ ? _001_[7] : \ram[5] [7];
+  assign _038_[8] = _030_ ? _001_[8] : \ram[5] [8];
+  assign _038_[9] = _030_ ? _001_[9] : \ram[5] [9];
+  assign _038_[10] = _030_ ? _001_[10] : \ram[5] [10];
+  assign _038_[11] = _030_ ? _001_[11] : \ram[5] [11];
+  assign _037_[0] = _029_ ? _001_[0] : \ram[4] [0];
+  assign _037_[1] = _029_ ? _001_[1] : \ram[4] [1];
+  assign _037_[2] = _029_ ? _001_[2] : \ram[4] [2];
+  assign _037_[3] = _029_ ? _001_[3] : \ram[4] [3];
+  assign _037_[4] = _029_ ? _001_[4] : \ram[4] [4];
+  assign _037_[5] = _029_ ? _001_[5] : \ram[4] [5];
+  assign _037_[6] = _029_ ? _001_[6] : \ram[4] [6];
+  assign _037_[7] = _029_ ? _001_[7] : \ram[4] [7];
+  assign _037_[8] = _029_ ? _001_[8] : \ram[4] [8];
+  assign _037_[9] = _029_ ? _001_[9] : \ram[4] [9];
+  assign _037_[10] = _029_ ? _001_[10] : \ram[4] [10];
+  assign _037_[11] = _029_ ? _001_[11] : \ram[4] [11];
+  assign _036_[0] = _028_ ? _001_[0] : \ram[3] [0];
+  assign _036_[1] = _028_ ? _001_[1] : \ram[3] [1];
+  assign _036_[2] = _028_ ? _001_[2] : \ram[3] [2];
+  assign _036_[3] = _028_ ? _001_[3] : \ram[3] [3];
+  assign _036_[4] = _028_ ? _001_[4] : \ram[3] [4];
+  assign _036_[5] = _028_ ? _001_[5] : \ram[3] [5];
+  assign _036_[6] = _028_ ? _001_[6] : \ram[3] [6];
+  assign _036_[7] = _028_ ? _001_[7] : \ram[3] [7];
+  assign _036_[8] = _028_ ? _001_[8] : \ram[3] [8];
+  assign _036_[9] = _028_ ? _001_[9] : \ram[3] [9];
+  assign _036_[10] = _028_ ? _001_[10] : \ram[3] [10];
+  assign _036_[11] = _028_ ? _001_[11] : \ram[3] [11];
+  assign _034_[0] = _026_ ? _001_[0] : \ram[1] [0];
+  assign _034_[1] = _026_ ? _001_[1] : \ram[1] [1];
+  assign _034_[2] = _026_ ? _001_[2] : \ram[1] [2];
+  assign _034_[3] = _026_ ? _001_[3] : \ram[1] [3];
+  assign _034_[4] = _026_ ? _001_[4] : \ram[1] [4];
+  assign _034_[5] = _026_ ? _001_[5] : \ram[1] [5];
+  assign _034_[6] = _026_ ? _001_[6] : \ram[1] [6];
+  assign _034_[7] = _026_ ? _001_[7] : \ram[1] [7];
+  assign _034_[8] = _026_ ? _001_[8] : \ram[1] [8];
+  assign _034_[9] = _026_ ? _001_[9] : \ram[1] [9];
+  assign _034_[10] = _026_ ? _001_[10] : \ram[1] [10];
+  assign _034_[11] = _026_ ? _001_[11] : \ram[1] [11];
+  assign _033_[0] = _025_ ? _001_[0] : \ram[0] [0];
+  assign _033_[1] = _025_ ? _001_[1] : \ram[0] [1];
+  assign _033_[2] = _025_ ? _001_[2] : \ram[0] [2];
+  assign _033_[3] = _025_ ? _001_[3] : \ram[0] [3];
+  assign _033_[4] = _025_ ? _001_[4] : \ram[0] [4];
+  assign _033_[5] = _025_ ? _001_[5] : \ram[0] [5];
+  assign _033_[6] = _025_ ? _001_[6] : \ram[0] [6];
+  assign _033_[7] = _025_ ? _001_[7] : \ram[0] [7];
+  assign _033_[8] = _025_ ? _001_[8] : \ram[0] [8];
+  assign _033_[9] = _025_ ? _001_[9] : \ram[0] [9];
+  assign _033_[10] = _025_ ? _001_[10] : \ram[0] [10];
+  assign _033_[11] = _025_ ? _001_[11] : \ram[0] [11];
+  assign _020_[0] = rd_ptr[0] ? \ram[1] [0] : \ram[0] [0];
+  assign _020_[1] = rd_ptr[0] ? \ram[1] [1] : \ram[0] [1];
+  assign _020_[2] = rd_ptr[0] ? \ram[1] [2] : \ram[0] [2];
+  assign _020_[3] = rd_ptr[0] ? \ram[1] [3] : \ram[0] [3];
+  assign _020_[4] = rd_ptr[0] ? \ram[1] [4] : \ram[0] [4];
+  assign _020_[5] = rd_ptr[0] ? \ram[1] [5] : \ram[0] [5];
+  assign _020_[6] = rd_ptr[0] ? \ram[1] [6] : \ram[0] [6];
+  assign _020_[7] = rd_ptr[0] ? \ram[1] [7] : \ram[0] [7];
+  assign _020_[8] = rd_ptr[0] ? \ram[1] [8] : \ram[0] [8];
+  assign _020_[9] = rd_ptr[0] ? \ram[1] [9] : \ram[0] [9];
+  assign _020_[10] = rd_ptr[0] ? \ram[1] [10] : \ram[0] [10];
+  assign _020_[11] = rd_ptr[0] ? \ram[1] [11] : \ram[0] [11];
+  assign _019_[0] = rd_ptr[1] ? _023_[0] : _022_[0];
+  assign _019_[1] = rd_ptr[1] ? _023_[1] : _022_[1];
+  assign _019_[2] = rd_ptr[1] ? _023_[2] : _022_[2];
+  assign _019_[3] = rd_ptr[1] ? _023_[3] : _022_[3];
+  assign _019_[4] = rd_ptr[1] ? _023_[4] : _022_[4];
+  assign _019_[5] = rd_ptr[1] ? _023_[5] : _022_[5];
+  assign _019_[6] = rd_ptr[1] ? _023_[6] : _022_[6];
+  assign _019_[7] = rd_ptr[1] ? _023_[7] : _022_[7];
+  assign _019_[8] = rd_ptr[1] ? _023_[8] : _022_[8];
+  assign _019_[9] = rd_ptr[1] ? _023_[9] : _022_[9];
+  assign _019_[10] = rd_ptr[1] ? _023_[10] : _022_[10];
+  assign _019_[11] = rd_ptr[1] ? _023_[11] : _022_[11];
+  assign _018_[0] = rd_ptr[1] ? _021_[0] : _020_[0];
+  assign _018_[1] = rd_ptr[1] ? _021_[1] : _020_[1];
+  assign _018_[2] = rd_ptr[1] ? _021_[2] : _020_[2];
+  assign _018_[3] = rd_ptr[1] ? _021_[3] : _020_[3];
+  assign _018_[4] = rd_ptr[1] ? _021_[4] : _020_[4];
+  assign _018_[5] = rd_ptr[1] ? _021_[5] : _020_[5];
+  assign _018_[6] = rd_ptr[1] ? _021_[6] : _020_[6];
+  assign _018_[7] = rd_ptr[1] ? _021_[7] : _020_[7];
+  assign _018_[8] = rd_ptr[1] ? _021_[8] : _020_[8];
+  assign _018_[9] = rd_ptr[1] ? _021_[9] : _020_[9];
+  assign _018_[10] = rd_ptr[1] ? _021_[10] : _020_[10];
+  assign _018_[11] = rd_ptr[1] ? _021_[11] : _020_[11];
+  assign _024_[0] = rd_ptr[2] ? _019_[0] : _018_[0];
+  assign _024_[1] = rd_ptr[2] ? _019_[1] : _018_[1];
+  assign _024_[2] = rd_ptr[2] ? _019_[2] : _018_[2];
+  assign _024_[3] = rd_ptr[2] ? _019_[3] : _018_[3];
+  assign _024_[4] = rd_ptr[2] ? _019_[4] : _018_[4];
+  assign _024_[5] = rd_ptr[2] ? _019_[5] : _018_[5];
+  assign _024_[6] = rd_ptr[2] ? _019_[6] : _018_[6];
+  assign _024_[7] = rd_ptr[2] ? _019_[7] : _018_[7];
+  assign _024_[8] = rd_ptr[2] ? _019_[8] : _018_[8];
+  assign _024_[9] = rd_ptr[2] ? _019_[9] : _018_[9];
+  assign _024_[10] = rd_ptr[2] ? _019_[10] : _018_[10];
+  assign _024_[11] = rd_ptr[2] ? _019_[11] : _018_[11];
+  assign _000_[0] = write_enable ? (* src = "memoria_synth.v:24" *) wr_ptr[0] : 1'hx;
+  assign _000_[1] = write_enable ? (* src = "memoria_synth.v:24" *) wr_ptr[1] : 1'hx;
+  assign _000_[2] = write_enable ? (* src = "memoria_synth.v:24" *) wr_ptr[2] : 1'hx;
   assign _017_[0] = read_enable ? _024_[0] : FIFO_synth_data_out[0];
   assign _017_[1] = read_enable ? _024_[1] : FIFO_synth_data_out[1];
   assign _017_[2] = read_enable ? _024_[2] : FIFO_synth_data_out[2];
@@ -2023,9 +2030,6 @@ module memoria_synth(FIFO_synth_data_in, wr_ptr, rd_ptr, clk, write_enable, read
   assign _017_[9] = read_enable ? _024_[9] : FIFO_synth_data_out[9];
   assign _017_[10] = read_enable ? _024_[10] : FIFO_synth_data_out[10];
   assign _017_[11] = read_enable ? _024_[11] : FIFO_synth_data_out[11];
-  assign _000_[0] = write_enable ? (* src = "memoria_synth.v:24" *) wr_ptr[0] : 1'hx;
-  assign _000_[1] = write_enable ? (* src = "memoria_synth.v:24" *) wr_ptr[1] : 1'hx;
-  assign _000_[2] = write_enable ? (* src = "memoria_synth.v:24" *) wr_ptr[2] : 1'hx;
   assign _001_[0] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_synth_data_in[0] : 1'hx;
   assign _001_[1] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_synth_data_in[1] : 1'hx;
   assign _001_[2] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_synth_data_in[2] : 1'hx;
@@ -2038,8 +2042,8 @@ module memoria_synth(FIFO_synth_data_in, wr_ptr, rd_ptr, clk, write_enable, read
   assign _001_[9] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_synth_data_in[9] : 1'hx;
   assign _001_[10] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_synth_data_in[10] : 1'hx;
   assign _001_[11] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_synth_data_in[11] : 1'hx;
-  assign _016_ = ~_000_[2];
   assign _015_ = ~_000_[1];
+  assign _016_ = ~_000_[2];
   assign _014_ = ~_000_[0];
   always @(posedge clk)
       \ram[0] [0] <= _033_[0];
@@ -2065,6 +2069,126 @@ module memoria_synth(FIFO_synth_data_in, wr_ptr, rd_ptr, clk, write_enable, read
       \ram[0] [10] <= _033_[10];
   always @(posedge clk)
       \ram[0] [11] <= _033_[11];
+  always @(posedge clk)
+      \ram[6] [0] <= _039_[0];
+  always @(posedge clk)
+      \ram[6] [1] <= _039_[1];
+  always @(posedge clk)
+      \ram[6] [2] <= _039_[2];
+  always @(posedge clk)
+      \ram[6] [3] <= _039_[3];
+  always @(posedge clk)
+      \ram[6] [4] <= _039_[4];
+  always @(posedge clk)
+      \ram[6] [5] <= _039_[5];
+  always @(posedge clk)
+      \ram[6] [6] <= _039_[6];
+  always @(posedge clk)
+      \ram[6] [7] <= _039_[7];
+  always @(posedge clk)
+      \ram[6] [8] <= _039_[8];
+  always @(posedge clk)
+      \ram[6] [9] <= _039_[9];
+  always @(posedge clk)
+      \ram[6] [10] <= _039_[10];
+  always @(posedge clk)
+      \ram[6] [11] <= _039_[11];
+  always @(posedge clk)
+      \ram[4] [0] <= _037_[0];
+  always @(posedge clk)
+      \ram[4] [1] <= _037_[1];
+  always @(posedge clk)
+      \ram[4] [2] <= _037_[2];
+  always @(posedge clk)
+      \ram[4] [3] <= _037_[3];
+  always @(posedge clk)
+      \ram[4] [4] <= _037_[4];
+  always @(posedge clk)
+      \ram[4] [5] <= _037_[5];
+  always @(posedge clk)
+      \ram[4] [6] <= _037_[6];
+  always @(posedge clk)
+      \ram[4] [7] <= _037_[7];
+  always @(posedge clk)
+      \ram[4] [8] <= _037_[8];
+  always @(posedge clk)
+      \ram[4] [9] <= _037_[9];
+  always @(posedge clk)
+      \ram[4] [10] <= _037_[10];
+  always @(posedge clk)
+      \ram[4] [11] <= _037_[11];
+  always @(posedge clk)
+      \ram[5] [0] <= _038_[0];
+  always @(posedge clk)
+      \ram[5] [1] <= _038_[1];
+  always @(posedge clk)
+      \ram[5] [2] <= _038_[2];
+  always @(posedge clk)
+      \ram[5] [3] <= _038_[3];
+  always @(posedge clk)
+      \ram[5] [4] <= _038_[4];
+  always @(posedge clk)
+      \ram[5] [5] <= _038_[5];
+  always @(posedge clk)
+      \ram[5] [6] <= _038_[6];
+  always @(posedge clk)
+      \ram[5] [7] <= _038_[7];
+  always @(posedge clk)
+      \ram[5] [8] <= _038_[8];
+  always @(posedge clk)
+      \ram[5] [9] <= _038_[9];
+  always @(posedge clk)
+      \ram[5] [10] <= _038_[10];
+  always @(posedge clk)
+      \ram[5] [11] <= _038_[11];
+  always @(posedge clk)
+      \ram[2] [0] <= _035_[0];
+  always @(posedge clk)
+      \ram[2] [1] <= _035_[1];
+  always @(posedge clk)
+      \ram[2] [2] <= _035_[2];
+  always @(posedge clk)
+      \ram[2] [3] <= _035_[3];
+  always @(posedge clk)
+      \ram[2] [4] <= _035_[4];
+  always @(posedge clk)
+      \ram[2] [5] <= _035_[5];
+  always @(posedge clk)
+      \ram[2] [6] <= _035_[6];
+  always @(posedge clk)
+      \ram[2] [7] <= _035_[7];
+  always @(posedge clk)
+      \ram[2] [8] <= _035_[8];
+  always @(posedge clk)
+      \ram[2] [9] <= _035_[9];
+  always @(posedge clk)
+      \ram[2] [10] <= _035_[10];
+  always @(posedge clk)
+      \ram[2] [11] <= _035_[11];
+  always @(posedge clk)
+      \ram[3] [0] <= _036_[0];
+  always @(posedge clk)
+      \ram[3] [1] <= _036_[1];
+  always @(posedge clk)
+      \ram[3] [2] <= _036_[2];
+  always @(posedge clk)
+      \ram[3] [3] <= _036_[3];
+  always @(posedge clk)
+      \ram[3] [4] <= _036_[4];
+  always @(posedge clk)
+      \ram[3] [5] <= _036_[5];
+  always @(posedge clk)
+      \ram[3] [6] <= _036_[6];
+  always @(posedge clk)
+      \ram[3] [7] <= _036_[7];
+  always @(posedge clk)
+      \ram[3] [8] <= _036_[8];
+  always @(posedge clk)
+      \ram[3] [9] <= _036_[9];
+  always @(posedge clk)
+      \ram[3] [10] <= _036_[10];
+  always @(posedge clk)
+      \ram[3] [11] <= _036_[11];
   always @(posedge clk)
       FIFO_synth_data_out[0] <= _017_[0];
   always @(posedge clk)
@@ -2114,126 +2238,6 @@ module memoria_synth(FIFO_synth_data_in, wr_ptr, rd_ptr, clk, write_enable, read
   always @(posedge clk)
       \ram[7] [11] <= _040_[11];
   always @(posedge clk)
-      \ram[6] [0] <= _039_[0];
-  always @(posedge clk)
-      \ram[6] [1] <= _039_[1];
-  always @(posedge clk)
-      \ram[6] [2] <= _039_[2];
-  always @(posedge clk)
-      \ram[6] [3] <= _039_[3];
-  always @(posedge clk)
-      \ram[6] [4] <= _039_[4];
-  always @(posedge clk)
-      \ram[6] [5] <= _039_[5];
-  always @(posedge clk)
-      \ram[6] [6] <= _039_[6];
-  always @(posedge clk)
-      \ram[6] [7] <= _039_[7];
-  always @(posedge clk)
-      \ram[6] [8] <= _039_[8];
-  always @(posedge clk)
-      \ram[6] [9] <= _039_[9];
-  always @(posedge clk)
-      \ram[6] [10] <= _039_[10];
-  always @(posedge clk)
-      \ram[6] [11] <= _039_[11];
-  always @(posedge clk)
-      \ram[5] [0] <= _038_[0];
-  always @(posedge clk)
-      \ram[5] [1] <= _038_[1];
-  always @(posedge clk)
-      \ram[5] [2] <= _038_[2];
-  always @(posedge clk)
-      \ram[5] [3] <= _038_[3];
-  always @(posedge clk)
-      \ram[5] [4] <= _038_[4];
-  always @(posedge clk)
-      \ram[5] [5] <= _038_[5];
-  always @(posedge clk)
-      \ram[5] [6] <= _038_[6];
-  always @(posedge clk)
-      \ram[5] [7] <= _038_[7];
-  always @(posedge clk)
-      \ram[5] [8] <= _038_[8];
-  always @(posedge clk)
-      \ram[5] [9] <= _038_[9];
-  always @(posedge clk)
-      \ram[5] [10] <= _038_[10];
-  always @(posedge clk)
-      \ram[5] [11] <= _038_[11];
-  always @(posedge clk)
-      \ram[4] [0] <= _037_[0];
-  always @(posedge clk)
-      \ram[4] [1] <= _037_[1];
-  always @(posedge clk)
-      \ram[4] [2] <= _037_[2];
-  always @(posedge clk)
-      \ram[4] [3] <= _037_[3];
-  always @(posedge clk)
-      \ram[4] [4] <= _037_[4];
-  always @(posedge clk)
-      \ram[4] [5] <= _037_[5];
-  always @(posedge clk)
-      \ram[4] [6] <= _037_[6];
-  always @(posedge clk)
-      \ram[4] [7] <= _037_[7];
-  always @(posedge clk)
-      \ram[4] [8] <= _037_[8];
-  always @(posedge clk)
-      \ram[4] [9] <= _037_[9];
-  always @(posedge clk)
-      \ram[4] [10] <= _037_[10];
-  always @(posedge clk)
-      \ram[4] [11] <= _037_[11];
-  always @(posedge clk)
-      \ram[3] [0] <= _036_[0];
-  always @(posedge clk)
-      \ram[3] [1] <= _036_[1];
-  always @(posedge clk)
-      \ram[3] [2] <= _036_[2];
-  always @(posedge clk)
-      \ram[3] [3] <= _036_[3];
-  always @(posedge clk)
-      \ram[3] [4] <= _036_[4];
-  always @(posedge clk)
-      \ram[3] [5] <= _036_[5];
-  always @(posedge clk)
-      \ram[3] [6] <= _036_[6];
-  always @(posedge clk)
-      \ram[3] [7] <= _036_[7];
-  always @(posedge clk)
-      \ram[3] [8] <= _036_[8];
-  always @(posedge clk)
-      \ram[3] [9] <= _036_[9];
-  always @(posedge clk)
-      \ram[3] [10] <= _036_[10];
-  always @(posedge clk)
-      \ram[3] [11] <= _036_[11];
-  always @(posedge clk)
-      \ram[2] [0] <= _035_[0];
-  always @(posedge clk)
-      \ram[2] [1] <= _035_[1];
-  always @(posedge clk)
-      \ram[2] [2] <= _035_[2];
-  always @(posedge clk)
-      \ram[2] [3] <= _035_[3];
-  always @(posedge clk)
-      \ram[2] [4] <= _035_[4];
-  always @(posedge clk)
-      \ram[2] [5] <= _035_[5];
-  always @(posedge clk)
-      \ram[2] [6] <= _035_[6];
-  always @(posedge clk)
-      \ram[2] [7] <= _035_[7];
-  always @(posedge clk)
-      \ram[2] [8] <= _035_[8];
-  always @(posedge clk)
-      \ram[2] [9] <= _035_[9];
-  always @(posedge clk)
-      \ram[2] [10] <= _035_[10];
-  always @(posedge clk)
-      \ram[2] [11] <= _035_[11];
-  always @(posedge clk)
       \ram[1] [0] <= _034_[0];
   always @(posedge clk)
       \ram[1] [1] <= _034_[1];
@@ -2257,24 +2261,24 @@ module memoria_synth(FIFO_synth_data_in, wr_ptr, rd_ptr, clk, write_enable, read
       \ram[1] [10] <= _034_[10];
   always @(posedge clk)
       \ram[1] [11] <= _034_[11];
-  assign _003_ = _014_ & _002_;
-  assign _025_ = _003_ & write_enable;
-  assign _002_ = _015_ & _016_;
-  assign _010_ = _000_[0] & _008_;
-  assign _030_ = _010_ & write_enable;
-  assign _029_ = _009_ & write_enable;
-  assign _008_ = _015_ & _000_[2];
-  assign _009_ = _014_ & _008_;
+  assign _007_ = _000_[0] & _005_;
+  assign _028_ = _007_ & write_enable;
+  assign _027_ = _006_ & write_enable;
+  assign _006_ = _014_ & _005_;
   assign _032_ = _013_ & write_enable;
   assign _013_ = _000_[0] & _011_;
   assign _031_ = _012_ & write_enable;
   assign _012_ = _014_ & _011_;
   assign _011_ = _000_[1] & _000_[2];
-  assign _007_ = _000_[0] & _005_;
-  assign _028_ = _007_ & write_enable;
-  assign _027_ = _006_ & write_enable;
-  assign _006_ = _014_ & _005_;
+  assign _030_ = _010_ & write_enable;
+  assign _010_ = _000_[0] & _008_;
+  assign _029_ = _009_ & write_enable;
+  assign _009_ = _014_ & _008_;
+  assign _008_ = _015_ & _000_[2];
   assign _005_ = _000_[1] & _016_;
   assign _026_ = _004_ & write_enable;
   assign _004_ = _000_[0] & _002_;
+  assign _025_ = _003_ & write_enable;
+  assign _003_ = _014_ & _002_;
+  assign _002_ = _015_ & _016_;
 endmodule

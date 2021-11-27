@@ -42,6 +42,7 @@ always @(posedge clk) begin
     endcase
     
   end
+  else Push = 0;
     
 end
 

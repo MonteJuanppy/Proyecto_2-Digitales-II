@@ -703,7 +703,7 @@ module arbitro_1_synth(Pops, Push, clk, reset, Enable, FIFO_synth_empty, Almost_
   wire [3:0] _055_;
   (* src = "arbitro_1_synth.v:32" *)
   wire _056_;
-  (* src = "arbitro_1_synth.v:59|contador_synth.v:33|<techmap.v>:260|<techmap.v>:203" *)
+  (* src = "arbitro_1_synth.v:59|<techmap.v>:260|<techmap.v>:203" *)
   (* unused_bits = "3" *)
   wire [31:0] _057_;
   (* src = "arbitro_1_synth.v:46|<techmap.v>:260|<techmap.v>:203" *)
@@ -732,7 +732,7 @@ module arbitro_1_synth(Pops, Push, clk, reset, Enable, FIFO_synth_empty, Almost_
   wire _072_;
   (* src = "arbitro_1_synth.v:79|arbitro_1_synth.v:75|<techmap.v>:445" *)
   wire _073_;
-  (* src = "arbitro_1_synth.v:59|contador_synth.v:33|<techmap.v>:260|<techmap.v>:222" *)
+  (* src = "arbitro_1_synth.v:59|<techmap.v>:260|<techmap.v>:222" *)
   wire _074_;
   (* src = "arbitro_1_synth.v:46|<techmap.v>:260|<techmap.v>:221" *)
   wire _075_;
@@ -776,16 +776,17 @@ module arbitro_1_synth(Pops, Push, clk, reset, Enable, FIFO_synth_empty, Almost_
   assign _031_ = _029_[0] |(* src = "arbitro_1_synth.v:79|arbitro_1_synth.v:75" *)  _029_[1];
   assign _032_ = dest[0] |(* src = "arbitro_1_synth.v:78|arbitro_1_synth.v:75" *)  _029_[1];
   assign _033_ = _029_[0] |(* src = "arbitro_1_synth.v:77|arbitro_1_synth.v:75" *)  dest[1];
+  assign _010_[0] = _006_[0] &(* src = "arbitro_1_synth.v:42" *)  _028_[1];
   assign _011_[0] = _010_[0] &(* src = "arbitro_1_synth.v:42" *)  _010_[1];
   assign _036_ = _068_ | _011_[0];
   assign _013_[0] = _012_[0] &(* src = "arbitro_1_synth.v:46" *)  _010_[1];
   assign _034_ = _060_ | _013_[0];
-  assign _015_[0] = _014_[0] &(* src = "arbitro_1_synth.v:46|arbitro_1_synth.v:42" *)  _010_[1];
+  assign _014_[0] = contador_synth[0] &(* src = "arbitro_1_synth.v:46|arbitro_1_synth.v:42" *)  contador_synth[1];
   assign _037_ = _070_ | _015_[0];
-  assign _010_[0] = _006_[0] &(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:46" *)  _028_[1];
-  assign _016_[1] = _063_[2] &(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:46" *)  contador_synth[3];
   assign _017_[0] = _010_[0] &(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:46" *)  _016_[1];
   assign _035_ = _065_ | _017_[0];
+  assign _012_[0] = contador_synth[0] &(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:42" *)  _028_[1];
+  assign _016_[1] = _063_[2] &(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:42" *)  contador_synth[3];
   assign _018_[0] = _012_[0] &(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:42" *)  _016_[1];
   assign _038_ = _072_ | _018_[0];
   assign _023_[0] = _019_[0] |(* src = "arbitro_1_synth.v:79|arbitro_1_synth.v:75|<techmap.v>:445" *)  _020_[0];
@@ -929,31 +930,30 @@ module arbitro_1_synth(Pops, Push, clk, reset, Enable, FIFO_synth_empty, Almost_
   assign _029_[0] = dest[0] ^(* src = "arbitro_1_synth.v:77|arbitro_1_synth.v:75" *)  1'h1;
   assign _061_ = _059_ | _013_[0];
   assign _066_ = _064_ | _017_[0];
-  assign _028_[3] = contador_synth[3] ^(* src = "arbitro_1_synth.v:42|<techmap.v>:262" *)  1'h1;
   assign _006_[0] = contador_synth[0] ^(* src = "arbitro_1_synth.v:46|<techmap.v>:263" *)  1'h1;
+  assign _028_[3] = contador_synth[3] ^(* src = "arbitro_1_synth.v:46|arbitro_1_synth.v:42|<techmap.v>:262" *)  1'h1;
+  assign _006_[1] = contador_synth[1] ^(* src = "arbitro_1_synth.v:59|<techmap.v>:263" *)  contador_synth[0];
+  assign _006_[2] = contador_synth[2] ^(* src = "arbitro_1_synth.v:59|<techmap.v>:263" *)  _014_[0];
+  assign _006_[3] = contador_synth[3] ^(* src = "arbitro_1_synth.v:59|<techmap.v>:263" *)  _057_[2];
+  assign _063_[2] = contador_synth[2] ^(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:46|<techmap.v>:262" *)  1'h1;
   assign _028_[1] = contador_synth[1] ^(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:42|<techmap.v>:262" *)  1'h1;
-  assign _063_[2] = contador_synth[2] ^(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:42|<techmap.v>:262" *)  1'h1;
-  assign _006_[1] = contador_synth[1] ^(* src = "arbitro_1_synth.v:59|contador_synth.v:33|<techmap.v>:263" *)  contador_synth[0];
-  assign _006_[2] = contador_synth[2] ^(* src = "arbitro_1_synth.v:59|contador_synth.v:33|<techmap.v>:263" *)  _014_[0];
-  assign _006_[3] = contador_synth[3] ^(* src = "arbitro_1_synth.v:59|contador_synth.v:33|<techmap.v>:263" *)  _057_[2];
+  assign _076_ = _028_[1] &(* src = "arbitro_1_synth.v:42|<techmap.v>:260|<techmap.v>:221" *)  _062_[0];
   assign _078_ = _010_[1] &(* src = "arbitro_1_synth.v:42|<techmap.v>:260|<techmap.v>:221" *)  _062_[1];
+  assign _010_[1] = _028_[3] &(* src = "arbitro_1_synth.v:42|<techmap.v>:260|<techmap.v>:222" *)  contador_synth[2];
   assign _067_[31] = contador_synth[3] |(* src = "arbitro_1_synth.v:42|<techmap.v>:260|<techmap.v>:221" *)  _078_;
   assign _075_ = _010_[1] &(* src = "arbitro_1_synth.v:46|<techmap.v>:260|<techmap.v>:221" *)  _058_[1];
   assign _058_[1] = contador_synth[1] |(* src = "arbitro_1_synth.v:46|<techmap.v>:260|<techmap.v>:221" *)  _012_[0];
   assign _058_[31] = contador_synth[3] |(* src = "arbitro_1_synth.v:46|<techmap.v>:260|<techmap.v>:221" *)  _075_;
-  assign _010_[1] = _028_[3] &(* src = "arbitro_1_synth.v:46|arbitro_1_synth.v:42|<techmap.v>:260|<techmap.v>:222" *)  contador_synth[2];
+  assign _015_[0] = _010_[1] &(* src = "arbitro_1_synth.v:46|arbitro_1_synth.v:42|<techmap.v>:260|<techmap.v>:221" *)  _014_[0];
+  assign _057_[2] = contador_synth[2] &(* src = "arbitro_1_synth.v:46|arbitro_1_synth.v:42|<techmap.v>:260|<techmap.v>:229" *)  _014_[0];
   assign _069_[31] = contador_synth[3] |(* src = "arbitro_1_synth.v:46|arbitro_1_synth.v:42|<techmap.v>:260|<techmap.v>:221" *)  _015_[0];
-  assign _076_ = _028_[1] &(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:46|<techmap.v>:260|<techmap.v>:221" *)  _062_[0];
-  assign _074_ = contador_synth[3] &(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:46|<techmap.v>:260|<techmap.v>:221" *)  contador_synth[2];
+  assign _074_ = contador_synth[3] &(* src = "arbitro_1_synth.v:59|<techmap.v>:260|<techmap.v>:222" *)  contador_synth[2];
   assign _077_ = _016_[1] &(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:46|<techmap.v>:260|<techmap.v>:221" *)  _062_[1];
   assign _062_[0] = contador_synth[0] |(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:46|<techmap.v>:260|<techmap.v>:212" *)  _006_[0];
   assign _062_[1] = contador_synth[1] |(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:46|<techmap.v>:260|<techmap.v>:221" *)  _076_;
   assign _062_[31] = _074_ |(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:46|<techmap.v>:260|<techmap.v>:221" *)  _077_;
-  assign _012_[0] = _028_[1] &(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:42|<techmap.v>:260|<techmap.v>:221" *)  contador_synth[0];
   assign _079_ = _016_[1] &(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:42|<techmap.v>:260|<techmap.v>:221" *)  _058_[1];
   assign _071_[31] = _074_ |(* src = "arbitro_1_synth.v:50|arbitro_1_synth.v:42|<techmap.v>:260|<techmap.v>:221" *)  _079_;
-  assign _014_[0] = contador_synth[1] &(* src = "arbitro_1_synth.v:59|contador_synth.v:33|<techmap.v>:260|<techmap.v>:221" *)  contador_synth[0];
-  assign _057_[2] = contador_synth[2] &(* src = "arbitro_1_synth.v:59|contador_synth.v:33|<techmap.v>:260|<techmap.v>:229" *)  _014_[0];
   assign _006_[31:5] = 27'h0000000;
   assign _010_[15:2] = 14'h3fff;
   assign _011_[7:1] = 7'h7f;
@@ -1047,10 +1047,10 @@ module arbitro_2_synth(Pop, clk, Push, reset, Enable, FIFO_synth_empty, Almost_f
   assign _08_[0] = ~(* src = "arbitro_2_synth.v:40|arbitro_2_synth.v:36" *) _17_;
   assign _10_[1] = ~(* src = "arbitro_2_synth.v:38|arbitro_2_synth.v:36" *) _18_;
   assign _11_[1] = ~(* src = "arbitro_2_synth.v:37|arbitro_2_synth.v:36" *) _13_;
-  assign _05_[0] = FIFO_synth_empty ? (* src = "arbitro_2_synth.v:34" *) Push[0] : _06_[0];
-  assign _05_[1] = FIFO_synth_empty ? (* src = "arbitro_2_synth.v:34" *) Push[1] : _06_[1];
-  assign _05_[2] = FIFO_synth_empty ? (* src = "arbitro_2_synth.v:34" *) Push[2] : _06_[2];
-  assign _05_[3] = FIFO_synth_empty ? (* src = "arbitro_2_synth.v:34" *) Push[3] : _06_[3];
+  assign _05_[0] = FIFO_synth_empty ? (* src = "arbitro_2_synth.v:34" *) 1'h0 : _06_[0];
+  assign _05_[1] = FIFO_synth_empty ? (* src = "arbitro_2_synth.v:34" *) 1'h0 : _06_[1];
+  assign _05_[2] = FIFO_synth_empty ? (* src = "arbitro_2_synth.v:34" *) 1'h0 : _06_[2];
+  assign _05_[3] = FIFO_synth_empty ? (* src = "arbitro_2_synth.v:34" *) 1'h0 : _06_[3];
   assign _04_ = ~(* src = "arbitro_2_synth.v:28" *) _19_;
   assign _02_ = reset ? (* src = "arbitro_2_synth.v:22" *) _04_ : 1'h0;
   assign _03_[0] = reset ? (* src = "arbitro_2_synth.v:22" *) _05_[0] : 1'h0;
@@ -1191,7 +1191,7 @@ module capa_transaccion_synth(FIFO_synth_in, PUSH, pop_fifo_azules, umbral_bajo,
   (* src = "capa_transaccion_synth.v:19" *)
   input reset;
   (* src = "capa_transaccion_synth.v:24" *)
-  output [4:0] salida_contador_synth;
+  output [7:0] salida_contador_synth;
   (* src = "capa_transaccion_synth.v:59" *)
   wire [11:0] salida_fifo_central;
   (* src = "capa_transaccion_synth.v:33" *)
@@ -1411,8 +1411,8 @@ module capa_transaccion_synth(FIFO_synth_in, PUSH, pop_fifo_azules, umbral_bajo,
     .clk(clk),
     .interno_alto(interno_alto),
     .interno_bajo(interno_bajo),
-    .read_enable(_04_),
-    .write_enable(Enable)
+    .read_enable(Enable),
+    .write_enable(_04_)
   );
   (* module_not_derived = 32'd1 *)
   (* src = "capa_transaccion_synth.v:72" *)
@@ -1490,33 +1490,33 @@ endmodule
 (* src = "contador_synth.v:6" *)
 module contador_synth(push0, push1, push2, push3, push4, req, idx, clk, data, valid);
   (* src = "contador_synth.v:26" *)
-  wire [3:0] _000_;
+  wire [7:0] _000_;
   (* src = "contador_synth.v:26" *)
-  wire [3:0] _001_;
+  wire [7:0] _001_;
   (* src = "contador_synth.v:26" *)
-  wire [3:0] _002_;
+  wire [7:0] _002_;
   (* src = "contador_synth.v:26" *)
-  wire [3:0] _003_;
+  wire [7:0] _003_;
   (* src = "contador_synth.v:26" *)
-  wire [3:0] _004_;
+  wire [7:0] _004_;
   (* src = "contador_synth.v:26" *)
-  wire [4:0] _005_;
+  wire [7:0] _005_;
   (* src = "contador_synth.v:26" *)
-  wire [4:0] _006_;
+  wire [7:0] _006_;
   (* src = "contador_synth.v:29" *)
-  (* unused_bits = "4" *)
+  (* unused_bits = "8" *)
   wire [31:0] _007_;
   (* src = "contador_synth.v:31" *)
-  (* unused_bits = "4" *)
+  (* unused_bits = "8" *)
   wire [31:0] _008_;
   (* src = "contador_synth.v:33" *)
-  (* unused_bits = "4" *)
+  (* unused_bits = "8" *)
   wire [31:0] _009_;
   (* src = "contador_synth.v:35" *)
-  (* unused_bits = "4" *)
+  (* unused_bits = "8" *)
   wire [31:0] _010_;
   (* src = "contador_synth.v:37" *)
-  (* unused_bits = "4" *)
+  (* unused_bits = "8" *)
   wire [31:0] _011_;
   wire _012_;
   wire _013_;
@@ -1532,60 +1532,88 @@ module contador_synth(push0, push1, push2, push3, push4, req, idx, clk, data, va
   wire _023_;
   wire [1:0] _024_;
   wire _025_;
-  wire _026_;
-  wire [2:0] _027_;
-  wire [2:0] _028_;
+  wire [1:0] _026_;
+  wire _027_;
+  wire [1:0] _028_;
   wire _029_;
-  wire _030_;
+  wire [1:0] _030_;
   wire _031_;
-  wire _032_;
-  (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:432" *)
-  wire [24:0] _033_;
-  (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:428" *)
-  wire [4:0] _034_;
-  wire _035_;
-  wire _036_;
+  wire [1:0] _032_;
+  wire _033_;
+  wire _034_;
+  wire [2:0] _035_;
+  wire [2:0] _036_;
   wire _037_;
   wire _038_;
   wire _039_;
-  (* src = "contador_synth.v:29|contador_synth.v:33|<techmap.v>:260|<techmap.v>:203" *)
-  (* unused_bits = "3" *)
-  wire [31:0] _040_;
-  (* src = "contador_synth.v:31|contador_synth.v:33|<techmap.v>:260|<techmap.v>:203" *)
-  (* unused_bits = "3" *)
-  wire [31:0] _041_;
-  (* src = "contador_synth.v:33|<techmap.v>:260|<techmap.v>:203" *)
-  (* unused_bits = "3" *)
-  wire [31:0] _042_;
-  (* src = "contador_synth.v:35|contador_synth.v:33|<techmap.v>:260|<techmap.v>:203" *)
-  (* unused_bits = "3" *)
-  wire [31:0] _043_;
-  (* src = "contador_synth.v:37|contador_synth.v:33|<techmap.v>:260|<techmap.v>:203" *)
-  (* unused_bits = "3" *)
-  wire [31:0] _044_;
-  (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *)
+  wire _040_;
+  (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:432" *)
+  wire [39:0] _041_;
+  (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:428" *)
+  wire [7:0] _042_;
+  wire _043_;
+  wire _044_;
   wire _045_;
+  wire _046_;
+  wire _047_;
+  (* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:203" *)
+  (* unused_bits = "7" *)
+  wire [31:0] _048_;
+  (* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:203" *)
+  (* unused_bits = "7" *)
+  wire [31:0] _049_;
+  (* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:203" *)
+  (* unused_bits = "7" *)
+  wire [31:0] _050_;
+  (* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:203" *)
+  (* unused_bits = "7" *)
+  wire [31:0] _051_;
+  (* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:203" *)
+  (* unused_bits = "7" *)
+  wire [31:0] _052_;
+  (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *)
+  wire _053_;
+  (* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)
+  wire _054_;
+  (* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)
+  wire _055_;
+  (* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)
+  wire _056_;
+  (* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)
+  wire _057_;
+  (* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)
+  wire _058_;
+  (* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)
+  wire _059_;
+  (* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)
+  wire _060_;
+  (* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)
+  wire _061_;
+  (* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)
+  wire _062_;
+  (* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)
+  wire _063_;
   (* src = "contador_synth.v:14" *)
   input clk;
-  (* init = 4'h0 *)
+  (* init = 8'h00 *)
   (* src = "contador_synth.v:20" *)
-  reg [3:0] cuenta0 = 4'h0;
-  (* init = 4'h0 *)
+  reg [7:0] cuenta0 = 8'h00;
+  (* init = 8'h00 *)
   (* src = "contador_synth.v:21" *)
-  reg [3:0] cuenta1 = 4'h0;
-  (* init = 4'h0 *)
+  reg [7:0] cuenta1 = 8'h00;
+  (* init = 8'h00 *)
   (* src = "contador_synth.v:22" *)
-  reg [3:0] cuenta2 = 4'h0;
-  (* init = 4'h0 *)
+  reg [7:0] cuenta2 = 8'h00;
+  (* init = 8'h00 *)
   (* src = "contador_synth.v:23" *)
-  reg [3:0] cuenta3 = 4'h0;
-  (* init = 4'h0 *)
+  reg [7:0] cuenta3 = 8'h00;
+  (* init = 8'h00 *)
   (* src = "contador_synth.v:24" *)
-  reg [3:0] cuenta4 = 4'h0;
-  (* init = 5'h00 *)
+  reg [7:0] cuenta4 = 8'h00;
+  (* init = 8'h00 *)
   (* src = "contador_synth.v:15" *)
-  output [4:0] data;
-  reg [4:0] data = 5'h00;
+  output [7:0] data;
+  reg [7:0] data = 8'h00;
   (* src = "contador_synth.v:13" *)
   input [2:0] idx;
   (* src = "contador_synth.v:7" *)
@@ -1604,69 +1632,112 @@ module contador_synth(push0, push1, push2, push3, push4, req, idx, clk, data, va
   (* src = "contador_synth.v:16" *)
   output valid;
   reg valid = 1'h0;
-  assign _029_ = _012_ |(* src = "contador_synth.v:45|contador_synth.v:40" *)  _027_[2];
-  assign _013_ = _028_[0] |(* src = "contador_synth.v:44|contador_synth.v:40" *)  _028_[1];
-  assign _030_ = _013_ |(* src = "contador_synth.v:44|contador_synth.v:40" *)  idx[2];
-  assign _014_ = idx[0] |(* src = "contador_synth.v:43|contador_synth.v:40" *)  _028_[1];
-  assign _031_ = _014_ |(* src = "contador_synth.v:43|contador_synth.v:40" *)  idx[2];
-  assign _015_ = _028_[0] |(* src = "contador_synth.v:42|contador_synth.v:40" *)  idx[1];
-  assign _032_ = _015_ |(* src = "contador_synth.v:42|contador_synth.v:40" *)  idx[2];
-  assign _016_[0] = _033_[3] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _033_[8];
-  assign _016_[1] = _033_[13] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _033_[18];
+  assign _037_ = _012_ |(* src = "contador_synth.v:45|contador_synth.v:40" *)  _035_[2];
+  assign _013_ = _036_[0] |(* src = "contador_synth.v:44|contador_synth.v:40" *)  _036_[1];
+  assign _038_ = _013_ |(* src = "contador_synth.v:44|contador_synth.v:40" *)  idx[2];
+  assign _014_ = idx[0] |(* src = "contador_synth.v:43|contador_synth.v:40" *)  _036_[1];
+  assign _039_ = _014_ |(* src = "contador_synth.v:43|contador_synth.v:40" *)  idx[2];
+  assign _015_ = _036_[0] |(* src = "contador_synth.v:42|contador_synth.v:40" *)  idx[1];
+  assign _040_ = _015_ |(* src = "contador_synth.v:42|contador_synth.v:40" *)  idx[2];
+  assign _016_[0] = _041_[7] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[15];
+  assign _016_[1] = _041_[23] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[31];
   assign _017_ = _016_[0] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _016_[1];
-  assign _034_[3] = _017_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _033_[23];
-  assign _018_[0] = _033_[2] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _033_[7];
-  assign _018_[1] = _033_[12] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _033_[17];
+  assign _042_[7] = _017_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[39];
+  assign _018_[0] = _041_[6] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[14];
+  assign _018_[1] = _041_[22] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[30];
   assign _019_ = _018_[0] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _018_[1];
-  assign _034_[2] = _019_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _033_[22];
-  assign _020_[0] = _033_[1] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _033_[6];
-  assign _020_[1] = _033_[11] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _033_[16];
+  assign _042_[6] = _019_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[38];
+  assign _020_[0] = _041_[5] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[13];
+  assign _020_[1] = _041_[21] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[29];
   assign _021_ = _020_[0] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _020_[1];
-  assign _034_[1] = _021_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _033_[21];
-  assign _022_[0] = _033_[0] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _033_[5];
-  assign _022_[1] = _033_[10] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _033_[15];
+  assign _042_[5] = _021_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[37];
+  assign _022_[0] = _041_[4] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[12];
+  assign _022_[1] = _041_[20] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[28];
   assign _023_ = _022_[0] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _022_[1];
-  assign _034_[0] = _023_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _033_[20];
-  assign _024_[0] = _035_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *)  _036_;
-  assign _024_[1] = _037_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *)  _038_;
-  assign _025_ = _024_[0] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *)  _024_[1];
-  assign _045_ = _025_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *)  _039_;
+  assign _042_[4] = _023_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[36];
+  assign _024_[0] = _041_[3] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[11];
+  assign _024_[1] = _041_[19] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[27];
+  assign _025_ = _024_[0] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _024_[1];
+  assign _042_[3] = _025_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[35];
+  assign _026_[0] = _041_[2] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[10];
+  assign _026_[1] = _041_[18] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[26];
+  assign _027_ = _026_[0] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _026_[1];
+  assign _042_[2] = _027_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[34];
+  assign _028_[0] = _041_[1] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[9];
+  assign _028_[1] = _041_[17] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[25];
+  assign _029_ = _028_[0] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _028_[1];
+  assign _042_[1] = _029_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[33];
+  assign _030_[0] = _041_[0] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[8];
+  assign _030_[1] = _041_[16] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[24];
+  assign _031_ = _030_[0] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _030_[1];
+  assign _042_[0] = _031_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:441" *)  _041_[32];
+  assign _032_[0] = _043_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *)  _044_;
+  assign _032_[1] = _045_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *)  _046_;
+  assign _033_ = _032_[0] |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *)  _032_[1];
+  assign _053_ = _033_ |(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *)  _047_;
   assign _012_ = idx[0] |(* src = "contador_synth.v:41|contador_synth.v:40" *)  idx[1];
-  assign _026_ = _012_ |(* src = "contador_synth.v:41|contador_synth.v:40" *)  idx[2];
-  assign _035_ = ~(* src = "contador_synth.v:45|contador_synth.v:40" *) _029_;
-  assign _036_ = ~(* src = "contador_synth.v:44|contador_synth.v:40" *) _030_;
-  assign _037_ = ~(* src = "contador_synth.v:43|contador_synth.v:40" *) _031_;
-  assign _038_ = ~(* src = "contador_synth.v:42|contador_synth.v:40" *) _032_;
-  assign _039_ = ~(* src = "contador_synth.v:41|contador_synth.v:40" *) _026_;
+  assign _034_ = _012_ |(* src = "contador_synth.v:41|contador_synth.v:40" *)  idx[2];
+  assign _043_ = ~(* src = "contador_synth.v:45|contador_synth.v:40" *) _037_;
+  assign _044_ = ~(* src = "contador_synth.v:44|contador_synth.v:40" *) _038_;
+  assign _045_ = ~(* src = "contador_synth.v:43|contador_synth.v:40" *) _039_;
+  assign _046_ = ~(* src = "contador_synth.v:42|contador_synth.v:40" *) _040_;
+  assign _047_ = ~(* src = "contador_synth.v:41|contador_synth.v:40" *) _034_;
   assign _003_[0] = push3 ? (* src = "contador_synth.v:35" *) _010_[0] : cuenta3[0];
   assign _003_[1] = push3 ? (* src = "contador_synth.v:35" *) _010_[1] : cuenta3[1];
   assign _003_[2] = push3 ? (* src = "contador_synth.v:35" *) _010_[2] : cuenta3[2];
   assign _003_[3] = push3 ? (* src = "contador_synth.v:35" *) _010_[3] : cuenta3[3];
+  assign _003_[4] = push3 ? (* src = "contador_synth.v:35" *) _010_[4] : cuenta3[4];
+  assign _003_[5] = push3 ? (* src = "contador_synth.v:35" *) _010_[5] : cuenta3[5];
+  assign _003_[6] = push3 ? (* src = "contador_synth.v:35" *) _010_[6] : cuenta3[6];
+  assign _003_[7] = push3 ? (* src = "contador_synth.v:35" *) _010_[7] : cuenta3[7];
   assign _005_[0] = req ? (* src = "contador_synth.v:39" *) _006_[0] : data[0];
   assign _005_[1] = req ? (* src = "contador_synth.v:39" *) _006_[1] : data[1];
   assign _005_[2] = req ? (* src = "contador_synth.v:39" *) _006_[2] : data[2];
   assign _005_[3] = req ? (* src = "contador_synth.v:39" *) _006_[3] : data[3];
-  assign _005_[4] = req ? (* src = "contador_synth.v:39" *) 1'h0 : data[4];
+  assign _005_[4] = req ? (* src = "contador_synth.v:39" *) _006_[4] : data[4];
+  assign _005_[5] = req ? (* src = "contador_synth.v:39" *) _006_[5] : data[5];
+  assign _005_[6] = req ? (* src = "contador_synth.v:39" *) _006_[6] : data[6];
+  assign _005_[7] = req ? (* src = "contador_synth.v:39" *) _006_[7] : data[7];
   assign _004_[0] = push4 ? (* src = "contador_synth.v:37" *) _011_[0] : cuenta4[0];
   assign _004_[1] = push4 ? (* src = "contador_synth.v:37" *) _011_[1] : cuenta4[1];
   assign _004_[2] = push4 ? (* src = "contador_synth.v:37" *) _011_[2] : cuenta4[2];
   assign _004_[3] = push4 ? (* src = "contador_synth.v:37" *) _011_[3] : cuenta4[3];
+  assign _004_[4] = push4 ? (* src = "contador_synth.v:37" *) _011_[4] : cuenta4[4];
+  assign _004_[5] = push4 ? (* src = "contador_synth.v:37" *) _011_[5] : cuenta4[5];
+  assign _004_[6] = push4 ? (* src = "contador_synth.v:37" *) _011_[6] : cuenta4[6];
+  assign _004_[7] = push4 ? (* src = "contador_synth.v:37" *) _011_[7] : cuenta4[7];
   assign _000_[0] = push0 ? (* src = "contador_synth.v:29" *) _007_[0] : cuenta0[0];
   assign _000_[1] = push0 ? (* src = "contador_synth.v:29" *) _007_[1] : cuenta0[1];
   assign _000_[2] = push0 ? (* src = "contador_synth.v:29" *) _007_[2] : cuenta0[2];
   assign _000_[3] = push0 ? (* src = "contador_synth.v:29" *) _007_[3] : cuenta0[3];
+  assign _000_[4] = push0 ? (* src = "contador_synth.v:29" *) _007_[4] : cuenta0[4];
+  assign _000_[5] = push0 ? (* src = "contador_synth.v:29" *) _007_[5] : cuenta0[5];
+  assign _000_[6] = push0 ? (* src = "contador_synth.v:29" *) _007_[6] : cuenta0[6];
+  assign _000_[7] = push0 ? (* src = "contador_synth.v:29" *) _007_[7] : cuenta0[7];
   assign _002_[0] = push2 ? (* src = "contador_synth.v:33" *) _009_[0] : cuenta2[0];
   assign _002_[1] = push2 ? (* src = "contador_synth.v:33" *) _009_[1] : cuenta2[1];
   assign _002_[2] = push2 ? (* src = "contador_synth.v:33" *) _009_[2] : cuenta2[2];
   assign _002_[3] = push2 ? (* src = "contador_synth.v:33" *) _009_[3] : cuenta2[3];
+  assign _002_[4] = push2 ? (* src = "contador_synth.v:33" *) _009_[4] : cuenta2[4];
+  assign _002_[5] = push2 ? (* src = "contador_synth.v:33" *) _009_[5] : cuenta2[5];
+  assign _002_[6] = push2 ? (* src = "contador_synth.v:33" *) _009_[6] : cuenta2[6];
+  assign _002_[7] = push2 ? (* src = "contador_synth.v:33" *) _009_[7] : cuenta2[7];
   assign _001_[0] = push1 ? (* src = "contador_synth.v:31" *) _008_[0] : cuenta1[0];
   assign _001_[1] = push1 ? (* src = "contador_synth.v:31" *) _008_[1] : cuenta1[1];
   assign _001_[2] = push1 ? (* src = "contador_synth.v:31" *) _008_[2] : cuenta1[2];
   assign _001_[3] = push1 ? (* src = "contador_synth.v:31" *) _008_[3] : cuenta1[3];
-  assign _006_[0] = _045_ ? (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *) _034_[0] : 1'h0;
-  assign _006_[1] = _045_ ? (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *) _034_[1] : 1'h0;
-  assign _006_[2] = _045_ ? (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *) _034_[2] : 1'h0;
-  assign _006_[3] = _045_ ? (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *) _034_[3] : 1'h0;
+  assign _001_[4] = push1 ? (* src = "contador_synth.v:31" *) _008_[4] : cuenta1[4];
+  assign _001_[5] = push1 ? (* src = "contador_synth.v:31" *) _008_[5] : cuenta1[5];
+  assign _001_[6] = push1 ? (* src = "contador_synth.v:31" *) _008_[6] : cuenta1[6];
+  assign _001_[7] = push1 ? (* src = "contador_synth.v:31" *) _008_[7] : cuenta1[7];
+  assign _006_[0] = _053_ ? (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *) _042_[0] : 1'h0;
+  assign _006_[1] = _053_ ? (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *) _042_[1] : 1'h0;
+  assign _006_[2] = _053_ ? (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *) _042_[2] : 1'h0;
+  assign _006_[3] = _053_ ? (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *) _042_[3] : 1'h0;
+  assign _006_[4] = _053_ ? (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *) _042_[4] : 1'h0;
+  assign _006_[5] = _053_ ? (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *) _042_[5] : 1'h0;
+  assign _006_[6] = _053_ ? (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *) _042_[6] : 1'h0;
+  assign _006_[7] = _053_ ? (* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:445" *) _042_[7] : 1'h0;
   (* src = "contador_synth.v:26" *)
   always @(posedge clk)
       data[0] <= _005_[0];
@@ -1684,6 +1755,15 @@ module contador_synth(push0, push1, push2, push3, push4, req, idx, clk, data, va
       data[4] <= _005_[4];
   (* src = "contador_synth.v:26" *)
   always @(posedge clk)
+      data[5] <= _005_[5];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      data[6] <= _005_[6];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      data[7] <= _005_[7];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
       valid <= req;
   (* src = "contador_synth.v:26" *)
   always @(posedge clk)
@@ -1699,6 +1779,18 @@ module contador_synth(push0, push1, push2, push3, push4, req, idx, clk, data, va
       cuenta0[3] <= _000_[3];
   (* src = "contador_synth.v:26" *)
   always @(posedge clk)
+      cuenta0[4] <= _000_[4];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta0[5] <= _000_[5];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta0[6] <= _000_[6];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta0[7] <= _000_[7];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
       cuenta1[0] <= _001_[0];
   (* src = "contador_synth.v:26" *)
   always @(posedge clk)
@@ -1709,6 +1801,18 @@ module contador_synth(push0, push1, push2, push3, push4, req, idx, clk, data, va
   (* src = "contador_synth.v:26" *)
   always @(posedge clk)
       cuenta1[3] <= _001_[3];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta1[4] <= _001_[4];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta1[5] <= _001_[5];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta1[6] <= _001_[6];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta1[7] <= _001_[7];
   (* src = "contador_synth.v:26" *)
   always @(posedge clk)
       cuenta2[0] <= _002_[0];
@@ -1723,6 +1827,18 @@ module contador_synth(push0, push1, push2, push3, push4, req, idx, clk, data, va
       cuenta2[3] <= _002_[3];
   (* src = "contador_synth.v:26" *)
   always @(posedge clk)
+      cuenta2[4] <= _002_[4];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta2[5] <= _002_[5];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta2[6] <= _002_[6];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta2[7] <= _002_[7];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
       cuenta3[0] <= _003_[0];
   (* src = "contador_synth.v:26" *)
   always @(posedge clk)
@@ -1735,6 +1851,18 @@ module contador_synth(push0, push1, push2, push3, push4, req, idx, clk, data, va
       cuenta3[3] <= _003_[3];
   (* src = "contador_synth.v:26" *)
   always @(posedge clk)
+      cuenta3[4] <= _003_[4];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta3[5] <= _003_[5];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta3[6] <= _003_[6];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta3[7] <= _003_[7];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
       cuenta4[0] <= _004_[0];
   (* src = "contador_synth.v:26" *)
   always @(posedge clk)
@@ -1745,74 +1873,153 @@ module contador_synth(push0, push1, push2, push3, push4, req, idx, clk, data, va
   (* src = "contador_synth.v:26" *)
   always @(posedge clk)
       cuenta4[3] <= _004_[3];
-  assign _027_[2] = idx[2] ^(* src = "contador_synth.v:45|contador_synth.v:40" *)  1'h1;
-  assign _028_[1] = idx[1] ^(* src = "contador_synth.v:43|contador_synth.v:40" *)  1'h1;
-  assign _028_[0] = idx[0] ^(* src = "contador_synth.v:42|contador_synth.v:40" *)  1'h1;
-  assign _033_[20] = cuenta0[0] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _039_;
-  assign _033_[21] = cuenta0[1] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _039_;
-  assign _033_[22] = cuenta0[2] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _039_;
-  assign _033_[23] = cuenta0[3] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _039_;
-  assign _033_[15] = cuenta1[0] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _038_;
-  assign _033_[16] = cuenta1[1] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _038_;
-  assign _033_[17] = cuenta1[2] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _038_;
-  assign _033_[18] = cuenta1[3] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _038_;
-  assign _033_[10] = cuenta2[0] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _037_;
-  assign _033_[11] = cuenta2[1] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _037_;
-  assign _033_[12] = cuenta2[2] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _037_;
-  assign _033_[13] = cuenta2[3] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _037_;
-  assign _033_[5] = cuenta3[0] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _036_;
-  assign _033_[6] = cuenta3[1] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _036_;
-  assign _033_[7] = cuenta3[2] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _036_;
-  assign _033_[8] = cuenta3[3] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _036_;
-  assign _033_[0] = cuenta4[0] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _035_;
-  assign _033_[1] = cuenta4[1] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _035_;
-  assign _033_[2] = cuenta4[2] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _035_;
-  assign _033_[3] = cuenta4[3] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _035_;
-  assign _009_[1] = cuenta2[1] ^(* src = "contador_synth.v:33|<techmap.v>:263" *)  cuenta2[0];
-  assign _009_[2] = cuenta2[2] ^(* src = "contador_synth.v:33|<techmap.v>:263" *)  _042_[1];
-  assign _009_[3] = cuenta2[3] ^(* src = "contador_synth.v:33|<techmap.v>:263" *)  _042_[2];
-  assign _009_[0] = cuenta2[0] ^(* src = "contador_synth.v:33|<techmap.v>:262" *)  1'h1;
-  assign _010_[1] = cuenta3[1] ^(* src = "contador_synth.v:35|contador_synth.v:33|<techmap.v>:263" *)  cuenta3[0];
-  assign _010_[2] = cuenta3[2] ^(* src = "contador_synth.v:35|contador_synth.v:33|<techmap.v>:263" *)  _043_[1];
-  assign _010_[3] = cuenta3[3] ^(* src = "contador_synth.v:35|contador_synth.v:33|<techmap.v>:263" *)  _043_[2];
-  assign _010_[0] = cuenta3[0] ^(* src = "contador_synth.v:35|contador_synth.v:33|<techmap.v>:262" *)  1'h1;
-  assign _007_[1] = cuenta0[1] ^(* src = "contador_synth.v:29|contador_synth.v:33|<techmap.v>:263" *)  cuenta0[0];
-  assign _007_[2] = cuenta0[2] ^(* src = "contador_synth.v:29|contador_synth.v:33|<techmap.v>:263" *)  _040_[1];
-  assign _007_[3] = cuenta0[3] ^(* src = "contador_synth.v:29|contador_synth.v:33|<techmap.v>:263" *)  _040_[2];
-  assign _007_[0] = cuenta0[0] ^(* src = "contador_synth.v:29|contador_synth.v:33|<techmap.v>:262" *)  1'h1;
-  assign _008_[1] = cuenta1[1] ^(* src = "contador_synth.v:31|contador_synth.v:33|<techmap.v>:263" *)  cuenta1[0];
-  assign _008_[2] = cuenta1[2] ^(* src = "contador_synth.v:31|contador_synth.v:33|<techmap.v>:263" *)  _041_[1];
-  assign _008_[3] = cuenta1[3] ^(* src = "contador_synth.v:31|contador_synth.v:33|<techmap.v>:263" *)  _041_[2];
-  assign _008_[0] = cuenta1[0] ^(* src = "contador_synth.v:31|contador_synth.v:33|<techmap.v>:262" *)  1'h1;
-  assign _011_[1] = cuenta4[1] ^(* src = "contador_synth.v:37|contador_synth.v:33|<techmap.v>:263" *)  cuenta4[0];
-  assign _011_[2] = cuenta4[2] ^(* src = "contador_synth.v:37|contador_synth.v:33|<techmap.v>:263" *)  _044_[1];
-  assign _011_[3] = cuenta4[3] ^(* src = "contador_synth.v:37|contador_synth.v:33|<techmap.v>:263" *)  _044_[2];
-  assign _011_[0] = cuenta4[0] ^(* src = "contador_synth.v:37|contador_synth.v:33|<techmap.v>:262" *)  1'h1;
-  assign _042_[1] = cuenta2[1] &(* src = "contador_synth.v:33|<techmap.v>:260|<techmap.v>:221" *)  cuenta2[0];
-  assign _042_[2] = cuenta2[2] &(* src = "contador_synth.v:33|<techmap.v>:260|<techmap.v>:229" *)  _042_[1];
-  assign _043_[1] = cuenta3[1] &(* src = "contador_synth.v:35|contador_synth.v:33|<techmap.v>:260|<techmap.v>:221" *)  cuenta3[0];
-  assign _043_[2] = cuenta3[2] &(* src = "contador_synth.v:35|contador_synth.v:33|<techmap.v>:260|<techmap.v>:229" *)  _043_[1];
-  assign _040_[1] = cuenta0[1] &(* src = "contador_synth.v:29|contador_synth.v:33|<techmap.v>:260|<techmap.v>:221" *)  cuenta0[0];
-  assign _040_[2] = cuenta0[2] &(* src = "contador_synth.v:29|contador_synth.v:33|<techmap.v>:260|<techmap.v>:229" *)  _040_[1];
-  assign _041_[1] = cuenta1[1] &(* src = "contador_synth.v:31|contador_synth.v:33|<techmap.v>:260|<techmap.v>:221" *)  cuenta1[0];
-  assign _041_[2] = cuenta1[2] &(* src = "contador_synth.v:31|contador_synth.v:33|<techmap.v>:260|<techmap.v>:229" *)  _041_[1];
-  assign _044_[1] = cuenta4[1] &(* src = "contador_synth.v:37|contador_synth.v:33|<techmap.v>:260|<techmap.v>:221" *)  cuenta4[0];
-  assign _044_[2] = cuenta4[2] &(* src = "contador_synth.v:37|contador_synth.v:33|<techmap.v>:260|<techmap.v>:229" *)  _044_[1];
-  assign _006_[4] = 1'h0;
-  assign _007_[31:5] = 27'h0000000;
-  assign _008_[31:5] = 27'h0000000;
-  assign _009_[31:5] = 27'h0000000;
-  assign _010_[31:5] = 27'h0000000;
-  assign _011_[31:5] = 27'h0000000;
-  assign _027_[1:0] = idx[1:0];
-  assign _028_[2] = idx[2];
-  assign { _033_[24], _033_[19], _033_[14], _033_[9], _033_[4] } = 5'h00;
-  assign _034_[4] = 1'h0;
-  assign { _040_[31:3], _040_[0] } = { 28'h0000000, _007_[4], cuenta0[0] };
-  assign { _041_[31:3], _041_[0] } = { 28'h0000000, _008_[4], cuenta1[0] };
-  assign { _042_[31:3], _042_[0] } = { 28'h0000000, _009_[4], cuenta2[0] };
-  assign { _043_[31:3], _043_[0] } = { 28'h0000000, _010_[4], cuenta3[0] };
-  assign { _044_[31:3], _044_[0] } = { 28'h0000000, _011_[4], cuenta4[0] };
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta4[4] <= _004_[4];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta4[5] <= _004_[5];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta4[6] <= _004_[6];
+  (* src = "contador_synth.v:26" *)
+  always @(posedge clk)
+      cuenta4[7] <= _004_[7];
+  assign _035_[2] = idx[2] ^(* src = "contador_synth.v:45|contador_synth.v:40" *)  1'h1;
+  assign _036_[1] = idx[1] ^(* src = "contador_synth.v:43|contador_synth.v:40" *)  1'h1;
+  assign _036_[0] = idx[0] ^(* src = "contador_synth.v:42|contador_synth.v:40" *)  1'h1;
+  assign _041_[32] = cuenta0[0] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _047_;
+  assign _041_[33] = cuenta0[1] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _047_;
+  assign _041_[34] = cuenta0[2] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _047_;
+  assign _041_[35] = cuenta0[3] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _047_;
+  assign _041_[36] = cuenta0[4] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _047_;
+  assign _041_[37] = cuenta0[5] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _047_;
+  assign _041_[38] = cuenta0[6] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _047_;
+  assign _041_[39] = cuenta0[7] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _047_;
+  assign _041_[24] = cuenta1[0] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _046_;
+  assign _041_[25] = cuenta1[1] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _046_;
+  assign _041_[26] = cuenta1[2] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _046_;
+  assign _041_[27] = cuenta1[3] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _046_;
+  assign _041_[28] = cuenta1[4] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _046_;
+  assign _041_[29] = cuenta1[5] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _046_;
+  assign _041_[30] = cuenta1[6] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _046_;
+  assign _041_[31] = cuenta1[7] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _046_;
+  assign _041_[16] = cuenta2[0] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _045_;
+  assign _041_[17] = cuenta2[1] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _045_;
+  assign _041_[18] = cuenta2[2] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _045_;
+  assign _041_[19] = cuenta2[3] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _045_;
+  assign _041_[20] = cuenta2[4] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _045_;
+  assign _041_[21] = cuenta2[5] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _045_;
+  assign _041_[22] = cuenta2[6] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _045_;
+  assign _041_[23] = cuenta2[7] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _045_;
+  assign _041_[8] = cuenta3[0] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _044_;
+  assign _041_[9] = cuenta3[1] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _044_;
+  assign _041_[10] = cuenta3[2] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _044_;
+  assign _041_[11] = cuenta3[3] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _044_;
+  assign _041_[12] = cuenta3[4] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _044_;
+  assign _041_[13] = cuenta3[5] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _044_;
+  assign _041_[14] = cuenta3[6] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _044_;
+  assign _041_[15] = cuenta3[7] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _044_;
+  assign _041_[0] = cuenta4[0] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _043_;
+  assign _041_[1] = cuenta4[1] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _043_;
+  assign _041_[2] = cuenta4[2] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _043_;
+  assign _041_[3] = cuenta4[3] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _043_;
+  assign _041_[4] = cuenta4[4] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _043_;
+  assign _041_[5] = cuenta4[5] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _043_;
+  assign _041_[6] = cuenta4[6] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _043_;
+  assign _041_[7] = cuenta4[7] &(* src = "contador_synth.v:45|contador_synth.v:40|<techmap.v>:434" *)  _043_;
+  assign _009_[0] = cuenta2[0] ^(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:262" *)  1'h1;
+  assign _009_[1] = cuenta2[1] ^(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:263" *)  cuenta2[0];
+  assign _009_[2] = cuenta2[2] ^(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:263" *)  _050_[1];
+  assign _009_[3] = cuenta2[3] ^(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:263" *)  _050_[2];
+  assign _009_[4] = cuenta2[4] ^(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:263" *)  _050_[3];
+  assign _009_[5] = cuenta2[5] ^(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:263" *)  _050_[4];
+  assign _009_[6] = cuenta2[6] ^(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:263" *)  _050_[5];
+  assign _009_[7] = cuenta2[7] ^(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:263" *)  _050_[6];
+  assign _010_[0] = cuenta3[0] ^(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:262" *)  1'h1;
+  assign _010_[1] = cuenta3[1] ^(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:263" *)  cuenta3[0];
+  assign _010_[2] = cuenta3[2] ^(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:263" *)  _051_[1];
+  assign _010_[3] = cuenta3[3] ^(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:263" *)  _051_[2];
+  assign _010_[4] = cuenta3[4] ^(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:263" *)  _051_[3];
+  assign _010_[5] = cuenta3[5] ^(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:263" *)  _051_[4];
+  assign _010_[6] = cuenta3[6] ^(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:263" *)  _051_[5];
+  assign _010_[7] = cuenta3[7] ^(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:263" *)  _051_[6];
+  assign _007_[0] = cuenta0[0] ^(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:262" *)  1'h1;
+  assign _007_[1] = cuenta0[1] ^(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:263" *)  cuenta0[0];
+  assign _007_[2] = cuenta0[2] ^(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:263" *)  _048_[1];
+  assign _007_[3] = cuenta0[3] ^(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:263" *)  _048_[2];
+  assign _007_[4] = cuenta0[4] ^(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:263" *)  _048_[3];
+  assign _007_[5] = cuenta0[5] ^(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:263" *)  _048_[4];
+  assign _007_[6] = cuenta0[6] ^(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:263" *)  _048_[5];
+  assign _007_[7] = cuenta0[7] ^(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:263" *)  _048_[6];
+  assign _008_[0] = cuenta1[0] ^(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:262" *)  1'h1;
+  assign _008_[1] = cuenta1[1] ^(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:263" *)  cuenta1[0];
+  assign _008_[2] = cuenta1[2] ^(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:263" *)  _049_[1];
+  assign _008_[3] = cuenta1[3] ^(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:263" *)  _049_[2];
+  assign _008_[4] = cuenta1[4] ^(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:263" *)  _049_[3];
+  assign _008_[5] = cuenta1[5] ^(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:263" *)  _049_[4];
+  assign _008_[6] = cuenta1[6] ^(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:263" *)  _049_[5];
+  assign _008_[7] = cuenta1[7] ^(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:263" *)  _049_[6];
+  assign _011_[0] = cuenta4[0] ^(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:262" *)  1'h1;
+  assign _011_[1] = cuenta4[1] ^(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:263" *)  cuenta4[0];
+  assign _011_[2] = cuenta4[2] ^(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:263" *)  _052_[1];
+  assign _011_[3] = cuenta4[3] ^(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:263" *)  _052_[2];
+  assign _011_[4] = cuenta4[4] ^(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:263" *)  _052_[3];
+  assign _011_[5] = cuenta4[5] ^(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:263" *)  _052_[4];
+  assign _011_[6] = cuenta4[6] ^(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:263" *)  _052_[5];
+  assign _011_[7] = cuenta4[7] ^(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:263" *)  _052_[6];
+  assign _050_[1] = cuenta2[1] &(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:221" *)  cuenta2[0];
+  assign _050_[3] = _058_ &(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:221" *)  _050_[1];
+  assign _058_ = cuenta2[3] &(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)  cuenta2[2];
+  assign _059_ = cuenta2[5] &(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)  cuenta2[4];
+  assign _050_[5] = _059_ &(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _050_[3];
+  assign _050_[2] = cuenta2[2] &(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _050_[1];
+  assign _050_[4] = cuenta2[4] &(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _050_[3];
+  assign _050_[6] = cuenta2[6] &(* src = "contador_synth.v:33|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _050_[5];
+  assign _051_[1] = cuenta3[1] &(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:221" *)  cuenta3[0];
+  assign _051_[3] = _060_ &(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:221" *)  _051_[1];
+  assign _060_ = cuenta3[3] &(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)  cuenta3[2];
+  assign _061_ = cuenta3[5] &(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)  cuenta3[4];
+  assign _051_[5] = _061_ &(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _051_[3];
+  assign _051_[2] = cuenta3[2] &(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _051_[1];
+  assign _051_[4] = cuenta3[4] &(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _051_[3];
+  assign _051_[6] = cuenta3[6] &(* src = "contador_synth.v:35|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _051_[5];
+  assign _048_[1] = cuenta0[1] &(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:221" *)  cuenta0[0];
+  assign _048_[3] = _054_ &(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:221" *)  _048_[1];
+  assign _054_ = cuenta0[3] &(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)  cuenta0[2];
+  assign _055_ = cuenta0[5] &(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)  cuenta0[4];
+  assign _048_[5] = _055_ &(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _048_[3];
+  assign _048_[2] = cuenta0[2] &(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _048_[1];
+  assign _048_[4] = cuenta0[4] &(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _048_[3];
+  assign _048_[6] = cuenta0[6] &(* src = "contador_synth.v:29|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _048_[5];
+  assign _049_[1] = cuenta1[1] &(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:221" *)  cuenta1[0];
+  assign _049_[3] = _056_ &(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:221" *)  _049_[1];
+  assign _056_ = cuenta1[3] &(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)  cuenta1[2];
+  assign _057_ = cuenta1[5] &(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)  cuenta1[4];
+  assign _049_[5] = _057_ &(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _049_[3];
+  assign _049_[2] = cuenta1[2] &(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _049_[1];
+  assign _049_[4] = cuenta1[4] &(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _049_[3];
+  assign _049_[6] = cuenta1[6] &(* src = "contador_synth.v:31|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _049_[5];
+  assign _052_[1] = cuenta4[1] &(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:221" *)  cuenta4[0];
+  assign _052_[3] = _062_ &(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:221" *)  _052_[1];
+  assign _062_ = cuenta4[3] &(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)  cuenta4[2];
+  assign _063_ = cuenta4[5] &(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)  cuenta4[4];
+  assign _052_[5] = _063_ &(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _052_[3];
+  assign _052_[2] = cuenta4[2] &(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _052_[1];
+  assign _052_[4] = cuenta4[4] &(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _052_[3];
+  assign _052_[6] = cuenta4[6] &(* src = "contador_synth.v:37|FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _052_[5];
+  assign _007_[31:9] = 23'h000000;
+  assign _008_[31:9] = 23'h000000;
+  assign _009_[31:9] = 23'h000000;
+  assign _010_[31:9] = 23'h000000;
+  assign _011_[31:9] = 23'h000000;
+  assign _035_[1:0] = idx[1:0];
+  assign _036_[2] = idx[2];
+  assign { _048_[31:7], _048_[0] } = { 24'h000000, _007_[8], cuenta0[0] };
+  assign { _049_[31:7], _049_[0] } = { 24'h000000, _008_[8], cuenta1[0] };
+  assign { _050_[31:7], _050_[0] } = { 24'h000000, _009_[8], cuenta2[0] };
+  assign { _051_[31:7], _051_[0] } = { 24'h000000, _010_[8], cuenta3[0] };
+  assign { _052_[31:7], _052_[0] } = { 24'h000000, _011_[8], cuenta4[0] };
 endmodule
 
 (* dynports =  1  *)

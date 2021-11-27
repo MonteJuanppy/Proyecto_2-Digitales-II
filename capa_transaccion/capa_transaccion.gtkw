@@ -1,0 +1,60 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Sat Nov 27 05:03:20 2021
+[*]
+[dumpfile] "/home/montejuanppy/Documents/Circuitos_DIgitales_II/Proyecto_II/Proyecto_2-Digitales-II/capa_transaccion/capa.vcd"
+[dumpfile_mtime] "Sat Nov 27 04:59:33 2021"
+[dumpfile_size] 178616
+[savefile] "/home/montejuanppy/Documents/Circuitos_DIgitales_II/Proyecto_II/Proyecto_2-Digitales-II/capa_transaccion/capa_transaccion.gtkw"
+[timestart] 0
+[size] 1848 1016
+[pos] -39 -39
+*-15.118077 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 233
+[signals_width] 294
+[sst_expanded] 1
+[sst_vpaned_height] 289
+@200
+-Capa de transacción
+@28
+banco_capa.clk
+banco_capa.Enable
+banco_capa.reset
+banco_capa.PUSH
+banco_capa.init
+@22
+banco_capa.FIFO_in[11:0]
+banco_capa.pop_fifo_azules[3:0]
+@28
+banco_capa.umbral_alto[2:0]
+banco_capa.umbral_bajo[2:0]
+banco_capa.req
+banco_capa.idx[2:0]
+@200
+-Modelo Conductual
+@22
+banco_capa.data_out_fifo_azul_p0[11:0]
+banco_capa.data_out_fifo_azul_p1[11:0]
+banco_capa.data_out_fifo_azul_p2[11:0]
+banco_capa.data_out_fifo_azul_p3[11:0]
+@28
+banco_capa.idle
+@22
+banco_capa.salida_contador[7:0]
+@28
+banco_capa.valid_contador
+@200
+-Modelo Estructural
+@22
+banco_capa.data_out_fifo_azul_p0_synth[11:0]
+banco_capa.data_out_fifo_azul_p1_synth[11:0]
+banco_capa.data_out_fifo_azul_p2_synth[11:0]
+banco_capa.data_out_fifo_azul_p3_synth[11:0]
+@28
+banco_capa.idle_synth
+@22
+banco_capa.salida_contador_synth[7:0]
+@28
+banco_capa.valid_contador_synth
+[pattern_trace] 1
+[pattern_trace] 0

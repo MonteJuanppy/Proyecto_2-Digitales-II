@@ -12,16 +12,16 @@ input push4,
 input req,
 input [2:0] idx,
   input clk,
-  output reg [4:0] data,
+  output reg [7:0] data,
   output reg valid);
 
 initial data <= 0;
 initial valid <= 0;
-reg [3:0] cuenta0 = 0;
-reg [3:0] cuenta1 = 0;
-reg [3:0] cuenta2 = 0;
-reg [3:0] cuenta3 = 0;
-reg [3:0] cuenta4 = 0;
+reg [7:0] cuenta0 = 0;
+reg [7:0] cuenta1 = 0;
+reg [7:0] cuenta2 = 0;
+reg [7:0] cuenta3 = 0;
+reg [7:0] cuenta4 = 0;
 
 always @(posedge clk) begin
   //Por cada push se incrementa la cantidad de datos

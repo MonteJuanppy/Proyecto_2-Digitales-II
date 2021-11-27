@@ -21,7 +21,7 @@ module capa_transaccion(
     input init,//señal de init para FSM
     input req, //señal de request para los contadores
     input [2:0] idx, //señal para indexar el contador
-    output [4:0] salida_contador,
+    output [7:0] salida_contador,
     output valid_contador,
     output [11:0] data_out_fifo_azul_p0,
     output [11:0] data_out_fifo_azul_p1,
@@ -102,7 +102,7 @@ module capa_transaccion(
 
     //FIFO central
     FIFO FIFO_central (.FIFO_data_in(entrada_fifo_central), .clk(clk), .interno_bajo(interno_bajo), .interno_alto(interno_alto), 
-    .Reset(reset), .Enable(Enable), .write_enable(Enable), .read_enable(|pop_fifos_amarillos), .FIFO_data_out(salida_fifo_central),
+    .Reset(reset), .Enable(Enable), .write_enable(|pop_fifos_amarillos), .read_enable(Enable), .FIFO_data_out(salida_fifo_central),
     .FIFO_empty(empty_fifo_central), .FIFO_full(full_fifo_central), .FIFO_almost_empty(almost_empty_fifo_central), .FIFO_almost_full(almost_full_fifo_central));
 
     //Capa FIFOs azules

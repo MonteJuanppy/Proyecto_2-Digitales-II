@@ -27,9 +27,9 @@ module banco_capa;
     wire init;//señal de init para FSM
     wire req; //señal de request para los contadores
     wire [2:0] idx; //señal para indexar el contador
-    wire [4:0] salida_contador;
+    wire [7:0] salida_contador;
     wire valid_contador;
-    wire [4:0] salida_contador_synth;
+    wire [7:0] salida_contador_synth;
     wire valid_contador_synth;
     wire [11:0] data_out_fifo_azul_p0_synth;
     wire [11:0] data_out_fifo_azul_p1_synth;
@@ -46,7 +46,7 @@ module banco_capa;
 	// Se instancia el módulo de memoria conductual
 	capa_transaccion conductual(/*AUTOINST*/
 				    // Outputs
-				    .salida_contador	(salida_contador[4:0]),
+				    .salida_contador	(salida_contador[7:0]),
 				    .valid_contador	(valid_contador),
 				    .data_out_fifo_azul_p0(data_out_fifo_azul_p0[11:0]),
 				    .data_out_fifo_azul_p1(data_out_fifo_azul_p1[11:0]),
@@ -69,7 +69,7 @@ module banco_capa;
    capa_transaccion_synth estructural(/*AUTOINST*/
 
                     // Outputs
-				    .salida_contador_synth	(salida_contador_synth[4:0]),
+				    .salida_contador_synth	(salida_contador_synth[7:0]),
 				    .valid_contador_synth	(valid_contador_synth),
 				    .data_out_fifo_azul_p0(data_out_fifo_azul_p0_synth[11:0]),
 				    .data_out_fifo_azul_p1(data_out_fifo_azul_p1_synth[11:0]),
@@ -104,7 +104,7 @@ module banco_capa;
 			       .req		(req),
 			       .idx		(idx[2:0]),
 			       // Inputs
-			       .salida_contador	(salida_contador[4:0]),
+			       .salida_contador	(salida_contador[7:0]),
 			       .valid_contador	(valid_contador),
 			       .data_out_fifo_azul_p0(data_out_fifo_azul_p0[11:0]),
 			       .data_out_fifo_azul_p1(data_out_fifo_azul_p1[11:0]),

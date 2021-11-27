@@ -15,7 +15,7 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
     output reg init,//señal de init para FSM
     output reg req, //señal de request para los contadores
     output reg [2:0] idx, //señal para indexar el contador
-    input [4:0] salida_contador,
+    input [7:0] salida_contador,
     input valid_contador,
     input [11:0] data_out_fifo_azul_p0,
     input [11:0] data_out_fifo_azul_p1,
@@ -81,8 +81,17 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
     FIFO_in <= 12'h0BB;
     @(posedge clk);
     FIFO_in <= 12'h02D;
+    
     @(posedge clk);
-   
+    @(posedge clk);
+    PUSH = 0;
+    repeat (10)
+    @(posedge clk);
+    pop_fifo_azules[0] <= 1;
+    @(posedge clk);
+    @(posedge clk);
+    PUSH = 1;
+    @(posedge clk);
 
     
     //Para fifo 2
@@ -100,18 +109,31 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
     FIFO_in <= 12'h52D;
     @(posedge clk);
     FIFO_in <= 12'h53E;
-    pop_fifo_azules[0] <= 1;
+    @(posedge clk);
+    @(posedge clk);
+    PUSH = 0;
+    repeat (10)
+    @(posedge clk);
+    pop_fifo_azules[1] <= 1;
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    PUSH = 1;
     @(posedge clk);
     
     //Para fifo 3
     FIFO_in <= 12'hAAA;
     @(posedge clk);
-
+    @(posedge clk);
     FIFO_in <= 12'hACC;
     @(posedge clk);
     FIFO_in <= 12'hAF3;
     @(posedge clk);
-    pop_fifo_azules[0] <= 0;
     FIFO_in <= 12'hA77;
     @(posedge clk);
     FIFO_in <= 12'hABB;
@@ -120,10 +142,20 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
     @(posedge clk);
     FIFO_in <= 12'hA3E;
     @(posedge clk);
+     @(posedge clk);
+    PUSH = 0;
+    repeat (10)
+    @(posedge clk);
+    pop_fifo_azules[2] <= 1;
+    @(posedge clk);
+    @(posedge clk);
+    PUSH = 1;
+    @(posedge clk);
 
     
     //Para fifo 4
     FIFO_in <= 12'hFAA;
+    @(posedge clk);
     @(posedge clk);
     FIFO_in <= 12'hFCC;
     @(posedge clk);
@@ -131,7 +163,6 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
     FIFO_in <= 12'hFF3;
     @(posedge clk);
     FIFO_in <= 12'hF77;
-    pop_fifo_azules[1] <= 1;
     @(posedge clk);
     FIFO_in <= 12'hFBB;
     @(posedge clk);
@@ -139,11 +170,37 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
     @(posedge clk);
     FIFO_in <= 12'hF3E;
     @(posedge clk);
+    @(posedge clk);
+    PUSH = 0;
+    repeat (10)
+    @(posedge clk);
+    pop_fifo_azules[3] <= 1;
+    @(posedge clk);
+    @(posedge clk);
+    PUSH = 1;
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    req <= 1;
+    idx <= 0;
+    @(posedge clk);
+    idx <= 1;
+    @(posedge clk);
+    idx <= 2;
+    @(posedge clk);
+    idx <= 3;
+    @(posedge clk);
+    idx <= 4;
+    @(posedge clk);
 
 
     /*4. Provoque un Almost Full en todos los FIFOs de entrada. Luego usando POPs del probador deje todos los FIFOs vacíos. 
     Verifique que las palabras que salieron son las mismas que entraron y que salieron por la salida correcta en la prioridad correcta.*/
     
+    /*
     @(posedge clk);
     pop_fifo_azules[1] <= 0;
     FIFO_in <= 12'h0AA;
@@ -231,6 +288,7 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
    /*7. Lea los contadores de palabras y valide un aumento de 4 palabras por contador. El contador 4 debe tener el mismo
     valor que la suma de los contadores 0, 1, 2 y 3*/
     
+
 
 	#3 $finish;
     

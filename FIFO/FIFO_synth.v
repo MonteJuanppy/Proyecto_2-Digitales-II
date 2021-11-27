@@ -2,387 +2,448 @@
 
 (* dynports =  1  *)
 (* top =  1  *)
-(* src = "FIFO_synth.v:8" *)
+(* src = "FIFO_synth.v:6" *)
 module FIFO_synth(FIFO_data_in, clk, interno_bajo, interno_alto, Reset, Enable, write_enable, read_enable, FIFO_synth_data_out, FIFO_synth_empty, FIFO_synth_full, FIFO_synth_almost_empty, FIFO_synth_almost_full);
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   wire [7:0] _000_;
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   wire [2:0] _001_;
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   wire [2:0] _002_;
-  (* src = "FIFO_synth.v:47" *)
+  (* src = "FIFO_synth.v:43" *)
   (* unused_bits = "3" *)
   wire [31:0] _003_;
-  (* src = "FIFO_synth.v:53" *)
+  (* src = "FIFO_synth.v:47" *)
   (* unused_bits = "3" *)
   wire [31:0] _004_;
-  (* src = "FIFO_synth.v:61" *)
+  (* src = "FIFO_synth.v:52" *)
   (* unused_bits = "8" *)
   wire [31:0] _005_;
-  (* src = "FIFO_synth.v:61" *)
+  (* src = "FIFO_synth.v:52" *)
   wire _006_;
-  (* src = "FIFO_synth.v:63" *)
+  (* src = "FIFO_synth.v:54" *)
   wire _007_;
   wire [3:0] _008_;
   wire [1:0] _009_;
   wire [3:0] _010_;
   wire [1:0] _011_;
-  wire [3:0] _012_;
-  wire [1:0] _013_;
+  wire [15:0] _012_;
+  wire [7:0] _013_;
   wire [3:0] _014_;
-  wire [1:0] _015_;
-  wire _016_;
-  wire [7:0] _017_;
-  wire _018_;
-  (* src = "FIFO_synth.v:31" *)
-  wire _019_;
-  (* src = "FIFO_synth.v:30" *)
-  wire _020_;
-  (* src = "FIFO_synth.v:61" *)
-  wire _021_;
-  (* src = "FIFO_synth.v:63" *)
+  wire [15:0] _015_;
+  wire [7:0] _016_;
+  wire [3:0] _017_;
+  wire [3:0] _018_;
+  wire [1:0] _019_;
+  wire [3:0] _020_;
+  wire [1:0] _021_;
   wire _022_;
   wire [7:0] _023_;
-  wire [7:0] _024_;
-  wire [7:0] _025_;
-  wire [2:0] _026_;
-  wire [2:0] _027_;
-  wire [2:0] _028_;
-  wire [2:0] _029_;
-  (* src = "FIFO_synth.v:63" *)
+  wire _024_;
+  (* src = "FIFO_synth.v:28" *)
+  wire _025_;
+  (* src = "FIFO_synth.v:30" *)
+  wire _026_;
+  (* src = "FIFO_synth.v:27" *)
+  wire _027_;
+  (* src = "FIFO_synth.v:29" *)
+  wire _028_;
+  (* src = "FIFO_synth.v:52" *)
+  wire _029_;
+  (* src = "FIFO_synth.v:54" *)
+  wire _030_;
+  wire [7:0] _031_;
+  wire [7:0] _032_;
+  wire [7:0] _033_;
+  wire [2:0] _034_;
+  wire [2:0] _035_;
+  wire [2:0] _036_;
+  wire [2:0] _037_;
+  (* src = "FIFO_synth.v:54" *)
   (* unused_bits = "8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31" *)
-  wire [31:0] _030_;
-  (* src = "FIFO_synth.v:47|<techmap.v>:260|<techmap.v>:203" *)
+  wire [31:0] _038_;
+  (* src = "FIFO_synth.v:43|<techmap.v>:260|<techmap.v>:203" *)
   (* unused_bits = "2" *)
-  wire [31:0] _031_;
-  (* src = "FIFO_synth.v:53|FIFO_synth.v:47|<techmap.v>:260|<techmap.v>:203" *)
+  wire [31:0] _039_;
+  (* src = "FIFO_synth.v:47|FIFO_synth.v:43|<techmap.v>:260|<techmap.v>:203" *)
   (* unused_bits = "2" *)
-  wire [31:0] _032_;
-  (* src = "FIFO_synth.v:61|<techmap.v>:260|<techmap.v>:203" *)
+  wire [31:0] _040_;
+  (* src = "FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:203" *)
   (* unused_bits = "7" *)
-  wire [31:0] _033_;
-  (* src = "FIFO_synth.v:31|<techmap.v>:258" *)
-  wire [7:0] _034_;
-  (* src = "FIFO_synth.v:31|<techmap.v>:260|<techmap.v>:203" *)
+  wire [31:0] _041_;
+  (* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:203" *)
   (* unused_bits = "2 4 5 6" *)
-  wire [7:0] _035_;
-  (* src = "FIFO_synth.v:31|<techmap.v>:260|<techmap.v>:203" *)
-  (* unused_bits = "1 2 3 4 5 6 7" *)
-  wire [7:0] _036_;
-  wire [7:0] _037_;
-  wire _038_;
-  wire _039_;
-  (* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:203" *)
-  (* unused_bits = "2 4 5 6" *)
-  wire [7:0] _040_;
-  (* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:203" *)
-  (* unused_bits = "1 2 3 4 5 6 7" *)
-  wire [7:0] _041_;
-  wire [7:0] _042_;
-  wire _043_;
+  wire [31:0] _042_;
+  wire [31:0] _043_;
   wire _044_;
   wire _045_;
   wire _046_;
-  (* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:203" *)
-  (* unused_bits = "7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31" *)
-  wire [31:0] _047_;
-  wire [31:0] _048_;
-  (* src = "FIFO_synth.v:61|<techmap.v>:260|<techmap.v>:222" *)
-  wire _049_;
-  (* src = "FIFO_synth.v:61|<techmap.v>:260|<techmap.v>:222" *)
-  wire _050_;
-  (* src = "FIFO_synth.v:31|<techmap.v>:260" *)
-  wire [7:0] _051_;
-  (* src = "FIFO_synth.v:31|<techmap.v>:260|<techmap.v>:221" *)
+  (* src = "FIFO_synth.v:30|<techmap.v>:258" *)
+  wire [7:0] _047_;
+  (* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:203" *)
+  (* unused_bits = "2 4 5 6" *)
+  wire [7:0] _048_;
+  (* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:203" *)
+  (* unused_bits = "1 2 3 4 5 6 7" *)
+  wire [7:0] _049_;
+  wire [7:0] _050_;
+  wire _051_;
   wire _052_;
-  (* src = "FIFO_synth.v:31|<techmap.v>:260|<techmap.v>:221" *)
-  wire _053_;
-  (* src = "FIFO_synth.v:31|<techmap.v>:260|<techmap.v>:221" *)
-  wire _054_;
-  (* src = "FIFO_synth.v:30|<techmap.v>:260" *)
-  wire [7:0] _055_;
-  (* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)
-  wire _056_;
-  (* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)
-  wire _057_;
-  (* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)
-  wire _058_;
-  (* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:221" *)
+  (* src = "FIFO_synth.v:27|<techmap.v>:260|<techmap.v>:203" *)
+  (* unused_bits = "2 4 5 6" *)
+  wire [31:0] _053_;
+  wire [31:0] _054_;
+  wire _055_;
+  (* src = "FIFO_synth.v:29|<techmap.v>:260|<techmap.v>:203" *)
+  (* unused_bits = "2 4 5 6" *)
+  wire [7:0] _056_;
+  (* src = "FIFO_synth.v:29|<techmap.v>:260|<techmap.v>:203" *)
+  (* unused_bits = "1 2 3 4 5 6 7" *)
+  wire [7:0] _057_;
+  wire [7:0] _058_;
   wire _059_;
-  (* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:221" *)
   wire _060_;
-  (* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:221" *)
   wire _061_;
-  (* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:221" *)
   wire _062_;
-  (* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:222" *)
-  wire _063_;
-  (* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:222" *)
-  wire _064_;
-  (* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:229" *)
+  (* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:203" *)
+  (* unused_bits = "7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31" *)
+  wire [31:0] _063_;
+  wire [31:0] _064_;
+  (* src = "FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)
   wire _065_;
-  (* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:229" *)
+  (* src = "FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)
   wire _066_;
-  (* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:229" *)
+  (* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)
   wire _067_;
-  (* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:229" *)
+  (* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)
   wire _068_;
-  (* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:221" *)
+  (* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)
   wire _069_;
-  (* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:221" *)
+  (* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)
   wire _070_;
-  (* src = "FIFO_synth.v:17" *)
+  (* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)
+  wire _071_;
+  (* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)
+  wire _072_;
+  (* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)
+  wire _073_;
+  (* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)
+  wire _074_;
+  (* src = "FIFO_synth.v:30|<techmap.v>:260" *)
+  wire [7:0] _075_;
+  (* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)
+  wire _076_;
+  (* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)
+  wire _077_;
+  (* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)
+  wire _078_;
+  (* src = "FIFO_synth.v:27|<techmap.v>:260|<techmap.v>:221" *)
+  wire _079_;
+  (* src = "FIFO_synth.v:27|<techmap.v>:260|<techmap.v>:221" *)
+  wire _080_;
+  (* src = "FIFO_synth.v:27|<techmap.v>:260|<techmap.v>:221" *)
+  wire _081_;
+  (* src = "FIFO_synth.v:29|<techmap.v>:260" *)
+  wire [7:0] _082_;
+  (* src = "FIFO_synth.v:29|<techmap.v>:260|<techmap.v>:221" *)
+  wire _083_;
+  (* src = "FIFO_synth.v:29|<techmap.v>:260|<techmap.v>:221" *)
+  wire _084_;
+  (* src = "FIFO_synth.v:29|<techmap.v>:260|<techmap.v>:221" *)
+  wire _085_;
+  (* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:221" *)
+  wire _086_;
+  (* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:221" *)
+  wire _087_;
+  (* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:229" *)
+  wire _088_;
+  (* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:229" *)
+  wire _089_;
+  (* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:229" *)
+  wire _090_;
+  (* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:229" *)
+  wire _091_;
+  (* src = "FIFO_synth.v:15" *)
   input Enable;
-  (* src = "FIFO_synth.v:23" *)
-  output FIFO_synth_almost_empty;
-  (* src = "FIFO_synth.v:24" *)
-  output FIFO_synth_almost_full;
-  (* src = "FIFO_synth.v:12" *)
-  input [11:0] FIFO_data_in;
-  (* src = "FIFO_synth.v:20" *)
-  output [11:0] FIFO_synth_data_out;
   (* src = "FIFO_synth.v:21" *)
-  output FIFO_synth_empty;
+  output FIFO_synth_almost_empty;
   (* src = "FIFO_synth.v:22" *)
+  output FIFO_synth_almost_full;
+  (* src = "FIFO_synth.v:10" *)
+  input [11:0] FIFO_data_in;
+  (* src = "FIFO_synth.v:18" *)
+  output [11:0] FIFO_synth_data_out;
+  (* src = "FIFO_synth.v:19" *)
+  output FIFO_synth_empty;
+  (* src = "FIFO_synth.v:20" *)
   output FIFO_synth_full;
-  (* src = "FIFO_synth.v:16" *)
+  (* src = "FIFO_synth.v:14" *)
   input Reset;
-  (* src = "FIFO_synth.v:13" *)
+  (* src = "FIFO_synth.v:11" *)
   input clk;
   (* init = 8'h00 *)
-  (* src = "FIFO_synth.v:26" *)
+  (* src = "FIFO_synth.v:23" *)
   reg [7:0] espacios_ocupados = 8'h00;
-  (* src = "FIFO_synth.v:15" *)
+  (* src = "FIFO_synth.v:13" *)
   input [2:0] interno_alto;
-  (* src = "FIFO_synth.v:14" *)
+  (* src = "FIFO_synth.v:12" *)
   input [2:0] interno_bajo;
-  (* src = "FIFO_synth.v:33" *)
+  (* src = "FIFO_synth.v:32" *)
   reg [2:0] rd_ptr;
-  (* src = "FIFO_synth.v:19" *)
+  (* src = "FIFO_synth.v:17" *)
   input read_enable;
-  (* src = "FIFO_synth.v:33" *)
+  (* src = "FIFO_synth.v:32" *)
   reg [2:0] wr_ptr;
-  (* src = "FIFO_synth.v:18" *)
+  (* src = "FIFO_synth.v:16" *)
   input write_enable;
-  assign _010_[1] = espacios_ocupados[2] |(* src = "FIFO_synth.v:30" *)  espacios_ocupados[3];
-  assign _011_[0] = _008_[0] |(* src = "FIFO_synth.v:30" *)  _010_[1];
-  assign _009_[1] = _008_[2] |(* src = "FIFO_synth.v:30" *)  _008_[3];
-  assign _008_[0] = espacios_ocupados[0] |(* src = "FIFO_synth.v:31" *)  espacios_ocupados[1];
-  assign _008_[1] = espacios_ocupados[2] |(* src = "FIFO_synth.v:31" *)  _017_[3];
-  assign _008_[2] = espacios_ocupados[4] |(* src = "FIFO_synth.v:31" *)  espacios_ocupados[5];
-  assign _008_[3] = espacios_ocupados[6] |(* src = "FIFO_synth.v:31" *)  espacios_ocupados[7];
-  assign _009_[0] = _008_[0] |(* src = "FIFO_synth.v:31" *)  _008_[1];
-  assign _018_ = _009_[0] |(* src = "FIFO_synth.v:31" *)  _009_[1];
-  assign _012_[0] = _041_[0] &(* src = "FIFO_synth.v:30" *)  _042_[1];
-  assign _013_[0] = _012_[0] &(* src = "FIFO_synth.v:30" *)  _012_[1];
-  assign _045_ = _013_[0] &(* src = "FIFO_synth.v:30" *)  _013_[1];
-  assign _020_ = _044_ | _045_;
-  assign _014_[0] = _036_[0] &(* src = "FIFO_synth.v:31" *)  _037_[1];
-  assign _015_[0] = _014_[0] &(* src = "FIFO_synth.v:31" *)  _014_[1];
-  assign _039_ = _015_[0] &(* src = "FIFO_synth.v:31" *)  _013_[1];
-  assign _019_ = _038_ | _039_;
-  assign _016_ = _011_[0] |(* src = "FIFO_synth.v:28" *)  _009_[1];
-  assign FIFO_synth_empty = ~(* src = "FIFO_synth.v:28" *) _016_;
-  assign FIFO_synth_full = ~(* src = "FIFO_synth.v:29" *) _018_;
-  assign _021_ = ~(* src = "FIFO_synth.v:61" *) read_enable;
-  assign _022_ = ~(* src = "FIFO_synth.v:63" *) write_enable;
-  assign _025_[0] = Reset ? (* src = "FIFO_synth.v:38" *) _024_[0] : 1'h0;
-  assign _025_[1] = Reset ? (* src = "FIFO_synth.v:38" *) _024_[1] : 1'h0;
-  assign _025_[2] = Reset ? (* src = "FIFO_synth.v:38" *) _024_[2] : 1'h0;
-  assign _025_[3] = Reset ? (* src = "FIFO_synth.v:38" *) _024_[3] : 1'h0;
-  assign _025_[4] = Reset ? (* src = "FIFO_synth.v:38" *) _024_[4] : 1'h0;
-  assign _025_[5] = Reset ? (* src = "FIFO_synth.v:38" *) _024_[5] : 1'h0;
-  assign _025_[6] = Reset ? (* src = "FIFO_synth.v:38" *) _024_[6] : 1'h0;
-  assign _025_[7] = Reset ? (* src = "FIFO_synth.v:38" *) _024_[7] : 1'h0;
-  assign _024_[0] = _007_ ? (* src = "FIFO_synth.v:63" *) _005_[0] : _023_[0];
-  assign _024_[1] = _007_ ? (* src = "FIFO_synth.v:63" *) _030_[1] : _023_[1];
-  assign _024_[2] = _007_ ? (* src = "FIFO_synth.v:63" *) _030_[2] : _023_[2];
-  assign _024_[3] = _007_ ? (* src = "FIFO_synth.v:63" *) _030_[3] : _023_[3];
-  assign _024_[4] = _007_ ? (* src = "FIFO_synth.v:63" *) _030_[4] : _023_[4];
-  assign _024_[5] = _007_ ? (* src = "FIFO_synth.v:63" *) _030_[5] : _023_[5];
-  assign _024_[6] = _007_ ? (* src = "FIFO_synth.v:63" *) _030_[6] : _023_[6];
-  assign _024_[7] = _007_ ? (* src = "FIFO_synth.v:63" *) _030_[7] : _023_[7];
-  assign _023_[0] = _006_ ? (* src = "FIFO_synth.v:61" *) _005_[0] : espacios_ocupados[0];
-  assign _023_[1] = _006_ ? (* src = "FIFO_synth.v:61" *) _005_[1] : espacios_ocupados[1];
-  assign _023_[2] = _006_ ? (* src = "FIFO_synth.v:61" *) _005_[2] : espacios_ocupados[2];
-  assign _023_[3] = _006_ ? (* src = "FIFO_synth.v:61" *) _005_[3] : espacios_ocupados[3];
-  assign _023_[4] = _006_ ? (* src = "FIFO_synth.v:61" *) _005_[4] : espacios_ocupados[4];
-  assign _023_[5] = _006_ ? (* src = "FIFO_synth.v:61" *) _005_[5] : espacios_ocupados[5];
-  assign _023_[6] = _006_ ? (* src = "FIFO_synth.v:61" *) _005_[6] : espacios_ocupados[6];
-  assign _023_[7] = _006_ ? (* src = "FIFO_synth.v:61" *) _005_[7] : espacios_ocupados[7];
-  assign _000_[0] = Enable ? (* src = "FIFO_synth.v:36" *) _025_[0] : espacios_ocupados[0];
-  assign _000_[1] = Enable ? (* src = "FIFO_synth.v:36" *) _025_[1] : espacios_ocupados[1];
-  assign _000_[2] = Enable ? (* src = "FIFO_synth.v:36" *) _025_[2] : espacios_ocupados[2];
-  assign _000_[3] = Enable ? (* src = "FIFO_synth.v:36" *) _025_[3] : espacios_ocupados[3];
-  assign _000_[4] = Enable ? (* src = "FIFO_synth.v:36" *) _025_[4] : espacios_ocupados[4];
-  assign _000_[5] = Enable ? (* src = "FIFO_synth.v:36" *) _025_[5] : espacios_ocupados[5];
-  assign _000_[6] = Enable ? (* src = "FIFO_synth.v:36" *) _025_[6] : espacios_ocupados[6];
-  assign _000_[7] = Enable ? (* src = "FIFO_synth.v:36" *) _025_[7] : espacios_ocupados[7];
-  assign _001_[0] = Enable ? (* src = "FIFO_synth.v:36" *) _027_[0] : rd_ptr[0];
-  assign _001_[1] = Enable ? (* src = "FIFO_synth.v:36" *) _027_[1] : rd_ptr[1];
-  assign _001_[2] = Enable ? (* src = "FIFO_synth.v:36" *) _027_[2] : rd_ptr[2];
-  assign _026_[0] = read_enable ? (* src = "FIFO_synth.v:46" *) _003_[0] : rd_ptr[0];
-  assign _026_[1] = read_enable ? (* src = "FIFO_synth.v:46" *) _003_[1] : rd_ptr[1];
-  assign _026_[2] = read_enable ? (* src = "FIFO_synth.v:46" *) _003_[2] : rd_ptr[2];
-  assign _027_[0] = Reset ? (* src = "FIFO_synth.v:38" *) _026_[0] : 1'h0;
-  assign _027_[1] = Reset ? (* src = "FIFO_synth.v:38" *) _026_[1] : 1'h0;
-  assign _027_[2] = Reset ? (* src = "FIFO_synth.v:38" *) _026_[2] : 1'h0;
-  assign _002_[0] = Enable ? (* src = "FIFO_synth.v:36" *) _029_[0] : wr_ptr[0];
-  assign _002_[1] = Enable ? (* src = "FIFO_synth.v:36" *) _029_[1] : wr_ptr[1];
-  assign _002_[2] = Enable ? (* src = "FIFO_synth.v:36" *) _029_[2] : wr_ptr[2];
-  assign _028_[0] = write_enable ? (* src = "FIFO_synth.v:52" *) _004_[0] : wr_ptr[0];
-  assign _028_[1] = write_enable ? (* src = "FIFO_synth.v:52" *) _004_[1] : wr_ptr[1];
-  assign _028_[2] = write_enable ? (* src = "FIFO_synth.v:52" *) _004_[2] : wr_ptr[2];
-  assign _029_[0] = Reset ? (* src = "FIFO_synth.v:38" *) _028_[0] : 1'h0;
-  assign _029_[1] = Reset ? (* src = "FIFO_synth.v:38" *) _028_[1] : 1'h0;
-  assign _029_[2] = Reset ? (* src = "FIFO_synth.v:38" *) _028_[2] : 1'h0;
-  assign _044_ = ~(* src = "FIFO_synth.v:30" *) _046_;
-  assign _043_ = ~(* src = "FIFO_synth.v:30" *) _040_[7];
-  assign _038_ = ~(* src = "FIFO_synth.v:31" *) _035_[7];
-  assign _034_[0] = ~(* src = "FIFO_synth.v:30|<techmap.v>:258" *) espacios_ocupados[0];
-  assign _034_[1] = ~(* src = "FIFO_synth.v:30|<techmap.v>:258" *) espacios_ocupados[1];
-  assign _034_[4] = ~(* src = "FIFO_synth.v:30|<techmap.v>:258" *) espacios_ocupados[4];
-  assign _034_[2] = ~(* src = "FIFO_synth.v:31|<techmap.v>:258" *) espacios_ocupados[2];
-  assign _034_[3] = ~(* src = "FIFO_synth.v:31|<techmap.v>:258" *) espacios_ocupados[3];
-  assign _034_[5] = ~(* src = "FIFO_synth.v:31|<techmap.v>:258" *) espacios_ocupados[5];
-  assign _034_[6] = ~(* src = "FIFO_synth.v:31|<techmap.v>:258" *) espacios_ocupados[6];
-  assign _034_[7] = ~(* src = "FIFO_synth.v:31|<techmap.v>:258" *) espacios_ocupados[7];
-  (* src = "FIFO_synth.v:35" *)
+  assign _010_[1] = espacios_ocupados[2] |(* src = "FIFO_synth.v:29" *)  espacios_ocupados[3];
+  assign _011_[0] = _008_[0] |(* src = "FIFO_synth.v:29" *)  _010_[1];
+  assign _009_[1] = _008_[2] |(* src = "FIFO_synth.v:29" *)  _008_[3];
+  assign _008_[0] = espacios_ocupados[0] |(* src = "FIFO_synth.v:30" *)  espacios_ocupados[1];
+  assign _008_[1] = espacios_ocupados[2] |(* src = "FIFO_synth.v:30" *)  _023_[3];
+  assign _008_[2] = espacios_ocupados[4] |(* src = "FIFO_synth.v:30" *)  espacios_ocupados[5];
+  assign _008_[3] = espacios_ocupados[6] |(* src = "FIFO_synth.v:30" *)  espacios_ocupados[7];
+  assign _009_[0] = _008_[0] |(* src = "FIFO_synth.v:30" *)  _008_[1];
+  assign _024_ = _009_[0] |(* src = "FIFO_synth.v:30" *)  _009_[1];
+  assign _013_[0] = _012_[0] &(* src = "FIFO_synth.v:27" *)  _012_[1];
+  assign _014_[0] = _013_[0] &(* src = "FIFO_synth.v:27" *)  _013_[1];
+  assign _027_ = _055_ | _014_[0];
+  assign _012_[0] = _005_[0] &(* src = "FIFO_synth.v:28" *)  espacios_ocupados[1];
+  assign _016_[0] = _012_[0] &(* src = "FIFO_synth.v:28" *)  _015_[1];
+  assign _017_[0] = _016_[0] &(* src = "FIFO_synth.v:28" *)  _013_[1];
+  assign _025_ = _045_ | _017_[0];
+  assign _018_[0] = _057_[0] &(* src = "FIFO_synth.v:29" *)  _058_[1];
+  assign _018_[2] = _047_[4] &(* src = "FIFO_synth.v:29" *)  _047_[5];
+  assign _019_[0] = _018_[0] &(* src = "FIFO_synth.v:29" *)  _018_[1];
+  assign _061_ = _019_[0] &(* src = "FIFO_synth.v:29" *)  _019_[1];
+  assign _028_ = _060_ | _061_;
+  assign _020_[0] = _049_[0] &(* src = "FIFO_synth.v:30" *)  _050_[1];
+  assign _021_[0] = _020_[0] &(* src = "FIFO_synth.v:30" *)  _020_[1];
+  assign _052_ = _021_[0] &(* src = "FIFO_synth.v:30" *)  _019_[1];
+  assign _026_ = _051_ | _052_;
+  assign _022_ = _011_[0] |(* src = "FIFO_synth.v:25" *)  _009_[1];
+  assign FIFO_synth_empty = ~(* src = "FIFO_synth.v:25" *) _022_;
+  assign FIFO_synth_full = ~(* src = "FIFO_synth.v:26" *) _024_;
+  assign _029_ = ~(* src = "FIFO_synth.v:52" *) read_enable;
+  assign _030_ = ~(* src = "FIFO_synth.v:54" *) write_enable;
+  assign _033_[0] = Reset ? (* src = "FIFO_synth.v:36" *) _032_[0] : 1'h0;
+  assign _033_[1] = Reset ? (* src = "FIFO_synth.v:36" *) _032_[1] : 1'h0;
+  assign _033_[2] = Reset ? (* src = "FIFO_synth.v:36" *) _032_[2] : 1'h0;
+  assign _033_[3] = Reset ? (* src = "FIFO_synth.v:36" *) _032_[3] : 1'h0;
+  assign _033_[4] = Reset ? (* src = "FIFO_synth.v:36" *) _032_[4] : 1'h0;
+  assign _033_[5] = Reset ? (* src = "FIFO_synth.v:36" *) _032_[5] : 1'h0;
+  assign _033_[6] = Reset ? (* src = "FIFO_synth.v:36" *) _032_[6] : 1'h0;
+  assign _033_[7] = Reset ? (* src = "FIFO_synth.v:36" *) _032_[7] : 1'h0;
+  assign _032_[0] = _007_ ? (* src = "FIFO_synth.v:54" *) _005_[0] : _031_[0];
+  assign _032_[1] = _007_ ? (* src = "FIFO_synth.v:54" *) _038_[1] : _031_[1];
+  assign _032_[2] = _007_ ? (* src = "FIFO_synth.v:54" *) _038_[2] : _031_[2];
+  assign _032_[3] = _007_ ? (* src = "FIFO_synth.v:54" *) _038_[3] : _031_[3];
+  assign _032_[4] = _007_ ? (* src = "FIFO_synth.v:54" *) _038_[4] : _031_[4];
+  assign _032_[5] = _007_ ? (* src = "FIFO_synth.v:54" *) _038_[5] : _031_[5];
+  assign _032_[6] = _007_ ? (* src = "FIFO_synth.v:54" *) _038_[6] : _031_[6];
+  assign _032_[7] = _007_ ? (* src = "FIFO_synth.v:54" *) _038_[7] : _031_[7];
+  assign _031_[0] = _006_ ? (* src = "FIFO_synth.v:52" *) _005_[0] : espacios_ocupados[0];
+  assign _031_[1] = _006_ ? (* src = "FIFO_synth.v:52" *) _005_[1] : espacios_ocupados[1];
+  assign _031_[2] = _006_ ? (* src = "FIFO_synth.v:52" *) _005_[2] : espacios_ocupados[2];
+  assign _031_[3] = _006_ ? (* src = "FIFO_synth.v:52" *) _005_[3] : espacios_ocupados[3];
+  assign _031_[4] = _006_ ? (* src = "FIFO_synth.v:52" *) _005_[4] : espacios_ocupados[4];
+  assign _031_[5] = _006_ ? (* src = "FIFO_synth.v:52" *) _005_[5] : espacios_ocupados[5];
+  assign _031_[6] = _006_ ? (* src = "FIFO_synth.v:52" *) _005_[6] : espacios_ocupados[6];
+  assign _031_[7] = _006_ ? (* src = "FIFO_synth.v:52" *) _005_[7] : espacios_ocupados[7];
+  assign _000_[0] = Enable ? (* src = "FIFO_synth.v:35" *) _033_[0] : espacios_ocupados[0];
+  assign _000_[1] = Enable ? (* src = "FIFO_synth.v:35" *) _033_[1] : espacios_ocupados[1];
+  assign _000_[2] = Enable ? (* src = "FIFO_synth.v:35" *) _033_[2] : espacios_ocupados[2];
+  assign _000_[3] = Enable ? (* src = "FIFO_synth.v:35" *) _033_[3] : espacios_ocupados[3];
+  assign _000_[4] = Enable ? (* src = "FIFO_synth.v:35" *) _033_[4] : espacios_ocupados[4];
+  assign _000_[5] = Enable ? (* src = "FIFO_synth.v:35" *) _033_[5] : espacios_ocupados[5];
+  assign _000_[6] = Enable ? (* src = "FIFO_synth.v:35" *) _033_[6] : espacios_ocupados[6];
+  assign _000_[7] = Enable ? (* src = "FIFO_synth.v:35" *) _033_[7] : espacios_ocupados[7];
+  assign _001_[0] = Enable ? (* src = "FIFO_synth.v:35" *) _035_[0] : rd_ptr[0];
+  assign _001_[1] = Enable ? (* src = "FIFO_synth.v:35" *) _035_[1] : rd_ptr[1];
+  assign _001_[2] = Enable ? (* src = "FIFO_synth.v:35" *) _035_[2] : rd_ptr[2];
+  assign _034_[0] = read_enable ? (* src = "FIFO_synth.v:42" *) _003_[0] : rd_ptr[0];
+  assign _034_[1] = read_enable ? (* src = "FIFO_synth.v:42" *) _003_[1] : rd_ptr[1];
+  assign _034_[2] = read_enable ? (* src = "FIFO_synth.v:42" *) _003_[2] : rd_ptr[2];
+  assign _035_[0] = Reset ? (* src = "FIFO_synth.v:36" *) _034_[0] : 1'h0;
+  assign _035_[1] = Reset ? (* src = "FIFO_synth.v:36" *) _034_[1] : 1'h0;
+  assign _035_[2] = Reset ? (* src = "FIFO_synth.v:36" *) _034_[2] : 1'h0;
+  assign _002_[0] = Enable ? (* src = "FIFO_synth.v:35" *) _037_[0] : wr_ptr[0];
+  assign _002_[1] = Enable ? (* src = "FIFO_synth.v:35" *) _037_[1] : wr_ptr[1];
+  assign _002_[2] = Enable ? (* src = "FIFO_synth.v:35" *) _037_[2] : wr_ptr[2];
+  assign _036_[0] = write_enable ? (* src = "FIFO_synth.v:46" *) _004_[0] : wr_ptr[0];
+  assign _036_[1] = write_enable ? (* src = "FIFO_synth.v:46" *) _004_[1] : wr_ptr[1];
+  assign _036_[2] = write_enable ? (* src = "FIFO_synth.v:46" *) _004_[2] : wr_ptr[2];
+  assign _037_[0] = Reset ? (* src = "FIFO_synth.v:36" *) _036_[0] : 1'h0;
+  assign _037_[1] = Reset ? (* src = "FIFO_synth.v:36" *) _036_[1] : 1'h0;
+  assign _037_[2] = Reset ? (* src = "FIFO_synth.v:36" *) _036_[2] : 1'h0;
+  assign _047_[1] = ~(* src = "FIFO_synth.v:29|<techmap.v>:258" *) espacios_ocupados[1];
+  assign _047_[2] = ~(* src = "FIFO_synth.v:29|<techmap.v>:258" *) espacios_ocupados[2];
+  assign _047_[0] = ~(* src = "FIFO_synth.v:30|<techmap.v>:258" *) espacios_ocupados[0];
+  assign _047_[3] = ~(* src = "FIFO_synth.v:30|<techmap.v>:258" *) espacios_ocupados[3];
+  assign _047_[4] = ~(* src = "FIFO_synth.v:30|<techmap.v>:258" *) espacios_ocupados[4];
+  assign _047_[5] = ~(* src = "FIFO_synth.v:30|<techmap.v>:258" *) espacios_ocupados[5];
+  assign _047_[6] = ~(* src = "FIFO_synth.v:30|<techmap.v>:258" *) espacios_ocupados[6];
+  assign _047_[7] = ~(* src = "FIFO_synth.v:30|<techmap.v>:258" *) espacios_ocupados[7];
+  assign _055_ = ~(* src = "FIFO_synth.v:27" *) _053_[31];
+  assign _045_ = ~(* src = "FIFO_synth.v:28" *) _046_;
+  assign _044_ = ~(* src = "FIFO_synth.v:28" *) _042_[31];
+  assign _060_ = ~(* src = "FIFO_synth.v:29" *) _062_;
+  assign _059_ = ~(* src = "FIFO_synth.v:29" *) _056_[7];
+  assign _051_ = ~(* src = "FIFO_synth.v:30" *) _048_[7];
+  (* src = "FIFO_synth.v:34" *)
   always @(posedge clk)
       rd_ptr[0] <= _001_[0];
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   always @(posedge clk)
       rd_ptr[1] <= _001_[1];
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   always @(posedge clk)
       rd_ptr[2] <= _001_[2];
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   always @(posedge clk)
       wr_ptr[0] <= _002_[0];
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   always @(posedge clk)
       wr_ptr[1] <= _002_[1];
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   always @(posedge clk)
       wr_ptr[2] <= _002_[2];
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   always @(posedge clk)
       espacios_ocupados[0] <= _000_[0];
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   always @(posedge clk)
       espacios_ocupados[1] <= _000_[1];
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   always @(posedge clk)
       espacios_ocupados[2] <= _000_[2];
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   always @(posedge clk)
       espacios_ocupados[3] <= _000_[3];
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   always @(posedge clk)
       espacios_ocupados[4] <= _000_[4];
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   always @(posedge clk)
       espacios_ocupados[5] <= _000_[5];
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   always @(posedge clk)
       espacios_ocupados[6] <= _000_[6];
-  (* src = "FIFO_synth.v:35" *)
+  (* src = "FIFO_synth.v:34" *)
   always @(posedge clk)
       espacios_ocupados[7] <= _000_[7];
-  assign _004_[1] = wr_ptr[1] ^(* src = "FIFO_synth.v:53|FIFO_synth.v:47|<techmap.v>:263" *)  wr_ptr[0];
-  assign _004_[2] = wr_ptr[2] ^(* src = "FIFO_synth.v:53|FIFO_synth.v:47|<techmap.v>:263" *)  _032_[1];
-  assign _004_[0] = wr_ptr[0] ^(* src = "FIFO_synth.v:53|FIFO_synth.v:47|<techmap.v>:262" *)  1'h1;
-  assign _005_[1] = espacios_ocupados[1] ^(* src = "FIFO_synth.v:61|<techmap.v>:263" *)  espacios_ocupados[0];
-  assign _005_[2] = espacios_ocupados[2] ^(* src = "FIFO_synth.v:61|<techmap.v>:263" *)  _033_[1];
-  assign _005_[3] = espacios_ocupados[3] ^(* src = "FIFO_synth.v:61|<techmap.v>:263" *)  _033_[2];
-  assign _005_[4] = espacios_ocupados[4] ^(* src = "FIFO_synth.v:61|<techmap.v>:263" *)  _033_[3];
-  assign _005_[5] = espacios_ocupados[5] ^(* src = "FIFO_synth.v:61|<techmap.v>:263" *)  _033_[4];
-  assign _005_[6] = espacios_ocupados[6] ^(* src = "FIFO_synth.v:61|<techmap.v>:263" *)  _033_[5];
-  assign _005_[7] = espacios_ocupados[7] ^(* src = "FIFO_synth.v:61|<techmap.v>:263" *)  _033_[6];
-  assign _005_[0] = espacios_ocupados[0] ^(* src = "FIFO_synth.v:61|<techmap.v>:262" *)  1'h1;
-  assign _030_[1] = _048_[1] ^(* src = "FIFO_synth.v:63|<techmap.v>:263" *)  espacios_ocupados[0];
-  assign _030_[2] = _048_[2] ^(* src = "FIFO_synth.v:63|<techmap.v>:263" *)  _047_[1];
-  assign _030_[3] = _017_[3] ^(* src = "FIFO_synth.v:63|<techmap.v>:263" *)  _047_[2];
-  assign _030_[4] = _048_[4] ^(* src = "FIFO_synth.v:63|<techmap.v>:263" *)  _047_[3];
-  assign _030_[5] = _048_[5] ^(* src = "FIFO_synth.v:63|<techmap.v>:263" *)  _047_[4];
-  assign _030_[6] = _048_[6] ^(* src = "FIFO_synth.v:63|<techmap.v>:263" *)  _047_[5];
-  assign _030_[7] = _048_[7] ^(* src = "FIFO_synth.v:63|<techmap.v>:263" *)  _047_[6];
-  assign _048_[1] = espacios_ocupados[1] ^(* src = "FIFO_synth.v:63|<techmap.v>:262" *)  1'h1;
-  assign _048_[2] = espacios_ocupados[2] ^(* src = "FIFO_synth.v:63|<techmap.v>:262" *)  1'h1;
-  assign _017_[3] = espacios_ocupados[3] ^(* src = "FIFO_synth.v:63|<techmap.v>:262" *)  1'h1;
-  assign _048_[4] = espacios_ocupados[4] ^(* src = "FIFO_synth.v:63|<techmap.v>:262" *)  1'h1;
-  assign _048_[5] = espacios_ocupados[5] ^(* src = "FIFO_synth.v:63|<techmap.v>:262" *)  1'h1;
-  assign _048_[6] = espacios_ocupados[6] ^(* src = "FIFO_synth.v:63|<techmap.v>:262" *)  1'h1;
-  assign _048_[7] = espacios_ocupados[7] ^(* src = "FIFO_synth.v:63|<techmap.v>:262" *)  1'h1;
-  assign _056_ = _042_[1] &(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)  _040_[0];
-  assign _057_ = _034_[3] &(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)  _055_[2];
-  assign _058_ = _012_[1] &(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)  _040_[1];
-  assign _040_[7] = _013_[1] &(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)  _040_[3];
-  assign _012_[1] = _034_[3] &(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:222" *)  _042_[2];
-  assign _012_[2] = _034_[5] &(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:222" *)  _034_[4];
-  assign _012_[3] = _034_[7] &(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:222" *)  _034_[6];
-  assign _013_[1] = _012_[3] &(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:222" *)  _012_[2];
-  assign _040_[0] = _055_[0] |(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:212" *)  _041_[0];
-  assign _040_[1] = _055_[1] |(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)  _056_;
-  assign _040_[3] = _057_ |(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)  _058_;
-  assign _052_ = _037_[1] &(* src = "FIFO_synth.v:31|<techmap.v>:260|<techmap.v>:221" *)  _035_[0];
-  assign _053_ = _034_[3] &(* src = "FIFO_synth.v:31|<techmap.v>:260|<techmap.v>:221" *)  _051_[2];
-  assign _054_ = _014_[1] &(* src = "FIFO_synth.v:31|<techmap.v>:260|<techmap.v>:221" *)  _035_[1];
-  assign _035_[7] = _013_[1] &(* src = "FIFO_synth.v:31|<techmap.v>:260|<techmap.v>:221" *)  _035_[3];
-  assign _014_[1] = _034_[3] &(* src = "FIFO_synth.v:31|<techmap.v>:260|<techmap.v>:222" *)  _037_[2];
-  assign _035_[0] = _051_[0] |(* src = "FIFO_synth.v:31|<techmap.v>:260|<techmap.v>:212" *)  _036_[0];
-  assign _035_[1] = _051_[1] |(* src = "FIFO_synth.v:31|<techmap.v>:260|<techmap.v>:221" *)  _052_;
-  assign _035_[3] = _053_ |(* src = "FIFO_synth.v:31|<techmap.v>:260|<techmap.v>:221" *)  _054_;
-  assign _031_[1] = rd_ptr[1] &(* src = "FIFO_synth.v:47|<techmap.v>:260|<techmap.v>:221" *)  rd_ptr[0];
-  assign _032_[1] = wr_ptr[1] &(* src = "FIFO_synth.v:53|FIFO_synth.v:47|<techmap.v>:260|<techmap.v>:221" *)  wr_ptr[0];
-  assign _033_[1] = espacios_ocupados[1] &(* src = "FIFO_synth.v:61|<techmap.v>:260|<techmap.v>:221" *)  espacios_ocupados[0];
-  assign _033_[3] = _049_ &(* src = "FIFO_synth.v:61|<techmap.v>:260|<techmap.v>:221" *)  _033_[1];
-  assign _049_ = espacios_ocupados[3] &(* src = "FIFO_synth.v:61|<techmap.v>:260|<techmap.v>:222" *)  espacios_ocupados[2];
-  assign _050_ = espacios_ocupados[5] &(* src = "FIFO_synth.v:61|<techmap.v>:260|<techmap.v>:222" *)  espacios_ocupados[4];
-  assign _033_[5] = _050_ &(* src = "FIFO_synth.v:61|<techmap.v>:260|<techmap.v>:229" *)  _033_[3];
-  assign _033_[2] = espacios_ocupados[2] &(* src = "FIFO_synth.v:61|<techmap.v>:260|<techmap.v>:229" *)  _033_[1];
-  assign _033_[4] = espacios_ocupados[4] &(* src = "FIFO_synth.v:61|<techmap.v>:260|<techmap.v>:229" *)  _033_[3];
-  assign _033_[6] = espacios_ocupados[6] &(* src = "FIFO_synth.v:61|<techmap.v>:260|<techmap.v>:229" *)  _033_[5];
-  assign _059_ = _048_[1] &(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:221" *)  espacios_ocupados[0];
-  assign _060_ = _017_[3] &(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:221" *)  espacios_ocupados[2];
-  assign _061_ = _048_[5] &(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:221" *)  espacios_ocupados[4];
-  assign _062_ = _063_ &(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:221" *)  _047_[1];
-  assign _063_ = _017_[3] &(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:222" *)  _048_[2];
-  assign _064_ = _048_[5] &(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:222" *)  _048_[4];
-  assign _065_ = _064_ &(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:229" *)  _047_[3];
-  assign _066_ = _048_[2] &(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:229" *)  _047_[1];
-  assign _067_ = _048_[4] &(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:229" *)  _047_[3];
-  assign _068_ = _048_[6] &(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:229" *)  _047_[5];
-  assign _047_[1] = espacios_ocupados[1] |(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:221" *)  _059_;
-  assign _069_ = espacios_ocupados[3] |(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:221" *)  _060_;
-  assign _070_ = espacios_ocupados[5] |(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:221" *)  _061_;
-  assign _047_[3] = _069_ |(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:221" *)  _062_;
-  assign _047_[5] = _070_ |(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:229" *)  _065_;
-  assign _047_[2] = espacios_ocupados[2] |(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:229" *)  _066_;
-  assign _047_[4] = espacios_ocupados[4] |(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:229" *)  _067_;
-  assign _047_[6] = espacios_ocupados[6] |(* src = "FIFO_synth.v:63|<techmap.v>:260|<techmap.v>:229" *)  _068_;
-  assign FIFO_synth_almost_empty = _020_ &(* src = "FIFO_synth.v:30" *)  _016_;
-  assign FIFO_synth_almost_full = _019_ &(* src = "FIFO_synth.v:31" *)  _018_;
-  assign _006_ = write_enable &(* src = "FIFO_synth.v:61" *)  _021_;
-  assign _007_ = _022_ &(* src = "FIFO_synth.v:63" *)  read_enable;
-  assign _046_ = _043_ | _045_;
-  assign _051_[0] = interno_alto[0] &(* src = "FIFO_synth.v:31|<techmap.v>:260" *)  _034_[0];
-  assign _051_[1] = interno_alto[1] &(* src = "FIFO_synth.v:31|<techmap.v>:260" *)  _034_[1];
-  assign _051_[2] = interno_alto[2] &(* src = "FIFO_synth.v:31|<techmap.v>:260" *)  _034_[2];
-  assign _055_[0] = interno_bajo[0] &(* src = "FIFO_synth.v:30|<techmap.v>:260" *)  _034_[0];
-  assign _055_[1] = interno_bajo[1] &(* src = "FIFO_synth.v:30|<techmap.v>:260" *)  _034_[1];
-  assign _055_[2] = interno_bajo[2] &(* src = "FIFO_synth.v:30|<techmap.v>:260" *)  _034_[2];
-  assign _041_[0] = interno_bajo[0] ^(* src = "FIFO_synth.v:30|<techmap.v>:262" *)  _034_[0];
-  assign _042_[1] = interno_bajo[1] ^(* src = "FIFO_synth.v:30|<techmap.v>:262" *)  _034_[1];
-  assign _042_[2] = interno_bajo[2] ^(* src = "FIFO_synth.v:30|<techmap.v>:262" *)  _034_[2];
-  assign _036_[0] = interno_alto[0] ^(* src = "FIFO_synth.v:31|<techmap.v>:262" *)  _034_[0];
-  assign _037_[1] = interno_alto[1] ^(* src = "FIFO_synth.v:31|<techmap.v>:262" *)  _034_[1];
-  assign _037_[2] = interno_alto[2] ^(* src = "FIFO_synth.v:31|<techmap.v>:262" *)  _034_[2];
-  assign _003_[1] = rd_ptr[1] ^(* src = "FIFO_synth.v:47|<techmap.v>:263" *)  rd_ptr[0];
-  assign _003_[2] = rd_ptr[2] ^(* src = "FIFO_synth.v:47|<techmap.v>:263" *)  _031_[1];
-  assign _003_[0] = rd_ptr[0] ^(* src = "FIFO_synth.v:47|<techmap.v>:262" *)  1'h1;
+  assign _054_[2] = espacios_ocupados[2] ^(* src = "FIFO_synth.v:27|<techmap.v>:262" *)  1'h1;
+  assign _043_[6] = espacios_ocupados[6] ^(* src = "FIFO_synth.v:27|<techmap.v>:262" *)  1'h1;
+  assign _023_[3] = espacios_ocupados[3] ^(* src = "FIFO_synth.v:28|<techmap.v>:262" *)  1'h1;
+  assign _043_[4] = espacios_ocupados[4] ^(* src = "FIFO_synth.v:28|<techmap.v>:262" *)  1'h1;
+  assign _043_[5] = espacios_ocupados[5] ^(* src = "FIFO_synth.v:28|<techmap.v>:262" *)  1'h1;
+  assign _043_[7] = espacios_ocupados[7] ^(* src = "FIFO_synth.v:28|<techmap.v>:262" *)  1'h1;
+  assign _082_[0] = interno_bajo[0] &(* src = "FIFO_synth.v:29|<techmap.v>:260" *)  _047_[0];
+  assign _082_[1] = interno_bajo[1] &(* src = "FIFO_synth.v:29|<techmap.v>:260" *)  _047_[1];
+  assign _082_[2] = interno_bajo[2] &(* src = "FIFO_synth.v:29|<techmap.v>:260" *)  _047_[2];
+  assign _057_[0] = interno_bajo[0] ^(* src = "FIFO_synth.v:29|<techmap.v>:262" *)  _047_[0];
+  assign _058_[1] = interno_bajo[1] ^(* src = "FIFO_synth.v:29|<techmap.v>:262" *)  _047_[1];
+  assign _058_[2] = interno_bajo[2] ^(* src = "FIFO_synth.v:29|<techmap.v>:262" *)  _047_[2];
+  assign _049_[0] = interno_alto[0] ^(* src = "FIFO_synth.v:30|<techmap.v>:262" *)  _047_[0];
+  assign _050_[1] = interno_alto[1] ^(* src = "FIFO_synth.v:30|<techmap.v>:262" *)  _047_[1];
+  assign _050_[2] = interno_alto[2] ^(* src = "FIFO_synth.v:30|<techmap.v>:262" *)  _047_[2];
+  assign _003_[1] = rd_ptr[1] ^(* src = "FIFO_synth.v:43|<techmap.v>:263" *)  rd_ptr[0];
+  assign _003_[2] = rd_ptr[2] ^(* src = "FIFO_synth.v:43|<techmap.v>:263" *)  _039_[1];
+  assign _003_[0] = rd_ptr[0] ^(* src = "FIFO_synth.v:43|<techmap.v>:262" *)  1'h1;
+  assign _004_[1] = wr_ptr[1] ^(* src = "FIFO_synth.v:47|FIFO_synth.v:43|<techmap.v>:263" *)  wr_ptr[0];
+  assign _004_[2] = wr_ptr[2] ^(* src = "FIFO_synth.v:47|FIFO_synth.v:43|<techmap.v>:263" *)  _040_[1];
+  assign _004_[0] = wr_ptr[0] ^(* src = "FIFO_synth.v:47|FIFO_synth.v:43|<techmap.v>:262" *)  1'h1;
+  assign _005_[1] = espacios_ocupados[1] ^(* src = "FIFO_synth.v:52|<techmap.v>:263" *)  espacios_ocupados[0];
+  assign _005_[2] = espacios_ocupados[2] ^(* src = "FIFO_synth.v:52|<techmap.v>:263" *)  _041_[1];
+  assign _005_[3] = espacios_ocupados[3] ^(* src = "FIFO_synth.v:52|<techmap.v>:263" *)  _041_[2];
+  assign _005_[4] = espacios_ocupados[4] ^(* src = "FIFO_synth.v:52|<techmap.v>:263" *)  _041_[3];
+  assign _005_[5] = espacios_ocupados[5] ^(* src = "FIFO_synth.v:52|<techmap.v>:263" *)  _041_[4];
+  assign _005_[6] = espacios_ocupados[6] ^(* src = "FIFO_synth.v:52|<techmap.v>:263" *)  _041_[5];
+  assign _005_[7] = espacios_ocupados[7] ^(* src = "FIFO_synth.v:52|<techmap.v>:263" *)  _041_[6];
+  assign _038_[1] = _064_[1] ^(* src = "FIFO_synth.v:54|<techmap.v>:263" *)  espacios_ocupados[0];
+  assign _038_[2] = _054_[2] ^(* src = "FIFO_synth.v:54|<techmap.v>:263" *)  _063_[1];
+  assign _038_[3] = _023_[3] ^(* src = "FIFO_synth.v:54|<techmap.v>:263" *)  _063_[2];
+  assign _038_[4] = _043_[4] ^(* src = "FIFO_synth.v:54|<techmap.v>:263" *)  _063_[3];
+  assign _038_[5] = _043_[5] ^(* src = "FIFO_synth.v:54|<techmap.v>:263" *)  _063_[4];
+  assign _038_[6] = _043_[6] ^(* src = "FIFO_synth.v:54|<techmap.v>:263" *)  _063_[5];
+  assign _038_[7] = _043_[7] ^(* src = "FIFO_synth.v:54|<techmap.v>:263" *)  _063_[6];
+  assign _064_[1] = espacios_ocupados[1] ^(* src = "FIFO_synth.v:54|<techmap.v>:262" *)  1'h1;
+  assign _068_ = _043_[7] &(* src = "FIFO_synth.v:27|<techmap.v>:260|<techmap.v>:221" *)  espacios_ocupados[6];
+  assign _079_ = _012_[1] &(* src = "FIFO_synth.v:27|<techmap.v>:260|<techmap.v>:221" *)  _042_[1];
+  assign _070_ = _012_[3] &(* src = "FIFO_synth.v:27|<techmap.v>:260|<techmap.v>:221" *)  _072_;
+  assign _080_ = _013_[1] &(* src = "FIFO_synth.v:27|<techmap.v>:260|<techmap.v>:221" *)  _053_[3];
+  assign _013_[1] = _012_[3] &(* src = "FIFO_synth.v:27|<techmap.v>:260|<techmap.v>:222" *)  _012_[2];
+  assign _042_[0] = espacios_ocupados[0] |(* src = "FIFO_synth.v:27|<techmap.v>:260|<techmap.v>:212" *)  _005_[0];
+  assign _053_[3] = _081_ |(* src = "FIFO_synth.v:27|<techmap.v>:260|<techmap.v>:221" *)  _079_;
+  assign _053_[31] = _074_ |(* src = "FIFO_synth.v:27|<techmap.v>:260|<techmap.v>:221" *)  _080_;
+  assign _042_[1] = espacios_ocupados[1] &(* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)  _042_[0];
+  assign _067_ = _043_[5] &(* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)  espacios_ocupados[4];
+  assign _069_ = _015_[1] &(* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)  _042_[1];
+  assign _071_ = _013_[1] &(* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)  _042_[3];
+  assign _015_[1] = _023_[3] &(* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:222" *)  espacios_ocupados[2];
+  assign _012_[2] = _043_[5] &(* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:222" *)  _043_[4];
+  assign _012_[3] = _043_[7] &(* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:222" *)  _043_[6];
+  assign _072_ = espacios_ocupados[5] |(* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)  _067_;
+  assign _042_[3] = espacios_ocupados[3] |(* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)  _069_;
+  assign _042_[31] = _074_ |(* src = "FIFO_synth.v:28|<techmap.v>:260|<techmap.v>:221" *)  _071_;
+  assign _083_ = _058_[1] &(* src = "FIFO_synth.v:29|<techmap.v>:260|<techmap.v>:221" *)  _056_[0];
+  assign _084_ = _047_[3] &(* src = "FIFO_synth.v:29|<techmap.v>:260|<techmap.v>:221" *)  _082_[2];
+  assign _085_ = _018_[1] &(* src = "FIFO_synth.v:29|<techmap.v>:260|<techmap.v>:221" *)  _056_[1];
+  assign _056_[7] = _019_[1] &(* src = "FIFO_synth.v:29|<techmap.v>:260|<techmap.v>:221" *)  _056_[3];
+  assign _018_[1] = _047_[3] &(* src = "FIFO_synth.v:29|<techmap.v>:260|<techmap.v>:222" *)  _058_[2];
+  assign _056_[0] = _082_[0] |(* src = "FIFO_synth.v:29|<techmap.v>:260|<techmap.v>:212" *)  _057_[0];
+  assign _056_[1] = _082_[1] |(* src = "FIFO_synth.v:29|<techmap.v>:260|<techmap.v>:221" *)  _083_;
+  assign _056_[3] = _084_ |(* src = "FIFO_synth.v:29|<techmap.v>:260|<techmap.v>:221" *)  _085_;
+  assign _076_ = _050_[1] &(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)  _048_[0];
+  assign _077_ = _047_[3] &(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)  _075_[2];
+  assign _078_ = _020_[1] &(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)  _048_[1];
+  assign _048_[7] = _019_[1] &(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)  _048_[3];
+  assign _020_[1] = _047_[3] &(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:222" *)  _050_[2];
+  assign _018_[3] = _047_[7] &(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:222" *)  _047_[6];
+  assign _019_[1] = _018_[3] &(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:222" *)  _018_[2];
+  assign _048_[0] = _075_[0] |(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:212" *)  _049_[0];
+  assign _048_[1] = _075_[1] |(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)  _076_;
+  assign _048_[3] = _077_ |(* src = "FIFO_synth.v:30|<techmap.v>:260|<techmap.v>:221" *)  _078_;
+  assign _039_[1] = rd_ptr[1] &(* src = "FIFO_synth.v:43|<techmap.v>:260|<techmap.v>:221" *)  rd_ptr[0];
+  assign _040_[1] = wr_ptr[1] &(* src = "FIFO_synth.v:47|FIFO_synth.v:43|<techmap.v>:260|<techmap.v>:221" *)  wr_ptr[0];
+  assign _041_[1] = espacios_ocupados[1] &(* src = "FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:221" *)  espacios_ocupados[0];
+  assign _041_[3] = _065_ &(* src = "FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:221" *)  _041_[1];
+  assign _065_ = espacios_ocupados[3] &(* src = "FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)  espacios_ocupados[2];
+  assign _066_ = espacios_ocupados[5] &(* src = "FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:222" *)  espacios_ocupados[4];
+  assign _041_[5] = _066_ &(* src = "FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _041_[3];
+  assign _041_[2] = espacios_ocupados[2] &(* src = "FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _041_[1];
+  assign _041_[4] = espacios_ocupados[4] &(* src = "FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _041_[3];
+  assign _041_[6] = espacios_ocupados[6] &(* src = "FIFO_synth.v:52|<techmap.v>:260|<techmap.v>:229" *)  _041_[5];
+  assign _086_ = _064_[1] &(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:221" *)  espacios_ocupados[0];
+  assign _087_ = _012_[1] &(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:221" *)  _063_[1];
+  assign _012_[1] = _023_[3] &(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:222" *)  _054_[2];
+  assign _088_ = _012_[2] &(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:229" *)  _063_[3];
+  assign _089_ = _054_[2] &(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:229" *)  _063_[1];
+  assign _090_ = _043_[4] &(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:229" *)  _063_[3];
+  assign _091_ = _043_[6] &(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:229" *)  _063_[5];
+  assign _063_[1] = espacios_ocupados[1] |(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:221" *)  _086_;
+  assign _081_ = espacios_ocupados[3] |(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:221" *)  _015_[1];
+  assign _073_ = espacios_ocupados[7] |(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:221" *)  _068_;
+  assign _063_[3] = _081_ |(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:221" *)  _087_;
+  assign _074_ = _073_ |(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:221" *)  _070_;
+  assign _063_[5] = _072_ |(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:229" *)  _088_;
+  assign _063_[2] = espacios_ocupados[2] |(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:229" *)  _089_;
+  assign _063_[4] = espacios_ocupados[4] |(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:229" *)  _090_;
+  assign _063_[6] = espacios_ocupados[6] |(* src = "FIFO_synth.v:54|<techmap.v>:260|<techmap.v>:229" *)  _091_;
+  assign FIFO_synth_almost_empty = _028_ &(* src = "FIFO_synth.v:29" *)  _022_;
+  assign FIFO_synth_almost_empty = _027_ &(* src = "FIFO_synth.v:27" *)  _022_;
+  assign FIFO_synth_almost_full = _025_ &(* src = "FIFO_synth.v:28" *)  _024_;
+  assign FIFO_synth_almost_full = _026_ &(* src = "FIFO_synth.v:30" *)  _024_;
+  assign _006_ = write_enable &(* src = "FIFO_synth.v:52" *)  _029_;
+  assign _007_ = _030_ &(* src = "FIFO_synth.v:54" *)  read_enable;
+  assign _046_ = _044_ | _017_[0];
+  assign _062_ = _059_ | _061_;
+  assign _075_[0] = interno_alto[0] &(* src = "FIFO_synth.v:30|<techmap.v>:260" *)  _047_[0];
+  assign _075_[1] = interno_alto[1] &(* src = "FIFO_synth.v:30|<techmap.v>:260" *)  _047_[1];
+  assign _075_[2] = interno_alto[2] &(* src = "FIFO_synth.v:30|<techmap.v>:260" *)  _047_[2];
+  assign _005_[0] = espacios_ocupados[0] ^(* src = "FIFO_synth.v:27|<techmap.v>:262" *)  1'h1;
   (* module_not_derived = 32'd1 *)
-  (* src = "FIFO_synth.v:70" *)
+  (* src = "FIFO_synth.v:60" *)
   memoria_synth memoria_synth (
     .FIFO_data_in(FIFO_data_in),
     .FIFO_synth_data_out(FIFO_synth_data_out),
@@ -397,19 +458,29 @@ module FIFO_synth(FIFO_data_in, clk, interno_bajo, interno_alto, Reset, Enable, 
   assign _005_[31:9] = 23'h000000;
   assign { _010_[3:2], _010_[0] } = { _008_[3:2], _008_[0] };
   assign _011_[1] = _009_[1];
-  assign _014_[3:2] = _012_[3:2];
-  assign _015_[1] = _013_[1];
-  assign { _017_[7:4], _017_[2:0] } = { espacios_ocupados[7:4], espacios_ocupados[2:0] };
-  assign { _030_[30:8], _030_[0] } = { _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _030_[31], _005_[0] };
-  assign { _031_[31:2], _031_[0] } = { 29'h00000000, _003_[3], rd_ptr[0] };
-  assign { _032_[31:2], _032_[0] } = { 29'h00000000, _004_[3], wr_ptr[0] };
-  assign { _033_[31:7], _033_[0] } = { 24'h000000, _005_[8], espacios_ocupados[0] };
-  assign { _037_[7:3], _037_[0] } = { _034_[7:3], _036_[0] };
-  assign { _042_[7:3], _042_[0] } = { _034_[7:3], _041_[0] };
-  assign { _047_[30:7], _047_[0] } = { _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], _047_[31], espacios_ocupados[0] };
-  assign { _048_[31:8], _048_[3], _048_[0] } = { 24'hffffff, _017_[3], espacios_ocupados[0] };
-  assign _051_[7:3] = 5'h00;
-  assign _055_[7:3] = 5'h00;
+  assign _012_[15:4] = 12'hfff;
+  assign _013_[7:2] = 6'h3f;
+  assign _014_[3:1] = 3'h7;
+  assign { _015_[15:2], _015_[0] } = { 12'hfff, _012_[3:2], _012_[0] };
+  assign _016_[7:1] = { 6'h3f, _013_[1] };
+  assign _017_[3:1] = 3'h7;
+  assign _020_[3:2] = _018_[3:2];
+  assign _021_[1] = _019_[1];
+  assign { _023_[7:4], _023_[2:0] } = { espacios_ocupados[7:4], espacios_ocupados[2:0] };
+  assign { _038_[30:8], _038_[0] } = { _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _038_[31], _005_[0] };
+  assign { _039_[31:2], _039_[0] } = { 29'h00000000, _003_[3], rd_ptr[0] };
+  assign { _040_[31:2], _040_[0] } = { 29'h00000000, _004_[3], wr_ptr[0] };
+  assign { _041_[31:7], _041_[0] } = { 24'h000000, _005_[8], espacios_ocupados[0] };
+  assign _042_[30:7] = { _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31], _042_[31] };
+  assign { _043_[31:8], _043_[3:0] } = { 24'hffffff, _023_[3], espacios_ocupados[2:1], _005_[0] };
+  assign { _050_[7:3], _050_[0] } = { _047_[7:3], _049_[0] };
+  assign { _053_[30:7], _053_[1:0] } = { _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _053_[31], _042_[1:0] };
+  assign { _054_[31:3], _054_[1:0] } = { 24'hffffff, _043_[7:4], _023_[3], espacios_ocupados[1], _005_[0] };
+  assign { _058_[7:3], _058_[0] } = { _047_[7:3], _057_[0] };
+  assign { _063_[30:7], _063_[0] } = { _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], _063_[31], espacios_ocupados[0] };
+  assign { _064_[31:2], _064_[0] } = { 24'hffffff, _043_[7:4], _023_[3], _054_[2], espacios_ocupados[0] };
+  assign _075_[7:3] = 5'h00;
+  assign _082_[7:3] = 5'h00;
 endmodule
 
 (* dynports =  1  *)
@@ -482,18 +553,18 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   input [7:0] wr_ptr;
   (* src = "memoria_synth.v:16" *)
   input write_enable;
-  assign _019_[0] = rd_ptr[1] ? _023_[0] : _022_[0];
-  assign _019_[1] = rd_ptr[1] ? _023_[1] : _022_[1];
-  assign _019_[2] = rd_ptr[1] ? _023_[2] : _022_[2];
-  assign _019_[3] = rd_ptr[1] ? _023_[3] : _022_[3];
-  assign _019_[4] = rd_ptr[1] ? _023_[4] : _022_[4];
-  assign _019_[5] = rd_ptr[1] ? _023_[5] : _022_[5];
-  assign _019_[6] = rd_ptr[1] ? _023_[6] : _022_[6];
-  assign _019_[7] = rd_ptr[1] ? _023_[7] : _022_[7];
-  assign _019_[8] = rd_ptr[1] ? _023_[8] : _022_[8];
-  assign _019_[9] = rd_ptr[1] ? _023_[9] : _022_[9];
-  assign _019_[10] = rd_ptr[1] ? _023_[10] : _022_[10];
-  assign _019_[11] = rd_ptr[1] ? _023_[11] : _022_[11];
+  assign _021_[0] = rd_ptr[0] ? \ram[3] [0] : \ram[2] [0];
+  assign _021_[1] = rd_ptr[0] ? \ram[3] [1] : \ram[2] [1];
+  assign _021_[2] = rd_ptr[0] ? \ram[3] [2] : \ram[2] [2];
+  assign _021_[3] = rd_ptr[0] ? \ram[3] [3] : \ram[2] [3];
+  assign _021_[4] = rd_ptr[0] ? \ram[3] [4] : \ram[2] [4];
+  assign _021_[5] = rd_ptr[0] ? \ram[3] [5] : \ram[2] [5];
+  assign _021_[6] = rd_ptr[0] ? \ram[3] [6] : \ram[2] [6];
+  assign _021_[7] = rd_ptr[0] ? \ram[3] [7] : \ram[2] [7];
+  assign _021_[8] = rd_ptr[0] ? \ram[3] [8] : \ram[2] [8];
+  assign _021_[9] = rd_ptr[0] ? \ram[3] [9] : \ram[2] [9];
+  assign _021_[10] = rd_ptr[0] ? \ram[3] [10] : \ram[2] [10];
+  assign _021_[11] = rd_ptr[0] ? \ram[3] [11] : \ram[2] [11];
   assign _020_[0] = rd_ptr[0] ? \ram[1] [0] : \ram[0] [0];
   assign _020_[1] = rd_ptr[0] ? \ram[1] [1] : \ram[0] [1];
   assign _020_[2] = rd_ptr[0] ? \ram[1] [2] : \ram[0] [2];
@@ -506,6 +577,30 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _020_[9] = rd_ptr[0] ? \ram[1] [9] : \ram[0] [9];
   assign _020_[10] = rd_ptr[0] ? \ram[1] [10] : \ram[0] [10];
   assign _020_[11] = rd_ptr[0] ? \ram[1] [11] : \ram[0] [11];
+  assign _019_[0] = rd_ptr[1] ? _023_[0] : _022_[0];
+  assign _019_[1] = rd_ptr[1] ? _023_[1] : _022_[1];
+  assign _019_[2] = rd_ptr[1] ? _023_[2] : _022_[2];
+  assign _019_[3] = rd_ptr[1] ? _023_[3] : _022_[3];
+  assign _019_[4] = rd_ptr[1] ? _023_[4] : _022_[4];
+  assign _019_[5] = rd_ptr[1] ? _023_[5] : _022_[5];
+  assign _019_[6] = rd_ptr[1] ? _023_[6] : _022_[6];
+  assign _019_[7] = rd_ptr[1] ? _023_[7] : _022_[7];
+  assign _019_[8] = rd_ptr[1] ? _023_[8] : _022_[8];
+  assign _019_[9] = rd_ptr[1] ? _023_[9] : _022_[9];
+  assign _019_[10] = rd_ptr[1] ? _023_[10] : _022_[10];
+  assign _019_[11] = rd_ptr[1] ? _023_[11] : _022_[11];
+  assign _022_[0] = rd_ptr[0] ? \ram[5] [0] : \ram[4] [0];
+  assign _022_[1] = rd_ptr[0] ? \ram[5] [1] : \ram[4] [1];
+  assign _022_[2] = rd_ptr[0] ? \ram[5] [2] : \ram[4] [2];
+  assign _022_[3] = rd_ptr[0] ? \ram[5] [3] : \ram[4] [3];
+  assign _022_[4] = rd_ptr[0] ? \ram[5] [4] : \ram[4] [4];
+  assign _022_[5] = rd_ptr[0] ? \ram[5] [5] : \ram[4] [5];
+  assign _022_[6] = rd_ptr[0] ? \ram[5] [6] : \ram[4] [6];
+  assign _022_[7] = rd_ptr[0] ? \ram[5] [7] : \ram[4] [7];
+  assign _022_[8] = rd_ptr[0] ? \ram[5] [8] : \ram[4] [8];
+  assign _022_[9] = rd_ptr[0] ? \ram[5] [9] : \ram[4] [9];
+  assign _022_[10] = rd_ptr[0] ? \ram[5] [10] : \ram[4] [10];
+  assign _022_[11] = rd_ptr[0] ? \ram[5] [11] : \ram[4] [11];
   assign _018_[0] = rd_ptr[1] ? _021_[0] : _020_[0];
   assign _018_[1] = rd_ptr[1] ? _021_[1] : _020_[1];
   assign _018_[2] = rd_ptr[1] ? _021_[2] : _020_[2];
@@ -557,30 +652,6 @@ module memoria_synth(FIFO_data_in, wr_ptr, rd_ptr, clk, write_enable, read_enabl
   assign _001_[9] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_data_in[9] : 1'hx;
   assign _001_[10] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_data_in[10] : 1'hx;
   assign _001_[11] = write_enable ? (* src = "memoria_synth.v:24" *) FIFO_data_in[11] : 1'hx;
-  assign _021_[0] = rd_ptr[0] ? \ram[3] [0] : \ram[2] [0];
-  assign _021_[1] = rd_ptr[0] ? \ram[3] [1] : \ram[2] [1];
-  assign _021_[2] = rd_ptr[0] ? \ram[3] [2] : \ram[2] [2];
-  assign _021_[3] = rd_ptr[0] ? \ram[3] [3] : \ram[2] [3];
-  assign _021_[4] = rd_ptr[0] ? \ram[3] [4] : \ram[2] [4];
-  assign _021_[5] = rd_ptr[0] ? \ram[3] [5] : \ram[2] [5];
-  assign _021_[6] = rd_ptr[0] ? \ram[3] [6] : \ram[2] [6];
-  assign _021_[7] = rd_ptr[0] ? \ram[3] [7] : \ram[2] [7];
-  assign _021_[8] = rd_ptr[0] ? \ram[3] [8] : \ram[2] [8];
-  assign _021_[9] = rd_ptr[0] ? \ram[3] [9] : \ram[2] [9];
-  assign _021_[10] = rd_ptr[0] ? \ram[3] [10] : \ram[2] [10];
-  assign _021_[11] = rd_ptr[0] ? \ram[3] [11] : \ram[2] [11];
-  assign _022_[0] = rd_ptr[0] ? \ram[5] [0] : \ram[4] [0];
-  assign _022_[1] = rd_ptr[0] ? \ram[5] [1] : \ram[4] [1];
-  assign _022_[2] = rd_ptr[0] ? \ram[5] [2] : \ram[4] [2];
-  assign _022_[3] = rd_ptr[0] ? \ram[5] [3] : \ram[4] [3];
-  assign _022_[4] = rd_ptr[0] ? \ram[5] [4] : \ram[4] [4];
-  assign _022_[5] = rd_ptr[0] ? \ram[5] [5] : \ram[4] [5];
-  assign _022_[6] = rd_ptr[0] ? \ram[5] [6] : \ram[4] [6];
-  assign _022_[7] = rd_ptr[0] ? \ram[5] [7] : \ram[4] [7];
-  assign _022_[8] = rd_ptr[0] ? \ram[5] [8] : \ram[4] [8];
-  assign _022_[9] = rd_ptr[0] ? \ram[5] [9] : \ram[4] [9];
-  assign _022_[10] = rd_ptr[0] ? \ram[5] [10] : \ram[4] [10];
-  assign _022_[11] = rd_ptr[0] ? \ram[5] [11] : \ram[4] [11];
   assign _023_[0] = rd_ptr[0] ? \ram[7] [0] : \ram[6] [0];
   assign _023_[1] = rd_ptr[0] ? \ram[7] [1] : \ram[6] [1];
   assign _023_[2] = rd_ptr[0] ? \ram[7] [2] : \ram[6] [2];

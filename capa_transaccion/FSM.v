@@ -16,6 +16,7 @@ parameter RESET = 0;
 parameter INIT = 1;
 parameter IDLE = 2;
 parameter ACTIVE = 3;
+reg idle_d;
 reg [2:0] estado;
 reg [2:0] proximo_estado;
 reg [2:0] interno_alto_d;
@@ -28,12 +29,14 @@ always @(posedge clk) begin
                 estado <= RESET;
                 interno_alto_d <= 0;
                 interno_bajo_d <= 0;
+                idle_d <= 0;
         end
 
         else begin
                 estado <= proximo_estado;
                 interno_alto_d <= interno_alto;
                 interno_bajo_d <= interno_bajo;
+                idle_d <= idle;
         
         end 
         end
@@ -41,7 +44,7 @@ always @(posedge clk) begin
 always @(*) begin
 
     proximo_estado = estado;
-    idle = 0;
+    idle = idle_d;
     interno_alto = interno_alto_d;
     interno_bajo = interno_bajo_d;
 

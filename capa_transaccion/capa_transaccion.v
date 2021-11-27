@@ -74,7 +74,7 @@ module capa_transaccion(
     .FIFO_empty(empty_fifo_principal), .FIFO_full(full_fifo_princiapl), .FIFO_almost_empty(almost_empty_principal), .FIFO_almost_full(almost_full_principal));
 
     //ARBITRO 2
-    arbitro_2 arbitro_2 (.clk(clk), .class(FIFO_in[11:10]), .FIFO_empty(empty_fifo_principal), 
+    arbitro_2 arbitro_2 (.clk(clk), .class(salida_fifo_principal[11:10]), .FIFO_empty(empty_fifo_principal), 
     .reset(reset), .Enable(Enable), .Almost_full(almost_full_fifos_amarillos), .Push(push_fifos_amarillos), .Pop(pop_fifo_principal));
 
     //CAPA DE FIFOS AMARILLOS
@@ -102,7 +102,7 @@ module capa_transaccion(
 
     //FIFO central
     FIFO FIFO_central (.FIFO_data_in(entrada_fifo_central), .clk(clk), .interno_bajo(interno_bajo), .interno_alto(interno_alto), 
-    .Reset(reset), .Enable(Enable), .write_enable(|pop_fifos_amarillos), .read_enable(|push_fifos_azules), .FIFO_data_out(salida_fifo_central),
+    .Reset(reset), .Enable(Enable), .write_enable(Enable), .read_enable(|pop_fifos_amarillos), .FIFO_data_out(salida_fifo_central),
     .FIFO_empty(empty_fifo_central), .FIFO_full(full_fifo_central), .FIFO_almost_empty(almost_empty_fifo_central), .FIFO_almost_full(almost_full_fifo_central));
 
     //Capa FIFOs azules

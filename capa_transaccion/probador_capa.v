@@ -59,6 +59,7 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
     umbral_bajo <=2;
     umbral_alto <= 6;
     @(posedge clk);
+    @(posedge clk);
     init <= 0;
 
 
@@ -68,27 +69,158 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
     @(posedge clk);
     PUSH = 1;
     @(posedge clk);
+    @(posedge clk);
     FIFO_in <= 12'h0AA;
     @(posedge clk);
     FIFO_in <= 12'h0CC;
     @(posedge clk);
-    FIFO_in <= 12'h0F23;
+    FIFO_in <= 12'h0F3;
     @(posedge clk);
     FIFO_in <= 12'h077;
     @(posedge clk);
     FIFO_in <= 12'h0BB;
     @(posedge clk);
-    PUSH = 0;
+    FIFO_in <= 12'h02D;
     @(posedge clk);
-    @(posedge clk);
-    @(posedge clk);
-    @(posedge clk);
-    pop_fifo_azules[0] <= 1;
    
+
+    
+    //Para fifo 2
+    FIFO_in <= 12'h5AA;
+    @(posedge clk);
+    @(posedge clk);
+    FIFO_in <= 12'h5CC;
+    @(posedge clk);
+    FIFO_in <= 12'h5F3;
+    @(posedge clk);
+    FIFO_in <= 12'h577;
+    @(posedge clk);
+    FIFO_in <= 12'h5BB;
+    @(posedge clk);
+    FIFO_in <= 12'h52D;
+    @(posedge clk);
+    FIFO_in <= 12'h53E;
+    pop_fifo_azules[0] <= 1;
+    @(posedge clk);
+    
+    //Para fifo 3
+    FIFO_in <= 12'hAAA;
+    @(posedge clk);
+
+    FIFO_in <= 12'hACC;
+    @(posedge clk);
+    FIFO_in <= 12'hAF3;
+    @(posedge clk);
+    pop_fifo_azules[0] <= 0;
+    FIFO_in <= 12'hA77;
+    @(posedge clk);
+    FIFO_in <= 12'hABB;
+    @(posedge clk);
+    FIFO_in <= 12'hA2D;
+    @(posedge clk);
+    FIFO_in <= 12'hA3E;
+    @(posedge clk);
+
+    
+    //Para fifo 4
+    FIFO_in <= 12'hFAA;
+    @(posedge clk);
+    FIFO_in <= 12'hFCC;
+    @(posedge clk);
+    
+    FIFO_in <= 12'hFF3;
+    @(posedge clk);
+    FIFO_in <= 12'hF77;
+    pop_fifo_azules[1] <= 1;
+    @(posedge clk);
+    FIFO_in <= 12'hFBB;
+    @(posedge clk);
+    FIFO_in <= 12'hF2D;
+    @(posedge clk);
+    FIFO_in <= 12'hF3E;
+    @(posedge clk);
 
 
     /*4. Provoque un Almost Full en todos los FIFOs de entrada. Luego usando POPs del probador deje todos los FIFOs vacíos. 
     Verifique que las palabras que salieron son las mismas que entraron y que salieron por la salida correcta en la prioridad correcta.*/
+    
+    @(posedge clk);
+    pop_fifo_azules[1] <= 0;
+    FIFO_in <= 12'h0AA;
+    @(posedge clk);
+    FIFO_in <= 12'h0CC;
+    @(posedge clk);
+    FIFO_in <= 12'h0F3;
+    @(posedge clk);
+    FIFO_in <= 12'h077;
+    @(posedge clk);
+    FIFO_in <= 12'h0BB;
+    @(posedge clk);
+    FIFO_in <= 12'h02D;
+    @(posedge clk);
+
+    
+
+    //Para fifo 2
+    FIFO_in <= 12'h5AA;
+    @(posedge clk);
+    FIFO_in <= 12'h5CC;
+    @(posedge clk);
+
+    
+
+    FIFO_in <= 12'h5F3;
+    @(posedge clk);
+    FIFO_in <= 12'h577;
+    @(posedge clk);
+    FIFO_in <= 12'h5BB;
+    @(posedge clk);
+    FIFO_in <= 12'h52D;
+    @(posedge clk);
+    FIFO_in <= 12'h53E;
+    @(posedge clk);
+
+    
+
+    //Para fifo 3
+    FIFO_in <= 12'hAAA;
+    @(posedge clk);
+    FIFO_in <= 12'hACC;
+    @(posedge clk);
+
+    
+
+    FIFO_in <= 12'hAF3;
+    @(posedge clk);
+    FIFO_in <= 12'hA77;
+    @(posedge clk);
+    FIFO_in <= 12'hABB;
+    @(posedge clk);
+    FIFO_in <= 12'hA2D;
+    @(posedge clk);
+    FIFO_in <= 12'hA3E;
+    @(posedge clk);
+
+   
+
+    //Para fifo 4
+    FIFO_in <= 12'hFAA;
+    @(posedge clk);
+    FIFO_in <= 12'hFCC;
+    @(posedge clk);
+
+   
+
+    FIFO_in <= 12'hFF3;
+    @(posedge clk);
+    FIFO_in <= 12'hF77;
+    @(posedge clk);
+    FIFO_in <= 12'hFBB;
+    @(posedge clk);
+    FIFO_in <= 12'hF2D;
+    @(posedge clk);
+    FIFO_in <= 12'hF3E;
+    @(posedge clk);
 
     /*5. Lea los contadores de palabras. El contador 4 debe tener el mismo valor que la suma de los contadores 0, 1, 2 y 3.*/
 
@@ -99,14 +231,7 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
    /*7. Lea los contadores de palabras y valide un aumento de 4 palabras por contador. El contador 4 debe tener el mismo
     valor que la suma de los contadores 0, 1, 2 y 3*/
     
-    @(posedge clk);
-    @(posedge clk);
-     @(posedge clk);
-    @(posedge clk);
-     @(posedge clk);
-    @(posedge clk);
-     @(posedge clk);
-    @(posedge clk);
+
 	#3 $finish;
     
 	end

@@ -31,7 +31,7 @@ always @(posedge clk) begin
     // No tiene prioridades
     // Dependiendo del valor de class se habilitan los Pushes
 
-  if (!FIFO_empty) begin
+  if (!FIFO_empty & (class[0] == 0 | class[0] == 1)) begin
 
     case (class)
         0: Push = 4'b0001;

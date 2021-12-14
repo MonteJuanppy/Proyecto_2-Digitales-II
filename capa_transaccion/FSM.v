@@ -21,6 +21,9 @@ reg [2:0] estado;
 reg [2:0] proximo_estado;
 reg [2:0] interno_alto_d;
 reg [2:0] interno_bajo_d;
+initial begin
+        idle<=1'b0;
+end
 
 always @(posedge clk) begin
     

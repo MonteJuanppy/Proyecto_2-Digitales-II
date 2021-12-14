@@ -35,6 +35,7 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
         req <= 0;
         idx <= 2;
         FIFO_in <= 12'h0FC;
+     
     end
     always #1 clk <= ~clk;
 
@@ -69,6 +70,12 @@ module probador_capa (output reg [11:0] FIFO_in,//Entrada principal
     @(posedge clk);
     PUSH = 1;
     @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+    @(posedge clk);
+
+    @(posedge clk);
+    FIFO_in <= 12'h0FC;
     @(posedge clk);
     FIFO_in <= 12'h0AA;
     @(posedge clk);

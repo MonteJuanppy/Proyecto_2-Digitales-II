@@ -17,7 +17,9 @@ module memoria #(
   input read_enable,
   output reg [(DATA_WIDTH-1):0] FIFO_data_out //salida FIFO_data_out
 );
-
+initial begin
+  FIFO_data_out=12'h000;
+end
   reg [DATA_WIDTH-1:0] ram [0:ADDR_WIDTH-1]; //Tamaño de la memoria
 
   always @(posedge clk) begin 

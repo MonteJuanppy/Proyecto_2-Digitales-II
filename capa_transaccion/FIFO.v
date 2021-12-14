@@ -55,8 +55,8 @@ module FIFO #(
   
     end
     end
-    end
-      
+    end 
+
   memoria memoria (/*AUTOINST*/
 		   // Outputs
 		   .FIFO_data_out	(FIFO_data_out[(DATA_WIDTH-1):0]),
@@ -67,5 +67,6 @@ module FIFO #(
 		   .clk			(clk),
 		   .write_enable	(write_enable),
 		   .read_enable		(read_enable));
+
     
 endmodule
